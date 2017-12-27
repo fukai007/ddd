@@ -29,7 +29,7 @@ Page({
     setTimeout(()=>{
       this.wxCanvas.add(polygon);//添加到canvas上面
       polygon.animate({ r: "+=40", rotate: "+=80"}, { duration:3000}).start(1)
-    },500);
+    },700);
   },
 
   /**
