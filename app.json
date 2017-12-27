@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/dx/dx",
     "pages/testDraw/td",
     "pages/ask/ask",
     "pages/testAnimation/ta",

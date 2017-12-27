@@ -1,0 +1,30 @@
+<!--pages/dx/dx.wxml-->
+
+
+<view class='df fxyc mt40'>
+   <image class='wh100 bgc-red'></image>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>雪球名字</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h2'>挑战成功</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>成功获取万能的圈挑战赛</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>水平不错噢</text>
+</view>
+<view class='df fxyc mt40'>
+  <button class='bgc-red'>继续挑战</button>
+</view>
+<view class='df fxyc mt40'>
+  <button class='bgc-f1'>炫耀成绩</button>
+</view>
+<view class='df fxyc mt40'>
+ <image class='wh200 bgc-red'></image>
+</view>
+
+
+

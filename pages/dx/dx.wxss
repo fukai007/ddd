@@ -1,0 +1,9 @@
+/* pages/dx/dx.wxss */
+.wh100{
+  width: 100rpx;
+  height: 100rpx;
+}
+.wh200{
+ width: 200rpx;
+  height: 200rpx;
+}
