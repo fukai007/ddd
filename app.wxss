@@ -1,0 +1,149 @@
+/**app.wxss**/
+@import 'weui.wxss';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.f1{
+  flex: 1;
+}
+.fxc{
+  justify-content: center;
+}
+.fsb{
+  justify-content: space-between;
+}
+.fxyc{
+  justify-content: center;
+  align-items: center;
+}
+
+.df{
+  display: flex
+}
+.fww{
+  flex-wrap: wrap;
+}
+
+.tac{
+  text-align: center
+}
+
+.tar{
+  text-align: right;
+}
+.tal{
+  text-align: left;
+}
+
+
+.bgf2{
+  background-color: #f2f2f2
+}
+
+.bgc-f2{
+  background-color: #f2f2f2
+}
+
+.fc-red{
+  color:#F37059;
+}
+.fc-f2{
+  color: #f2f2f2;
+}
+
+.fc-f37059{
+  color: #f37059
+}
+
+.fc-blue{
+  color: blue
+}
+
+
+.mx40{
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+
+.mx80{
+  margin-left:80rpx;
+  margin-right:80rpx;
+}
+
+.mt20{
+  margin-top: 20rpx;
+}
+
+.mt30{
+  margin-top: 30rpx;
+}
+.mt10{
+  margin-top: 10rpx;
+}
+
+.mb20{
+  margin-bottom: 20rpx;
+}
+
+.mb40{
+  margin-bottom: 40rpx;
+}
+
+.mt40{
+  margin-top: 40rpx;
+}
+.ml10{
+  margin-left: 10rpx;
+}
+
+.ml20{
+  margin-left: 20rpx;
+}
+
+.ml40{
+  margin-left: 40rpx;
+}
+
+.obar{
+  position: absolute;
+  bottom: 0;
+  height: 100rpx;
+  width: 100%;
+  background-color: #f2f2f2;
+}
+
+.obarItem{
+  width: 80rpx;
+}
+
+.h1{
+  font-size: 28rpx;
+}

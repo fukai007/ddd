@@ -1,0 +1,13 @@
+/* pages/ask/ask.wxss */
+.h40{
+  height: 40rpx;
+}
+.p40{
+  width: 46%;
+}
+
+
+.cd{
+  border: 1rpx solid ;
+  height: 80rpx;
+}

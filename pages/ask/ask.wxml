@@ -1,0 +1,56 @@
+<!--pages/ask/ask.wxml-->
+<view class='df'>
+  <view class='f1 tac'></view>
+  <view class="userinfo">
+    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='f1 tar'>参赛说明</view>
+</view>
+<view class='df'>
+  <text class='f1 tal'>选手等级 : </text>
+  <text class='f1 tar'>挑战级别 : </text>
+</view>
+<view class='bgf2 h40'></view>
+<view class='df fxc'>
+    <view>
+        <text>AAAA</text>
+        <text>|</text>
+        <text>BBBB</text>
+    </view>
+</view>
+<view class='tac'>
+  <text>题1/1</text>
+</view>
+<view class='fxyc df cd'>
+  <text>答题倒计时:10S</text>
+</view>
+<view class='tac mt40 mx40'>
+  <text>孙红雷和姚晨联袂主演的谍战题材电视剧是什么</text>
+</view>
+<view class='mx80 df fsp fww'>
+    <button class='p40 mt40'>A</button>
+    <button class='p40 mt40'>B</button>
+    <button class='p40 mt40'>C</button>
+    <button class='p40 mt40'>D</button>
+</view>
+<view class='tac mt40'>
+    <text class='fc-red'>求助剩余时间 : </text>
+</view>
+
+<view class='obar'>
+  <view class="df fsb mx80">
+    <view class='obarItem'>
+      <image></image>
+      <view>求助好友</view>
+    </view>
+     <view class='obarItem'>
+      <image></image>
+      <view>一元续命</view>
+    </view>
+     <view class='obarItem'>
+      <image></image>
+      <view>等待解锁</view>
+    </view>
+  </view>
+</view>
