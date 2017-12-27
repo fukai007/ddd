@@ -31,6 +31,8 @@
   margin-top: 200px;
 }
 
+/** -----------layout start--------------- **/
+
 .f1{
   flex: 1;
 }
@@ -40,6 +42,10 @@
 .fsb{
   justify-content: space-between;
 }
+.fsbyc{
+  justify-content: space-between;
+}
+
 .fxyc{
   justify-content: center;
   align-items: center;
@@ -51,7 +57,9 @@
 .fww{
   flex-wrap: wrap;
 }
+/** -----------layout end--------------- **/
 
+/** -----------font start--------------- **/
 .tac{
   text-align: center
 }
@@ -61,15 +69,6 @@
 }
 .tal{
   text-align: left;
-}
-
-
-.bgf2{
-  background-color: #f2f2f2
-}
-
-.bgc-f2{
-  background-color: #f2f2f2
 }
 
 .fc-red{
@@ -88,6 +87,45 @@
 }
 
 
+.h1{
+  line-height: 1;
+  font-weight:normal;
+  font-size: 40rpx;
+}
+.h2{
+  line-height: 1;
+  font-weight:normal;
+  font-size: 36rpx;
+}
+.h3{
+  line-height: 1;
+  font-weight:normal;
+  font-size: 32rpx;
+}
+.h4{
+  line-height: 1;
+  font-weight:normal;
+  font-size: 28rpx;
+}
+
+/** -----------font end--------------- **/
+
+
+
+/** -----------view start--------------- **/
+
+.bgf2{
+  background-color: #f2f2f2
+}
+
+.bgc-f2{
+  background-color: #f2f2f2
+}
+
+/** -----------view end--------------- **/
+
+
+/** -----------position start--------------- **/
 .mx40{
   margin-left: 40rpx;
   margin-right: 40rpx;
@@ -132,6 +170,9 @@
   margin-left: 40rpx;
 }
 
+
+/** -----------position end--------------- **/
+
 .obar{
   position: absolute;
   bottom: 0;
@@ -144,6 +185,3 @@
   width: 80rpx;
 }
 
-.h1{
-  font-size: 28rpx;
-}
