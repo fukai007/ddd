@@ -141,6 +141,10 @@
   margin-right:80rpx;
 }
 
+.mt10{
+  margin-top: 10rpx;
+}
+
 .mt20{
   margin-top: 20rpx;
 }
@@ -148,9 +152,17 @@
 .mt30{
   margin-top: 30rpx;
 }
-.mt10{
-  margin-top: 10rpx;
+.mt40{
+  margin-top: 40rpx;
 }
+
+.mt50{
+  margin-top: 50rpx;
+}
+.mt60{
+  margin-top: 60rpx;
+}
+
 
 .mb20{
   margin-bottom: 20rpx;
