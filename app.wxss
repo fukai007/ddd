@@ -54,6 +54,7 @@
 }
 .fsbyc{
   justify-content: space-between;
+  align-items: center;
 }
 
 .fxyc{
