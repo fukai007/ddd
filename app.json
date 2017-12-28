@@ -6,7 +6,9 @@
     "pages/testAnimation/ta",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/getbonus/getbonus"
+    "pages/getbonus/getbonus",
+    "pages/dx2",
+    "pages/dx2/dx2"
   ],
   "window": {
     "backgroundTextStyle": "light",
