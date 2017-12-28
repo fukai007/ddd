@@ -1,2 +1,24 @@
 <!--pages/dx2/dx2.wxml-->
-<text>pages/dx2/dx2.wxml</text>
+
+
+<view class='df fxyc mt40'>
+  <text class='h4'>今天最后挑战时间：2017-12-24 12:35:00</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>奖金5.00元 挑战级别：中级挑战赛</text>
+</view>
+<view class='df fxyc mt40'>
+  <button class='bgc-f2'>立即领取</button>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>共200人参与，总金额：1000元</text>
+</view>
+<view class='df fsbys'>
+  <text class='h4 bgc-f1'>特别致谢</text>
+</view>
+<view>
+ <image class='wh200 bgc-red mt40'></image>
+ </view>
+
+
+
