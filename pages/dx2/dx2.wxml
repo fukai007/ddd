@@ -4,21 +4,35 @@
 <view class='df fxyc mt40'>
   <text class='h4'>今天最后挑战时间：2017-12-24 12:35:00</text>
 </view>
+
 <view class='df fxyc mt40'>
   <text class='h4'>奖金5.00元 挑战级别：中级挑战赛</text>
 </view>
+
 <view class='df fxyc mt40'>
   <button class='bgc-f2'>立即领取</button>
 </view>
+
 <view class='df fxyc mt40'>
   <text class='h4'>共200人参与，总金额：1000元</text>
 </view>
-<view class='df fsbys'>
-  <text class='h4 bgc-f1'>特别致谢</text>
+
+<view class='df fsbyc  mt40'>
+  <view class='h1w100 bgc-000079'></view>
+  <text class='h4 f1 tac'>特别致谢</text>
+  <view class='h1w100 bgc-000079'></view>  
 </view>
-<view>
- <image class='wh200 bgc-red mt40'></image>
- </view>
+<view class='df fyc mt40 mx40'>
+  <image class='wh100 bgc-red'></image>
+  <view class='f1 ml40'>xxxxxx</view>
+</view>
+
+<view class='df fyc mt40 mx40'>
+  <image class='wh100 bgc-red'></image>
+  <view class='f1 ml40'>xxxxxx</view>
+</view>
+<view class='df fxyc h4 mt40'>特别感谢以上金主对本场活动的大力支持</view>
+
 
 
 

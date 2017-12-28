@@ -1,14 +1,13 @@
 {
   "pages": [
     "pages/dx/dx",
-    "pages/testDraw/td",
+    "pages/dx2/dx2",
+   "pages/testDraw/td",
     "pages/ask/ask",
     "pages/testAnimation/ta",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/getbonus/getbonus",
-    "pages/dx2",
-    "pages/dx2/dx2"
+    "pages/getbonus/getbonus"
   ],
   "window": {
     "backgroundTextStyle": "light",
