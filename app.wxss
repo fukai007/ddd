@@ -49,9 +49,14 @@
 .fxc{
   justify-content: center;
 }
+.fyc{
+  align-items: center;
+}
+
 .fsb{
   justify-content: space-between;
 }
+
 .fsbyc{
   justify-content: space-between;
   align-items: center;
@@ -144,7 +149,9 @@
   background-color: blue;
 }
 
-
+.bgc-000079{
+  background-color: #000079
+}
 /** -----------view end--------------- **/
 
 
