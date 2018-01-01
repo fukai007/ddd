@@ -1,4 +1,5 @@
 // pages/ask/ask.js
+import _ from '../../utils/underscore.js';
 var app = getApp();
 Page({
 
@@ -12,12 +13,27 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    console.log("ask------onLoad--------");
+  onLoad: function (qo) {
+    console.log("ask------onLoad--------", qo);
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true
     })
+
+    // 如果为空则为答题者 
+    if (_.isEmpty(qo)){
+      //wx.showToast({ title:'答题者'});
+      app.fetchData({
+          
+      })
+    }else{ //帮助者
+
+    }
+
+    // app.fetchData({
+
+    // })
+
 
   },
 

@@ -1,10 +1,9 @@
 {
   "pages": [
+    "pages/ask/ask",
     "pages/dx2/dx2",
     "pages/dx/dx",
-    "pages/dx2/dx2",
-   "pages/testDraw/td",
-    "pages/ask/ask",
+    "pages/testDraw/td",
     "pages/testAnimation/ta",
     "pages/index/index",
     "pages/logs/logs",

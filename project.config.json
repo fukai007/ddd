@@ -22,7 +22,14 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "带参数的",
+					"pathName": "pages/ask/ask",
+					"query": "name=miles&t=200"
+				}
+			]
 		}
 	}
 }
