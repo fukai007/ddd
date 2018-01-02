@@ -1,0 +1,33 @@
+<!--pages/dx3/dx3.wxml-->
+<view class='df fxyc mt40'>
+  <text class='h4'>最后答题时间：2017-12-24 12:35:00</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>奖金5.00</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>本场答题共200人参与，奖金1000元</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4 mt40'>您当前的账户余额为：30.00</text>
+  <button class='h2 bgc-f2 mt40'>我要提现</button>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h2'>我的答题记录 </text>
+</view>
+<view class='df fyc mt40'>
+  <view class='h4 f1'>幼儿园水平：2017-12-30 09：12：43</view>
+  <view class=' h4 fr ml40'>奖励：答题资格一次</view>
+</view>
+<view class='df fyc mt40'>
+  <view class='h4 fl'>小学水平：2017-12-30 09：12：43</view>
+  <view class=' h4 fr ml40'>奖励：10：00</view>
+</view>
+<view class='df fyc mt40'>
+  <view class='h4 f1'>初中水平：2017-12-30 09：12：43</view>
+  <view class=' h4 fr ml40'>奖励：3：00</view>
+</view>
+<view class='df fyc mt40'>
+  <view class='h4 f1'>大学水平：2017-12-30 09：12：43</view>
+  <view class=' h4 fr ml40'>奖励：30：00</view>
+</view>
