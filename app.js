@@ -12,26 +12,6 @@ let endpoint={
 //app.js
 App({
   onLaunch: function (){
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              // if (this.userInfoReadyCallback) {
-              //   this.userInfoReadyCallback(res)
-              // }
-            }
-          })
-        }
-      },
-      fail: error => console.log("wx.getUserInfo----------->error", error)
-    })
   },
   globalData: {
     userInfo: null
@@ -53,8 +33,10 @@ App({
           that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
             console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
             let data = loginRes;
+            that.globalData.openid = data.openid;
             that.globalData.session_key = data.session_key; //存储 微信会话key
             that.globalData.union_id = data.union_id;  // 微信端用户唯一id
+            resolve();
           })
         },
         fail: function (e) {
@@ -75,15 +57,12 @@ App({
     wx.showLoading({ title: '数据加载中' });
     let that = this;
     var fetchDataPromise = new Promise(function (resolve, reject) {
-      //console.log("fetchData-------------------->",endpoint,"-----start----token->",qo,that.globalData.token);
-      if (that.globalData.token) { //已登录不需要重新请求 logIn
-        qo.token = that.globalData.token;
+      if (that.globalData.openid) { //已登录不需要重新请求 logIn
+        qo.openid = that.globalData.openid;
         that.fetchDataBase(qo, resolve);
       } else {
         that.wxLogin().then((value) => { //登录成功执行业务请求接口
-          if (that.globalData.token) {
-            qo.token = that.globalData.token;
-          }
+          qo.openid = that.globalData.openid || 0;
           that.fetchDataBase(qo, resolve);
         }).catch((err) => {//失败则执行 失败方案
           reject(err)
@@ -192,3 +171,24 @@ App({
     // var logs = wx.getStorageSync('logs') || []
     // logs.unshift(Date.now())
     // wx.setStorageSync('logs', logs)
+
+    // 获取用户信息
+    // wx.getSetting({
+    //   success: res => {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    //       wx.getUserInfo({
+    //         success: res => {
+    //           // 可以将 res 发送给后台解码出 unionId
+    //           this.globalData.userInfo = res.userInfo
+    //           // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+    //           // 所以此处加入 callback 以防止这种情况
+    //           // if (this.userInfoReadyCallback) {
+    //           //   this.userInfoReadyCallback(res)
+    //           // }
+    //         }
+    //       })
+    //     }
+    //   },
+    //   fail: error => console.log("wx.getUserInfo----------->error", error)
+    // })

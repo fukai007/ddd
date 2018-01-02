@@ -1,13 +1,34 @@
 <!--index.wxml-->
-<view class="container">
+<view class='df'>
+  <view class='f1 tac'></view>
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+  <view class='f1 tar'>参赛说明</view>
 </view>
+<view 
+  wx:for="{{levelList}}"  
+  wx:for-index="idx" 
+  wx:key="levelId"
+  wx:for-item="levelInfo" 
+  >
+  <view wx:if="{{levelInfo.levelId < (userInfo.u_level || 2)}}" class='df fxyc h300 bgc-red mt40'>
+        <view class='df fdy fyc'>
+          <text>{{levelInfo.levelName}}</text>
+          <text>{{levelInfo.levelInfo}}</text>
+          <text>index--->{{idx}}</text>
+          <text>{{levelInfo.levelId}}</text>
+      </view>
+  </view>
+  <view wx:else class='df fxyc h300 bgc-f2 mt40'>
+        <view class='df fdy fyc'>
+          <text>{{levelInfo.levelName}}</text>
+          <text>{{levelInfo.levelInfo}}</text>
+          <text>index--->{{idx}}</text>
+          <text>{{levelInfo.levelId}}</text>
+      </view>
+  </view>
+
+</view>
+

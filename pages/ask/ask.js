@@ -24,7 +24,8 @@ Page({
     if (_.isEmpty(qo)){
       //wx.showToast({ title:'答题者'});
       app.fetchData({
-          
+        func:'question.get_question',
+        
       })
     }else{ //帮助者
 

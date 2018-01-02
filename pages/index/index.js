@@ -1,57 +1,51 @@
 //index.js
 //获取应用实例
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    userInfo:{
+      u_level:2
+    },
+    levelList:[
+      {
+        levelName : '幼儿园水平',
+        levelInfo : 'xxxxx',
+        levelId : 1,
+      },
+      {
+        levelName: '小学水平A',
+        levelInfo: 'xxxxx',
+        levelId: 2,
+      },
+      {
+        levelName: '初中水平',
+        levelInfo: 'xxxxx',
+        levelId: 3,
+      },
+      {
+        levelName: '高中水平',
+        levelInfo: 'xxxxx',
+        levelId: 4,
+      },
+      {
+        levelName: '大学水平',
+        levelInfo: 'xxxxx',
+        levelId: 5,
+      }                  
+    ]
   },
   onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        },
-        fail:error=>{
-          console.log("wx.getUserInfo----------->error",error);
-        }
-      })
-    }
+    // app.fetchData({func:'user.get_userinfo'}).then(data=>{
+    //   console("data-------->user.get_userinfo",data)
+    //   this.setData({
+    //     userInfo: data,//app.globalData.userInfo,
+    //     hasUserInfo: true
+    //   })
+    //   app.globalData.userInfo = data;
+    // }).catch(error=>{
+    //   console("data-------->user.get_userinfo", error)
+    // });
+    app.wxLogin();
   },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
-    })
-  }
 })
