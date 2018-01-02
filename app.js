@@ -3,6 +3,8 @@ const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
 import { makePar } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
 import _ from './utils/underscore.js';
+import { addIndex} from './utils/ramda.js';
+console.log("addIndex-------->", addIndex);
 
 let endpoint={
   getOpenId: 'user.get_openid',

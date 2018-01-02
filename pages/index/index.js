@@ -36,16 +36,27 @@ Page({
     ]
   },
   onLoad: function () {
-    // app.fetchData({func:'user.get_userinfo'}).then(data=>{
-    //   console("data-------->user.get_userinfo",data)
-    //   this.setData({
-    //     userInfo: data,//app.globalData.userInfo,
-    //     hasUserInfo: true
-    //   })
-    //   app.globalData.userInfo = data;
-    // }).catch(error=>{
-    //   console("data-------->user.get_userinfo", error)
-    // });
-    app.wxLogin();
+    app.fetchData({func:'user.get_userinfo'}).then(data=>{
+      console.log("data-------->user.get_userinfo",data)
+      this.setData({
+        userInfo: data,//app.globalData.userInfo,
+        hasUserInfo: true
+      })
+      app.globalData.userInfo = data;
+    }).catch(error=>{
+      console("data-------->user.get_userinfo", error)
+    });
+    //app.wxLogin();
   },
+  /*
+    @purpose 跳转到答题页面
+    @creatTime 2018-01-02 21:09:22
+    @author miles_fk
+  */
+  toAsk:function(e){
+    // toPage: function (pageName, paro, gotoType) 
+    let levelId = e.target.dataset.levelId;
+
+    app.toPage('ask', { cid: levelId},'to'); //跳转到答题页面
+  }
 })
