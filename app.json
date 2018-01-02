@@ -1,14 +1,16 @@
 {
   "pages": [
-    "pages/ask/ask",
+    "pages/tx/tx",
+    "pages/accountMain/accountMain",
     "pages/dx2/dx2",
+    "pages/ask/ask",
     "pages/dx/dx",
     "pages/testDraw/td",
     "pages/testAnimation/ta",
     "pages/index/index",
     "pages/logs/logs",
     "pages/getbonus/getbonus"
-  ],
+   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
