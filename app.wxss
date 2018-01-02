@@ -67,6 +67,15 @@
   align-items: center;
 }
 
+.fdy{
+  flex-direction:column;
+}
+
+.fdx{
+  flex-direction:row;
+}
+
+
 .df{
   display: flex
 }
