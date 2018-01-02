@@ -165,6 +165,14 @@
 
 
 /** -----------position start--------------- **/
+.my0{
+    margin-top: 0;
+  margin-bottom: 0;
+}
+.mx0{
+    margin-left:0;
+  margin-right:0;
+}
 .mx40{
   margin-left: 40rpx;
   margin-right: 40rpx;
@@ -174,7 +182,9 @@
   margin-left:80rpx;
   margin-right:80rpx;
 }
-
+.mt0{
+  margin-top: 0;
+}
 .mt10{
   margin-top: 10rpx;
 }
@@ -197,7 +207,9 @@
   margin-top: 60rpx;
 }
 
-
+.mb0{
+  margin-bottom: 0;
+}
 .mb20{
   margin-bottom: 20rpx;
 }
@@ -206,8 +218,8 @@
   margin-bottom: 40rpx;
 }
 
-.mt40{
-  margin-top: 40rpx;
+.ml0{
+  margin-left: 0;
 }
 .ml10{
   margin-left: 10rpx;
@@ -221,6 +233,9 @@
   margin-left: 40rpx;
 }
 
+.mr0{
+  margin-right: 0;
+}
 
 /** -----------position end--------------- **/
 
