@@ -24,6 +24,18 @@ Page({
       helpTime:{m:60,s:0}
     })
 
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '这是一个模态弹窗',
+    //   success: function (res) {
+    //     if (res.confirm) {
+    //       console.log('用户点击确定')
+    //     } else if (res.cancel) {
+    //       console.log('用户点击取消')
+    //     }
+    //   }
+    // })
+
     this.hcd_sid = setInterval(()=>{
       let time = this.data.helpCD-1000;
       let  m,s;
