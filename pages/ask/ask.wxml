@@ -35,7 +35,7 @@
     <button class='p40 mt40' data-qid='4' bindtap='checkAsk'>{{answer.q_an4}}</button>
 </view>
 <view class='tac mt40'>
-    <text class='fc-red'>求助剩余时间 : </text>
+    <text class='fc-red'>求助剩余时间 : {{helpTime.m+'分'+helpTime.s+'秒'}} </text>
 </view>
 
 <view class='obar'>

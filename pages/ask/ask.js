@@ -15,12 +15,28 @@ Page({
    */
   onLoad: function (qo) {
     console.log("ask------onLoad--------", qo);
-    this.isChecking = false;
+    this.isWaiting = false;
     this.setData({
       userInfo: app.globalData.userInfo,
       hasUserInfo: true,
-      cd:10,
+      cd:10, //单位是秒
+      helpCD:3600000, //单位是毫秒
+      helpTime:{m:60,s:0}
     })
+
+    this.hcd_sid = setInterval(()=>{
+      let time = this.data.helpCD-1000;
+      let  m,s;
+      console.log(time);
+      if (time >= 0) {
+        m = Math.floor(time / 1000 / 60 % 60);
+        s = Math.floor(time / 1000 % 60);
+      }
+      this.setData({
+        helpTime:{m,s},
+        helpCD: time
+      })
+    },1000); 
 
     //wx.showToast({ title:'答题者'});
 
@@ -37,10 +53,11 @@ Page({
       }).then(data=>{
         console.log("ask--------->fetchData------->answer.get_answer_info",data);
         
-        this.sid = setInterval(()=>{
+        this.ask_sid = setInterval(()=>{
           let oldCd = this.data.cd;
+          if(this.isWaiting) return ;
           if(oldCd < 1){
-            clearInterval(this.sid);
+            clearInterval(this.ask_sid);
             wx.showToast({ title: '答题已超时' });
           }else{
             this.setData({
@@ -84,8 +101,10 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+      clearInterval(this.hcd_sid);
+      clearInterval(this.ask_sid);
   },
+
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
@@ -109,11 +128,16 @@ Page({
   },
 
   checkAsk:function(e){
+    console.log("ask----->checkAsk---------------->");
+    if (this.isWaiting) return 
     let qid = e.target.dataset.qid;
-    this.isChecking = true;
+    this.isWaiting = true;
     //TODO check-question 接口 核对
     app.fetchData({
-
+      func:'answer.check_answer',
+      q_an: qid
+    }).then(daeta=>{
+      console.log("answer.check_answer-------->",data)
     });
   }
 })

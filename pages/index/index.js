@@ -60,6 +60,6 @@ Page({
     // toPage: function (pageName, paro, gotoType) 
     let levelId = e.target.dataset.levelid;
 
-    app.toPage('accountMain', { cid: levelId},'to'); //跳转到答题页面
+    app.toPage('ask', { cid: levelId},'to'); //跳转到答题页面
   }
 })

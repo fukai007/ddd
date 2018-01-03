@@ -143,6 +143,10 @@
 
 
 /** -----------view start--------------- **/
+.wh50{
+  width: 50rpx;
+  height: 50rpx;
+}
 
 .bgf2{
   background-color: #f2f2f2;
