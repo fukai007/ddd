@@ -1,4 +1,5 @@
 //index.js
+import { makePar, extend } from '../../utils/util.js';
 //获取应用实例
 const app = getApp();
 
@@ -38,11 +39,13 @@ Page({
   onLoad: function () {
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
+      let oldUserInfo = app.globalData.userInfo 
+      let newUserInfo = extend(oldUserInfo,data);
+      app.globalData.userInfo = newUserInfo
       this.setData({
-        userInfo: data,//app.globalData.userInfo,
+        userInfo: newUserInfo,//app.globalData.userInfo,
         hasUserInfo: true
       })
-      app.globalData.userInfo = data;
     }).catch(error=>{
       console("data-------->user.get_userinfo", error)
     });
@@ -55,7 +58,7 @@ Page({
   */
   toAsk:function(e){
     // toPage: function (pageName, paro, gotoType) 
-    let levelId = e.target.dataset.levelId;
+    let levelId = e.target.dataset.levelid;
 
     app.toPage('ask', { cid: levelId},'to'); //跳转到答题页面
   }

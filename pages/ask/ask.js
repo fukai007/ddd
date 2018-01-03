@@ -15,26 +15,46 @@ Page({
    */
   onLoad: function (qo) {
     console.log("ask------onLoad--------", qo);
+    this.isChecking = false;
     this.setData({
       userInfo: app.globalData.userInfo,
-      hasUserInfo: true
+      hasUserInfo: true,
+      cd:10,
     })
 
+    //wx.showToast({ title:'答题者'});
+
     // 如果为空则为答题者 
-    if (_.isEmpty(qo)){
-      //wx.showToast({ title:'答题者'});
+    // if (_.isEmpty(qo)){
+      
+    // }else{ //帮助者
+
+    // }
+
       app.fetchData({
-        func:'question.get_question',
+        func: 'answer.get_answer_info',
+        u_level: qo.cid
+      }).then(data=>{
+        console.log("ask--------->fetchData------->answer.get_answer_info",data);
         
+        this.sid = setInterval(()=>{
+          let oldCd = this.data.cd;
+          if(oldCd < 1){
+            clearInterval(this.sid);
+            wx.showToast({ title: '答题已超时' });
+          }else{
+            this.setData({
+              cd: --oldCd
+            });
+          }
+
+        },1000);
+
+        this.setData({
+          answer:data
+        });
+
       })
-    }else{ //帮助者
-
-    }
-
-    // app.fetchData({
-
-    // })
-
 
   },
 
@@ -86,5 +106,14 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  checkAsk:function(e){
+    let qid = e.target.dataset.qid;
+    this.isChecking = true;
+    //TODO check-question 接口 核对
+    app.fetchData({
+
+    });
   }
 })

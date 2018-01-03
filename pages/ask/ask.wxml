@@ -23,16 +23,16 @@
   <text>题1/1</text>
 </view>
 <view class='fxyc df cd'>
-  <text>答题倒计时:10S</text>
+  <text>答题倒计时:{{cd}}S</text>
 </view>
 <view class='tac mt40 mx40'>
-  <text>孙红雷和姚晨联袂主演的谍战题材电视剧是什么</text>
+  <text>{{answer.q_title}}</text>
 </view>
 <view class='mx80 df fsp fww'>
-    <button class='p40 mt40'>A</button>
-    <button class='p40 mt40'>B</button>
-    <button class='p40 mt40'>C</button>
-    <button class='p40 mt40'>D</button>
+    <button class='p40 mt40' data-qid='1' bindtap='checkAsk'>{{answer.q_an1}}</button>
+    <button class='p40 mt40' data-qid='2' bindtap='checkAsk'>{{answer.q_an2}}</button>
+    <button class='p40 mt40' data-qid='3' bindtap='checkAsk'>{{answer.q_an3}}</button>
+    <button class='p40 mt40' data-qid='4' bindtap='checkAsk'>{{answer.q_an4}}</button>
 </view>
 <view class='tac mt40'>
     <text class='fc-red'>求助剩余时间 : </text>

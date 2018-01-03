@@ -84,7 +84,10 @@ var extend = function(bo,eo){
     if(al == 1) return arguments[0];
     for (let propName in eo) {
           if(eo.hasOwnProperty(propName)){
-            bo[propName] = eo[propName]
+            let curItem = eo[propName]; //如果扩展为空
+            if (curItem != ''){
+              bo[propName] = curItem;
+            }
           }
     }
     return bo

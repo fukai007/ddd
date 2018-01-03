@@ -1,6 +1,6 @@
 const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/'; 
 const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
-import { makePar } from './utils/util';
+import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
 import _ from './utils/underscore.js';
 import { addIndex} from './utils/ramda.js';
@@ -14,6 +14,22 @@ let endpoint={
 //app.js
 App({
   onLaunch: function (){
+      // 获取用户信息
+      wx.getSetting({
+        success: res => {
+          if (res.authSetting['scope.userInfo']) {
+            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+            wx.getUserInfo({
+              success: res => {
+                // 可以将 res 发送给后台解码出 unionId
+                console.log("res.userInfo-------------->",res.userInfo);
+                this.globalData.userInfo = res.userInfo
+              }
+            })
+          }
+        },
+        fail: error => console.log("wx.getUserInfo----------->error", error)
+      })
   },
   globalData: {
     userInfo: null
