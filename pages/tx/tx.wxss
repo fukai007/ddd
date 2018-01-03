@@ -1,1 +1,6 @@
 /* pages/accountMain/accountMain.wxss */
+.wh100{
+  width: 80%;
+  height:100rpx;
+  line-height: 3
+}

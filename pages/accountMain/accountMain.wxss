@@ -1,1 +1,6 @@
 /* pages/dx3/dx3.wxss */
+.w448{
+  width:450rpx;
+  max-width:450rpx; 
+  background-color: red;
+}
