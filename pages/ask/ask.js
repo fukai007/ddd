@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    isOver: false,
+    isPassAll:false,
   },
 
   /**
@@ -64,25 +65,18 @@ Page({
         u_level: qo.cid
       }).then(data=>{
         console.log("ask--------->fetchData------->answer.get_answer_info",data);
-        
         this.ask_sid = setInterval(()=>{
-          let oldCd = this.data.cd;
-          if(this.isWaiting) return ;
-          if(oldCd < 1){
-            clearInterval(this.ask_sid);
-            wx.showToast({ title: '答题已超时' });
-          }else{
-            this.setData({
-              cd: --oldCd
-            });
-          }
-
+            let oldCd = this.data.cd;
+            if(this.isWaiting) return ;
+            if(oldCd < 1){
+              clearInterval(this.ask_sid);
+              wx.showToast({ title: '答题已超时' });
+            }else{
+              this.setData({cd: --oldCd });
+            }
         },1000);
 
-        this.setData({
-          answer:data
-        });
-
+        this.setData({answer:data});
       })
 
   },
@@ -148,8 +142,29 @@ Page({
     app.fetchData({
       func:'answer.check_answer',
       q_an: qid
-    }).then(daeta=>{
-      console.log("answer.check_answer-------->",data)
+    }).then(data=>{
+      console.log("answer.check_answer-------->",data);
+      switch (data.is_correct){
+          case 1 :{
+            //更新问题数据 和 重置倒计时
+            this.setData({ answer: data, cd: 10});
+            this.isWaiting = false
+            break;
+          }
+          case 2:{
+            wx.showToast({ title: '答题失败' });
+            clearInterval(this.hcd_sid);
+            clearInterval(this.ask_sid);
+            this.setData({isOver:true})
+            break;
+          }
+          case 3:{
+            wx.showToast({ title: '恭喜你过关了' });
+            clearInterval(this.hcd_sid);
+            clearInterval(this.ask_sid);
+            break;
+          }
+      }
     });
   }
 })

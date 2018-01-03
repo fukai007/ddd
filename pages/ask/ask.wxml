@@ -1,56 +1,66 @@
 <!--pages/ask/ask.wxml-->
-<view class='df'>
-  <view class='f1 tac'></view>
-  <view class="userinfo">
-    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class='f1 tar'>参赛说明</view>
-</view>
-<view class='df'>
-  <text class='f1 tal'>选手等级 : </text>
-  <text class='f1 tar'>挑战级别 : </text>
-</view>
-<view class='bgf2 h40'></view>
-<view class='df fxc'>
-    <view>
-        <text>AAAA</text>
-        <text>|</text>
-        <text>BBBB</text>
+<view class='fullwh' style='display:none'></view>
+<view>
+  <view class='df'>
+    <view class='f1 tac'></view>
+    <view class="userinfo">
+      <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
-</view>
-<view class='tac'>
-  <text>题1/1</text>
-</view>
-<view class='fxyc df cd'>
-  <text>答题倒计时:{{cd}}S</text>
-</view>
-<view class='tac mt40 mx40'>
-  <text>{{answer.q_title}}</text>
-</view>
-<view class='mx80 df fsp fww'>
-    <button class='p40 mt40' data-qid='1' bindtap='checkAsk'>{{answer.q_an1}}</button>
-    <button class='p40 mt40' data-qid='2' bindtap='checkAsk'>{{answer.q_an2}}</button>
-    <button class='p40 mt40' data-qid='3' bindtap='checkAsk'>{{answer.q_an3}}</button>
-    <button class='p40 mt40' data-qid='4' bindtap='checkAsk'>{{answer.q_an4}}</button>
-</view>
-<view class='tac mt40'>
-    <text class='fc-red'>求助剩余时间 : {{helpTime.m+'分'+helpTime.s+'秒'}} </text>
+    <view class='f1 tar'>参赛说明</view>
+  </view>
+  <view class='df'>
+    <text class='f1 tal'>选手等级 : </text>
+    <text class='f1 tar'>挑战级别 : </text>
+  </view>
+  <view class='bgf2 h40'></view>
+  <view class='df fxc'>
+      <view>
+          <text>AAAA</text>
+          <text>|</text>
+          <text>BBBB</text>
+      </view>
+  </view>
+  <view class='tac'>
+    <text>题1/1</text>
+  </view>
+  <view class='fxyc df cd'>
+    <text>答题倒计时:{{cd}}S</text>
+  </view>
+  <view class='tac mt40 mx40'>
+    <text>{{answer.q_title}}</text>
+  </view>
+  <view class='mx80 df fsb fww'>
+      <view 
+        class='p40 mt40'
+        wx:for="{{[1,2,3,4]}}"  
+        wx:for-index="idx" 
+        wx:key="qid"
+        wx:for-item="qid" 
+      >
+        <button  data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
+      </view>
+     
+  </view>
+  <view class='tac mt40'>
+      <text class='fc-red'>求助剩余时间 : {{helpTime.m+'分'+helpTime.s+'秒'}} </text>
+  </view>
+
+  <view class='obar'>
+    <view class="df fsb mx80">
+      <view class='obarItem df  fdy fyc'>
+        <image class='wh50 bgc-red'></image>
+        <view>求助好友</view>
+      </view>
+      <view class='obarItem df  fdy fyc'>
+        <image class='wh50 bgc-red' ></image>
+        <view>一元续命</view>
+      </view>
+      <view class='obarItem df  fdy fyc'>
+        <image class='wh50 bgc-red'></image>
+        <view>等待解锁</view>
+      </view>
+    </view>
+  </view>
 </view>
 
-<view class='obar'>
-  <view class="df fsb mx80">
-    <view class='obarItem'>
-      <image></image>
-      <view>求助好友</view>
-    </view>
-     <view class='obarItem'>
-      <image></image>
-      <view>一元续命</view>
-    </view>
-     <view class='obarItem'>
-      <image></image>
-      <view>等待解锁</view>
-    </view>
-  </view>
-</view>

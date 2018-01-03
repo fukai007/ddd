@@ -147,6 +147,13 @@
   width: 50rpx;
   height: 50rpx;
 }
+.fullwh{
+  position: absolute;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5)
+}
 
 .bgf2{
   background-color: #f2f2f2;
