@@ -38,7 +38,9 @@
         wx:key="qid"
         wx:for-item="qid" 
       >
-        <button  data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
+        <button  wx:if='{{isOver&&answer.q_id == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-red'>{{answer['q_an'+qid]}}</button>
+        <button  wx:elif='{{isOver&&answer.q_an_yes == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-green'>{{answer['q_an'+qid]}}</button>
+        <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
       </view>
      
   </view>
