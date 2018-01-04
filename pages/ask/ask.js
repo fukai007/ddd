@@ -64,13 +64,15 @@ Page({
         func: 'answer.get_answer_info',
         u_level: qo.cid
       }).then(data=>{
-        console.log("ask--------->fetchData------->answer.get_answer_info",data);
+        //console.log("ask--------->fetchData------->answer.get_answer_info",data);
         this.ask_sid = setInterval(()=>{
             let oldCd = this.data.cd;
             if(this.isWaiting) return ;
             if(oldCd < 1){
               clearInterval(this.ask_sid);
-              wx.showToast({ title: '答题已超时' });
+              clearInterval(this.hcd_sid);
+              this.setData({ isOver:true});
+              wx.showToast({ title: '时间到,您已放弃本次答题机会' });
             }else{
               this.setData({cd: --oldCd });
             }
@@ -130,12 +132,29 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let par = `a_id=${this.data.answer.a_progress}`;
+    let title = `万能的圈圈让您发财`;
+    let imageUrl = '';
+    let path = 'pages/helper/helper?' + par;
+
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) {
+        //如果成功则禁用转发功能 因为是一对一的
+       // wx.hideShareMenu();
+        console.log('ask--------------onShareAppMessage------->', path)
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }    
   },
 
   checkAsk:function(e){
     console.log("ask----->checkAsk---------------->");
-    if (this.isWaiting) return 
+    if (this.isWaiting || this.data.isOver) return 
     let qid = e.target.dataset.qid;
     this.isWaiting = true;
     //TODO check-question 接口 核对

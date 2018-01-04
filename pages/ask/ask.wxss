@@ -11,3 +11,14 @@
   border: 1rpx solid ;
   height: 80rpx;
 }
+
+.shareIcon{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+.shareIcon::after{
+  border:0px;
+}

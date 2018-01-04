@@ -47,17 +47,22 @@
   <view class='tac mt40'>
       <text class='fc-red'>求助剩余时间 : {{helpTime.m+'分'+helpTime.s+'秒'}} </text>
   </view>
-
+  
   <view class='obar'>
     <view class="df fsb mx80">
+
       <view class='obarItem df  fdy fyc'>
+        <button class='shareIcon' open-type="share"></button>
         <image class='wh50 bgc-red'></image>
         <view>求助好友</view>
       </view>
+
       <view class='obarItem df  fdy fyc'>
+        <button class='shareIcon' ></button>
         <image class='wh50 bgc-red' ></image>
         <view>一元续命</view>
       </view>
+
       <view class='obarItem df  fdy fyc'>
         <image class='wh50 bgc-red'></image>
         <view>等待解锁</view>
