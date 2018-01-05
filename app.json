@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/testAnimation/ta",
     "pages/index/index",
     "pages/ask/ask",
     "pages/dx2/dx2",
@@ -10,6 +9,7 @@
     "pages/getbonus/getbonus",
     "pages/tx/tx",
     "pages/accountMain/accountMain",
+    "pages/testAnimation/ta",
     "pages/helper/helper"
   ],
   "window": {

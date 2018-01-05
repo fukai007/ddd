@@ -1,5 +1,9 @@
 <!--pages/ask/ask.wxml-->
-<view class='fullwh' style='display:none'></view>
+<view class='fullwh' style='{{isShowHelpUI?"display:flex":"display:none"}}'>
+  <view class='tac mt40'>
+      <text class='fc-red'>求助剩余时间 : {{helpCD+'秒'}} </text>
+  </view>
+</view>
 <view>
   <view class='df'>
     <view class='f1 tac'></view>
@@ -32,22 +36,19 @@
   </view>
   <view class='mx80 df fsb fww'>
       <view 
-        class='p40 mt40'
+        class='p40 mt40 por'
         wx:for="{{[1,2,3,4]}}"  
         wx:for-index="idx" 
         wx:key="qid"
         wx:for-item="qid" 
       >
+        <view wx:if='{{isShowHelpUI}}' class='tipCount'>{{tipInfo['fabulous'+qid]}}</view>
         <button  wx:if='{{isOver&&answer.q_id == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-red'>{{answer['q_an'+qid]}}</button>
         <button  wx:elif='{{isOver&&answer.q_an_yes == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-green'>{{answer['q_an'+qid]}}</button>
         <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
       </view>
      
   </view>
-  <view class='tac mt40'>
-      <text class='fc-red'>求助剩余时间 : {{helpTime.m+'分'+helpTime.s+'秒'}} </text>
-  </view>
-  
   <view class='obar'>
     <view class="df fsb mx80">
 
