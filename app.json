@@ -9,8 +9,9 @@
     "pages/logs/logs",
     "pages/getbonus/getbonus",
     "pages/tx/tx",
-    "pages/accountMain/accountMain"
-   ],
+    "pages/accountMain/accountMain",
+    "pages/tg/tg"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

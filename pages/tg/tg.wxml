@@ -1,0 +1,19 @@
+<!--pages/tg/tg.wxml-->
+<view class='df fxyc mt200'>
+  <text class='h2'></text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>雪球儿</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h2'>通关成功</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>成功获取万能的圈晋级资格 </text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>水平不错哦~</text>
+</view>
+<view class='df fxyc mt40'>
+ <button class='h2 bgc-f1 wh400'>继续闯关</button>
+</view>
