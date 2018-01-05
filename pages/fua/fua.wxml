@@ -1,0 +1,23 @@
+<!--pages/fua/fua.wxml-->
+  <view class='fxyc df cd'>
+    <text>答题倒计时:{{cd}}S</text>
+  </view>
+
+  <view class='tac mt40 mx40'>
+    <text>{{answer.q_title}}</text>
+  </view>
+
+  <view class='mx80'>
+      <view 
+        class='p40 mt40'
+        wx:for="{{ [1,2,3,4] }}"  
+        wx:for-index="idx" 
+        wx:key="qid"
+        wx:for-item="qid" 
+      >
+        <button  wx:if='{{isOver&&sqid == qid}}' class='bgc-red'>{{answer['q_an'+qid]}}</button>
+        <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
+      </view>
+    </view>
+
+    <button wx:if='{{cd==0}}' bindtap='toIndex' class='mx40 mt60'>自己搞一下</button>
