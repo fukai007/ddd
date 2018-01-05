@@ -1,0 +1,25 @@
+<!--pages/helper/helper.wxml-->
+<view class='tac'>1/5</view>
+<view class='tac'>倒计时:10s</view>
+<view class='mx40'>
+    <view class='tac'>绿茶属于什么茶</view>
+    <view 
+      class='p40 mt40'
+      wx:for="{{[1,2,3,4]}}"  
+      wx:for-index="idx" 
+      wx:key="qid"
+      wx:for-item="qid" 
+    >
+      <button  
+        wx:if='{{isOver&&answer.q_id == qid}}'
+          data-qid='{{qid}}' bindtap='checkAsk' 
+          class='bgc-red'>{{answer['q_an'+qid]}}</button>
+
+      <button 
+          wx:elif='{{isOver&&answer.q_an_yes == qid}}' 
+          data-qid='{{qid}}' bindtap='checkAsk' 
+          class='bgc-green'>{{answer['q_an'+qid]}}</button>
+
+      <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
+    </view>
+</view>

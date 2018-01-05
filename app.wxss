@@ -180,6 +180,12 @@
 
 
 /** -----------position start--------------- **/
+.por{
+  position: relative;
+}
+.poa{
+  position: absolute;
+}
 .my0{
     margin-top: 0;
   margin-bottom: 0;

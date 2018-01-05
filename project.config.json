@@ -26,7 +26,11 @@
 				{
 					"id": 0,
 					"name": "带参数的",
+<<<<<<< HEAD
 					"pathName": "pages/fua/fua",
+=======
+					"pathName": "pages/helper/helper",
+>>>>>>> 0ba75ee5240a4238a2fcdbe0c13000cb71e011f7
 					"query": "a_id=2"
 				}
 			]

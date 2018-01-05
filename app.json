@@ -5,12 +5,13 @@
     "pages/dx2/dx2",
     "pages/dx/dx",
     "pages/td/td",
-    "pages/testAnimation/ta",
     "pages/logs/logs",
     "pages/getbonus/getbonus",
     "pages/tx/tx",
     "pages/accountMain/accountMain",
-    "pages/fua/fua"
+    "pages/fua/fua",
+    "pages/testAnimation/ta",
+    "pages/helper/helper"
   ],
   "window": {
     "backgroundTextStyle": "light",
