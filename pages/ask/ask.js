@@ -180,10 +180,11 @@ Page({
     }).then(data=>{
       data.timeStamp = data.timeStamp+'';
       data.success=function(){
-        that.setData({isOver:false,cd:10 });
-        wx.showShareMenu() //允许分享
-        that.isWaiting = false; //取消等待
-        this.isQuestionShare = false;  
+        // that.setData({isOver:false,cd:10 });
+        // wx.showShareMenu() //允许分享
+        // that.isWaiting = false; //取消等待
+        // this.isQuestionShare = false;  
+        app.toPage('ask',{},)
       }
       data.fail = function(error){
         that.isWaiting = false;
