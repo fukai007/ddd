@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/tg/tg",
     "pages/index/index",
     "pages/ask/ask",
     "pages/dx/dx",
