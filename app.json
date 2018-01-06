@@ -1,16 +1,18 @@
 {
   "pages": [
+    "pages/tg/tg",
     "pages/index/index",
     "pages/ask/ask",
     "pages/dx2/dx2",
     "pages/dx/dx",
     "pages/td/td",
-    "pages/testAnimation/ta",
     "pages/logs/logs",
     "pages/getbonus/getbonus",
     "pages/tx/tx",
     "pages/accountMain/accountMain",
-    "pages/tg/tg"
+    "pages/fua/fua",
+    "pages/testAnimation/ta",
+    "pages/helper/helper" 
   ],
   "window": {
     "backgroundTextStyle": "light",

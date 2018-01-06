@@ -15,5 +15,11 @@
   <text class='h4'>水平不错哦~</text>
 </view>
 <view class='df fxyc mt40'>
- <button class='h2 bgc-f1 wh400'>继续闯关</button>
+ <button class='h2 bgc-f2 wh400'>继续闯关</button>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>奖励总金额：100元</text>
+</view>
+<view class='df fxyc mt40'>
+  <text class='h4'>水平不错哦~</text>
 </view>

@@ -147,6 +147,13 @@
   width: 50rpx;
   height: 50rpx;
 }
+.fullwh{
+  position: absolute;
+  z-index: 3;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.5)
+}
 
 .bgf2{
   background-color: #f2f2f2;
@@ -162,6 +169,10 @@
   background-color: blue;
 }
 
+.bgc-green{
+  background-color: green;
+}
+
 .bgc-000079{
   background-color: #000079
 }
@@ -169,6 +180,12 @@
 
 
 /** -----------position start--------------- **/
+.por{
+  position: relative;
+}
+.poa{
+  position: absolute;
+}
 .my0{
     margin-top: 0;
   margin-bottom: 0;

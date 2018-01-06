@@ -21,13 +21,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "带参数的",
-					"pathName": "pages/ask/ask",
-					"query": "name=miles&t=200"
+					"pathName": "pages/fua/fua",
+					"query": "a_id=2"
 				}
 			]
 		}

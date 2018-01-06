@@ -6,8 +6,27 @@
   width: 46%;
 }
 
-
 .cd{
   border: 1rpx solid ;
   height: 80rpx;
+}
+
+.shareIcon{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
+}
+.shareIcon::after{
+  border:0px;
+}
+.tipCount{
+  position: absolute;
+  background-color: red;
+  right: 0;
+  top: 0;
+  width: 50rpx;
+  height: 50rpx;
+  z-index:99;
 }
