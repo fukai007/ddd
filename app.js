@@ -32,7 +32,7 @@ App({
       })
   },
   globalData: {
-    userInfo: null
+    userInfo: {}
   },
   /*
       @purpose  微信登录
@@ -72,8 +72,8 @@ App({
     @author  miles_fk
 */
   fetchData: function (qo) {
-    wx.showLoading({ title: '数据加载中' });
-    let that = this;
+    if (!qo.noloadding) wx.showLoading({ title: '数据加载中' });
+    let that = this; 
     var fetchDataPromise = new Promise(function (resolve, reject) {
       if (that.globalData.openid) { //已登录不需要重新请求 logIn
         qo.openid = that.globalData.openid;

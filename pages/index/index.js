@@ -6,7 +6,7 @@ const app = getApp();
 Page({
   data: {
     userInfo:{
-      u_level:2
+      u_level:0
     },
     levelList:[
       {

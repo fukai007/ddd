@@ -12,7 +12,8 @@ Page({
     isOver: false,
     isPassAll:false,
     isShowHelpUI:false, //是否显示帮助显示浮层-2018-01-05 11:26
-    answer:{}
+    answer:{},
+    cd:0
   },
 
   /**
@@ -133,6 +134,46 @@ Page({
     }    
   },
 
+  /*
+      @purpose 再次尝试在支付后
+      @createTIme 2018-01-06 08:47:58
+      @author miles_fk
+      @parm
+          answer.q_id
+  */
+  tryIt:function(){
+    let that = this;
+    this.isWaiting = true;
+    app.fetchData({ 
+        func: 'resurrection.resurrection',
+        a_id: this.data.answer.a_id
+    }).then(data=>{
+      data.timeStamp = data.timeStamp+'';
+      data.success=function(){
+        that.setData({
+          isOver:false,
+          cd:10
+        });
+        this.isWaiting = false;
+      }
+      data.fail = function(error){
+        this.isWaiting = false;
+        wx.showToast(支付失败);
+      }
+      try{
+        wx.requestPayment(data);
+      }catch(e){
+          console.log(e);
+      }
+      
+    })
+  },
+  
+  /*
+      @purpose 核对问题
+      @createTIme 2018-01-06 08:47:58
+      @author miles_fk
+  */
   checkAsk:function(e){
     console.log("ask----->checkAsk---------------->");
     if (this.isWaiting || this.data.isOver) return 
@@ -169,13 +210,18 @@ Page({
       }
     });
   },
+    /*
+      @purpose 开启帮助
+      @createTIme 2018-01-06 08:47:58
+      @author miles_fk
+  */
   startHelpCD: function(){
     this.isWaiting = true;
     this.hcd_sid = setInterval(()=>{
       let time = this.data.helpCD-1;
       let  m,s;
       console.log(time);
-      if (time == 0) {
+      if (time < 0) {
         let sid = this.hcd_sid ;
         clearInterval(sid)//清除帮助倒计时器
         this.isWaiting = false;
@@ -200,8 +246,9 @@ Page({
   getFabulous: function () {
     let a_id = this.data.answer.q_id;
       app.fetchData({
-        func:'help.fabulous',
-        a_id: a_id
+        func:'help.fabulous_num',
+        a_id: a_id,
+        noloadding:true
       }).then(data=>{
         this.setData({ tipInfo: data});
       });
