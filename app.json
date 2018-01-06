@@ -11,8 +11,7 @@
     "pages/tx/tx",
     "pages/accountMain/accountMain",
     "pages/fua/fua",
-    "pages/testAnimation/ta",
-    "pages/helper/helper" 
+    "pages/testAnimation/ta"
   ],
   "window": {
     "backgroundTextStyle": "light",

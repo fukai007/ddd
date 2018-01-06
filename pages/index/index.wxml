@@ -13,7 +13,7 @@
   wx:key="levelId"
   wx:for-item="levelInfo" 
   >
-  <view wx:if="{{levelInfo.levelId <= userInfo.u_level}}" class='df fxyc h300 bgc-red mt40' bindtap="toAsk" data-levelId="{{levelInfo.levelId}}">
+  <view wx:if="{{levelInfo.levelId <= userInfo.u_level}}" class='df fxyc h300 bgc-red mt40' bindtap="toAsk" data-levelid="{{levelInfo.levelId}}">
         <view class='df fdy fyc'>
           <text>{{levelInfo.levelName}}</text>
           <text>{{levelInfo.levelInfo}}</text>

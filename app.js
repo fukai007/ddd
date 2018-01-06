@@ -20,10 +20,10 @@ App({
           if (res.authSetting['scope.userInfo']) {
             // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
             wx.getUserInfo({
-              success: res => {
+              success: resa => {
                 // 可以将 res 发送给后台解码出 unionId
-                console.log("res.userInfo-------------->",res.userInfo);
-                this.globalData.userInfo = res.userInfo
+                console.log("res.userInfo-------------->", resa.userInfo);
+                this.globalData.userInfo = resa.userInfo
               }
             })
           }
@@ -32,7 +32,7 @@ App({
       })
   },
   globalData: {
-    userInfo: null
+    userInfo: {}
   },
   /*
       @purpose  微信登录
@@ -46,16 +46,18 @@ App({
     var wxLoginPromise = new Promise(function (resolve, reject) {
       wx.login({ //微信登录接口-微信提供的  res.code 到后台换取 openId, sessionKey, unionId
         success: function (res) {
-          console.log("wxLogin------->wx.login----------------->", res);
-          //decryptMpCode  解code的 测试  mpLogin
-          that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
-            console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
-            let data = loginRes;
-            that.globalData.openid = data.openid;
-            that.globalData.session_key = data.session_key; //存储 微信会话key
-            that.globalData.union_id = data.union_id;  // 微信端用户唯一id
-            resolve();
-          })
+            console.log("wxLogin------->wx.login----------------->", res);
+            //decryptMpCode  解code的 测试  mpLogin
+            that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
+              console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
+              let data = loginRes;
+              that.globalData.openid = data.openid;
+              that.globalData.session_key = data.session_key; //存储 微信会话key
+              that.globalData.union_id = data.union_id;  // 微信端用户唯一id
+              resolve();
+            }, function(){
+              reject({ isError: true });
+            })
         },
         fail: function (e) {
           wx.showToast({ title: e.errMsg || fetchErrorInfo, image: "../../images/error-a.png" });
@@ -72,12 +74,12 @@ App({
     @author  miles_fk
 */
   fetchData: function (qo) {
-    wx.showLoading({ title: '数据加载中' });
-    let that = this;
+    if (!qo.noloadding) wx.showLoading({ title: '数据加载中' });
+    let that = this; 
     var fetchDataPromise = new Promise(function (resolve, reject) {
       if (that.globalData.openid) { //已登录不需要重新请求 logIn
         qo.openid = that.globalData.openid;
-        that.fetchDataBase(qo, resolve);
+        that.fetchDataBase(qo, resolve,reject);
       } else {
         that.wxLogin().then((value) => { //登录成功执行业务请求接口
           qo.openid = that.globalData.openid || 0;
@@ -122,7 +124,8 @@ App({
             let errInfo = res.data.errmsg || fetchErrorInfo;
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
-            console.log("fetchDataBase---errInfo----------endpoint------->", endpoint, errInfo);
+            console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
+            fallcb&&fallcb()
           }
         },
         fail: function(res) {
