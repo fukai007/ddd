@@ -7,7 +7,7 @@ Page({
    */
   data: {
       levelInfo:{
-        a:
+        //a:
       }
   },
 
