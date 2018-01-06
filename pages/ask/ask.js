@@ -108,11 +108,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    //let par = `a_id=${this.data.answer.a_progress}`;
-    let par = '';
+    let par = `a_id=${this.data.answer.a_id}`;
+    //let par = '';
     let title = `万能的圈圈让您发财`;
     let imageUrl = '';
-    let path = 'pages/helper/helper?' + par;
+    let path = 'pages/fua/fua?' + par;
     let that = this;
 
     return {
@@ -142,7 +142,9 @@ Page({
           answer.q_id
   */
   tryIt:function(){
+    if(this.ceq(this.data.answer) || this.data.isOver == false) return ;
     let that = this;
+
     this.isWaiting = true;
     app.fetchData({ 
         func: 'resurrection.resurrection',
@@ -150,10 +152,8 @@ Page({
     }).then(data=>{
       data.timeStamp = data.timeStamp+'';
       data.success=function(){
-        that.setData({
-          isOver:false,
-          cd:10
-        });
+        that.setData({isOver:false,cd:10 });
+        wx.showShareMenu() //允许分享
         this.isWaiting = false;
       }
       data.fail = function(error){
@@ -168,7 +168,17 @@ Page({
       
     })
   },
-  
+    /*
+      @purpose 核对是否 是 最后一道题
+      @createTIme 2018-01-06 08:47:58
+      @author miles_fk
+  */
+  ceq: function (answer){
+    let { a_progress, a_max}  = answer;
+    if (a_progress == a_max) return true
+    else return false
+  },
+    
   /*
       @purpose 核对问题
       @createTIme 2018-01-06 08:47:58
@@ -187,21 +197,24 @@ Page({
     }).then(data=>{
       console.log("answer.check_answer-------->",data);
       switch (data.is_correct){
-          case 1 :{
+          case 1 :{ //正确
+            
             //更新问题数据 、重置倒计时 、选了谁
+            if (this.ceq(data)) wx.hideShareMenu();
             this.setData({ answer: data, cd: 10});
             this.isWaiting = false;
             this.cur_qid = false;
+
             break;
           }
-          case 2:{
+          case 2:{ //错误
             wx.showToast({ title: '答题失败' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
             this.setData({isOver:true})
             break;
           }
-          case 3:{
+          case 3:{//通关
             wx.showToast({ title: '恭喜你过关了' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
@@ -244,7 +257,7 @@ Page({
     })
   },
   getFabulous: function () {
-    let a_id = this.data.answer.q_id;
+    let a_id = this.data.answer.a_id;
       app.fetchData({
         func:'help.fabulous_num',
         a_id: a_id,

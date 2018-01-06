@@ -59,7 +59,7 @@ Page({
   toAsk:function(e){
     // toPage: function (pageName, paro, gotoType) 
     let levelId = e.target.dataset.levelid;
-
+    console.log("levelId--------------------------------->", levelId);
     app.toPage('ask', { cid: levelId},'to'); //跳转到答题页面
   }
 })
