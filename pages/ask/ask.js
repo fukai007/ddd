@@ -13,7 +13,7 @@ Page({
     isPassAll:false,
     isShowHelpUI:false, //是否显示帮助显示浮层-2018-01-05 11:26
     answer:{},
-    cd:0
+    cd:0,
   },
 
   /**
@@ -22,6 +22,7 @@ Page({
   onLoad: function (qo) {
     console.log("ask------onLoad--------", qo);
     this.isWaiting = false;
+    this.isQuestionShare=false
     let that = this;
     app.fetchData({
       func: 'answer.get_answer_info',
@@ -107,31 +108,58 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    let par = `a_id=${this.data.answer.a_id}`;
-    //let par = '';
-    let title = `万能的圈圈让您发财`;
-    let imageUrl = '';
-    let path = 'pages/fua/fua?' + par;
-    let that = this;
+  onShareAppMessage: function (res) {
 
-    return {
-      title: title,
-      path: path,
-      imageUrl: imageUrl,
-      success: function (res) {
-        //如果成功则禁用转发功能 因为是一对一的
-       // wx.hideShareMenu();
-        console.log('ask--------------onShareAppMessage------->', path)
-        that.setData({
-          isShowHelpUI:true
-        })
-        that.startHelpCD();
-      },
-      fail: function (res) {
-        // 转发失败
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+      let par = `a_id=${this.data.answer.a_id}`;
+      //let par = '';
+      let title = `万能的圈圈让您发财`;
+      let imageUrl = '';
+      let path = 'pages/fua/fua?' + par;
+      let that = this;
+      return {
+        title: title,
+        path: path,
+        imageUrl: imageUrl,
+        success: function (res) {
+          //如果成功则禁用转发功能 因为是一对一的
+          // wx.hideShareMenu();
+          console.log('ask--------------onShareAppMessage------->', path)
+          that.setData({
+            isShowHelpUI: true
+          })
+          //当前题目如果分享了 就不用调用接口了
+          if (!that.isQuestionShare) {
+            app.fetchData({
+              func: 'help.share_num',
+              a_id: that.data.answer.a_id
+            }).then(data => {
+              //TODO 增加是否判断  控制 分享行为-2018-01-06 10:52
+              that.isQuestionShare = true
+            }).catch(() => {
+              that.setData({
+                isShowHelpUI: true
+              })
+            })
+          }
+
+          that.startHelpCD();
+
+
+        },
+        fail: function (res) {
+          // 转发失败
+        }
+      } 
+    }else{
+      return {
+        title: '万能的圈圈让您发财',
+        path: 'pages/index/index/',
+        imageUrl: imageUrl,      
       }
-    }    
+    }
   },
 
   /*
@@ -154,10 +182,11 @@ Page({
       data.success=function(){
         that.setData({isOver:false,cd:10 });
         wx.showShareMenu() //允许分享
-        this.isWaiting = false;
+        that.isWaiting = false; //取消等待
+        this.isQuestionShare = false;  
       }
       data.fail = function(error){
-        this.isWaiting = false;
+        that.isWaiting = false;
         wx.showToast(支付失败);
       }
       try{
@@ -166,6 +195,8 @@ Page({
           console.log(e);
       }
       
+    }).catch(()=>{
+      console.log("生成订单次失败");
     })
   },
     /*
@@ -198,12 +229,16 @@ Page({
       console.log("answer.check_answer-------->",data);
       switch (data.is_correct){
           case 1 :{ //正确
-            
             //更新问题数据 、重置倒计时 、选了谁
-            if (this.ceq(data)) wx.hideShareMenu();
+            if (this.ceq(data) || data.share == 0){
+              wx.hideShareMenu();
+            }else{
+              this.isQuestionShare = false
+            }
             this.setData({ answer: data, cd: 10});
             this.isWaiting = false;
             this.cur_qid = false;
+
 
             break;
           }
@@ -211,7 +246,7 @@ Page({
             wx.showToast({ title: '答题失败' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
-            this.setData({isOver:true})
+            this.setData({ isOver: true, answer: data})
             break;
           }
           case 3:{//通关
@@ -232,7 +267,6 @@ Page({
     this.isWaiting = true;
     this.hcd_sid = setInterval(()=>{
       let time = this.data.helpCD-1;
-      let  m,s;
       console.log(time);
       if (time < 0) {
         let sid = this.hcd_sid ;
@@ -240,8 +274,8 @@ Page({
         this.isWaiting = false;
 
         this.setData({
-          cd: this.data.answer_time,
-          helpCD: this.data.help_time,
+          cd: this.data.answer.answer_time,
+          helpCD: this.data.answer.help_time,
           isShowHelpUI:false
         })
 

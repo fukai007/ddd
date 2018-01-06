@@ -46,16 +46,18 @@ App({
     var wxLoginPromise = new Promise(function (resolve, reject) {
       wx.login({ //微信登录接口-微信提供的  res.code 到后台换取 openId, sessionKey, unionId
         success: function (res) {
-          console.log("wxLogin------->wx.login----------------->", res);
-          //decryptMpCode  解code的 测试  mpLogin
-          that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
-            console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
-            let data = loginRes;
-            that.globalData.openid = data.openid;
-            that.globalData.session_key = data.session_key; //存储 微信会话key
-            that.globalData.union_id = data.union_id;  // 微信端用户唯一id
-            resolve();
-          })
+            console.log("wxLogin------->wx.login----------------->", res);
+            //decryptMpCode  解code的 测试  mpLogin
+            that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
+              console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
+              let data = loginRes;
+              that.globalData.openid = data.openid;
+              that.globalData.session_key = data.session_key; //存储 微信会话key
+              that.globalData.union_id = data.union_id;  // 微信端用户唯一id
+              resolve();
+            }, function(){
+              reject({ isError: true });
+            })
         },
         fail: function (e) {
           wx.showToast({ title: e.errMsg || fetchErrorInfo, image: "../../images/error-a.png" });
@@ -77,7 +79,7 @@ App({
     var fetchDataPromise = new Promise(function (resolve, reject) {
       if (that.globalData.openid) { //已登录不需要重新请求 logIn
         qo.openid = that.globalData.openid;
-        that.fetchDataBase(qo, resolve);
+        that.fetchDataBase(qo, resolve,reject);
       } else {
         that.wxLogin().then((value) => { //登录成功执行业务请求接口
           qo.openid = that.globalData.openid || 0;
@@ -123,6 +125,7 @@ App({
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
             console.log("fetchDataBase---errInfo----------endpoint------->", endpoint, errInfo);
+            fallcb&&fallcb()
           }
         },
         fail: function(res) {
