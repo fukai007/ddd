@@ -46,8 +46,29 @@ Page({
         userInfo: newUserInfo,//app.globalData.userInfo,
         hasUserInfo: true
       })
+    }).then(()=>{
+      return app.fetchData({
+        func:'user.get_user_prize'
+      })
+    }).then(data=>{
+      let {} = data;
+      console.log("data---------------------->",data);
+      if (is_receive){
+        wx.showModal({
+          title: '提示',
+          content: '这是一个模态弹窗',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            } else if (res.cancel) {
+              console.log('用户点击取消')
+            }
+          }
+        })
+      }
+      return data;
     }).catch(error=>{
-      console("data-------->user.get_userinfo", error)
+      console("data-------->user.get_user_prize", error)
     });
     //app.wxLogin();
   },

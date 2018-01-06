@@ -1,4 +1,4 @@
-<!--pages/dx/dx.wxml-->
+<!--pages/dx/dx.wxml 挑战成功页面-->
 
 <view class='df mt40 fxc'>
  <image class='wh200 bgc-red'></image>

@@ -247,6 +247,7 @@ Page({
             wx.showToast({ title: '答题失败' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
+            wx.hideShareMenu();
             this.setData({ isOver: true, answer: data})
             break;
           }
@@ -254,6 +255,7 @@ Page({
             wx.showToast({ title: '恭喜你过关了' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
+            app.toPage('dx');
             break;
           }
       }

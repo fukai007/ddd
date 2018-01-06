@@ -124,7 +124,7 @@ App({
             let errInfo = res.data.errmsg || fetchErrorInfo;
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
-            console.log("fetchDataBase---errInfo----------endpoint------->", endpoint, errInfo);
+            console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
             fallcb&&fallcb()
           }
         },
