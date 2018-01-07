@@ -1,6 +1,15 @@
 <!--pages/tg/tg.wxml-->
+  <text class='h2'>levelInfo.a-->{{levelInfo.a}}</text>
+
+  <view style="{{isShow ? '':'display:none'}}">isShow=true</view>
+
+  <view wx:if="{{isShow}}">wx:if-isShow</view>
+  <view wx:else>wx:else-isShow</view>
+
 <view class='df fxyc mt200'>
-  <text class='h2'></text>
+
+
+
 </view>
 <view class='df fxyc mt40'>
   <text class='h4'>雪球儿</text>

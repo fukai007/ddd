@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/accountMain/accountMain",
     "pages/tg/tg",
     "pages/index/index",
     "pages/ask/ask",
@@ -7,7 +8,6 @@
     "pages/td/td",
     "pages/logs/logs",
     "pages/tx/tx",
-    "pages/accountMain/accountMain",
     "pages/fua/fua",
     "pages/testAnimation/ta"
   ],

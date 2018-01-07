@@ -1,4 +1,5 @@
-// pages/dx3/dx3.js
+import  { formatTime} from '../../utils/util.js';
+const app = getApp();
 Page({
 
   /**
@@ -12,7 +13,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    app.fetchData({
+      func:'user.get_answer_list'
+    }).then(data=>{
+      let ct = data.last_bonus.create_time;
+      data.last_bonus.create_time = formatTime(new Date(1513670112));
+      this.setData({
+        cinfo:data
+      })
+    })
   },
 
   /**

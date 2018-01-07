@@ -1,8 +1,15 @@
 <!--pages/dx/dx.wxml 挑战成功页面-->
-<view class='df fxc'>
+<view class='df fyc fdy'>
     <image  class="userinfo-avatar" src="{{userInfo.avatarUrl}}"  background-size="cover"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <view class='tac h1 mt40'>通关成功</view>
+    <text class='tac h3 mt40'>{{levelInfo[info.level]}}</text>
+    <view class='df fxc'>
+          <button bindtap='toIndex'>继续闯关</button>
+    </view>
+    <text>获奖金额 {{ info.bonus || 0 }}</text>
 </view>
+
 
 
 

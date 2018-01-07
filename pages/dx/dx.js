@@ -4,10 +4,13 @@ Page({
 
   /**
    * 页面的初始数据
-   */
-  data: {
+  */
+     data:{ 
       levelInfo:{
-        //a:
+          a:'通关成功,成功获得万能晋级资格,水平不错哦',
+          b:'通关成功,成功挑战10题,已经超越60%的答题者',
+          c:'Bingo!成功通关,为你点赞',
+          d:'疯狂为你打CALL!文化水平刚刚的!!!'
       }
   },
 
@@ -24,7 +27,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    app.fetchData({
+      func:'user.get_user_level'
+    }).then(data=>{
+        this.setData({
+          info:data
+        })
+        console.log('dx---------->',data);
+    });
   },
 
   /**
@@ -67,5 +77,8 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toIndex:function(){
+    app.toPage('index');
   }
 })
