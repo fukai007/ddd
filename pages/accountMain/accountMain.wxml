@@ -1,6 +1,14 @@
 <!--pages/dx3/dx3.wxml-->
+<view class='df'>
+  <view class='f1 tac'></view>
+  <view class="userinfo">
+    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+  <view class='f1 tar'>参赛说明</view>
+</view>
 <view class='df fxyc mt40'>
-  <text class='h4'>最后答题时间：2017-12-24 12:35:00</text>
+  <text class='h4'>最后答题时间：{{cinfo.balance.create_time}}</text>
 </view>
 <view class='df fxyc mt40'>
   <text class='h4'>奖金5.00</text>
@@ -9,7 +17,7 @@
   <text class='h4'>本场答题共200人参与，奖金1000元</text>
 </view>
 <view class='df fsbyc mt40 mx40'>
-  <text class='h4 '>您当前的账户余额为：30.00</text>
+  <text class='h4 '>您当前的账户余额为：{{cinfo.balance}}</text>
   <button class='h2 bgc-f2 mx0'>我要提现</button>
 </view>
 <view class='df fxyc mt40'>

@@ -1,27 +1,18 @@
-// pages/tg/tg.js
-var app = getApp();
-
+// pages/index/tg.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-     levelInfo:{
-       a:100,
-       b:200
-     },
-     isShow:false
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-        setTimeout(()=>{
-          app.toPage('index')  
-        },2000);
-
+  
   },
 
   /**

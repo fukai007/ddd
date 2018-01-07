@@ -184,7 +184,7 @@ Page({
         // wx.showShareMenu() //允许分享
         // that.isWaiting = false; //取消等待
         // this.isQuestionShare = false;  
-        app.toPage('ask',{},)
+        app.toPage('ask',{})
       }
       data.fail = function(error){
         that.isWaiting = false;
