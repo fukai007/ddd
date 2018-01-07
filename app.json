@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/dx3/dx3",
     "pages/tg/tg",
     "pages/index/index",
     "pages/ask/ask",
@@ -10,7 +11,7 @@
     "pages/accountMain/accountMain",
     "pages/fua/fua",
     "pages/testAnimation/ta"
-  ],
+   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

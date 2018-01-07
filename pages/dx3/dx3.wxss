@@ -1,0 +1,6 @@
+/* pages/dx3/dx3.wxss */
+.wh400{
+  width: 400rpx;
+  height:100rpx;
+  line-height: 100rpx;
+}

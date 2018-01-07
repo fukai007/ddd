@@ -1,0 +1,9 @@
+<!--pages/dx3/dx3.wxml-->
+
+<view class='df fxyc mt40'>
+ <button style="{{xcx ? '':'display:none'}}" class='h2 bgc-f2 mx0 wh400' bindtap='toIndex'>微信小程序</button>
+ <text wx:if="{{xcx}}">100</text>
+ <text wx:else>200</text>
+</view>
+
+
