@@ -17,7 +17,7 @@ Page({
       func:'user.get_answer_list'
     }).then(data=>{
       let ct = data.last_bonus.create_time;
-      data.last_bonus.create_time = formatTime(new Date(1513670112));
+      data.last_bonus.create_time = formatTime(new Date(ct));
       this.setData({
         cinfo:data
       })

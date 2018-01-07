@@ -8,10 +8,10 @@
   <view class='f1 tar'>参赛说明</view>
 </view>
 <view class='df fxyc mt40'>
-  <text class='h4'>最后答题时间：{{cinfo.balance.create_time}}</text>
+  <text class='h4'>最后答题时间：{{cinfo.last_bonus	.create_time}}</text>
 </view>
 <view class='df fxyc mt40'>
-  <text class='h4'>奖金5.00</text>
+  <text class='h4'>奖金:{{cinfo.last_bonus.s_money}}</text>
 </view>
 <view class='df fxyc mt40'>
   <text class='h4'>本场答题共200人参与，奖金1000元</text>
