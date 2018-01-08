@@ -224,17 +224,26 @@
 .por{
   position: relative;
 }
+
 .poa{
   position: absolute;
 }
+
 .my0{
-    margin-top: 0;
+  margin-top: 0;
   margin-bottom: 0;
 }
+
 .mx0{
-    margin-left:0;
+  margin-left:0;
   margin-right:0;
 }
+
+.mx24{
+  margin-left:24;
+  margin-right:24;
+}
+
 .mx40{
   margin-left: 40rpx;
   margin-right: 40rpx;
