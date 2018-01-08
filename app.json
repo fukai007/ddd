@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/testAnimation/ta",
     "pages/index/index",
     "pages/accountMain/accountMain",
     "pages/tg/tg",
@@ -8,8 +9,7 @@
     "pages/td/td",
     "pages/logs/logs",
     "pages/tx/tx",
-    "pages/fua/fua",
-    "pages/testAnimation/ta"
+    "pages/fua/fua"
    ],
   "window": {
     "backgroundTextStyle": "light",

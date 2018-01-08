@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import 'weui.wxss';
+/* @import 'weui.wxss'; */
 
 .container {
   height: 100%;
@@ -278,6 +278,22 @@
   margin-top: 60rpx;
 }
 
+.mt100{
+  margin-top: 100rpx;
+}
+
+.mt200{
+  margin-top: 200rpx;
+}
+
+.mt300{
+  margin-top: 300rpx;
+}
+
+.mt400{
+  margin-top: 400rpx;
+}
+
 .mb0{
   margin-bottom: 0;
 }
@@ -320,5 +336,13 @@
 
 .obarItem{
   width: 80rpx;
+}
+
+.root3d{
+  perspective: 800px;
+}
+
+.cube{
+  transform-style: preserve-3d;
 }
 

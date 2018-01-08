@@ -1,1 +1,9 @@
 /* pages/testAnimation/ta.wxss */
+
+.bga{
+  width: 702rpx;
+  height:208rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/level_1.jpg);
+  background-repeat: no-repeat;
+  background-size:contain;
+}
