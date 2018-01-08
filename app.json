@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/testAnimation/ta",
     "pages/index/index",
+    "pages/testAnimation/ta",
     "pages/accountMain/accountMain",
     "pages/tg/tg",
     "pages/ask/ask",
@@ -13,7 +13,7 @@
    ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#FFFFFF",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black"
   }

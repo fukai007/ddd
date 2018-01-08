@@ -2,3 +2,46 @@
 .h300{
   height: 300rpx
 }
+.userIcon{
+  border: 2px solid #FFFFFF;
+  border-radius: 130rpx;
+}
+.userInfo-index{
+  overflow: hidden;
+  height: 240rpx;
+  width: 750rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ruleIcon{
+  width: 44rpx;
+  height: 32.7rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/icon.png);
+  background-repeat: no-repeat;
+}
+.mainbg{
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG.png);
+  background-repeat: repeat;
+  background-size: 40rpx 40rpx;
+}
+.area-com{
+  width: 720rpx;
+  height: 54rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/Rectangle.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.l1{
+  width: 702rpx;
+  height: 201rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/kindergarten.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.baseLevel{
+  width: 702rpx;
+  height: 208rpx;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

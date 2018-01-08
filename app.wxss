@@ -1,6 +1,8 @@
 /**app.wxss**/
 /* @import 'weui.wxss'; */
-
+page {
+    font-family:PingFangSC-Medium
+}
 .container {
   height: 100%;
   display: flex;
@@ -9,7 +11,7 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -17,8 +19,8 @@
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 130rpx;
+  height: 130rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
@@ -48,6 +50,12 @@
 
 .fxc{
   justify-content: center;
+}
+.fxl{
+   justify-content: flex-start;
+}
+.fxr{
+  justify-content: flex-end;
 }
 .fyc{
   align-items: center;
@@ -103,6 +111,9 @@
 }
 .fc-f2{
   color: #f2f2f2;
+}
+.fc-fff{
+  color: #ffffff;
 }
 
 .fc-f37059{
@@ -188,6 +199,11 @@
   width: 50rpx;
   height: 50rpx;
 }
+.wh130{
+  width: 130rpx;
+  height: 130rpx;
+}
+
 .fullwh{
   position: absolute;
   z-index: 3;
@@ -240,8 +256,8 @@
 }
 
 .mx24{
-  margin-left:24;
-  margin-right:24;
+  margin-left:24rpx;
+  margin-right:24rpx;
 }
 
 .mx40{
@@ -267,6 +283,7 @@
 .mt30{
   margin-top: 30rpx;
 }
+
 .mt40{
   margin-top: 40rpx;
 }
@@ -276,6 +293,9 @@
 }
 .mt60{
   margin-top: 60rpx;
+}
+.mt74{
+  margin-top: 74rpx;
 }
 
 .mt100{
@@ -325,6 +345,9 @@
 }
 
 /** -----------position end--------------- **/
+.ovh{
+  overflow: hidden
+}
 
 .obar{
   position: absolute;
@@ -346,3 +369,10 @@
   transform-style: preserve-3d;
 }
 
+.levelItem{
+  transition:transform 500ms ease 0ms;
+}
+.levelItem:active{
+  transform:rotateX(25deg);
+  transform-origin:50% 50% 0px;
+}
