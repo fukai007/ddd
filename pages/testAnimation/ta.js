@@ -1,4 +1,5 @@
 // pages/testAnimation/ta.js
+const app = getApp();
 Page({
 
   /**
@@ -66,7 +67,7 @@ Page({
   },
 
   toAsk:function(){
-    this.changeZ();
+    app.toPage('index');
   },
 
   changeZ:function(){

@@ -2,6 +2,6 @@
 <!-- <view animation="{{animationData}}" style="background:red;height:100rpx;width:100rpx"></view> -->
 
 <view class='df fxc bgr mt300 root3d' bindtap='toAsk'>
-  <view class='bga cube' animation="{{animationData}}"></view>
+  <view class='bga cube levelItem' ></view>
 </view>
 
