@@ -4,3 +4,13 @@
   height:100rpx;
   line-height: 3
 }
+.getm{
+  border-bottom: 1px solid rebeccapurple;
+  padding: 20rpx;
+}
+.getm::before{
+  content: "￥";
+  position: absolute;
+  left: 0;
+  z-index: 99;
+}

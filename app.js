@@ -32,7 +32,29 @@ App({
       })
   },
   globalData: {
-    userInfo: {}
+    userInfo: {},
+    levelInfo: {
+      a: {
+        levelId: 1,
+        levelText: '幼儿园水平'
+      },
+      b: {
+        levelId: 2,
+        levelText: '小学水平'
+      },
+      c: {
+        levelId: 3,
+        levelText: '初中水平'
+      },
+      d: {
+        levelId: 4,
+        levelText: '高中水平'
+      },
+      e: {
+        levelId: 5,
+        levelText: '大学水平'
+      }
+    }    
   },
   /*
       @purpose  微信登录
@@ -121,7 +143,7 @@ App({
           if ((code != void 0) && code == 0) {        
             okcb(rd);
           } else {
-            let errInfo = res.data.errmsg || fetchErrorInfo;
+            let errInfo = res.data.msg || fetchErrorInfo;
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
             console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
@@ -129,9 +151,9 @@ App({
           }
         },
         fail: function(res) {
-          let errInfo = fetchErrorInfo || res.errMsg;
+          let errInfo = fetchErrorInfo || res.msg;
           if(res.data){
-            errInfo = res.data.errmsg ;
+            errInfo = res.data.msg ;
           }else{
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
           }

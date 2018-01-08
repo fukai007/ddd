@@ -1,14 +1,14 @@
 <!--pages/accountMain/accountMain.wxml-->
 <view class='df fsbyc mt40 mx40'>
   <view class='h2 f1 '>账户余额</view>
-  <view class=' h2 fl '>￥30:00元</view>
+  <view class=' h2 fl '>￥{{saveM || 0}}元</view>
 </view>
 
 <view class='df fsbyc mt40 mx40'>
   <view class='h2 f1'>提现金额</view>
-  <view class=' h2'>￥30:00元</view>
+  <view class=' h2'>￥{{getM}}元</view>
 </view>
-<view class='h1 fl mt40 ml20'>￥30.00</view>
+<input class='getm mx40'  bindinput='changeGetM'></input>
 <view class='df mt40'>
   <text class='h2 ml20'> 输入金额超过账户余额</text>
 </view>
@@ -16,7 +16,7 @@
   <text class='h2 ml20'>提现到微信钱包，全部提现</text>
 </view>
 <view class='df fxyc bgc-f2 mt40'>
-  <button class='h2  wh100'>提现</button>
+  <button class='h2  wh100' bindtap='getMoneyToMe'>提现</button>
 </view>
 <view class='df fxyc h2 mt40'>1-5个工作日到账</view>
 

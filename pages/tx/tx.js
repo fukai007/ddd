@@ -1,18 +1,22 @@
 // pages/accountMain/accountMain.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    getM:0,
+    mover:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-  
+  onLoad: function (po) {
+      this.setData({
+        saveM: po.m/100
+      })
   },
 
   /**
@@ -62,5 +66,20 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  //mover
+  changeGetM:function(e){
+    let m = e.detail.value;
+    let saveM = this.data.saveM 
+    //if (m > saveM)
+    this.setData({
+      getM: m
+    });
+  },
+  getMoneyToMe: function () {
+    app.fetchData({
+      func:'withdrawals.withdrawals',
+      money: this.data.getM*100
+    })
   }
 })

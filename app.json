@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/accountMain/accountMain",
     "pages/tg/tg",
-    "pages/index/index",
     "pages/ask/ask",
     "pages/dx/dx",
     "pages/td/td",

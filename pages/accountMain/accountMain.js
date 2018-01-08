@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    levelInfo: app.globalData.levelInfo
   },
 
   /**
@@ -16,8 +16,13 @@ Page({
     app.fetchData({
       func:'user.get_answer_list'
     }).then(data=>{
-      let ct = data.last_bonus.create_time;
-      data.last_bonus.create_time = formatTime(new Date(ct));
+      data.bonus_list = data.bonus_list.map(item=>{
+        item.s_money = (item.s_money / 100).toFixed(2);
+      })
+      return data;
+    }).then(data=>{
+      // let ct = data.last_bonus.create_time;
+      // data.last_bonus.create_time = formatTime(new Date(ct));
       this.setData({
         cinfo:data
       })
@@ -71,5 +76,9 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toTX:function(){
+    let m = this.data.cinfo.balance;
+    app.toPage('tx', {m});
   }
 })
