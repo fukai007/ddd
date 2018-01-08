@@ -117,7 +117,7 @@
 .h1{
   line-height: 1;
   font-weight:normal;
-  font-size: 40rpx;
+  font-size: 48rpx;
 }
 .h2{
   line-height: 1;
@@ -127,12 +127,53 @@
 .h3{
   line-height: 1;
   font-weight:normal;
-  font-size: 32rpx;
+  font-size: 34rpx;
 }
 .h4{
   line-height: 1;
   font-weight:normal;
+  font-size: 32rpx;
+}
+.h5{
+  line-height: 1;
+  font-weight:normal;
   font-size: 28rpx;
+}
+.h6{
+  line-height: 1;
+  font-weight:normal;
+  font-size: 24rpx;
+}
+
+.h1b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 48rpx;
+}
+.h2b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 36rpx;
+}
+.h3b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 34rpx;
+}
+.h4b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 32rpx;
+}
+.h5b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 28rpx;
+}
+.h6b{
+  line-height: 1;
+  font-weight:bold;
+  font-size: 24rpx;
 }
 
 
