@@ -42,6 +42,13 @@ Page({
         hasUserInfo: true
       })
     }).then(()=>{
+      let info = app.globalData.userInfo;
+      app.fetchDataBase({
+        func: 'user.save_userinfo',
+        openid: app.globalData.openId,
+        ...info
+      });
+
       return app.fetchData({
         func:'user.get_user_prize'
       })

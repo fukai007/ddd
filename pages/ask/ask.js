@@ -2,9 +2,7 @@
 import _ from '../../utils/underscore.js';
 var app = getApp();
 
-
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -30,7 +28,6 @@ Page({
     }).then(data=>{
       console.log("ask--------->fetchData------->answer.get_answer_info",data);
       try {
-        //在这里运行代码
         that.setData({
           userInfo: app.globalData.userInfo,
           hasUserInfo: true,
@@ -169,7 +166,6 @@ Page({
           answer.q_id
   */
   tryIt:function(){
-    if(this.ceq(this.data.answer) || this.data.isOver == false) return ;
     let that = this;
 
     this.isWaiting = true;
@@ -244,11 +240,14 @@ Page({
             break;
           }
           case 2:{ //错误
-            wx.showToast({ title: '' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
             wx.hideShareMenu();
             this.setData({ isOver: true, answer: data})
+            //TODO 最后一道题错了怎么办 2018-01-09 19:04:31
+            if (this.ceq(this.data.answer) || this.data.isOver == false){
+              return
+            };
             wx.showModal({
               title: '答题失败,是否愿意再来一次',
               content: '支付一元即可尝试',
@@ -274,6 +273,7 @@ Page({
       }
     });
   },
+
     /*
       @purpose 开启帮助
       @createTIme 2018-01-06 08:47:58
