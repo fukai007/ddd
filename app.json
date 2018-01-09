@@ -13,8 +13,8 @@
    ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#1D1443",
+    "navigationBarTextStyle": "#FFFFFF",
+    "navigationBarTitleText": "万能的圈"
   }
 }

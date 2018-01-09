@@ -7,8 +7,8 @@
       <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text>
     </view>
     <view class='df f1 fxr'>
-        <view class='tar fc-fff h6'>答题规则A</view>
-        <view class='ruleIcon'></view>
+        <text class='tar fc-fff h6 mt10'>答题规则</text>
+        <view class='ml10 ruleIcon'></view>
     </view>
   </view>
 </view>

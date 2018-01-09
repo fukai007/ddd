@@ -8,9 +8,9 @@
   background-size:contain;
 }
 .levelItem{
-  transition:transform 500ms ease 0ms;
+  transition:transform 200ms ease 0ms;
 }
 .levelItem:active{
-  transform:rotateX(25deg);
+  transform:rotateX(45deg);
   transform-origin:50% 50% 0px;
 }

@@ -109,6 +109,10 @@ page {
 .fc-red{
   color:#F37059;
 }
+.fc-fffe49{
+  color: #FFFE49;
+}
+
 .fc-f2{
   color: #f2f2f2;
 }
@@ -204,6 +208,12 @@ page {
   height: 130rpx;
 }
 
+.wh80{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+
 .fullwh{
   position: absolute;
   z-index: 3;
@@ -260,6 +270,11 @@ page {
   margin-right:24rpx;
 }
 
+.mx36{
+  margin-left:36rpx;
+  margin-right:36rpx;
+}
+
 .mx40{
   margin-left: 40rpx;
   margin-right: 40rpx;
@@ -287,6 +302,11 @@ page {
 .mt40{
   margin-top: 40rpx;
 }
+
+.mt45{
+  margin-top: 45rpx;
+}
+
 
 .mt50{
   margin-top: 50rpx;
@@ -343,6 +363,9 @@ page {
 .mr0{
   margin-right: 0;
 }
+.pl30{
+  margin-left: 30rpx;
+}
 
 /** -----------position end--------------- **/
 .ovh{
@@ -376,3 +399,97 @@ page {
   transform:rotateX(25deg);
   transform-origin:50% 50% 0px;
 }
+
+
+/** -----------答题页面和帮助页面 start-2018-01-09 16:43-------------- **/
+.askRoot{
+  height: 100vh;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/background_B.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.questionArea{
+  background: #fff;
+  border-radius: 16rpx;
+  height: 702rpx;
+}
+
+.baseInfo{
+  height: 80rpx;
+  margin-left: 70rpx;
+  margin-right: 70rpx;
+}
+
+.userIcon{
+  width: 80rpx;
+  height: 80rpx;
+  border: 2rpx solid #fff;
+  border-radius: 80rpx;
+}
+.userName{
+  color: #EBEBEB;
+}
+
+.qitem{
+  width: 630rpx;
+  height: 88rpx;
+  border-radius: 57rpx;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  
+}
+
+.qitem-normal{
+  color: #A3ABB7;
+  background-color: #ECEFF4;
+}
+.qitem-fail{
+  color: #ffffff;
+  background-color: #E31F1F;
+}
+
+.qitem-ok{
+  color: #ffffff;
+  background-color: #38D576;
+}
+
+
+
+
+.shareIconBig{
+  width: 486rpx;
+  height: 100rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/zanting.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0,0,0,0);
+  border: 0px;
+}
+.shareIconBig::after{
+  border:0px;
+}
+
+
+.tryItAsk{
+  width: 486rpx;
+  height: 100rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/dati.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0,0,0,0);
+  border: 0px;
+}
+
+.tryItAsk::after{
+  border:0px;
+}
+
+
+.qitem:active{
+  font-size: 32rpx;
+  color: #FFFFFF;
+  background: #734DF2;
+}
+
+/** -----------答题页面和帮助页面 end-2018-01-09 16:43-------------- **/

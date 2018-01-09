@@ -24,14 +24,18 @@
 			"current": -1,
 			"list": []
 		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
 			"current": -1,
 			"list": [
 				{
 					"id": 0,
-					"name": "带参数的",
+					"name": "求助页面",
 					"pathName": "pages/fua/fua",
-					"query": "a_id=19"
+					"query": "a_id=49"
 				},
 				{
 					"id": -1,

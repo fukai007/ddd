@@ -12,13 +12,14 @@
   width: 750rpx;
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard.png);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 .ruleIcon{
   width: 44rpx;
-  height: 32.7rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/icon.png);
+  height: 44rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/shuoming.png);
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .mainbg{
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG.png);
