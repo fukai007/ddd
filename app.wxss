@@ -113,6 +113,10 @@ page {
   color: #FFFE49;
 }
 
+.fc-000{
+  color: #000;
+}
+
 .fc-f2{
   color: #f2f2f2;
 }
@@ -126,6 +130,10 @@ page {
 
 .fc-blue{
   color: blue
+}
+
+.fb{
+  font-weight: bold
 }
 
 
@@ -362,6 +370,13 @@ page {
 
 .mr0{
   margin-right: 0;
+}
+.mr20{
+  margin-right: 20rpx;
+}
+
+.mr30{
+  margin-right: 30rpx;
 }
 .pl30{
   margin-left: 30rpx;

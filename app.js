@@ -4,6 +4,8 @@ import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
 import _ from './utils/underscore.js';
 import { addIndex} from './utils/ramda.js';
+import md5 from './utils/md5.js';
+
 console.log("addIndex-------->", addIndex);
 
 let endpoint={
@@ -157,13 +159,14 @@ App({
       @author  miles_fk
       fetchDataBase: (endpoint, qo, okcb, fallcb) 现在不需要 endpoint 根据参数区分
   */
-  fetchDataBase: (qo, okcb, fallcb) => {
+  fetchDataBase: function(qo, okcb, fallcb){
     //console.log("fetchDataBase------start----------------->", endpoint,qo);
-    //var that = this;
+    var that = this;
+    let nqo = that.makeMd5Par(qo);
     wx.request(
       Object.assign({
         url: SERVER,
-        data: qo,
+        data: nqo,
         method: 'POST',
         //header: {'content-type': 'application/json'},
         header:{
@@ -200,6 +203,45 @@ App({
         }
       })
     )
+  },
+
+  /*
+    @purpose 生产MD5函数
+    @createTime 2018-01-09 20:46
+    @author  miles_fk
+*/
+  makeMd5Par(data={}){
+    //传近来的data里不包含包含timestamp，ak这两个参数
+    let str = '';
+    let secretKey = 'UbM81S7uFfUQlqu9';
+    let nowDate = new Date().valueOf().toString().substr(0, 10);
+    data.timestamp = nowDate;
+    let nd = this.objKeySort(data);
+    for (let i in nd) {
+      str += i + nd[i];
+    }
+    let permd5 = secretKey + str + nowDate;
+
+    //console.log("po--------------------------->", str);
+    nd['ak'] = md5.hex_md5(permd5);
+    //console.log("permd5-------------------->", permd5);
+    //console.log("md5-------------------->", nd['ak'] );
+    
+
+    return nd;
+  },
+   /*
+    @purpose 对象 排序的函数
+    @createTime 2018-01-09 20:46
+    @author  miles_fk
+  */
+  objKeySort(obj) {
+      var newkey = Object.keys(obj).sort();
+      var newObj = {};//创建一个新的对象，用于存放排好序的键值对
+      for(var i = 0; i<newkey.length; i++) {//遍历newkey数组
+        newObj[newkey[i]] = obj[newkey[i]];//向新创建的对象中按照排好的顺序依次增加键值对
+      }
+      return newObj;//返回排好序的新对象
   },
   /*
     @purpose 基础 跳转函数
