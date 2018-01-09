@@ -15,7 +15,7 @@
   <!--  答题内容页面 开始 -->
   <view class='questionArea mx24 mt60'>
       <view class='mx36 ovh'>
-          <view class='mt40 tac h4 '>{{answer.q_title}}</view>
+          <view class='mt40 tac h4 '>{{answer.a_progress}}. {{answer.q_title}}</view>
           <view 
             class='mt40 por'
             wx:for="{{[1,2,3,4]}}"  
@@ -46,7 +46,7 @@
   <!--  答题内容页面 结束 -->
 
   <!--  分享开始   -->
-  
+
   <button wx:if='{{isOver == false}}' class='shareIconBig mt45' open-type="share"></button>
   <!-- 分享结束 -->
   
