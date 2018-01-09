@@ -29,7 +29,6 @@ Page({
       level: qo.cid
     }).then(data=>{
       console.log("ask--------->fetchData------->answer.get_answer_info",data);
-
       try {
         //在这里运行代码
         that.setData({
@@ -219,6 +218,7 @@ Page({
   checkAsk:function(e){
     console.log("ask----->checkAsk---------------->");
     if (this.isWaiting || this.data.isOver) return 
+    let that = this;
     let qid = e.target.dataset.qid;
     this.cur_qid = qid;
     this.isWaiting = true;
@@ -244,11 +244,24 @@ Page({
             break;
           }
           case 2:{ //错误
-            wx.showToast({ title: '答题失败' });
+            wx.showToast({ title: '' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
             wx.hideShareMenu();
             this.setData({ isOver: true, answer: data})
+            wx.showModal({
+              title: '答题失败,是否愿意再来一次',
+              content: '支付一元即可尝试',
+              success: function(res) {
+                if (res.confirm) {
+                  that.tryIt();
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                  app.toPage('index');
+                }
+              }
+            })
             break;
           }
           case 3:{//通关
