@@ -437,6 +437,7 @@ page {
   border-radius: 57rpx;
   font-size: 32rpx;
   line-height: 88rpx;
+  transition:all 500ms ease 0ms;
   
 }
 
