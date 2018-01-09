@@ -181,7 +181,7 @@ App({
 
           //TODO 0  为没有错误
           if ((code != void 0) && code == 0) {        
-            okcb(rd);
+            okcb&&okcb(rd);
           } else {
             let errInfo = res.data.msg || fetchErrorInfo;
             wx.hideLoading();
