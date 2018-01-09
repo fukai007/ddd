@@ -6,6 +6,8 @@
   width: 46%;
 }
 
+
+
 .cd{
   border: 1rpx solid ;
   height: 80rpx;

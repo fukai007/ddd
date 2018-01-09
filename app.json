@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/testAnimation/ta",
     "pages/accountMain/accountMain",
     "pages/tg/tg",
     "pages/ask/ask",
@@ -8,13 +9,12 @@
     "pages/td/td",
     "pages/logs/logs",
     "pages/tx/tx",
-    "pages/fua/fua",
-    "pages/testAnimation/ta"
+    "pages/fua/fua"
    ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#1D1443",
+    "navigationBarTextStyle": "#FFFFFF",
+    "navigationBarTitleText": "万能的圈"
   }
 }

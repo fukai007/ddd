@@ -1,4 +1,5 @@
 // pages/testAnimation/ta.js
+const app = getApp();
 Page({
 
   /**
@@ -13,25 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var animation = wx.createAnimation({
-      duration: 3000,
-      timingFunction: 'ease',
-    })
 
-    this.animation = animation
-
-    animation.scale(2, 2).rotate(45).step()
-
-    this.setData({
-      animationData: animation.export()
-    })
-
-    setTimeout(function () {
-      animation.translate(30).step()
-      this.setData({
-        animationData: animation.export()
-      })
-    }.bind(this), 4000)
   },
 
   /**
@@ -83,7 +66,26 @@ Page({
   
   },
 
+  toAsk:function(){
+    app.toPage('index');
+  },
 
+  changeZ:function(){
+    var animation = wx.createAnimation({
+      duration: 500,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation
+
+    animation.rotateX(25).step()
+
+
+
+    this.setData({
+      animationData: animation.export()
+    })
+  },
   rotateAndScale: function () {
     // 旋转同时放大
     this.animation.rotate(45).scale(2, 2).step()

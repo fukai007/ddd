@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cd: 99, 
+    cd: 0, 
     isOver:false
   },
 
@@ -19,8 +19,10 @@ Page({
     app.fetchData({
       func:'help.get_helper',a_id
     }).then(data=>{
-        this.setData({
-          answer:data
+      let userInfo = app.globalData.userInfo;
+          this.setData({
+          answer:data,
+          userInfo
         })
         this.startCd(data);
     })

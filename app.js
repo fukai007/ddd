@@ -14,22 +14,59 @@ let endpoint={
 //app.js
 App({
   onLaunch: function (){
+    let that = this;
+    let i = 1000000;
       // 获取用户信息
-      wx.getSetting({
-        success: res => {
-          if (res.authSetting['scope.userInfo']) {
-            // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-            wx.getUserInfo({
-              success: resa => {
-                // 可以将 res 发送给后台解码出 unionId
-                console.log("res.userInfo-------------->", resa.userInfo);
-                this.globalData.userInfo = resa.userInfo
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: resa => {
+              // 可以将 res 发送给后台解码出 unionId
+              console.log("res.userInfo-------------->", resa.userInfo);
+              that.globalData.userInfo = resa.userInfo
+            }
+          })
+        }else{
+          try{
+            wx.authorize({
+              scope: 'scope.userInfo',
+              success() {
+                    // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+                    wx.getUserInfo({
+                            success(resa) {
+                              // 可以将 res 发送给后台解码出 unionId
+                              console.log("res.userInfo-------------->", resa.userInfo);
+                              that.globalData.userInfo = resa.userInfo
+                            },
+                            fail(error) {
+                              console.log("res.userInfo----fail---------->", error);
+                            },
+                            complete(error) {
+                              console.log("res.getUserInfo----console---------->", error);
+                            }
+                    })
+              },
+              fail(error) {
+                console.log("res.userInfo----fail---------->", error);
+              },
+              complete(error) {
+                console.log("res.getUserInfo----console---------->", error);
               }
             })
+          }catch(e){
+            console.log(e);
           }
-        },
-        fail: error => console.log("wx.getUserInfo----------->error", error)
-      })
+
+        }
+      },
+      fail: error => console.log("wx.getUserInfo----------->error", error)
+    })
+
+    while(i){
+        i--;
+    }
   },
   globalData: {
     userInfo: {},
@@ -159,7 +196,7 @@ App({
           }
         },
         complete:function(e){
-            console.log("fetchDataBase--complete----->");
+            //console.log("fetchDataBase--complete----->");
         }
       })
     )
@@ -192,7 +229,7 @@ App({
         console.log("wx.navigate-fail------>", e);
       },
       complete: function (e) {
-        console.log("wx.navigate-complete------>", e);
+        //console.log("wx.navigate-complete------>", e);
       }
     }
     switch (gotoType) {

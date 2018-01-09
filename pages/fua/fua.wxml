@@ -1,23 +1,37 @@
 <!--pages/fua/fua.wxml-->
-  <view class='fxyc df cd'>
-    <text>答题倒计时:{{cd}}S</text>
+<view class='askRoot ovh'>
+  <view class='df fyc baseInfo mt60'>
+      <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text>
+      <text class='h1 fc-fffe49 ml40'>剩余 {{cd}} 秒</text>
   </view>
 
-  <view class='tac mt40 mx40'>
-    <text>{{answer.q_title}}</text>
-  </view>
+  <!--  答题内容页面 开始 -->
+  <view class='questionArea mx24 mt60'>
+      <view class='mx36 ovh'>
+          <view class='mt40 tac h4 '>{{answer.q_title}}</view>
+          <view 
+            class='mt40 por'
+            wx:for="{{[1,2,3,4]}}"  
+            wx:for-index="idx" 
+            wx:key="qid"
+            wx:for-item="qid" 
+          >
+            <view 
+               wx:if='{{isOver&&sqid == qid}}'
+              data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-ok'>
+              <text class='pl30'>{{answer['q_an'+qid]}}</text>
+            </view>
 
-  <view class='mx80'>
-      <view 
-        class='p40 mt40'
-        wx:for="{{ [1,2,3,4] }}"  
-        wx:for-index="idx" 
-        wx:key="qid"
-        wx:for-item="qid" 
-      >
-        <button  wx:if='{{isOver&&sqid == qid}}' class='bgc-red'>{{answer['q_an'+qid]}}</button>
-        <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
+            <view  wx:else data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-normal'>
+              <text class='pl30'>{{answer['q_an'+qid]}}</text>
+            </view>
+          </view>            
       </view>
-    </view>
+  </view>
+  <!--  答题内容页面 结束 -->
+  <view class='df fxc mt60'>
+      <view wx:if='{{cd==0}}' bindtap='toIndex' class='tryItAsk'></view>
+  </view>
 
-    <button wx:if='{{cd==0}}' bindtap='toIndex' class='mx40 mt60'>自己搞一下</button>
+</view>

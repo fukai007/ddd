@@ -10,11 +10,6 @@ Page({
     },
     levelList:[
       {
-        levelName : '幼儿园水平',
-        levelInfo : 'xxxxx',
-        levelId : 1,
-      },
-      {
         levelName: '小学水平A',
         levelInfo: 'xxxxx',
         levelId: 2,
@@ -81,6 +76,9 @@ Page({
     // toPage: function (pageName, paro, gotoType) 
     let levelId = e.target.dataset.levelid;
     console.log("levelId--------------------------------->", levelId);
-    app.toPage('ask', { cid: levelId},'to'); //跳转到答题页面
+    setTimeout(function(){
+        app.toPage('ask', { cid: levelId }, 'to'); //跳转到答题页面
+    },400);
+    
   }
 })

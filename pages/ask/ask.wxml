@@ -4,60 +4,54 @@
       <text class='fc-red'>求助剩余时间 : {{helpCD+'秒'}} </text>
   </view>
 </view>
-<view>
-  <view class='df'>
-    <view class='f1 tac'></view>
-    <view class="userinfo">
-      <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </view>
-    <view class='f1 tar'>参赛说明</view>
+
+<view class='askRoot ovh'>
+  <view class='df fyc baseInfo mt60'>
+      <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
+      <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text>
+      <text class='h1 fc-fffe49 ml40'>剩余 {{cd}} 秒</text>
   </view>
-  <view class='df'>
-    <text class='f1 tal'>选手等级 : </text>
-    <text class='f1 tar'>挑战级别 : </text>
-  </view>
-  <view class='bgf2 h40'></view>
-  <view class='df fxc'>
-      <view>
-          <text>AAAA</text>
-          <text>|</text>
-          <text>BBBB</text>
+
+  <!--  答题内容页面 开始 -->
+  <view class='questionArea mx24 mt60'>
+      <view class='mx36 ovh'>
+          <view class='mt40 tac h4 '>{{answer.q_title}}</view>
+          <view 
+            class='mt40 por'
+            wx:for="{{[1,2,3,4]}}"  
+            wx:for-index="idx" 
+            wx:key="qid"
+            wx:for-item="qid" 
+          >
+            <view wx:if='{{isShowHelpUI}}' class='tipCount'>{{tipInfo['fabulous'+qid]}}</view>
+
+            <view 
+              wx:if='{{isOver&&answer.q_an == qid}}' 
+              data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-fail'>
+              <text class='pl30'>{{answer['q_an'+qid]}}</text>
+            </view>
+
+            <view  
+              wx:elif='{{isOver&&answer.q_an_yes == qid}}' 
+              data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-ok'>
+                <text class='pl30'>{{answer['q_an'+qid]}}</text>
+            </view>
+
+            <view  wx:else data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-normal'>
+              <text class='pl30'>{{answer['q_an'+qid]}}</text>
+            </view>
+          </view>            
       </view>
   </view>
-  <view class='tac'>
-    <text>题1/1</text>
-  </view>
-  <view class='fxyc df cd'>
-    <text>答题倒计时:{{cd}}S</text>
-  </view>
-  <view class='tac mt40 mx40'>
-    <text>{{answer.q_title}}</text>
-  </view>
-  <view class='mx80 df fsb fww'>
-      <view 
-        class='p40 mt40 por'
-        wx:for="{{[1,2,3,4]}}"  
-        wx:for-index="idx" 
-        wx:key="qid"
-        wx:for-item="qid" 
-      >
-        <view wx:if='{{isShowHelpUI}}' class='tipCount'>{{tipInfo['fabulous'+qid]}}</view>
-        <button  wx:if='{{isOver&&answer.q_an == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-red'>{{answer['q_an'+qid]}}</button>
-        <button  wx:elif='{{isOver&&answer.q_an_yes == qid}}' data-qid='{{qid}}' bindtap='checkAsk' class='bgc-green'>{{answer['q_an'+qid]}}</button>
-        <button  wx:else data-qid='{{qid}}' bindtap='checkAsk'>{{answer['q_an'+qid]}}</button>
-      </view>
-     
-  </view>
+  <!--  答题内容页面 结束 -->
+
+  <!--  分享开始   -->
+  
+  <button wx:if='{{isOver == false}}' class='shareIconBig mt45' open-type="share"></button>
+  <!-- 分享结束 -->
+  
   <view class='obar'>
     <view class="df fsb mx80">
-
-      <view class='obarItem df  fdy fyc'>
-        <button class='shareIcon' open-type="share"></button>
-        <image class='wh50 bgc-red'></image>
-        <view>求助好友</view>
-      </view>
-
       <view class='obarItem df  fdy fyc' bindtap='tryIt'>
         <button class='shareIcon' ></button>
         <image class='wh50 bgc-red' ></image>
