@@ -26,6 +26,7 @@ Page({
         })
         this.startCd(data);
     })
+    this.setUserInfo();
   },
 
   /**
@@ -111,6 +112,23 @@ Page({
 
   toIndex:function(){
       app.toPage('index',{});
-  }
+  },
+   /*
+    @purpose 定时器-获得userInfo
+    @creatTime 2018-01-02 21:09:22
+    @author miles_fk
+  */
+  setUserInfo: function () {
+    let that = this;
+    let sid = setInterval(function () {
+      let info = app.globalData.userInfo;
+      if (info.nickName) {
+        that.setData({
+          userInfo: info,//app.globalData.userInfo,
+        })
+        clearInterval(sid);
+      }
+    }, 500);
+  },
 
 })

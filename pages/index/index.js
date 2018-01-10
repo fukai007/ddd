@@ -72,7 +72,25 @@ Page({
     }).catch(error=>{
       console("data-------->user.get_user_prize", error)
     });
+    this.setUserInfo();
     //app.wxLogin();
+  },
+  /*
+    @purpose 定时器-获得userInfo
+    @creatTime 2018-01-02 21:09:22
+    @author miles_fk
+  */
+  setUserInfo:function(){
+    let that = this;
+    let sid = setInterval(function(){
+      let info = app.globalData.userInfo;
+      if (info.nickName){
+        that.setData({
+          userInfo: info,//app.globalData.userInfo,
+        })
+        clearInterval(sid);
+      }
+    },500);
   },
   /*
     @purpose 跳转到答题页面
@@ -85,7 +103,7 @@ Page({
     console.log("levelId--------------------------------->", levelId);
     setTimeout(function(){
         app.toPage('ask', { cid: levelId }, 'to'); //跳转到答题页面
-    },400);
+    },500);
     
   }
 })
