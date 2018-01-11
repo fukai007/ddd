@@ -104,6 +104,8 @@ Page({
     setTimeout(function(){
         app.toPage('ask', { cid: levelId }, 'to'); //跳转到答题页面
     },500);
-    
+  },
+  toac:function(){
+    app.toPage('accountMain', {}, 'to'); //跳转到答题页面
   }
 })

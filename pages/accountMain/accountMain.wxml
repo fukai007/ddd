@@ -1,35 +1,58 @@
 <!--pages/dx3/dx3.wxml-->
-<view class='df'>
-  <view class='f1 tac'></view>
-  <view class="userinfo">
-    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class='f1 tar'>参赛说明</view>
-</view>
-<view class='df fxyc mt40'>
-  <text class='h4'>最后答题时间：{{cinfo.last_bonus	.create_time}}</text>
-</view>
-<view class='df fxyc mt40'>
-  <text class='h4'>奖金:{{cinfo.last_bonus.s_money}}</text>
-</view>
-<view class='df fxyc mt40'>
-  <text class='h4'>本场答题共200人参与，奖金1000元</text>
-</view>
-<view class='df fsbyc mt40 mx40'>
-  <text class='h4 '>您当前的账户余额为：{{cinfo.balance/100}} 元</text>
-  <button class='h2 bgc-f2 mx0' bindtap='toTX'>我要提现</button>
-</view>
-<view class='df fxyc mt40'>
-  <text class='h2'>我的答题记录 </text>
+<view class='root por'>
+<view class='bgtop'></view>
+<view class='h88'></view>
+    <view class='core mx24 por'>
+        <image class='userIcon' src='{{userInfo.avatarUrl}}'></image>
+        <view class='ovh'>
+            <view class='df fxr fyc mt30 mr20'>
+            <text class='h6 fc-333'>参赛说明</text>
+            <view class='ml10 ruleIconB'></view>
+        </view>
+
+        <view class='h6 fc-666 ml70 mt10'>上场奖学金额</view>
+
+        <view class='df fyb ml70 mt20 h56'>
+          <text class='h1 fc-F34435 fb'>{{cinfo.last_bonus.s_money}}</text>
+          <text class='fc-999 h6 lh60 ml10'>元</text>
+        </view>
+
+        <view class='ml70 mt-10'>
+          <text class='h6 fc-999'>上场答题时间：{{cinfo.last_bonus.create_time}}</text>
+        </view>
+        <view class='split-line'></view>
+        <view class='df ml70 fyc mt20' bindtap='toTX'>
+            <text class='h6 fc-333'>我的奖学金</text>
+            <text class='ml30 h2 fc-333 ml10'>{{cinfo.balance}}</text>
+            <text class='f1 h6 fc-999 ml10'>元</text>
+            <image 
+              class='tx-icon'
+              src='https://wxapp.haizeihuang.com/wannengdequan_php/images/ic_tixian.png'>
+            </image>
+        </view>
+
+        <view class='df fxyc mt80'>
+            <text class='sort-line'></text>
+            <text class='mx24 h6 fc-333'>我的答题记录</text>
+            <text class='sort-line'></text>
+        </view>
+
+        <scroll-view scroll-y class='listArea'>
+        <view 
+            class='df fyc mt40 por'
+            wx:for="{{cinfo.bonus_list}}"
+            wx:key="{{bonus.timestamp}}"
+            wx:for-item="item">
+          <view class='point'></view>
+          <view class='line-y'></view>
+
+          <view class='h6 fc-333 ml70 levelName'>{{levelInfo[item.l_config_level].levelText}}：</view>
+          <view class='h6 fc-333 leveltime'>{{item.create_time}}</view>
+          <view class='h6 fc-333 ml10'>奖学金 : </view>
+          <view class='fc-F34435 h6 ml10'>{{item.s_money}}</view>
+        </view>
+        </scroll-view>
+    </view>
 </view>
 
-<view 
-    class='df fyc mt40'
-    wx:for="{{cinfo.bonus_list}}"
-    wx:key="{{bonus.timestamp}}"
-    wx:for-item="bonus">
-  <view class='h4 f1 w448 '>
-    {{levelInfo[bonus.l_config_level].levelText}}：{{bonus.create_time}}</view>
-  <view class=' h4 fr ml40 '>奖励：答题资格一次</view>
 </view>

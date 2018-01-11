@@ -35,12 +35,18 @@
 					"id": 0,
 					"name": "求助页面",
 					"pathName": "pages/fua/fua",
-					"query": "a_id=49"
+					"query": "a_id=120"
 				},
 				{
 					"id": -1,
 					"name": "成功页",
 					"pathName": "pages/dx/dx",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "账户中心",
+					"pathName": "pages/accountMain/accountMain",
 					"query": ""
 				}
 			]

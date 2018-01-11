@@ -12,6 +12,25 @@ page {
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+
+.ruleIcon{
+  width: 44rpx;
+  height: 44rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/shuoming.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ruleIconB{
+  width: 44rpx;
+  height: 32.7rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/ic_jiangli.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
 .userinfo {
   display: flex;
   flex-direction: column;
@@ -112,6 +131,9 @@ page {
 .fc-red{
   color:#F37059;
 }
+.fc-F34435{
+  color: #F34435;
+}
 .fc-fffe49{
   color: #FFFE49;
 }
@@ -127,10 +149,20 @@ page {
 .fc-333{
   color: #333333;
 }
+
+.fc-666{
+  color: #666666;
+}
+.fc-999{
+  color: #999999;
+}
+
 .fc-fff{
   color: #ffffff;
 }
-
+.fc-fffd6c{
+   color: #fffd6c;
+} 
 .fc-f37059{
   color: #f37059
 }
@@ -299,6 +331,10 @@ page {
   margin-left:80rpx;
   margin-right:80rpx;
 }
+
+.mt-10{
+    margin-top: -10rpx;
+}
 .mt0{
   margin-top: 0;
 }
@@ -308,6 +344,9 @@ page {
 
 .mt20{
   margin-top: 20rpx;
+}
+.mt24{
+  margin-top: 24rpx;
 }
 
 .mt30{
@@ -331,6 +370,9 @@ page {
 }
 .mt74{
   margin-top: 74rpx;
+}
+.mt80{
+  margin-top: 80rpx;
 }
 
 .mt100{
@@ -373,6 +415,9 @@ page {
 
 .ml40{
   margin-left: 40rpx;
+}
+.ml70{
+  margin-left: 70rpx;
 }
 
 .mr0{

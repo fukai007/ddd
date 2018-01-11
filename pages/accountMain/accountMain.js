@@ -17,14 +17,19 @@ Page({
       func:'user.get_answer_list'
     }).then(data=>{
       data.bonus_list = data.bonus_list.map(item=>{
-        item.s_money = (item.s_money / 100).toFixed(2);
+        item.s_money = (item.s_money / 100 || 0).toFixed(2);
+        return item
       })
+      data.balance = (data.balance / 100 || 0).toFixed(2);
+      data.last_bonus.s_money = (data.last_bonus.s_money / 100 || 0).toFixed(2);
+
       return data;
     }).then(data=>{
       // let ct = data.last_bonus.create_time;
       // data.last_bonus.create_time = formatTime(new Date(ct));
       this.setData({
-        cinfo:data
+        cinfo:data,
+        userInfo: app.globalData.userInfo
       })
     })
   },
@@ -80,5 +85,8 @@ Page({
   toTX:function(){
     let m = this.data.cinfo.balance;
     app.toPage('tx', {m});
+  },
+  toRule:function(){
+    //app.toPage('tx', { m });
   }
 })

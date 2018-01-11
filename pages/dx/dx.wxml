@@ -12,7 +12,7 @@
     <view class='bottomArea por'>
         <view class='df fxc mt57'>
             <text class='passTitle'>您一共答对了</text>
-            <text class='passCount ml10'>{{levelInfo.a_max}}</text>
+            <text class='passCount ml10'>{{info.a_max}}</text>
             <text class='passTitle ml10'>题</text>
         </view>
         <view class='tac'>

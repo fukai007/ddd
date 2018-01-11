@@ -2,7 +2,15 @@
 .h300{
   height: 300rpx
 }
-.userIcon{
+.toac{
+  position:absolute;
+  right:0rpx;
+  top:150rpx;
+  font-size:24rpx;
+  color:#FFFFFF;
+  font-weight: bold;
+}
+.userIconA{
   border: 2px solid #FFFFFF;
   border-radius: 130rpx;
 }
@@ -14,13 +22,7 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
-.ruleIcon{
-  width: 44rpx;
-  height: 44rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/shuoming.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-}
+
 .mainbg{
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG.png);
   background-repeat: repeat;
