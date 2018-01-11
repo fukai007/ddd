@@ -22,9 +22,9 @@ page{
   background-color:#4e6abe;
 }
 
-.userIcon{
+.userIconA{
   position: absolute;
-  left: 46rp;
+  left: 46rpx;
   top:-50rpx;
   width: 100rpx;
   height: 100rpx;

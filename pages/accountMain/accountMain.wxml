@@ -3,7 +3,7 @@
 <view class='bgtop'></view>
 <view class='h88'></view>
     <view class='core mx24 por'>
-        <image class='userIcon' src='{{userInfo.avatarUrl}}'></image>
+        <image class='userIconA' src='{{userInfo.avatarUrl}}'></image>
         <view class='ovh'>
             <view class='df fxr fyc mt30 mr20'>
             <text class='h6 fc-333'>参赛说明</text>
