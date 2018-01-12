@@ -36,7 +36,13 @@
     src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'.png'}}"></image>
         <view class='levelName'>{{levelInfo.levelName}}</view> 
     </view>
-    <view wx:else class='df fxyc h300  mt40'>
+
+    <view wx:else class='df fxc mt20 root3d por'>
+        <image 
+          class="baseLevel cube levelItem"  
+            data-levelid="{{levelInfo.levelId}}"
+    src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'h.png'}}"></image>
+        <view class='levelName'>{{levelInfo.levelName}}</view> 
     </view>
 
   </view>

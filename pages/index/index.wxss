@@ -51,7 +51,7 @@
 
 .levelName{
   position: absolute;
-  top:140rpx;
+  top:143rpx;
   left:120rpx;
   width: 227rpx;
   height: 44rpx;
