@@ -48,3 +48,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.levelName{
+  position: absolute;
+  top:140rpx;
+  left:120rpx;
+  width: 227rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 28rpx;
+  color: #333333;
+  z-index: 3;
+}

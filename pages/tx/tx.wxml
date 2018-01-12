@@ -1,22 +1,30 @@
 <!--pages/accountMain/accountMain.wxml-->
-<view class='df fsbyc mt40 mx40'>
-  <view class='h2 f1 '>账户余额</view>
-  <view class=' h2 fl '>￥{{saveM || 0}}元</view>
+<view class=''>
+    <view class='bgtop'></view>
+
+    <view class='df fxc'>
+        <view class='core por'>
+            <image class='userIcon' src='{{userInfo.avatarUrl}}'></image>
+
+            <view class='mx80'>
+                <view class='df fxc'>
+                  <image 
+                    class='mbanner' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/ic_money.png'>
+                  </image>
+                </view>
+                <view class='df mt60 fyc'>
+                    <text class='h6 fc-999'>账户余额</text>
+                    <text class='h1 fc-F34435 mx10'>{{saveM || 0}}</text>
+                    <text class='h6 fc-999'>元</text>
+                </view>
+                    <input class='input' placeholder='请输入提现金额，大于一元'  bindinput='changeGetM'></input>
+                </view>
+                <view class='mt70'>
+                  <button class='commit' bindtap='getMoneyToMe'></button>
+                </view> 
+                <view class='tac h6 fc-999 mt20'>1-5个工作日到账</view>
+        </view>
+    </view>
 </view>
 
-<view class='df fsbyc mt40 mx40'>
-  <view class='h2 f1'>提现金额</view>
-  <view class=' h2'>￥{{getM}}元</view>
-</view>
-<input class='getm mx40'  bindinput='changeGetM'></input>
-<view class='df mt40'>
-  <text class='h2 ml20'> 输入金额超过账户余额</text>
-</view>
-<view class='df mt20'>
-  <text class='h2 ml20'>提现到微信钱包，全部提现</text>
-</view>
-<view class='df fxyc bgc-f2 mt40'>
-  <button class='h2  wh100' bindtap='getMoneyToMe'>提现</button>
-</view>
-<view class='df fxyc h2 mt40'>1-5个工作日到账</view>
 

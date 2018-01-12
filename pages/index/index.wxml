@@ -15,7 +15,7 @@
 </view>
 <view class='mainbg ovh'>
   <view class='df fxc mt20'>
-    <view class='area-com'><text class='h5 fc-fff'>常规比赛</text></view>
+    <view class='area-com'><text class='h5 fc-fff ml20'>常规比赛</text></view>
   </view>
 
   <view class='df fxc mt74 root3d' >
@@ -27,8 +27,14 @@
     wx:key="levelId"
     wx:for-item="levelInfo"
     >
-    <view wx:if="{{levelInfo.levelId <= userInfo.u_level}}" class='df fxc mt20 root3d' bindtap="toAsk">
-        <image class="baseLevel cube levelItem"  data-levelid="{{levelInfo.levelId}}" src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'.png'}}"></image>
+    <view 
+      wx:if="{{levelInfo.levelId <= userInfo.u_level}}" 
+      class='df fxc mt20 root3d por' bindtap="toAsk">
+        <image 
+          class="baseLevel cube levelItem"  
+            data-levelid="{{levelInfo.levelId}}"
+    src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'.png'}}"></image>
+        <view class='levelName'>{{levelInfo.levelName}}</view> 
     </view>
     <view wx:else class='df fxyc h300  mt40'>
     </view>

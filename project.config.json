@@ -48,6 +48,12 @@
 					"name": "账户中心",
 					"pathName": "pages/accountMain/accountMain",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/tx/tx",
+					"query": ""
 				}
 			]
 		}

@@ -312,6 +312,11 @@ page {
   margin-right:0;
 }
 
+.mx10{
+  margin-left:10rpx;
+  margin-right:10rpx;
+}
+
 .mx24{
   margin-left:24rpx;
   margin-right:24rpx;
@@ -335,6 +340,8 @@ page {
 .mt-10{
     margin-top: -10rpx;
 }
+
+
 .mt0{
   margin-top: 0;
 }
@@ -367,6 +374,9 @@ page {
 }
 .mt60{
   margin-top: 60rpx;
+}
+.mt70{
+  margin-top: 70rpx;
 }
 .mt74{
   margin-top: 74rpx;

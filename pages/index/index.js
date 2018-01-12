@@ -10,7 +10,7 @@ Page({
     },
     levelList:[
       {
-        levelName: '小学水平A',
+        levelName: '小学水平',
         levelInfo: 'xxxxx',
         levelId: 2,
       },

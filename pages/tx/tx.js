@@ -15,7 +15,8 @@ Page({
    */
   onLoad: function (po) {
       this.setData({
-        saveM: po.m/100
+        saveM: po.m,
+        userInfo: app.globalData.userInfo
       })
   },
 
