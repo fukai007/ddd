@@ -219,7 +219,7 @@ Page({
     this.cur_qid = qid;
     this.isWaiting = true;
     //TODO check-question 接口 核对
-    app.fetchData({
+    return app.fetchData({
       func:'answer.check_answer',
       q_an: qid
     }).then(data=>{
@@ -280,6 +280,7 @@ Page({
       @author miles_fk
   */
   startHelpCD: function(){
+    let  that = this;
     this.isWaiting = true;
     this.hcd_sid = setInterval(()=>{
       let time = this.data.helpCD-1;
@@ -288,13 +289,16 @@ Page({
         let sid = this.hcd_sid ;
         clearInterval(sid)//清除帮助倒计时器
         this.isWaiting = false;
-
-        this.setData({
-          cd: this.data.answer.answer_time,
-          helpCD: this.data.answer.help_time,
-          isShowHelpUI:false
+        // target.dataset.qid;
+        let qid = this.getMaxqid(this.data.tipInfo).qid;
+        let e = { target: { dataset :{qid}}}
+        this.checkAsk(e).then(()=>{
+              that.setData({
+              cd: this.data.answer.answer_time,
+              helpCD: this.data.answer.help_time,
+              isShowHelpUI: false
+            })
         })
-
       }else{
         this.setData({
           helpCD: time
@@ -305,6 +309,27 @@ Page({
     this.setData({
       isShowHelpUI:true
     })
+  },
+
+  getMaxqid:function(data){
+    let qlist = [{ 
+      star: data.fabulous1 || 0 ,qid:1}, 
+      { star: data.fabulous2 || 0 ,qid:2},
+       { star: data.fabulous3 || 1,qid:3 }, 
+       { star: data.fabulous4 || 0, qid: 4}]
+    qlist = qlist.sort((pre,after)=>{
+      if (after.star > pre.star){
+        return 1
+      } 
+      if (pre.star < after.star) {
+        return -1
+      }
+
+      if (pre.star == after.star){
+        return 0
+      }
+    });
+    return qlist[0]
   },
   getFabulous: function () {
     let a_id = this.data.answer.a_id;

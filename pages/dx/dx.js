@@ -30,6 +30,7 @@ Page({
     app.fetchData({
       func:'user.get_user_level'
     }).then(data=>{
+        data.bonus = (data.bonus / 100 || 0).toFixed(2);
         this.setData({
           info:data
         })
