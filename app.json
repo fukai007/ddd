@@ -9,8 +9,9 @@
     "pages/td/td",
     "pages/logs/logs",
     "pages/tx/tx",
-    "pages/fua/fua"
-   ],
+    "pages/fua/fua",
+    "pages/askRule/askRule"
+  ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1D1443",

@@ -103,7 +103,10 @@ Page({
       if (oldCd < 1) {
         clearInterval(this.ask_sid);
         this.setData({isOver:true});
-        wx.showToast({ title: '答题已超时' });
+        wx.showToast({ 
+          title: '答题已超时',
+          image: "../../images/error-a.png"
+        });
       } else {
         this.setData({ cd: --oldCd });
       }

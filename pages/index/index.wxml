@@ -7,8 +7,8 @@
       <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text>
     </view>
     <view class='df f1 fxr por'>
-        <text class='tar fc-fff h6 mt10'>答题规则</text>
-        <view class='ml10 ruleIcon'></view>
+        <text class='tar fc-fff h6 mt10' bindtap='toRule'>答题规则</text>
+        <view class='ml10 ruleIcon' bindtap='toRule'></view>
         <view class='toac' bindtap='toac'>累计学分 ＞ </view>
     </view>
   </view>
@@ -46,4 +46,5 @@
     </view>
 
   </view>
+  <view class='mt80'></view>
 </view>

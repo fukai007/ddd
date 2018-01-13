@@ -1,4 +1,4 @@
-import  { formatTime} from '../../utils/util.js';
+// pages/askRule/askRule.js
 const app = getApp();
 Page({
 
@@ -6,32 +6,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-    levelInfo: app.globalData.levelInfo
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    app.fetchData({
-      func:'user.get_answer_list'
-    }).then(data=>{
-      data.bonus_list = data.bonus_list.map(item=>{
-        item.s_money = (item.s_money / 100 || 0).toFixed(2);
-        return item
-      })
-      data.balance = (data.balance / 100 || 0).toFixed(2);
-      data.last_bonus.s_money = (data.last_bonus.s_money / 100 || 0).toFixed(2);
-
-      return data;
-    }).then(data=>{
-      // let ct = data.last_bonus.create_time;
-      // data.last_bonus.create_time = formatTime(new Date(ct));
-      this.setData({
-        cinfo:data,
-        userInfo: app.globalData.userInfo
-      })
+    this.setData({
+      userInfo: app.globalData.userInfo
     })
+    app.fetchData({
+      func:'msg.reward_explain'
+    }).then(data=>{
+      this.setData({
+        ruleList: data.msg
+      })
+    });
   },
 
   /**
@@ -81,12 +72,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  toTX:function(){
-    let m = this.data.cinfo.balance;
-    app.toPage('tx', {m},'to');
-  },
-  toRule:function(){
-    //app.toPage('tx', { m });
   }
 })

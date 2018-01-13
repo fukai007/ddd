@@ -54,6 +54,12 @@
 					"name": "提现",
 					"pathName": "pages/tx/tx",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "规则",
+					"pathName": "pages/askRule/askRule",
+					"query": ""
 				}
 			]
 		}

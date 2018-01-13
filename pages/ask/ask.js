@@ -47,7 +47,19 @@ Page({
           clearInterval(this.ask_sid);
           clearInterval(this.hcd_sid);
           this.setData({ isOver: true });
-          wx.showToast({ title: '时间到,您已放弃本次答题机会' });
+          wx.showModal({
+            title: '答题失败,是否愿意再来一次',
+            content: '支付一元即可尝试',
+            success: function (res) {
+              if (res.confirm) {
+                that.tryIt();
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+                app.toPage('index');
+              }
+            }
+          })
         } else {
           this.setData({ cd: --oldCd });
         }
@@ -105,14 +117,13 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-
+    let imageUrl = '';
+    let title = '我在参与答题赢奖金，请悄悄告诉我你会选择啥';
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
       let par = `a_id=${this.data.answer.a_id}`;
       //let par = '';
-      let title = `万能的圈圈让您发财`;
-      let imageUrl = '';
       let path = 'pages/fua/fua?' + par;
       let that = this;
       return {
@@ -132,7 +143,7 @@ Page({
               func: 'help.share_num',
               a_id: that.data.answer.a_id
             }).then(data => {
-              //TODO 增加是否判断  控制 分享行为-2018-01-06 10:52
+              //增加是否判断  控制 分享行为-2018-01-06 10:52
               that.isQuestionShare = true
             }).catch(() => {
               that.setData({
@@ -151,7 +162,6 @@ Page({
       } 
     }else{
       return {
-        title: '万能的圈圈让您发财',
         path: 'pages/index/index/',
         imageUrl: imageUrl,      
       }
@@ -218,7 +228,7 @@ Page({
     let qid = e.target.dataset.qid;
     this.cur_qid = qid;
     this.isWaiting = true;
-    //TODO check-question 接口 核对
+    //check-question 接口 核对
     return app.fetchData({
       func:'answer.check_answer',
       q_an: qid
@@ -315,7 +325,7 @@ Page({
     let qlist = [{ 
       star: data.fabulous1 || 0 ,qid:1}, 
       { star: data.fabulous2 || 0 ,qid:2},
-       { star: data.fabulous3 || 1,qid:3 }, 
+       { star: data.fabulous3 || 0,qid:3 }, 
        { star: data.fabulous4 || 0, qid: 4}]
     qlist = qlist.sort((pre,after)=>{
       if (after.star > pre.star){
@@ -329,6 +339,11 @@ Page({
         return 0
       }
     });
+    //TODO 如果没有选择则为99-2018-01-12 20:44
+    if (qlist[0].star == 0){
+      qlist[0].qid = 99;
+    }
+
     return qlist[0]
   },
   getFabulous: function () {

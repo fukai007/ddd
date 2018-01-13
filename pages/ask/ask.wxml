@@ -23,8 +23,6 @@
             wx:key="qid"
             wx:for-item="qid" 
           >
-            
-
             <view 
               wx:if='{{isOver&&answer.q_an == qid}}' 
               data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-fail'>
@@ -37,9 +35,16 @@
                 <text class='pl30'>{{answer['q_an'+qid]}}</text>
             </view>
 
-            <view  wx:else data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-normal df dyc'>
+            <view  wx:else data-qid='{{qid}}' 
+                bindtap='checkAsk' 
+                class='qitem qitem-normal df dyc'
+            >
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
-              <view wx:if='{{isShowHelpUI}}' class='f1 tar mr30 fc-000 fb'>{{tipInfo['fabulous'+qid]}}已选</view>
+              <view wx:if='{{isShowHelpUI}}' 
+                class='f1 tar mr30 fc-000 fb'
+              >
+                {{tipInfo['fabulous'+qid]}}已选
+              </view>
             </view>
           </view>            
       </view>
@@ -48,7 +53,7 @@
 
   <!--  分享开始   -->
 
-  <button wx:if='{{isOver == false}}' class='shareIconBig mt45' open-type="share"></button>
+  <button id='fua' wx:if='{{isOver == false}}' class='shareIconBig mt45' open-type="share"></button>
   <!-- 分享结束 -->
 </view>
 

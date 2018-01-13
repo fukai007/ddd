@@ -41,8 +41,9 @@ Page({
         userInfo: newUserInfo,//app.globalData.userInfo,
         hasUserInfo: true
       })
-    }).then(()=>{
-      let info = app.globalData.userInfo;
+      return newUserInfo
+    }).then(info=>{
+      //let info = app.globalData.userInfo;
       app.fetchDataBase({
         func: 'user.save_userinfo',
         openid: app.globalData.openId,
@@ -53,14 +54,15 @@ Page({
         func:'user.get_user_prize'
       })
     }).then(data=>{
-      let {} = data;
-      console.log("data---------------------->",data);
+      console.log("data---------------------->", data);
+      let {is_receive} = data;
       if (is_receive){
         wx.showModal({
-          title: '提示',
-          content: '这是一个模态弹窗',
-          success: function (res) {
+          title: '温馨提示',
+          content: '奖学金已派发，点击确认进如我的账户查看(或者提现)',
+          success: function(res){
             if (res.confirm) {
+              app.toPage('accountMain', {}, 'to'); //跳转到答题页面
               console.log('用户点击确定')
             } else if (res.cancel) {
               console.log('用户点击取消')
@@ -104,6 +106,9 @@ Page({
     setTimeout(function(){
         app.toPage('ask', { cid: levelId }, 'to'); //跳转到答题页面
     },500);
+  },
+  toRule:function(){
+    app.toPage('askRule', {}, 'to'); //跳转到答题页面
   },
   toac:function(){
     app.toPage('accountMain', {}, 'to'); //跳转到答题页面

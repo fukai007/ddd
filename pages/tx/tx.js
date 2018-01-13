@@ -1,5 +1,6 @@
 // pages/accountMain/accountMain.js
 const app = getApp();
+import _ from '../../utils/underscore.js';
 Page({
 
   /**
@@ -77,10 +78,10 @@ Page({
       getM: m
     });
   },
-  getMoneyToMe: function () {
+  getMoneyToMe: _.throttle(function () {
     app.fetchData({
       func:'withdrawals.withdrawals',
       money: this.data.getM*100
     })
-  }
+  },400)
 })
