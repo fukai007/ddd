@@ -21,6 +21,7 @@
 .bottomArea{
   width: 750rpx;
   height: 670rpx;
+  margin-top: -30rpx;
     background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/red-packet.png);
   background-repeat: no-repeat;
   background-size:cover;

@@ -25,8 +25,13 @@ Page({
     app.fetchData({
       func: 'answer.get_answer_info',
       level: qo.cid
+    }).then(data => {
+      if (data.share == 0) {
+        wx.hideShareMenu();
+      }
+      return data;
     }).then(data=>{
-      console.log("ask--------->fetchData------->answer.get_answer_info",data);
+      console.log("ask--------->fetchData------->answer.get_answer_info",data.q_an_yes);
       try {
         that.setData({
           userInfo: app.globalData.userInfo,
@@ -47,12 +52,15 @@ Page({
           clearInterval(this.ask_sid);
           clearInterval(this.hcd_sid);
           this.setData({ isOver: true });
+          let lindex = this.data.answer.q_level-1;//答题级别变成下标
+          let rf = this.data.answer.resurrection_fee;//获得金额显示
+          let content = `支付${rf[lindex]/100}元即可尝试`;
           wx.showModal({
             title: '答题失败,是否愿意再来一次',
-            content: '支付一元即可尝试',
+            content: content,
             success: function (res) {
               if (res.confirm) {
-                that.tryIt();
+                that.tryIt(1);
                 console.log('用户点击确定')
               } else if (res.cancel) {
                 console.log('用户点击取消')
@@ -117,7 +125,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    let imageUrl = '';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
     let title = '我在参与答题赢奖金，请悄悄告诉我你会选择啥';
     if (res.from === 'button') {
       // 来自页面内转发按钮
@@ -145,16 +153,16 @@ Page({
             }).then(data => {
               //增加是否判断  控制 分享行为-2018-01-06 10:52
               that.isQuestionShare = true
-            }).catch(() => {
+              that.startHelpCD();
+            }).catch((error) => {
+              if(error.code == -201004){
+                wx.hideShareMenu()
+              }
               that.setData({
-                isShowHelpUI: true
+                isShowHelpUI: false
               })
             })
           }
-
-          that.startHelpCD();
-
-
         },
         fail: function (res) {
           // 转发失败
@@ -175,32 +183,41 @@ Page({
       @parm
           answer.q_id
   */
-  tryIt:function(){
+  tryIt: function (force=0){
     let that = this;
 
     this.isWaiting = true;
-    app.fetchData({ 
+    app.fetchData({ //调用复活接口
         func: 'resurrection.resurrection',
-        a_id: this.data.answer.a_id
+        a_id: this.data.answer.a_id,
+        force: force
     }).then(data=>{
-      data.timeStamp = data.timeStamp+'';
-      data.success=function(){
-        // that.setData({isOver:false,cd:10 });
-        // wx.showShareMenu() //允许分享
-        // that.isWaiting = false; //取消等待
-        // this.isQuestionShare = false;  
-        app.toPage('ask',{})
-      }
-      data.fail = function(error){
-        that.isWaiting = false;
-        wx.showToast(支付失败);
-      }
-      try{
-        wx.requestPayment(data);
-      }catch(e){
+      //余额支付-2018-01-13 21:43
+      if (data.payType === 'balance'){
+        wx.showToast({
+          title: '余额支付成功',
+        })
+        app.toPage('ask', {cid:1})
+        return ;
+      }else{//使用微信进行支付-2018-01-13 21:43
+        data.timeStamp = data.timeStamp + '';
+        data.success = function () {
+          // that.setData({isOver:false,cd:10 });
+          // wx.showShareMenu() //允许分享
+          // that.isWaiting = false; //取消等待
+          // this.isQuestionShare = false;  
+          app.toPage('ask', { cid: 1 })
+        }
+        data.fail = function (error) {
+          that.isWaiting = false;
+          wx.showToast(支付失败);
+        }
+        try {
+          wx.requestPayment(data);
+        } catch (e) {
           console.log(e);
+        }        
       }
-      
     }).catch(()=>{
       console.log("生成订单次失败");
     })
@@ -215,6 +232,13 @@ Page({
     if (a_progress == a_max) return true
     else return false
   },
+
+  onCheck:function(e){
+    this.checkAsk(e).catch(data=>{
+      console.log("onCheck---catch----------------------------------->"+data);
+      this.isWaiting = false;
+    });
+  },
     
   /*
       @purpose 核对问题
@@ -226,6 +250,13 @@ Page({
     if (this.isWaiting || this.data.isOver) return 
     let that = this;
     let qid = e.target.dataset.qid;
+
+    // 如果选择的是 五项选的则不进行处理-2018-01-13 21:25:48
+    if (qid > this.data.answer.q_an_num && qid < 98){
+      return 
+    }
+
+
     this.cur_qid = qid;
     this.isWaiting = true;
     //check-question 接口 核对
@@ -233,7 +264,12 @@ Page({
       func:'answer.check_answer',
       q_an: qid
     }).then(data=>{
-      console.log("answer.check_answer-------->",data);
+      if (data.share == 0){
+          wx.hideShareMenu();
+      }
+      return data;
+    }).then(data=>{
+      console.log("ask--------->fetchData------->answer.get_answer_info", data.q_an_yes);
       switch (data.is_correct){
           case 1 :{ //正确
             //更新问题数据 、重置倒计时 、选了谁
@@ -245,8 +281,6 @@ Page({
             this.setData({ answer: data, cd: 10});
             this.isWaiting = false;
             this.cur_qid = false;
-
-
             break;
           }
           case 2:{ //错误
@@ -258,9 +292,13 @@ Page({
             if (this.ceq(this.data.answer) || this.data.isOver == false){
               return
             };
+            let lindex = this.data.answer.q_level;//答题级别变成下标
+            let rf = this.data.answer.resurrection_fee;//获得金额显示
+            let content = `支付${rf[lindex] / 100}元即可尝试`;
+            //弹出续费框
             wx.showModal({
               title: '答题失败,是否愿意再来一次',
-              content: '支付一元即可尝试',
+              content: content,
               success: function(res) {
                 if (res.confirm) {
                   that.tryIt();
@@ -300,14 +338,20 @@ Page({
         clearInterval(sid)//清除帮助倒计时器
         this.isWaiting = false;
         // target.dataset.qid;
-        let qid = this.getMaxqid(this.data.tipInfo).qid;
+        let qid = this.getMaxqid(this.data).qid;
         let e = { target: { dataset :{qid}}}
         this.checkAsk(e).then(()=>{
-              that.setData({
-              cd: this.data.answer.answer_time,
-              helpCD: this.data.answer.help_time,
-              isShowHelpUI: false
-            })
+                that.setData({
+                  cd: this.data.answer.answer_time,
+                  helpCD: this.data.answer.help_time,
+                  isShowHelpUI: false
+                })
+        }).catch(()=>{
+          that.setData({
+            cd: this.data.answer.answer_time,
+            helpCD: this.data.answer.help_time,
+            isShowHelpUI: false
+          })
         })
       }else{
         this.setData({

@@ -187,7 +187,7 @@ App({
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
             console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
-            fallcb&&fallcb()
+            fallcb && fallcb(res.data)
           }
         },
         fail: function(res) {

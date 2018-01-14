@@ -3,7 +3,7 @@
 <view class='df f1 fyc fdy pw-root por'>
     <image  class="userIcon" src="{{userInfo.avatarUrl}}"  background-size="cover"></image>
     <view><text class="h5 fc-333">{{userInfo.nickName}}</text></view>
-    <view style='margin-top:-30rpx'>
+    <view style='margin-top:-130rpx'>
         <image 
         class = 'cup'
         src='https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard-ok.png'>

@@ -1,7 +1,7 @@
 <!--pages/ask/ask.wxml-->
-<view class='fullwh' style='{{isShowHelpUI?"display:flex":"display:none"}}'>
-  <view class='tac mt40'>
-      <text class='fc-red'>求助剩余时间 : {{helpCD+'秒'}} </text>
+<view class='fullwh fxyc' style='{{isShowHelpUI?"display:flex":"display:none"}}'>
+  <view class='helpView df fxyc'>
+      <text class='fc-red h1'>等待求助剩余时间 : {{helpCD+'秒'}} </text>
   </view>
 </view>
 
@@ -25,18 +25,18 @@
           >
             <view 
               wx:if='{{isOver&&answer.q_an == qid}}' 
-              data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-fail'>
+              data-qid='{{qid}}' class='qitem qitem-fail'>
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
             </view>
 
             <view  
               wx:elif='{{isOver&&answer.q_an_yes == qid}}' 
-              data-qid='{{qid}}' bindtap='checkAsk' class='qitem qitem-ok'>
+              data-qid='{{qid}}'class='qitem qitem-ok'>
                 <text class='pl30'>{{answer['q_an'+qid]}}</text>
             </view>
 
             <view  wx:else data-qid='{{qid}}' 
-                bindtap='checkAsk' 
+                bindtap='onCheck' 
                 class='qitem qitem-normal df dyc'
             >
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
