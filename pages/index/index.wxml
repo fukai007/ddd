@@ -13,38 +13,26 @@
     </view>
   </view>
 </view>
+
 <view class='mainbg ovh'>
   <view class='df fxc mt20'>
     <view class='area-com'><text class='h5 fc-fff ml20'>常规比赛</text></view>
   </view>
+  <view wx:if="{userInfo.u_level}">
+    <view   wx:if="{{userInfo.u_level == 1}}"  class='df fxc mt74 root3d' >
+        <view class='l1 cube levelItem' bindtap="toAsk" data-levelid="1" ></view>
+    </view>
 
-  <view class='df fxc mt74 root3d' >
-      <view class='l1 cube levelItem' bindtap="toAsk" data-levelid="1" ></view>
-  </view>
-  <view
-    wx:for="{{levelList}}"
-    wx:for-index="idx"
-    wx:key="levelId"
-    wx:for-item="levelInfo"
-    >
-    <view 
-      wx:if="{{levelInfo.levelId <= userInfo.u_level}}" 
+    <view
+      wx:else
       class='df fxc mt20 root3d por' bindtap="toAsk">
-        <image 
-          class="baseLevel cube levelItem"  
-            data-levelid="{{levelInfo.levelId}}"
-    src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'.png'}}"></image>
-        <view class='levelName'>{{levelInfo.levelName}}</view> 
+        <image
+          class="baseLevel cube levelItem"
+          data-levelid="{{levelInfo.levelId}}"
+          src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+userInfo.u_level+'.png'}}"></image>
+        <view class='levelName'>{{levelList[userInfo.u_level].levelName}}</view>
     </view>
-
-    <view wx:else class='df fxc mt20 root3d por'>
-        <image 
-          class="baseLevel cube levelItem"  
-            data-levelid="{{levelInfo.levelId}}"
-    src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+levelInfo.levelId+'h.png'}}"></image>
-        <view class='levelName'>{{levelInfo.levelName}}</view> 
-    </view>
-
   </view>
+
   <view class='mt80'></view>
 </view>

@@ -10,6 +10,16 @@ Page({
     },
     levelList:[
       {
+        levelName: '出生水平',
+        levelInfo: 'xxxxx',
+        levelId: 0,
+      },
+      {
+        levelName: '幼儿园水平',
+        levelInfo: 'xxxxx',
+        levelId: 1,
+      },
+      {
         levelName: '小学水平',
         levelInfo: 'xxxxx',
         levelId: 2,
@@ -28,13 +38,13 @@ Page({
         levelName: '大学水平',
         levelInfo: 'xxxxx',
         levelId: 5,
-      }                  
+      }
     ]
   },
   onLoad: function () {
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
-      let oldUserInfo = app.globalData.userInfo 
+      let oldUserInfo = app.globalData.userInfo
       let newUserInfo = extend(oldUserInfo,data);
       app.globalData.userInfo = newUserInfo
       this.setData({
@@ -100,7 +110,7 @@ Page({
     @author miles_fk
   */
   toAsk:function(e){
-    // toPage: function (pageName, paro, gotoType) 
+    // toPage: function (pageName, paro, gotoType)
     let that = this;
     let levelId = e.target.dataset.levelid;
     let ticket = this.data.userInfo.u_ticket;
@@ -146,7 +156,7 @@ Page({
           // that.setData({isOver:false,cd:10 });
           // wx.showShareMenu() //允许分享
           // that.isWaiting = false; //取消等待
-          // this.isQuestionShare = false;  
+          // this.isQuestionShare = false;
           app.toPage('ask', { cid: 1 })
         }
         data.fail = function (error) {

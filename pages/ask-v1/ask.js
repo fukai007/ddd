@@ -10,9 +10,6 @@ Page({
     isOver: false,
     isPassAll:false,
     isShowHelpUI:false, //是否显示帮助显示浮层-2018-01-05 11:26
-    isTryUIA:false,//续命提示框
-    isTryUIB:false,//续命提示框
-    TryUIInfo:'',
     answer:{},
     cd:0,
   },
@@ -48,7 +45,6 @@ Page({
         console.log(err);
       }
     }).then(()=>{
-      //开始  答题 倒计时
       this.ask_sid = setInterval(() => {
         let oldCd = this.data.cd;
         if (this.isWaiting) return;
@@ -58,51 +54,26 @@ Page({
           this.setData({ isOver: true });
           let lindex = this.data.answer.q_level-1;//答题级别变成下标
           let rf = this.data.answer.resurrection_fee;//获得金额显示
-          let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
-
-          this.setData({
-            isTryUIA:true,
-            TryUIInfo:content
-          });
-
-          // wx.showModal({
-          //   title: '答题失败,是否愿意再来一次',
-          //   content: content,
-          //   success: function (res) {
-          //     if (res.confirm) {
-          //       that.tryIt(1);
-          //       console.log('用户点击确定')
-          //     } else if (res.cancel) {
-          //       console.log('用户点击取消')
-          //       app.toPage('index');
-          //     }
-          //   }
-          // })
+          let content = `支付${rf[lindex]/100}元即可尝试`;
+          wx.showModal({
+            title: '答题失败,是否愿意再来一次',
+            content: content,
+            success: function (res) {
+              if (res.confirm) {
+                that.tryIt(1);
+                console.log('用户点击确定')
+              } else if (res.cancel) {
+                console.log('用户点击取消')
+                app.toPage('index');
+              }
+            }
+          })
         } else {
           this.setData({ cd: --oldCd });
         }
       }, 1000);
     })
-  },
-  /**
-   * 强制复活
-   */
-  tryItA:function () {
-    this.tryIt(1);
-    this.hideTryItUI();
-  },
-  /**
-   * 正常复活
-   */
-  tryItB:function () {
-    this.tryIt();
-    this.hideTryItUI();
-  },
-  hideTryItUI:function () {
-    this.setData({
-      isTryUIA:false,
-      isTryUIB:false
-    })
+
   },
 
   /**
@@ -110,21 +81,21 @@ Page({
    */
   onReady: function () {
 
-
+  
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+  
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+  
   },
 
   /**
@@ -140,14 +111,14 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+  
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+  
   },
 
   /**
@@ -196,11 +167,11 @@ Page({
         fail: function (res) {
           // 转发失败
         }
-      }
+      } 
     }else{
       return {
         path: 'pages/index/index/',
-        imageUrl: imageUrl,
+        imageUrl: imageUrl,      
       }
     }
   },
@@ -234,7 +205,7 @@ Page({
           // that.setData({isOver:false,cd:10 });
           // wx.showShareMenu() //允许分享
           // that.isWaiting = false; //取消等待
-          // this.isQuestionShare = false;
+          // this.isQuestionShare = false;  
           app.toPage('ask', { cid: 1 })
         }
         data.fail = function (error) {
@@ -245,7 +216,7 @@ Page({
           wx.requestPayment(data);
         } catch (e) {
           console.log(e);
-        }
+        }        
       }
     }).catch(()=>{
       console.log("生成订单次失败");
@@ -268,7 +239,7 @@ Page({
       this.isWaiting = false;
     });
   },
-
+    
   /*
       @purpose 核对问题
       @createTIme 2018-01-06 08:47:58
@@ -276,13 +247,13 @@ Page({
   */
   checkAsk:function(e){
     console.log("ask----->checkAsk---------------->");
-    if (this.isWaiting || this.data.isOver) return
+    if (this.isWaiting || this.data.isOver) return 
     let that = this;
     let qid = e.target.dataset.qid;
 
     // 如果选择的是 五项选的则不进行处理-2018-01-13 21:25:48
     if (qid > this.data.answer.q_an_num && qid < 98){
-      return
+      return 
     }
 
 
@@ -323,28 +294,21 @@ Page({
             };
             let lindex = this.data.answer.q_level;//答题级别变成下标
             let rf = this.data.answer.resurrection_fee;//获得金额显示
-
-            let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
-
-            this.setData({
-              isTryUIB:true,
-              TryUIInfo:content
-            });
-
-            // //弹出续费框
-            // wx.showModal({
-            //   title: '答题失败,是否愿意再来一次',
-            //   content: content,
-            //   success: function(res) {
-            //     if (res.confirm) {
-            //       that.tryIt();
-            //       console.log('用户点击确定')
-            //     } else if (res.cancel) {
-            //       console.log('用户点击取消')
-            //       app.toPage('index');
-            //     }
-            //   }
-            // })
+            let content = `支付${rf[lindex] / 100}元即可尝试`;
+            //弹出续费框
+            wx.showModal({
+              title: '答题失败,是否愿意再来一次',
+              content: content,
+              success: function(res) {
+                if (res.confirm) {
+                  that.tryIt();
+                  console.log('用户点击确定')
+                } else if (res.cancel) {
+                  console.log('用户点击取消')
+                  app.toPage('index');
+                }
+              }
+            })
             break;
           }
           case 3:{//通关
@@ -395,28 +359,35 @@ Page({
         })
         this.getFabulous();
       }
-    },1000);
+    },1000); 
     this.setData({
       isShowHelpUI:true
     })
   },
 
   getMaxqid:function(data){
-    let qlist = [
-      {star: data.fabulous1 || 0 ,qid:1},
+    let qlist = [{ 
+      star: data.fabulous1 || 0 ,qid:1}, 
       { star: data.fabulous2 || 0 ,qid:2},
-      { star: data.fabulous3 || 0,qid:3 },
-      { star: data.fabulous4 || 0, qid: 4}
-    ]
-
+       { star: data.fabulous3 || 0,qid:3 }, 
+       { star: data.fabulous4 || 0, qid: 4}]
     qlist = qlist.sort((pre,after)=>{
-      if (after.star > pre.star){return 1}
-      if (pre.star < after.star) {return -1}
-      if (pre.star == after.star){return 0}
-    });
+      if (after.star > pre.star){
+        return 1
+      } 
+      if (pre.star < after.star) {
+        return -1
+      }
 
+      if (pre.star == after.star){
+        return 0
+      }
+    });
     //TODO 如果没有选择则为99-2018-01-12 20:44
-    if (qlist[0].star == 0) qlist[0].qid = 99;
+    if (qlist[0].star == 0){
+      qlist[0].qid = 99;
+    }
+
     return qlist[0]
   },
   getFabulous: function () {
@@ -444,4 +415,4 @@ Page({
 //     helpTime:{m,s},
 //     helpCD: time
 //   })
-// },1000);
+// },1000); 
