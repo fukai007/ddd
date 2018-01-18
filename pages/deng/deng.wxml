@@ -1,0 +1,9 @@
+<!--pages/deng/deng.wxml-->
+<view class='df fxyc bg_mask'>
+  <view class='df fxyc wh'>
+    <view class=' mt20'>
+      <text class='ch'>等待求助时间：15秒</text>
+      <button class='mt20'>返回一次</button> 
+    </view>
+  </view>
+</view>

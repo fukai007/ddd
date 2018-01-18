@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/deng/deng",
+    "pages/dx3/dx3",
     "pages/index/index",
     "pages/testAnimation/ta",
     "pages/accountMain/accountMain",
