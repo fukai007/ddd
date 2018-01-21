@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cd: 0, 
+    cd: 0,
     isOver:false
   },
 
@@ -16,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     let a_id = options.a_id;
+    this.a_id = options.a_id;
     app.fetchData({
       func:'help.get_helper',a_id
     }).then(data=>{
@@ -33,49 +34,56 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-  
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let par = `a_id=${this.a_id}`;
+    let path = 'pages/fua/fua?' + par;
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) {},
+      fail: function (res) {}
+    }
   },
 
   checkAsk:function(e){

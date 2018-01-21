@@ -27,10 +27,25 @@ page{
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.mainbg{
-
+.levelMaskAreal1{
+  position: absolute;
+  left: 24rpx;
+  top: 0;
+  z-index: 4;
+  width:702rpx;
+  height:154rpx;
+  background: rgba(0, 0, 0, 0.8);
 }
+
+.levelMaskCore{
+}
+
+.nextAskTime{
+  text-align: center;
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
+
 .area-com{
   width: 720rpx;
   height: 54rpx;
@@ -38,24 +53,39 @@ page{
   background-repeat: no-repeat;
   background-size: cover;
 }
-.l1{
-  width: 702rpx;
-  height: 201rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/kindergarten.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.nextAskTip{
+    width: 303rpx;
+    height: 70rpx;
+    background: #FFFFFF;
+    border-radius: 49px;
+    text-align: center;
+    font-size: 28rpx;
+    color: #F1322E;
+    line-height: 70rpx;
+}
+.askMinInfo{
+  font-size: 28rpx;
+  color: #EDFF39;
+}
+
+.PrizeImg{
+  width: 720rpx;
+  height: 617rpx;
+  background: #FFFFFF;
+  border-radius: 16px;
 }
 .baseLevel{
   width: 702rpx;
-  height: 208rpx;
+  height: 154rpx;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .levelName{
   position: absolute;
-  top:143rpx;
-  left:120rpx;
+  top:90rpx;
+  left:80rpx;
   width: 227rpx;
   height: 44rpx;
   line-height: 44rpx;

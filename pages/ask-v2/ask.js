@@ -155,8 +155,8 @@ Page({
    */
   onShareAppMessage: function (res) {
     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
-    let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
-    //if (res.from === 'button') {
+    let title = '我在参与答题赢奖金，请悄悄告诉我你会选择啥';
+    if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
       let par = `a_id=${this.data.answer.a_id}`;
@@ -197,12 +197,12 @@ Page({
           // 转发失败
         }
       }
-    // }else{
-    //   return {
-    //     path: 'pages/index/index/',
-    //     imageUrl: imageUrl,
-    //   }
-    // }
+    }else{
+      return {
+        path: 'pages/index/index/',
+        imageUrl: imageUrl,
+      }
+    }
   },
 
   /*
@@ -226,10 +226,7 @@ Page({
         wx.showToast({
           title: '余额支付成功',
         })
-        setTimeout(() => {
-          app.toPage('ask', {cid:1})
-        }, 500);
-
+        app.toPage('ask', {cid:1})
         return ;
       }else{//使用微信进行支付-2018-01-13 21:43
         data.timeStamp = data.timeStamp + '';

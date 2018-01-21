@@ -41,7 +41,9 @@ Page({
       }
     ]
   },
+
   onLoad: function () {
+    //获得用户信息
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
       let oldUserInfo = app.globalData.userInfo
@@ -87,6 +89,38 @@ Page({
     this.setUserInfo();
     //app.wxLogin();
   },
+  /**
+   * 生命周期函数--监听页面显示
+     @purpose更新 userInfo.u_ticket
+   */
+  onShow: function () {
+    app.fetchData({
+      func:'user.get_user_ticket_num'
+    }).then(data=>{
+      let userInfo = this.data.userInfo;
+      userInfo.u_ticket = data.u_ticket; //更新入场券-2018-01-20 19:54
+      userInfo.next_start_time = data.next_start_time; //更新下一场开场时间-2018-01-20 19:55
+      userInfo.question_nums = data.question_nums; //更新最大题数-2018-01-20 20:32
+      userInfo.level_bonus = data.level_bonus; // 更新奖金数2018-01-20 20:32
+      this.setData({userInfo});
+    })
+    console.log("index------------>onShow--------->");
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let path = 'pages/index/index?';
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) {},
+      fail: function (res) {}
+    }
+  },
   /*
     @purpose 定时器-获得userInfo
     @creatTime 2018-01-02 21:09:22
@@ -112,7 +146,7 @@ Page({
   toAsk:function(e){
     // toPage: function (pageName, paro, gotoType)
     let that = this;
-    let levelId = e.target.dataset.levelid;
+    let levelId = e.currentTarget.dataset.levelid || e.target.dataset.levelid;
     let ticket = this.data.userInfo.u_ticket;
     console.log("levelId--------------------------------->", levelId);
     if (ticket == 0){

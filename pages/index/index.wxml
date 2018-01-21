@@ -1,4 +1,5 @@
 <!--index.wxml-->
+<wxs src="./tools.wxs" module="tools" />
 <view class='userInfo-index'>
   <view class='df mx24 mt30'>
     <view class='f1 tac'></view>
@@ -9,30 +10,49 @@
     <view class='df f1 fxr por'>
         <text class='tar fc-fff h6 mt10' bindtap='toRule'>答题规则</text>
         <view class='ml10 ruleIcon' bindtap='toRule'></view>
-        <view class='toac' bindtap='toac'>累计学分 ＞ </view>
+        <view class='toac' bindtap='toac'>个人中心 ＞ </view>
     </view>
   </view>
 </view>
 
 <view class='mainbg ovh'>
   <view class='df fxc mt20'>
-    <view class='area-com'><text class='h5 fc-fff ml20'>常规比赛</text></view>
+    <view class='area-com'><text class='h5 fc-fff ml20'>百万多金赛</text></view>
   </view>
-  <view wx:if="{userInfo.u_level}">
-    <view   wx:if="{{userInfo.u_level == 1}}"  class='df fxc mt74 root3d' >
-        <view class='l1 cube levelItem' bindtap="toAsk" data-levelid="1" ></view>
-    </view>
+  <view wx:if="{{tools.isLevel(userInfo)}}">
+      <view  class='df fxc mt20 root3d por' >
+          <view class="por" bindtap="toAsk" data-levelid="{{userInfo.u_level}}" >
+            <image
+              class="baseLevel cube levelItem"
+              src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+userInfo.u_level+'.png'}}"></image>
+            <view class='levelName'> 共{{userInfo.question_nums}}题 / {{userInfo.level_bonus/100}}元</view>
+          </view>
+          <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal1'>
+              <view class='df fxyc'>
+                  <view class='levelMaskCore mt10'>
+                      <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
+                      <view class="df fxc">
+                          <view class='nextAskTip mt20'>尽情期待</view>
+                      </view>
+                  </view>
+              </view>
+          </view>
+      </view>
+  </view>
+  <view>
+    <view class='df fxc mt20'>
+      <view class='area-com'>
+        <text class='h5 fc-fff ml20'>品牌独享赛</text>
+        <text class='askMinInfo ml20'>每天十二场，十二万奖学金</text>
+      </view>
 
-    <view
-      wx:else
-      class='df fxc mt20 root3d por' bindtap="toAsk">
-        <image
-          class="baseLevel cube levelItem"
-          data-levelid="{{levelInfo.levelId}}"
-          src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+userInfo.u_level+'.png'}}"></image>
-        <view class='levelName'>{{levelList[userInfo.u_level].levelName}}</view>
+
+    </view>
+    <view class='df fxc mt20 por'>
+      <image class='PrizeImg'></image>
     </view>
   </view>
 
-  <view class='mt80'></view>
+
+
 </view>
