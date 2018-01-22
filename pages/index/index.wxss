@@ -93,3 +93,20 @@ page{
   color: #333333;
   z-index: 3;
 }
+
+.focusAPPWrap{
+  position: absolute;
+  right:0;
+  bottom:-40rpx;
+}
+.focusAPP{
+  width: 363rpx;
+  height: 100rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/gongzhonghao.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgba(0,0,0,0);
+}
+.focusAPP::after{
+  border: 0px;
+}

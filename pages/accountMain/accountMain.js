@@ -1,6 +1,6 @@
-import  { formatTime} from '../../utils/util.js';
+import  { formatTime,extend} from '../../utils/util.js';
 const app = getApp();
-Page({
+var amm = {
 
   /**
    * 页面的初始数据
@@ -80,7 +80,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let path = 'pages/index/index?';
     return {
@@ -98,4 +98,9 @@ Page({
   toRule:function(){
     //app.toPage('tx', { m });
   }
-})
+}
+
+
+
+var ammh = extend(amm,{});
+Page(ammh);

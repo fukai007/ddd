@@ -1,8 +1,9 @@
 // pages/ask/ask.js
 import _ from '../../utils/underscore.js';
+import { makePar, extend } from '../../utils/util.js';
 var app = getApp();
 
-Page({
+var askm = {
   /**
    * 页面的初始数据
    */
@@ -23,7 +24,8 @@ Page({
   onLoad: function (qo) {
     console.log("ask------onLoad--------", qo);
     this.isWaiting = false;
-    this.isQuestionShare=false
+    this.isQuestionShare=false;
+    this.cid = qo.cid;
     let that = this;
     app.fetchData({
       func: 'answer.get_answer_info',
@@ -58,26 +60,12 @@ Page({
           this.setData({ isOver: true });
           let lindex = this.data.answer.q_level-1;//答题级别变成下标
           let rf = this.data.answer.resurrection_fee;//获得金额显示
-          let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
+          let content = `答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。`;
 
           this.setData({
             isTryUIA:true,
             TryUIInfo:content
           });
-
-          // wx.showModal({
-          //   title: '答题失败,是否愿意再来一次',
-          //   content: content,
-          //   success: function (res) {
-          //     if (res.confirm) {
-          //       that.tryIt(1);
-          //       console.log('用户点击确定')
-          //     } else if (res.cancel) {
-          //       console.log('用户点击取消')
-          //       app.toPage('index');
-          //     }
-          //   }
-          // })
         } else {
           this.setData({ cd: --oldCd });
         }
@@ -98,11 +86,16 @@ Page({
     this.tryIt();
     this.hideTryItUI();
   },
+
   hideTryItUI:function () {
     this.setData({
       isTryUIA:false,
       isTryUIB:false
     })
+  },
+  toIndex:function () {
+    this.hideTryItUI();
+    app.toPage('index', {});
   },
 
   /**
@@ -154,7 +147,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
     //if (res.from === 'button') {
       // 来自页面内转发按钮
@@ -197,12 +190,6 @@ Page({
           // 转发失败
         }
       }
-    // }else{
-    //   return {
-    //     path: 'pages/index/index/',
-    //     imageUrl: imageUrl,
-    //   }
-    // }
   },
 
   /*
@@ -227,18 +214,14 @@ Page({
           title: '余额支付成功',
         })
         setTimeout(() => {
-          app.toPage('ask', {cid:1})
+          app.toPage('ask', {cid:that.cid})
         }, 500);
 
         return ;
       }else{//使用微信进行支付-2018-01-13 21:43
         data.timeStamp = data.timeStamp + '';
         data.success = function () {
-          // that.setData({isOver:false,cd:10 });
-          // wx.showShareMenu() //允许分享
-          // that.isWaiting = false; //取消等待
-          // this.isQuestionShare = false;
-          app.toPage('ask', { cid: 1 })
+          app.toPage('ask', { cid:that.cid})
         }
         data.fail = function (error) {
           that.isWaiting = false;
@@ -259,7 +242,7 @@ Page({
       @createTIme 2018-01-06 08:47:58
       @author miles_fk
   */
-  ceq: function (answer){
+  isEndQuestion: function (answer){
     let { a_progress, a_max}  = answer;
     if (a_progress == a_max) return true
     else return false
@@ -267,7 +250,6 @@ Page({
 
   onCheck:function(e){
     this.checkAsk(e).catch(data=>{
-      console.log("onCheck---catch----------------------------------->"+data);
       this.isWaiting = false;
     });
   },
@@ -278,7 +260,7 @@ Page({
       @author miles_fk
   */
   checkAsk:function(e){
-    console.log("ask----->checkAsk---------------->");
+    console.log("ask----->checkAsk---------------->",e.target.dataset.qid);
     if (this.isWaiting || this.data.isOver) return
     let that = this;
     let qid = e.target.dataset.qid;
@@ -305,7 +287,7 @@ Page({
       switch (data.is_correct){
           case 1 :{ //正确
             //更新问题数据 、重置倒计时 、选了谁
-            if (this.ceq(data) || data.share == 0){
+            if (this.isEndQuestion(data) || data.share == 0){
               wx.hideShareMenu();
             }else{
               this.isQuestionShare = false
@@ -321,33 +303,14 @@ Page({
             wx.hideShareMenu();
             this.setData({ isOver: true, answer: data})
             //TODO 最后一道题错了怎么办 2018-01-09 19:04:31
-            if (this.ceq(this.data.answer) || this.data.isOver == false){
-              return
-            };
             let lindex = this.data.answer.q_level;//答题级别变成下标
             let rf = this.data.answer.resurrection_fee;//获得金额显示
-
-            let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
-
+            //let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
+            let content = '答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。';
             this.setData({
               isTryUIB:true,
               TryUIInfo:content
             });
-
-            // //弹出续费框
-            // wx.showModal({
-            //   title: '答题失败,是否愿意再来一次',
-            //   content: content,
-            //   success: function(res) {
-            //     if (res.confirm) {
-            //       that.tryIt();
-            //       console.log('用户点击确定')
-            //     } else if (res.cancel) {
-            //       console.log('用户点击取消')
-            //       app.toPage('index');
-            //     }
-            //   }
-            // })
             break;
           }
           case 3:{//通关
@@ -372,20 +335,22 @@ Page({
     this.hcd_sid = setInterval(()=>{
       let time = this.data.helpCD-1;
       console.log(time);
+      //帮助时间到
       if (time < 0) {
         let sid = this.hcd_sid ;
         clearInterval(sid)//清除帮助倒计时器
-        this.isWaiting = false;
         // target.dataset.qid;
         let qid = this.getMaxqid(this.data).qid;
         let e = { target: { dataset :{qid}}}
         this.checkAsk(e).then(()=>{
-                that.setData({
-                  cd: this.data.answer.answer_time,
-                  helpCD: this.data.answer.help_time,
-                  isShowHelpUI: false
-                })
+            this.isWaiting = false;
+            that.setData({
+              cd: this.data.answer.answer_time,
+              helpCD: this.data.answer.help_time,
+              isShowHelpUI: false
+            })
         }).catch(()=>{
+          this.isWaiting = false;
           that.setData({
             cd: this.data.answer.answer_time,
             helpCD: this.data.answer.help_time,
@@ -423,7 +388,7 @@ Page({
     return qlist[0]
   },
   getFabulous: function () {
-    let a_id = this.data.answer.a_id;
+      let a_id = this.data.answer.a_id;
       app.fetchData({
         func:'help.fabulous_num',
         a_id: a_id,
@@ -432,7 +397,12 @@ Page({
         this.setData({ tipInfo: data});
       });
   }
-})
+}
+
+
+var askmh = extend(askm,{});
+
+Page(askmh);
 
 
 // this.hcd_sid = setInterval(()=>{

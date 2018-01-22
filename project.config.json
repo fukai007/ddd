@@ -35,7 +35,7 @@
 					"id": 0,
 					"name": "求助页面",
 					"pathName": "pages/fua/fua",
-					"query": "a_id=211"
+					"query": "a_id= 34"
 				},
 				{
 					"id": -1,
@@ -59,6 +59,12 @@
 					"id": -1,
 					"name": "规则",
 					"pathName": "pages/askRule/askRule",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货地址页面",
+					"pathName": "pages/address/address",
 					"query": ""
 				}
 			]

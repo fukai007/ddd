@@ -154,7 +154,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '我在参与答题赢奖金，请悄悄告诉我你会选择啥';
     if (res.from === 'button') {
       // 来自页面内转发按钮

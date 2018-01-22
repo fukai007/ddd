@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/addressb/addressb",
+    "pages/address/address",
     "pages/testAnimation/ta",
     "pages/accountMain/accountMain",
     "pages/tg/tg",

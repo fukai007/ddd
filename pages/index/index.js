@@ -3,7 +3,7 @@ import { makePar, extend } from '../../utils/util.js';
 //获取应用实例
 const app = getApp();
 
-Page({
+var indexm =  {
   data: {
     userInfo:{
       u_level:0
@@ -43,6 +43,7 @@ Page({
   },
 
   onLoad: function () {
+    wx.updateShareMenu({withShareTicket: true})
     //获得用户信息
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
@@ -66,7 +67,6 @@ Page({
         func:'user.get_user_prize'
       })
     }).then(data=>{
-      console.log("data---------------------->", data);
       let {is_receive} = data;
       if (is_receive){
         wx.showModal({
@@ -104,20 +104,21 @@ Page({
       userInfo.level_bonus = data.level_bonus; // 更新奖金数2018-01-20 20:32
       this.setData({userInfo});
     })
-    console.log("index------------>onShow--------->");
   },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let path = 'pages/index/index?';
     return {
       title: title,
       path: path,
       imageUrl: imageUrl,
-      success: function (res) {},
+      success: function (res) {
+        console.log(res);
+      },
       fail: function (res) {}
     }
   },
@@ -148,8 +149,8 @@ Page({
     let that = this;
     let levelId = e.currentTarget.dataset.levelid || e.target.dataset.levelid;
     let ticket = this.data.userInfo.u_ticket;
-    console.log("levelId--------------------------------->", levelId);
-    if (ticket == 0){
+    ticket = true;
+    if (ticket == 0) { //ticket == 0
       wx.showModal({
         title: '请购买入场券',
         content: '购买后从幼儿园开始',
@@ -206,4 +207,9 @@ Page({
 
     })
   }
-})
+}
+
+
+
+var indexmh = extend(indexm,{});
+Page(indexmh);

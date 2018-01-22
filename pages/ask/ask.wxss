@@ -31,7 +31,7 @@
 }
 
 .tryIt{
-  margin-top: 100rpx;
+  margin-top: 70rpx;
   width: 408rpx;
   height: 90rpx;
   color: #fff;

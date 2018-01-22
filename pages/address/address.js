@@ -1,28 +1,22 @@
-// pages/askRule/askRule.js
-const app = getApp();
-Page({
+// pages/address/address.js
+
+import { makePar, extend } from '../../utils/util.js';
+var app = getApp();
+
+var addressm ={
 
   /**
    * 页面的初始数据
    */
   data: {
-
+     addressInfo :{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      userInfo: app.globalData.userInfo
-    })
-    app.fetchData({
-      func:'msg.reward_explain'
-    }).then(data=>{
-      this.setData({
-        ruleList: data.msg
-      })
-    });
+
   },
 
   /**
@@ -71,15 +65,25 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
-    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
-    let path = 'pages/index/index?';
-    return {
-      title: title,
-      path: path,
-      imageUrl: imageUrl,
-      success: function (res) {},
-      fail: function (res) {}
-    }
+
   },
-})
+  saveAddressInfo:function(e){
+    let inputType = e.currentTarget.dataset.inputtype;
+    let value = e.detail.value;
+    let addressInfo  = this.data.addressInfo;
+    addressInfo[inputType] = value;
+    this.setData({addressInfo});
+  },
+  onAddressSubmit:function(){
+      //TODO 保存收货地址
+      app.fecthData({
+
+      })
+  }
+}
+
+var addressmh = extend(addressm, {});
+
+Page(addressmh);
+
+

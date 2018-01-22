@@ -17,7 +17,10 @@
 
 <view class='mainbg ovh'>
   <view class='df fxc mt20'>
-    <view class='area-com'><text class='h5 fc-fff ml20'>百万多金赛</text></view>
+    <view class='area-com'>
+      <text class='h5 fc-fff ml20'>百万多金赛</text>
+      <text class='askMinInfo ml20'>{{userInfo.msg1}}</text>
+    </view>
   </view>
   <view wx:if="{{tools.isLevel(userInfo)}}">
       <view  class='df fxc mt20 root3d por' >
@@ -32,7 +35,7 @@
                   <view class='levelMaskCore mt10'>
                       <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
                       <view class="df fxc">
-                          <view class='nextAskTip mt20'>尽情期待</view>
+                          <view class='nextAskTip mt20'>敬请期待</view>
                       </view>
                   </view>
               </view>
@@ -43,16 +46,20 @@
     <view class='df fxc mt20'>
       <view class='area-com'>
         <text class='h5 fc-fff ml20'>品牌独享赛</text>
-        <text class='askMinInfo ml20'>每天十二场，十二万奖学金</text>
+        <text class='askMinInfo ml20'>{{userInfo.msg2}}</text>
       </view>
 
 
     </view>
     <view class='df fxc mt20 por'>
-      <image class='PrizeImg'></image>
+      <image 
+        class='PrizeImg' 
+        src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
+      </image>
     </view>
   </view>
-
-
-
+  <view class='focusAPPWrap'>
+      <button open-type='contact' class='focusAPP'></button>
+  </view>
+  <view class='mt40'></view>
 </view>

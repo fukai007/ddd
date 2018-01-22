@@ -1,4 +1,4 @@
-const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/'; 
+const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/';
 const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
 import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
@@ -39,7 +39,7 @@ App({
                     wx.getUserInfo({
                             success(resa) {
                               // 可以将 res 发送给后台解码出 unionId
-                              console.log("res.userInfo-------------->", resa.userInfo);
+                              //console.log("res.userInfo-------------->", resa.userInfo);
                               that.globalData.userInfo = resa.userInfo
                             },
                             fail(error) {
@@ -93,7 +93,7 @@ App({
         levelId: 5,
         levelText: '大学水平'
       }
-    }    
+    }
   },
   /*
       @purpose  微信登录
@@ -107,10 +107,10 @@ App({
     var wxLoginPromise = new Promise(function (resolve, reject) {
       wx.login({ //微信登录接口-微信提供的  res.code 到后台换取 openId, sessionKey, unionId
         success: function (res) {
-            console.log("wxLogin------->wx.login----------------->", res);
+            //console.log("wxLogin------->wx.login----------------->", res);
             //decryptMpCode  解code的 测试  mpLogin
             that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
-              console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
+              //console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
               let data = loginRes;
               that.globalData.openid = data.openid;
               that.globalData.session_key = data.session_key; //存储 微信会话key
@@ -128,7 +128,7 @@ App({
       })
     });
     return wxLoginPromise
-  },  
+  },
   /*
     @purpose  请求数据基础包裹请求数据和判断登录
     @createTime 2017-09-03 09:14
@@ -136,7 +136,7 @@ App({
 */
   fetchData: function (qo) {
     if (!qo.noloadding) wx.showLoading({ title: '数据加载中' });
-    let that = this; 
+    let that = this;
     var fetchDataPromise = new Promise(function (resolve, reject) {
       if (that.globalData.openid) { //已登录不需要重新请求 logIn
         qo.openid = that.globalData.openid;
@@ -180,13 +180,13 @@ App({
           let rd = res.data.response;
 
           //TODO 0  为没有错误
-          if ((code != void 0) && code == 0) {        
+          if ((code != void 0) && code == 0) {
             okcb&&okcb(rd);
           } else {
             let errInfo = res.data.msg || fetchErrorInfo;
             wx.hideLoading();
             wx.showToast({ title: errInfo, image: "../../images/error-a.png" });
-            console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
+            //console.log("fetchDataBase---errInfo----------endpoint------->",qo, errInfo);
             fallcb && fallcb(res.data)
           }
         },
@@ -226,7 +226,7 @@ App({
     nd['ak'] = md5.hex_md5(permd5);
     //console.log("permd5-------------------->", permd5);
     //console.log("md5-------------------->", nd['ak'] );
-    
+
 
     return nd;
   },

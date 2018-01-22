@@ -1,7 +1,9 @@
 // pages/accountMain/accountMain.js
 const app = getApp();
+import { makePar, extend } from '../../utils/util.js';
 import _ from '../../utils/underscore.js';
-Page({
+
+let txm = {
 
   /**
    * 页面的初始数据
@@ -67,7 +69,7 @@ Page({
     * 用户点击右上角分享
     */
    onShareAppMessage: function () {
-     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
      let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
      let path = 'pages/index/index?';
      return {
@@ -93,4 +95,8 @@ Page({
       money: this.data.getM*100
     })
   },400)
-})
+}
+
+
+var txmh = extend(txm,{});
+Page(txmh);

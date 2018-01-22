@@ -1,7 +1,8 @@
 // pages/fua/fua.js
 var app = getApp();
+import { makePar, extend } from '../../utils/util.js';
 
-Page({
+var fuam = {
 
   /**
    * 页面的初始数据
@@ -15,19 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let a_id = options.a_id;
-    this.a_id = options.a_id;
-    app.fetchData({
-      func:'help.get_helper',a_id
-    }).then(data=>{
-      let userInfo = app.globalData.userInfo;
-          this.setData({
-          answer:data,
-          userInfo
-        })
-        this.startCd(data);
-    })
-    this.setUserInfo();
+    this.options = options;
+
   },
 
   /**
@@ -41,13 +31,28 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let options = this.options;
+    let a_id = options.a_id;
+    this.a_id = options.a_id;
+    app.fetchData({
+      func: 'help.get_helper', a_id
+    }).then(data => {
+      let userInfo = app.globalData.userInfo;
+      this.setData({
+        answer: data,
+        userInfo
+      })
+      this.startCd(data);
+    })
+    this.setUserInfo();
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    let ask_sid = this.ask_sid;
+    clearInterval(ask_sid)
 
   },
 
@@ -73,7 +78,7 @@ Page({
   },
 
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.jpeg';
+    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let par = `a_id=${this.a_id}`;
     let path = 'pages/fua/fua?' + par;
@@ -144,4 +149,7 @@ Page({
     }, 500);
   },
 
-})
+}
+
+var fuamh = extend(fuam,{});
+Page(fuamh);
