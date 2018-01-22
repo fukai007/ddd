@@ -249,6 +249,7 @@ var askm = {
   },
 
   onCheck:function(e){
+    if (this.isWaiting) return ;
     this.checkAsk(e).catch(data=>{
       this.isWaiting = false;
     });
@@ -264,7 +265,7 @@ var askm = {
     if (this.isWaiting || this.data.isOver) return
     let that = this;
     let qid = e.target.dataset.qid;
-
+    
     // 如果选择的是 五项选的则不进行处理-2018-01-13 21:25:48
     if (qid > this.data.answer.q_an_num && qid < 98){
       return
