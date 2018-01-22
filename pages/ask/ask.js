@@ -264,7 +264,7 @@ var askm = {
     console.log("ask----->checkAsk---------------->",e.target.dataset);
     if (this.isWaiting || this.data.isOver) return
     let that = this;
-    let qid = e.target.dataset.qid;
+    let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
     
     // 如果选择的是 五项选的则不进行处理-2018-01-13 21:25:48
     if (qid > this.data.answer.q_an_num && qid < 98){
