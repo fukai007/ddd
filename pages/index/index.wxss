@@ -82,7 +82,7 @@ page{
 
 .levelName{
   position: absolute;
-  top:120rpx;
+  top:118rpx;
   left:85rpx;
   width: 227rpx;
   height: 44rpx;
