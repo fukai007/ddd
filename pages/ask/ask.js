@@ -261,7 +261,7 @@ var askm = {
       @author miles_fk
   */
   checkAsk:function(e){
-    console.log("ask----->checkAsk---------------->",e.target.dataset.qid);
+    console.log("ask----->checkAsk---------------->",e.target.dataset);
     if (this.isWaiting || this.data.isOver) return
     let that = this;
     let qid = e.target.dataset.qid;
