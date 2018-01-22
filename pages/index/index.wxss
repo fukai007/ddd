@@ -21,7 +21,7 @@ page{
 }
 .userInfo-index{
   overflow: hidden;
-  height: 240rpx;
+  height: 200rpx;
   width: 750rpx;
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard.png);
   background-repeat: no-repeat;
@@ -33,7 +33,7 @@ page{
   top: 0;
   z-index: 4;
   width:702rpx;
-  height:154rpx;
+  height:200rpx;
   background: rgba(0, 0, 0, 0.8);
 }
 
@@ -77,15 +77,13 @@ page{
 }
 .baseLevel{
   width: 702rpx;
-  height: 154rpx;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 200rpx;
 }
 
 .levelName{
   position: absolute;
-  top:90rpx;
-  left:80rpx;
+  top:120rpx;
+  left:85rpx;
   width: 227rpx;
   height: 44rpx;
   line-height: 44rpx;
