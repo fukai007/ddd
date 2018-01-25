@@ -41,7 +41,7 @@ var indexm =  {
       }
     ]
   },
-
+  isWaitting:true,
   onLoad: function () {
     wx.updateShareMenu({withShareTicket: true})
     //获得用户信息
