@@ -53,6 +53,9 @@ var fuam = {
   onHide: function () {
     let ask_sid = this.ask_sid;
     clearInterval(ask_sid)
+    this.setData({
+      'isOver':false
+    })
 
   },
 

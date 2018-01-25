@@ -77,14 +77,14 @@ page{
 }
 .baseLevel{
   width: 702rpx;
-  height: 154rpx;
+  height: 200rpx;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .levelName{
   position: absolute;
-  top:90rpx;
+  top:118rpx;
   left:80rpx;
   width: 227rpx;
   height: 44rpx;

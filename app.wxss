@@ -254,7 +254,10 @@ page {
   width: 130rpx;
   height: 130rpx;
 }
-
+.wh100{
+  width: 100rpx;
+  height: 100rpx;
+}
 .wh80{
   width: 80rpx;
   height: 80rpx;
