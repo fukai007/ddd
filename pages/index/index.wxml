@@ -52,8 +52,8 @@
 
     </view>
     <view class='df fxc mt20 por'>
-      <image 
-        class='PrizeImg' 
+      <image
+        class='PrizeImg'
         src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
       </image>
     </view>
