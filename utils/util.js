@@ -107,6 +107,14 @@ var extend = function(bo,eo){
       }
       return bo
   }
+/*
+    @purpose 获得  datase数据
+    @createTIme 2018-01-22 21:54
+    @author miles_fk
+*/
+var getDataSetBy=function(event , key){
+  let val = event.target.dataset[key] || event.currentTarget.dataset[key];
+}
 
 module.exports = {
   formatTime: formatTime,
@@ -114,5 +122,6 @@ module.exports = {
   makePar: makePar,
   getPar: getPar,
   extend: extend,
-  extendos:extendos
+  extendos:extendos,
+  getDataSetBy: getDataSetBy
 }

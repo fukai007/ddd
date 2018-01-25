@@ -39,6 +39,7 @@ var fuam = {
     }).then(data => {
       let userInfo = app.globalData.userInfo;
       this.setData({
+        isOver:false,
         answer: data,
         userInfo
       })
@@ -53,6 +54,9 @@ var fuam = {
   onHide: function () {
     let ask_sid = this.ask_sid;
     clearInterval(ask_sid)
+    this.setData({
+      isOver: false,
+    })
 
   },
 
@@ -94,7 +98,7 @@ var fuam = {
   checkAsk:function(e){
     if(this.data.isOver) return ;
 
-    let qid = e.target.dataset.qid;
+    let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
 
     this.setData({
       isOver: true,

@@ -117,9 +117,9 @@ var askm = {
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    clearInterval(this.hcd_sid);
+    clearInterval(this.ask_sid);
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */
@@ -147,6 +147,7 @@ var askm = {
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
+    this.isWaiting = true;
     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
     //if (res.from === 'button') {
