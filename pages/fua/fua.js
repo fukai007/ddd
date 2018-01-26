@@ -100,15 +100,17 @@ var fuam = {
 
     let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
 
-    this.setData({
-      isOver: true,
-      sqid:qid
-    });
+    this.setData({isOver: true,sqid:qid});
 
     app.fetchData({
         func:'help.help_answer',
         a_id:this.data.answer.a_id,
         fabulous: qid //选了那个答案 1、2、3、4
+    }).then(data=>{
+      wx.showToast({ 'title':'提交成功'});
+      clearInterval(this.ask_sid);
+    }).catch(error=>{
+      wx.showToast({ 'title':'服务器超时', image: "../../images/error-a.png" });
     })
 
   },

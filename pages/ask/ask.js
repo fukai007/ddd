@@ -117,7 +117,7 @@ var askm = {
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    clearInterval(this.hcd_sid);
+    //clearInterval(this.hcd_sid);
     clearInterval(this.ask_sid);
   },
   /**
@@ -263,7 +263,7 @@ var askm = {
   */
   checkAsk:function(e){
     console.log("ask----->checkAsk---------------->",e.target.dataset);
-    if (this.isWaiting || this.data.isOver) return
+    if (this.data.isOver) return
     let that = this;
     let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
     
