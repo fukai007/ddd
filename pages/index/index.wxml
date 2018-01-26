@@ -15,7 +15,7 @@
   </view>
 </view>
 
-<view class='mainbg ovh'>
+<view wx:if="{{!isWaitting}}" class='mainbg ovh'>
   <view class='df fxc mt20'>
     <view class='area-com'>
       <text class='h5 fc-fff ml20'>百万多金赛</text>

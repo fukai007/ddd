@@ -29,13 +29,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": 0,
 					"name": "求助页面",
 					"pathName": "pages/fua/fua",
-					"query": "a_id= 34"
+					"query": "a_id=17"
 				},
 				{
 					"id": -1,

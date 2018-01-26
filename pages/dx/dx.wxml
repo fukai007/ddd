@@ -18,7 +18,7 @@
         <view class='tac'>
             <text class='levelInfo mt20'>{{levelInfo[info.level]}}</text>
         </view>
-        <view class='df fxc mt48'>
+        <view class='df fxc mt60'>
              <text class='mn'>{{ info.bonus || 0 }}</text>
             <text class='yuan'>元</text>
         </view>

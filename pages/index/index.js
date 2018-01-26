@@ -41,9 +41,11 @@ var indexm =  {
       }
     ]
   },
-  isWaitting:true,
   onLoad: function () {
     wx.updateShareMenu({withShareTicket: true})
+    setTimeout(()=>{
+      this.setData({ isWaitting: false})
+    },8000);
     //获得用户信息
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
@@ -52,7 +54,8 @@ var indexm =  {
       app.globalData.userInfo = newUserInfo
       this.setData({
         userInfo: newUserInfo,//app.globalData.userInfo,
-        hasUserInfo: true
+        hasUserInfo: true,
+        isWaitting: true,
       })
       return newUserInfo
     }).then(info=>{
@@ -67,6 +70,9 @@ var indexm =  {
         func:'user.get_user_prize'
       })
     }).then(data=>{
+      this.setData({
+        isWaitting: false
+      })
       let {is_receive} = data;
       if (is_receive){
         wx.showModal({
@@ -85,6 +91,9 @@ var indexm =  {
       return data;
     }).catch(error=>{
       console("data-------->user.get_user_prize", error)
+      this.setData({
+        isWatting:false
+      })
     });
     this.setUserInfo();
     //app.wxLogin();
@@ -103,6 +112,11 @@ var indexm =  {
       userInfo.question_nums = data.question_nums; //更新最大题数-2018-01-20 20:32
       userInfo.level_bonus = data.level_bonus; // 更新奖金数2018-01-20 20:32
       this.setData({userInfo});
+    })
+  },
+  onHide:function(){
+    this.setData({
+      isWatting: false
     })
   },
   /**
