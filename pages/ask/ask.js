@@ -118,7 +118,7 @@ var askm = {
    */
   onHide: function () {
     //clearInterval(this.hcd_sid);
-    clearInterval(this.ask_sid);
+    //clearInterval(this.ask_sid);
   },
   /**
    * 生命周期函数--监听页面卸载
@@ -126,7 +126,7 @@ var askm = {
   onUnload: function () {
       clearInterval(this.hcd_sid);
       clearInterval(this.ask_sid);
-      app.fetchData({func:'answer.mark_answer_fail'})
+      //app.fetchData({func:'answer.mark_answer_fail'})
   },
 
 
@@ -304,15 +304,16 @@ var askm = {
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
             wx.hideShareMenu();
-            this.setData({ isOver: true, answer: data})
             //TODO 最后一道题错了怎么办 2018-01-09 19:04:31
-            let lindex = this.data.answer.q_level;//答题级别变成下标
-            let rf = this.data.answer.resurrection_fee;//获得金额显示
+            //let lindex = this.data.answer.q_level;//答题级别变成下标
+            //let rf = this.data.answer.resurrection_fee;//获得金额显示
             //let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
             let content = '答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。';
             this.setData({
               isTryUIB:true,
-              TryUIInfo:content
+              TryUIInfo:content,
+              isOver: true,
+              answer: data
             });
             break;
           }

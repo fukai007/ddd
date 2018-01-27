@@ -32,7 +32,7 @@
           </view>
           <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal1'>
               <view class='df fxyc'>
-                  <view class='levelMaskCore mt10'>
+                  <view class='levelMaskCore mt40'>
                       <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
                       <view class="df fxc">
                           <view class='nextAskTip mt20'>敬请期待</view>

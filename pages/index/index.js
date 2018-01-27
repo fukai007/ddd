@@ -179,7 +179,7 @@ var indexm =  {
       })
     }else{
       setTimeout(function () {
-        app.toPage('ask', { cid: levelId }, 'to'); //跳转到答题页面
+        app.toPage('ask', { cid: levelId }); //跳转到答题页面
       }, 500);
     }
   },

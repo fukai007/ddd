@@ -12,7 +12,7 @@
       <view class="tryCore">
             <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
             <button type="button" name="ftryIt" class="tryIt" bindtap='tryItA'>
-              {{answer.resurrection_fee[answer.user_level||1]/100}}元 续命
+              {{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命
             </button>
       </view>
       <view class='close' bindtap='toIndex'></view>
@@ -24,7 +24,7 @@
   <view class='helpView df fxyc por'>
       <view class="tryCore">
             <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
-            <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.user_level||1]/100}}元 续命</button>
+            <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命</button>
       </view>
       <view class='close' bindtap='toIndex'></view>
   </view>
