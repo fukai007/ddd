@@ -126,6 +126,7 @@ var askm = {
   onUnload: function () {
       clearInterval(this.hcd_sid);
       clearInterval(this.ask_sid);
+      app.fetchData({func:'answer.mark_answer_fail'})
   },
 
 
