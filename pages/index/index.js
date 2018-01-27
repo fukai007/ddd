@@ -65,7 +65,6 @@ var indexm =  {
         openid: app.globalData.openId,
         ...info
       });
-
       return app.fetchData({
         func:'user.get_user_prize'
       })
