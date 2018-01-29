@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/askForGoods/askForGoods",
     "pages/addressb/addressb",
     "pages/address/address",
     "pages/testAnimation/ta",

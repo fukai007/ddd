@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 6,
 			"list": [
 				{
 					"id": 0,
@@ -66,6 +66,12 @@
 					"name": "收货地址页面",
 					"pathName": "pages/address/address",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "求助页面",
+					"pathName": "pages/askForGoods/askForGoods",
+					"query": "g_id= 1"
 				}
 			]
 		}

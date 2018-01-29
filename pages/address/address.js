@@ -9,7 +9,10 @@ var addressm ={
    * 页面的初始数据
    */
   data: {
-     addressInfo :{}
+     addressInfo:{
+       func:'address.save_address',
+       nationalCode:'86'
+     }
   },
 
   /**
@@ -75,10 +78,15 @@ var addressm ={
     this.setData({addressInfo});
   },
   onAddressSubmit:function(){
+    let addressInfo = this.data.addressInfo;
       //TODO 保存收货地址
-      app.fecthData({
-
-      })
+    app.fetchData(addressInfo).then(()=>{
+      wx.showToast({ title:'保存地址成功'});
+    }).then(()=>{
+      setTimeout(()=>{
+        app.toPage('index');
+      },500)
+    })
   }
 }
 

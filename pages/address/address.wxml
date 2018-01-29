@@ -2,7 +2,7 @@
 <view class='df fyc baseArea'>
     <view class='h3 fc-000'>收货人 :</view>
     <input
-      data-inputType='name'
+      data-inputType='username'
       bindinput='saveAddressInfo'>
     </input>
 </view>
@@ -10,7 +10,7 @@
     <view class='h3 fc-000'>手机号 :</view>
     <input
       type='number'
-      data-inputType='phone'
+      data-inputType='telNumber'
       bindinput='saveAddressInfo'>
     </input>
 </view>
@@ -19,7 +19,7 @@
 </view>
 <textarea
   class='minput'
-  data-inputType='addressText'
+  data-inputType='addressDetailInfo'
   bindinput='saveAddressInfo'>
 </textarea>
 

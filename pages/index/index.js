@@ -46,7 +46,7 @@ var indexm =  {
     setTimeout(()=>{
       this.setData({ isWaitting: false})
     },8000);
-    //获得用户信息
+    //获得用户信息-跳转账户页面时 。 金额不对
     app.fetchData({func:'user.get_userinfo'}).then(data=>{
       console.log("data-------->user.get_userinfo",data)
       let oldUserInfo = app.globalData.userInfo
