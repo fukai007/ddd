@@ -279,21 +279,7 @@ var askm = {
             this.cur_qid = false;
             break;
           }
-          //TODO 答题错误出任何处理-2018-01-29 17:45
-          case 2:{ //错误
-            clearInterval(this.hcd_sid);
-            clearInterval(this.ask_sid);
-            wx.hideShareMenu();
-            let content = '答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。';
-            this.setData({
-              isTryUIB:true,
-              TryUIInfo:content,
-              isOver: true,
-              answer: data
-            });
-            break;
-          }
-          case 3:{//通关
+          case 3:{//通关 TODO后台增加一个字段判断是否通关
             wx.showToast({ title: '恭喜你过关了' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);

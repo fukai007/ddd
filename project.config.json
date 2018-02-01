@@ -68,8 +68,8 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "求助页面",
+					"id": 6,
+					"name": "实物答题页面",
 					"pathName": "pages/askForGoods/askForGoods",
 					"query": "g_id= 1"
 				},
