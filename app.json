@@ -13,7 +13,8 @@
     "pages/logs/logs",
     "pages/tx/tx",
     "pages/fua/fua",
-    "pages/askRule/askRule"
+    "pages/askRule/askRule",
+    "pages/goodsPass/goodsPass"
   ],
   "window": {
     "backgroundTextStyle": "light",

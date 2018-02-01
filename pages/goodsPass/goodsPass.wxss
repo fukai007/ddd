@@ -1,0 +1,52 @@
+/* pages/goodsPass/goodsPass.wxss */
+page{
+  background-color: #eb5239
+}
+.bga{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 750rpx;
+  height: 785rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/underbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.topbg{
+  position: absolute;
+  width: 750rpx;
+  height: 463rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.infobg{
+  position: absolute;
+  top:350rpx;
+  left:80rpx;
+  width: 629rpx;
+  height: 133rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/tongguan.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.giftbg{
+  position: absolute;
+  top:680rpx;
+  left:80rpx;
+  width: 574rpx;
+  height: 344rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/giftbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.submit{
+  position: absolute;
+  bottom: 50rpx;
+  left:80rpx;
+  width: 574rpx;
+  height: 88rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/btn_lingqu.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}

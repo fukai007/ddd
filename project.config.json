@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 7,
 			"list": [
 				{
 					"id": 0,
@@ -72,6 +72,11 @@
 					"name": "求助页面",
 					"pathName": "pages/askForGoods/askForGoods",
 					"query": "g_id= 1"
+				},
+				{
+					"id": -1,
+					"name": "实物过关页面",
+					"pathName": "pages/goodsPass/goodsPass"
 				}
 			]
 		}

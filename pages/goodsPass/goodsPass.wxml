@@ -1,0 +1,6 @@
+<!--pages/goodsPass/goodsPass.wxml-->
+<view class='bga'></view>
+<view class='topbg'></view>
+<view class='infobg'></view>
+<view class='giftbg'></view>
+<view class='submit'></view>
