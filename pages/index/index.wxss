@@ -37,9 +37,6 @@ page{
   background: rgba(0, 0, 0, 0.8);
 }
 
-.levelMaskCore{
-}
-
 .nextAskTime{
   text-align: center;
   font-size: 28rpx;
@@ -107,4 +104,26 @@ page{
 }
 .focusAPP::after{
   border: 0px;
+}
+.lbgBygoods{
+  position: absolute;
+  top:400rpx;
+  left: 0;
+  width: 324rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/leftbg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.rbgBygoods{
+  position: absolute;
+  top:400rpx;
+  right: 0;
+  width: 324rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/rightbg.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }

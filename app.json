@@ -14,7 +14,8 @@
     "pages/tx/tx",
     "pages/fua/fua",
     "pages/askRule/askRule",
-    "pages/goodsMain/goodsMain"
+    "pages/goodsMain/goodsMain",
+    "pages/goodsPass/goodsPass"
   ],
   "window": {
     "backgroundTextStyle": "light",

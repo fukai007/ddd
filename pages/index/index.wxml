@@ -52,10 +52,12 @@
 
     </view>
     <view class='df fxc mt20 por'>
-      <image
-        class='PrizeImg'
-        src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
-      </image>
+        <image
+          class='PrizeImg'
+          src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
+        </image>
+        <view class='lbgBygoods'></view>
+        <view class='rbgBygoods'></view>
     </view>
   </view>
   <view class='focusAPPWrap'>
