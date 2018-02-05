@@ -68,7 +68,7 @@
               <view wx:if='{{isShowHelpUI}}'
                 class='f1 tar mr30 fc-000 fb'
               >
-                {{tipInfo['fabulous'+qid]}}已选
+                {{tipInfo['fabulous'+qid]||0}}人
               </view>
             </view>
           </view>

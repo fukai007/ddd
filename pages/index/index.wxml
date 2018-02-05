@@ -18,7 +18,7 @@
 <view wx:if="{{!isWaitting}}" class='mainbg ovh'>
   <view class='df fxc mt20'>
     <view class='area-com'>
-      <text class='h5 fc-fff ml20'>百万多金赛</text>
+      <text class='h5 fc-fff duo0'>百赛夺金赛</text>
       <text class='askMinInfo ml20'>{{userInfo.msg1}}</text>
     </view>
   </view>
@@ -51,8 +51,8 @@
 
 
     </view>
- 
-    <view 
+
+    <view
     wx:for="{{goodlist}}"
     wx:for-index="idx"
     wx:key="idx"
@@ -62,11 +62,17 @@
           bindtap='togm'
           data-gmid='{{gt.g_id}}'
           class='PrizeImg'
-          src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
+          src="{{gt.g_img}}">
         </image>
         <view class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
         <view class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
     </view>
+  </view>
+  <view class='df fxc mt20 por'>
+      <image
+        class='PrizeImg'
+        src="https://wxapp.haizeihuang.com/wannengdequan_php/images/xiayiqi.png">
+      </image>
   </view>
   <view class='focusAPPWrap'>
       <button open-type='contact' class='focusAPP'></button>

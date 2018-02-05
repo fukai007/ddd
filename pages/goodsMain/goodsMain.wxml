@@ -1,5 +1,5 @@
 <!--pages/goodsMain/goodsMain.wxml-->
-<view class='mx40'>
+<view class='mx24'>
   <image class='bigImage mt20' src='{{gd.g_img}}'></image>
   <view class='h5 fc-333 mt30'>产品详情</view>
   <view class='mt20'>
