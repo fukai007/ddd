@@ -90,7 +90,7 @@ page{
 }
 
 .focusAPPWrap{
-  position: absolute;
+  position: fixed;
   right:0;
   bottom:-40rpx;
 }

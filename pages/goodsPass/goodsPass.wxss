@@ -32,7 +32,7 @@ page{
 }
 .giftbg{
   position: absolute;
-  top:680rpx;
+  top:640rpx;
   left:80rpx;
   width: 574rpx;
   height: 344rpx;

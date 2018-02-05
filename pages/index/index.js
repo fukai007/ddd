@@ -189,7 +189,7 @@ var indexm =  {
   },
   togm:function(e){
     let gmid = e.currentTarget.dataset.gmid || e.target.dataset.gmid;
-    app.toPage('goodsMain', {gmid},); //跳转到答题页面
+    app.toPage('goodsMain', { gmid }, 'to'); //跳转到答题页面
   },
   toRule:function(){
     app.toPage('askRule', {}, 'to'); //跳转到答题页面

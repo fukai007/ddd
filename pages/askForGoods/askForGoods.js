@@ -50,6 +50,23 @@ var askm = {
       catch (err) {
         console.log(err);
       }
+    }).then(data=>{
+      //开始  答题 倒计时
+      this.ask_sid = setInterval(() => {
+        console.log("setInterval-----cd----------------------------",this.data.cd);
+        let oldCd = this.data.cd;
+        if (this.isWaiting) return;
+        if (oldCd < 1) {
+          // let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
+          let e = {
+            target:{dataset:{qid:''}},
+            currentTarget:{dataset:{qid:''}}
+          }
+          this.checkAsk(e)
+        } else {
+          this.setData({ cd: --oldCd });
+        }
+      }, 1000);
     })
   },
   /**
@@ -246,7 +263,7 @@ var askm = {
             } else {
               this.isQuestionShare = false
             }
-            this.setData({ answer: data, cd: 10 });
+            this.setData({ answer: data, cd: data.answer_time});
             this.isWaiting = false;
             this.cur_qid = false;
             break;
