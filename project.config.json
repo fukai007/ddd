@@ -9,7 +9,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.1",
-	"appid": "wx1e9d81e73b6ca226",
+	"appid": "wx1e0c74a4a965d9bc",
 	"projectname": "drawCard",
 	"svr": "",
 	"client": "",
@@ -29,7 +29,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -72,6 +72,12 @@
 					"name": "实物答题页面",
 					"pathName": "pages/askForGoods/askForGoods",
 					"query": "g_id= 1"
+				},
+				{
+					"id": -1,
+					"name": "实物答题成功页面",
+					"pathName": "pages/goodsPass/goodsPass",
+					"query": ""
 				}
 			]
 		}

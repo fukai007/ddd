@@ -1,7 +1,7 @@
 //用 let 会报错
 
 var isActiveShare = function(answer,isOver){
-  if (answer.a_progress == answer.a_max || answer.share == 0 || isOver){
+  if (answer.ga_progress == answer.ga_max || answer.share == 0 || isOver){
     return false
   }else{
     return true

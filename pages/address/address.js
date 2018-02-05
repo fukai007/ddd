@@ -19,7 +19,7 @@ var addressm ={
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.ga_id = options.ga_id;
   },
 
   /**
@@ -79,6 +79,7 @@ var addressm ={
   },
   onAddressSubmit:function(){
     let addressInfo = this.data.addressInfo;
+    addressInfo.ga_id = this.ga_id;
       //TODO 保存收货地址
     app.fetchData(addressInfo).then(()=>{
       wx.showToast({ title:'保存地址成功'});

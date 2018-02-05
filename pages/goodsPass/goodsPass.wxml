@@ -1,6 +1,9 @@
 <!--pages/goodsPass/goodsPass.wxml-->
 <view class='bga'></view>
+<view class='score'>获得分数 : {{ginfo.ga_score}}</view>
 <view class='topbg'></view>
 <view class='infobg'></view>
-<view class='giftbg'></view>
-<view class='submit'></view>
+<view class='giftbg df fxyc'>
+    <image src='{{ginfo.g_img}}' class='pic'></image>
+</view>
+<view class='submit' bindtap='toAddress'></view>

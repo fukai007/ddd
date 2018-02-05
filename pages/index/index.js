@@ -65,6 +65,11 @@ var indexm =  {
         openid: app.globalData.openId,
         ...info
       });
+      app.fetchData({
+        func:'goods.get_goods_list'
+      }).then(data=>{
+        this.setData({goodlist:data })
+      })
       return app.fetchData({
         func:'user.get_user_prize'
       })
@@ -181,6 +186,10 @@ var indexm =  {
         app.toPage('ask', { cid: levelId }); //跳转到答题页面
       }, 500);
     }
+  },
+  togm:function(e){
+    let gmid = e.currentTarget.dataset.gmid || e.target.dataset.gmid;
+    app.toPage('goodsMain', {gmid},); //跳转到答题页面
   },
   toRule:function(){
     app.toPage('askRule', {}, 'to'); //跳转到答题页面

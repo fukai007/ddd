@@ -50,3 +50,16 @@ page{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.pic{
+  width: 300rpx;
+  height: 300rpx;
+  background: red;
+}
+.score{
+  position: absolute;
+  top: 100rpx;
+  left: 260rpx;
+  font-size: 40rpx;
+  color: #FCF196;
+}

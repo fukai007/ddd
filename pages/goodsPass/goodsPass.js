@@ -17,7 +17,11 @@ var gpm = {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+        app.fetchData({
+          func:'goods.get_award'
+        }).then(data=>{
+          this.setData({ginfo:data});
+        })
   },
 
   /**
@@ -67,6 +71,11 @@ var gpm = {
    */
   onShareAppMessage: function () {
   
+  },
+  toAddress:function(){
+    app.toPage('address',{
+      ga_id: this.data.ginfo.ga_id
+    });
   }
 }
 var gpmh = extend(gpm, base);

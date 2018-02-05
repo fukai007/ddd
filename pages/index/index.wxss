@@ -111,6 +111,8 @@ page{
   left: 0;
   width: 324rpx;
   height: 80rpx;
+  text-align: left;
+  text-indent:2em; 
   line-height: 80rpx;
   background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/leftbg.png);
   background-repeat: no-repeat;
@@ -123,6 +125,8 @@ page{
   width: 324rpx;
   height: 80rpx;
   line-height: 80rpx;
+  text-indent:2em;
+  text-align: left;
   background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/rightbg.png);
   background-repeat: no-repeat;
   background-size: contain;

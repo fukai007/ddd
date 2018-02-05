@@ -1,17 +1,20 @@
 <!--pages/goodsMain/goodsMain.wxml-->
-<view class='df fxc'>
-  <image class='bigImage'></image>
-  <view class='h5 fc-333 mt30'></view>
+<view class='mx40'>
+  <image class='bigImage mt20' src='{{gd.g_img}}'></image>
+  <view class='h5 fc-333 mt30'>产品详情</view>
   <view class='mt20'>
-    <text class='h5 fc-333'></text>
+    <text class='h5 fc-333'>{{gd.g_title}}</text>
   </view>
-  <view class='h5 fc-333  mt30'></view>
+  <view class='h6 fc-333  mt30'>-产品说明-</view>
   <view class='mt20'>
-    <text class='h5 fc-333'></text>
+    <text class='h5 fc-333'>{{gd.g_info}}</text>
   </view>
 </view>
-<view class='df'>
-  <view class='f1 lbg bh88'>分享好友</view>
-  <view class='f1 rbg bh88'>开始答题</view>
+<view class='ba'>
+  <view class='df'>
+    <button class='f1 lbg bh88 share' open-type="share">分享好友</button>
+    <view class='f1 rbg bh88' bindtap='toga'>开始答题</view>
+  </view>
 </view>
+
 

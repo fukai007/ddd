@@ -1,4 +1,9 @@
 // pages/goodsMain/goodsMain.js
+//index.js
+import { makePar, extend } from '../../utils/util.js';
+//获取应用实例
+const app = getApp();
+
 Page({
 
   /**
@@ -12,7 +17,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let gmid = options.gmid;
+    app.fetchData({
+      func:'goods.get_goods_detail',
+      g_id: gmid
+    }).then(data=>{
+      this.setData({gd:data});
+    })
   },
 
   /**
@@ -61,6 +72,20 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let imageUrl = this.data.gt.g_img;
+    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let path = 'pages/index/index?';
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) { },
+      fail: function (res) { }
+    }
+  },
+  toga:function(){
+    app.toPage('askForGoods', {
+      g_id: this.data.gd.g_id
+    });
   }
 })

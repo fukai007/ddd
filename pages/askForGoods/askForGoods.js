@@ -26,6 +26,7 @@ var askm = {
     this.isWaiting = false;
     this.isQuestionShare=false;
     this.cid = qo.cid;
+    this.g_id = qo.g_id;
     let that = this;
     app.fetchData({
       func: 'goods.get_answer_info',
@@ -133,7 +134,7 @@ var askm = {
     //if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
-      let par = `a_id=${this.data.answer.a_id}`;
+      let par = `ga_id=${this.data.answer.ga_id}`;
       //let par = '';
       let path = 'pages/fua/fua?' + par;
       let that = this;
@@ -151,8 +152,8 @@ var askm = {
           //当前题目如果分享了 就不用调用接口了
           if (!that.isQuestionShare) {
             app.fetchData({
-              func: 'help.share_num',
-              a_id: that.data.answer.a_id
+              func: 'goods_help.share_num',
+              ga_id: that.data.answer.ga_id
             }).then(data => {
               //增加是否判断  控制 分享行为-2018-01-06 10:52
               that.isQuestionShare = true
@@ -173,59 +174,14 @@ var askm = {
       }
   },
 
-  /*
-      @purpose 再次尝试在支付后
-      @createTIme 2018-01-06 08:47:58
-      @author miles_fk
-      @parm
-          answer.q_id
-  */
-  tryIt: function (force=0){
-    let that = this;
-
-    this.isWaiting = true;
-    app.fetchData({ //调用复活接口
-        func: 'resurrection.resurrection',
-        a_id: this.data.answer.a_id,
-        force: force
-    }).then(data=>{
-      //余额支付-2018-01-13 21:43
-      if (data.payType === 'balance'){
-        wx.showToast({
-          title: '余额支付成功',
-        })
-        setTimeout(() => {
-          app.toPage('ask', {cid:that.cid})
-        }, 500);
-
-        return ;
-      }else{//使用微信进行支付-2018-01-13 21:43
-        data.timeStamp = data.timeStamp + '';
-        data.success = function () {
-          app.toPage('ask', { cid:that.cid})
-        }
-        data.fail = function (error) {
-          that.isWaiting = false;
-          wx.showToast(支付失败);
-        }
-        try {
-          wx.requestPayment(data);
-        } catch (e) {
-          console.log(e);
-        }
-      }
-    }).catch(()=>{
-      console.log("生成订单次失败");
-    })
-  },
     /*
       @purpose 核对是否 是 最后一道题
       @createTIme 2018-01-06 08:47:58
       @author miles_fk
   */
   isEndQuestion: function (answer){
-    let { a_progress, a_max}  = answer;
-    if (a_progress == a_max) return true
+    let { ga_progress, ga_max}  = answer;
+    if (ga_progress == ga_max) return true
     else return false
   },
 
@@ -246,7 +202,7 @@ var askm = {
     if (this.data.isOver) return
     let that = this;
     let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
-    
+
     // 如果选择的是 五项选的则不进行处理-2018-01-13 21:25:48
     if (qid > this.data.answer.q_an_num && qid < 98){
       return
@@ -267,25 +223,32 @@ var askm = {
     }).then(data=>{
       console.log("ask--------->fetchData------->answer.get_answer_info", data.q_an_yes);
       switch (data.is_correct){
-          case 1 :{ //正确
-            //更新问题数据 、重置倒计时 、选了谁
-            if (this.isEndQuestion(data) || data.share == 0){
-              wx.hideShareMenu();
-            }else{
-              this.isQuestionShare = false
-            }
-            this.setData({ answer: data, cd: 10});
-            this.isWaiting = false;
-            this.cur_qid = false;
-            break;
-          }
           case 3:{//通关 TODO后台增加一个字段判断是否通关
-            wx.showToast({ title: '恭喜你过关了' });
             clearInterval(this.hcd_sid);
             clearInterval(this.ask_sid);
-            setTimeout(()=>{
-              app.toPage('address');
-            },600);
+            if(data.win_prize){
+              wx.showToast({ title: '恭喜你过关了' });
+              setTimeout(() => {
+                app.toPage('goodsPass');
+              }, 600);
+            }else{
+              wx.showToast({ title: '答题失败' , image: "../../../images/error-a.png"});
+              setTimeout(() => {
+                app.toPage('index');
+              }, 600);
+            }
+            break;
+          }
+          default: {
+            //更新问题数据 、重置倒计时 、选了谁
+            if (this.isEndQuestion(data) || data.share == 0) {
+              wx.hideShareMenu();
+            } else {
+              this.isQuestionShare = false
+            }
+            this.setData({ answer: data, cd: 10 });
+            this.isWaiting = false;
+            this.cur_qid = false;
             break;
           }
       }
@@ -356,10 +319,10 @@ var askm = {
     return qlist[0]
   },
   getFabulous: function () {
-      let a_id = this.data.answer.a_id;
+      let ga_id = this.data.answer.ga_id;
       app.fetchData({
-        func:'help.fabulous_num',
-        a_id: a_id,
+        func:'goods_help.fabulous_num',
+        ga_id: ga_id,
         noloadding:true
       }).then(data=>{
         this.setData({ tipInfo: data});

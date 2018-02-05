@@ -51,13 +51,21 @@
 
 
     </view>
-    <view class='df fxc mt20 por'>
+ 
+    <view 
+    wx:for="{{goodlist}}"
+    wx:for-index="idx"
+    wx:key="idx"
+    wx:for-item="gt"
+    class='df fxc mt20 por'>
         <image
+          bindtap='togm'
+          data-gmid='{{gt.g_id}}'
           class='PrizeImg'
           src='https://wxapp.haizeihuang.com/wannengdequan_php/images/img_tao.png'>
         </image>
-        <view class='lbgBygoods'></view>
-        <view class='rbgBygoods'></view>
+        <view class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
+        <view class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
     </view>
   </view>
   <view class='focusAPPWrap'>
@@ -65,3 +73,14 @@
   </view>
   <view class='mt40'></view>
 </view>
+
+
+<!--
+          <view
+            class='mt40 por'
+            wx:for="{{[1,2,3,4]}}"
+            wx:for-index="idx"
+            wx:key="qid"
+            wx:for-item="qid"
+          >
+  -->
