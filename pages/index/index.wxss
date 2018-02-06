@@ -67,11 +67,22 @@ page{
 }
 
 .PrizeImg{
-  width: 720rpx;
+  width: 702rpx;
   height: 480rpx;
   background: #FFFFFF;
   border-radius: 16px;
 }
+
+.PrizeImgMask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 702rpx;
+  height: 480rpx;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 16px;
+}
+
 .baseLevel{
   width: 702rpx;
   height: 200rpx;
@@ -107,7 +118,7 @@ page{
 }
 .lbgBygoods{
   position: absolute;
-  top:400rpx;
+  top:300rpx;
   left: 0;
   width: 324rpx;
   height: 80rpx;
@@ -120,7 +131,7 @@ page{
 }
 .rbgBygoods{
   position: absolute;
-  top:400rpx;
+  top:300rpx;
   right: 0;
   width: 324rpx;
   height: 80rpx;

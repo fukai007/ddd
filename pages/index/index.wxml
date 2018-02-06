@@ -58,12 +58,13 @@
     wx:key="idx"
     wx:for-item="gt"
     class='df fxc mt20 por'>
-        <image
-          bindtap='togm'
-          data-gmid='{{gt.g_id}}'
-          class='PrizeImg'
-          src="{{gt.g_img}}">
-        </image>
+        <view class='por'>
+          <image bindtap='togm' data-gmid='{{gt.g_id}}' class='PrizeImg'src="{{gt.g_img}}"></image>
+          <view wx:if='{{gt.g_stock<1}}'class='PrizeImgMask df fxyc'>
+              <text class='fc-fff h3'>本场比赛已结束</text>
+          </view>
+        </view>
+
         <view class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
         <view class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
     </view>
