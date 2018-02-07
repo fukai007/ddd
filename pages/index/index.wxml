@@ -18,7 +18,7 @@
 <view wx:if="{{!isWaitting}}" class='mainbg ovh'>
   <view class='df fxc mt20'>
     <view class='area-com'>
-      <text class='h5 fc-fff duo0'>百赛夺金赛</text>
+      <text class='h5 fc-fff ml20'>百万夺金赛</text>
       <text class='askMinInfo ml20'>{{userInfo.msg1}}</text>
     </view>
   </view>
@@ -66,8 +66,8 @@
           </view>
         </view>
 
-        <view class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
-        <view class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
+        <view wx:if='{{gt.g_stock>1 || is_participate==false}}' class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
+        <view wx:if='{{gt.g_stock>1 || is_participate==false}}' class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
     </view>
   </view>
   <view class='df fxc mt20 por'>
