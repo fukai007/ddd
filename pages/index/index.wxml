@@ -60,8 +60,8 @@
     class='df fxc mt20 por'>
         <view class='por'>
           <image bindtap='togm' data-gmid='{{gt.g_id}}' class='PrizeImg'src="{{gt.g_img}}"></image>
-          <view wx:if='{{gt.g_stock<1 || is_participate}}'class='PrizeImgMask df fxyc'>
-               <text wx:if='{{is_participate}}' class='fc-fff h3'>本场比赛已参加</text>
+          <view wx:if='{{gt.is_participate||gt.g_stock<1}}'class='PrizeImgMask df fxyc'>
+               <text wx:if='{{is_participate}}' class='fc-fff h3'>今日已答，明日再来  答多多 答的多拿的多</text>
               <text wx:else class='fc-fff h3'>本场比赛已结束</text>
           </view>
         </view>

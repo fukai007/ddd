@@ -73,7 +73,7 @@ Page({
    */
   onShareAppMessage: function () {
     let imageUrl = this.data.gt.g_img;
-    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let title = '全场不要钱，答对就拿走，答的多拿的多';
     let path = 'pages/index/index?';
     return {
       title: title,
