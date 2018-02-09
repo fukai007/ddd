@@ -35,12 +35,14 @@
       <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
       <!-- <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text> -->
       <text class='h1 fc-fffe49 ml40'>剩余 {{cd}} 秒</text>
+      <view class='curScore'>100分</view>
   </view>
 
   <!--  答题内容页面 开始 -->
-  <view class='questionArea mx24 mt60'>
+  <view class='questionArea mx24 mt60 por'>
+      <image class='logo' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/logo.png'></image>
       <view class='mx36 ovh'>
-          <view class='mt40 tac h4 '>{{answer.ga_progress}}/{{answer.ga_max}} {{answer.q_title}}</view>
+          <view class='mt40 tac h4 mt70'>{{answer.ga_progress}}/{{answer.ga_max}} {{answer.q_title}}</view>
           <view
             class='mt40 por'
             wx:for="{{[1,2,3,4]}}"

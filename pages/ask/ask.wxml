@@ -39,8 +39,9 @@
 
   <!--  答题内容页面 开始 -->
   <view class='questionArea mx24 mt60'>
+      <image class='logo' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/logo.png'></image>
       <view class='mx36 ovh'>
-          <view class='mt40 tac h4 '>{{answer.a_progress}}/{{answer.a_max}} {{answer.q_title}}</view>
+          <view class='mt40 tac h4 mt70'>{{answer.a_progress}}/{{answer.a_max}} {{answer.q_title}}</view>
           <view
             class='mt40 por'
             wx:for="{{[1,2,3,4]}}"

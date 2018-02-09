@@ -118,7 +118,7 @@ page{
 }
 .lbgBygoods{
   position: absolute;
-  top:300rpx;
+  bottom: 40rpx;
   left: 0;
   width: 280rpx;
   height: 80rpx;
@@ -131,7 +131,7 @@ page{
 }
 .rbgBygoods{
   position: absolute;
-  top:300rpx;
+  bottom: 40rpx;
   right: 0;
   width: 280rpx;
   height: 80rpx;

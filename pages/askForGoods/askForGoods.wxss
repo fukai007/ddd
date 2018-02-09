@@ -46,6 +46,18 @@
   height: 80rpx;
 }
 
+.curScore{
+  width: 150rpx;
+  height: 55rpx;
+  background-color: #fff;
+  font-size: 32rpx;
+  color: #333333;
+  line-height: 55rpx;
+  text-align: center;
+  margin-left: 100rpx;
+  border-radius: 25rpx;
+}
+
 .tipCount{
   position: absolute;
   background-color: red;
@@ -62,4 +74,12 @@
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG_MessageBox.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.logo{
+    position:absolute;
+    left:280rpx;
+    top:-50rpx;
+    width:100rpx;
+    height:100rpx;
 }

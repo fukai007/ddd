@@ -63,3 +63,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.logo{
+    position:absolute;
+    left:280rpx;
+    top:-50rpx;
+    width:100rpx;
+    height:100rpx;
+}

@@ -492,7 +492,7 @@ page {
 .questionArea{
   background: #fff;
   border-radius: 16rpx;
-  height: 702rpx;
+  height: 750rpx;
 }
 
 .baseInfo{
