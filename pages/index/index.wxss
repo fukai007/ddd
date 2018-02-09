@@ -120,7 +120,7 @@ page{
   position: absolute;
   top:300rpx;
   left: 0;
-  width: 324rpx;
+  width: 280rpx;
   height: 80rpx;
   text-align: left;
   text-indent:2em;
@@ -133,7 +133,7 @@ page{
   position: absolute;
   top:300rpx;
   right: 0;
-  width: 324rpx;
+  width: 280rpx;
   height: 80rpx;
   line-height: 80rpx;
   text-indent:2em;
