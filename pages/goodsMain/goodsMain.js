@@ -10,7 +10,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
   },
 
   /**
@@ -18,12 +17,6 @@ Page({
    */
   onLoad: function (options) {
     let gmid = options.gmid;
-    app.fetchData({
-      func:'goods.get_goods_detail',
-      g_id: gmid
-    }).then(data=>{
-      this.setData({gd:data});
-    })
   },
 
   /**
@@ -37,7 +30,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    app.fetchData({
+      func: 'goods.get_goods_detail',
+      g_id: this.options.gmid
+    }).then(data => {
+      this.setData({ gd: data });
+    })
   },
 
   /**
@@ -72,9 +70,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let imageUrl = this.data.gt.g_img;
-    let title = '全场不要钱，答对就拿走，答的多拿的多';
-    let path = 'pages/index/index?';
+    let imageUrl = this.data.gd.g_img;
+    let title = '不要钱！答对就拿走，对的多拿的多';
+    let path = this.route + '?gmid=' + this.options.gmid;
     return {
       title: title,
       path: path,

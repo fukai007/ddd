@@ -6,6 +6,9 @@
   width: 46%;
 }
 
+.w230{
+  width: 230rpx;
+}
 
 .close{
   position: absolute;

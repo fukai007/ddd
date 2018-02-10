@@ -1,65 +1,58 @@
 /* pages/goodsPass/goodsPass.wxss */
 page{
-  background-color: #eb5239
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/tongguanBG.png);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.bga{
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.gicon{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 50%;
+}
+.okbg{
   width: 750rpx;
-  height: 785rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/underbg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 453rpx;
+  margin-top:-170rpx;
 }
-.topbg{
-  position: absolute;
-  width: 750rpx;
-  height: 463rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topbg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+
+.pimg{
+  background-color: #fff;
+  width: 702rpx;
+  height: 480rpx;
 }
-.infobg{
-  position: absolute;
-  top:350rpx;
-  left:80rpx;
-  width: 629rpx;
-  height: 133rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/tongguan.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.giftbg{
-  position: absolute;
-  top:640rpx;
-  left:80rpx;
-  width: 574rpx;
-  height: 344rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/giftbg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.submit{
+
+.submit-ok{
   position: absolute;
   bottom: 50rpx;
   left:80rpx;
   width: 574rpx;
   height: 88rpx;
+  line-height: 88rpx;
+  color: #FF4229;
+  font-size: 32rpx;
+  text-align: center;
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/btn_lingqu.png);
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.pic{
-  width: 300rpx;
-  height: 300rpx;
-  background: red;
-}
-.score{
+.submit-fail{
   position: absolute;
-  top: 100rpx;
-  left: 260rpx;
-  font-size: 40rpx;
-  color: #FCF196;
+  bottom: 25rpx;
+  left:80rpx;
+  width: 574rpx;
+  height: 88rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #FF4229;
+  font-size: 32rpx;
+  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/btn_lingqu_w.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.score{
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #333333;
 }

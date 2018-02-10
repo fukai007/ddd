@@ -10,17 +10,22 @@ var gpm = {
    * 页面的初始数据
    */
   data: {
-  
+    ispass: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+        let ispass = options.ispass * 1;
         app.fetchData({
           func:'goods.get_award'
         }).then(data=>{
-          this.setData({ginfo:data});
+          this.setData({
+            ginfo:data,
+            userInfo:app.globalData.userInfo,
+            ispass: ispass
+          });
         })
   },
 
@@ -76,6 +81,9 @@ var gpm = {
     app.toPage('address',{
       ga_id: this.data.ginfo.ga_id
     });
+  },
+  toIndex: function () {
+    app.toPage('index');
   }
 }
 var gpmh = extend(gpm, base);

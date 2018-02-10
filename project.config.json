@@ -74,10 +74,10 @@
 					"query": "g_id= 1"
 				},
 				{
-					"id": -1,
+					"id": 7,
 					"name": "实物答题成功页面",
 					"pathName": "pages/goodsPass/goodsPass",
-					"query": ""
+					"query": "ispass=false"
 				}
 			]
 		}

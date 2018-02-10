@@ -79,7 +79,7 @@ page{
   top: 0;
   width: 702rpx;
   height: 480rpx;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.6);
   border-radius: 16px;
 }
 

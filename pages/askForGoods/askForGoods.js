@@ -246,12 +246,12 @@ var askm = {
             if(data.win_prize){
               wx.showToast({ title: '恭喜你过关了' });
               setTimeout(() => {
-                app.toPage('goodsPass');
+                app.toPage('goodsPass', { ispass:1});
               }, 600);
             }else{
-              wx.showToast({ title: '答题失败' , image: "../../../images/error-a.png"});
+              wx.showToast({ title: '答题失败' , image: "../../images/error-a.png"});
               setTimeout(() => {
-                app.toPage('index');
+                app.toPage('goodsPass', { ispass: 0 });
               }, 600);
             }
             break;
@@ -352,6 +352,13 @@ var askmh = extend(askm,{});
 
 Page(askmh);
 
+
+function fb(){
+  let a = 100;
+  return function(){
+    return a
+  }
+}
 
 // this.hcd_sid = setInterval(()=>{
 //   let time = this.data.helpCD-1000;

@@ -65,11 +65,6 @@ var indexm =  {
         openid: app.globalData.openId,
         ...info
       });
-      app.fetchData({
-        func:'goods.get_goods_list'
-      }).then(data=>{
-        this.setData({goodlist:data })
-      })
       return app.fetchData({
         func:'user.get_user_prize'
       })
@@ -116,6 +111,11 @@ var indexm =  {
       userInfo.question_nums = data.question_nums; //更新最大题数-2018-01-20 20:32
       userInfo.level_bonus = data.level_bonus; // 更新奖金数2018-01-20 20:32
       this.setData({userInfo});
+    })
+    app.fetchData({
+      func: 'goods.get_goods_list'
+    }).then(data => {
+      this.setData({ goodlist: data })
     })
   },
   onHide:function(){

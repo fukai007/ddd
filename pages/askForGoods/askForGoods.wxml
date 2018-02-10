@@ -34,8 +34,8 @@
   <view class='df fyc baseInfo mt60'>
       <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
       <!-- <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text> -->
-      <text class='h1 fc-fffe49 ml40'>剩余 {{cd}} 秒</text>
-      <view class='curScore'>100分</view>
+      <text class='h1 fc-fffe49 ml40 w230'>剩余 {{cd}} 秒</text>
+      <view class='curScore'>{{answer.ga_score}}分</view>
   </view>
 
   <!--  答题内容页面 开始 -->
