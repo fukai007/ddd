@@ -79,7 +79,7 @@ page{
   top: 0;
   width: 702rpx;
   height: 480rpx;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.1);
   border-radius: 16px;
 }
 
@@ -141,4 +141,15 @@ page{
   background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/rightbg.png);
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.tipInfo-goods{
+  width: 380rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 60rpx;
 }

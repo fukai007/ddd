@@ -10,6 +10,7 @@
     <text class='h5 fc-333'>{{gd.g_info}}</text>
   </view>
 </view>
+<view class='bh88'></view>
 <view class='ba'>
   <view class='df'>
     <button class='f1 lbg bh88 share' open-type="share">分享好友</button>
