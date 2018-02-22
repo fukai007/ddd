@@ -78,6 +78,12 @@
 					"name": "实物答题成功页面",
 					"pathName": "pages/goodsPass/goodsPass",
 					"query": "ispass=false"
+				},
+				{
+					"id": -1,
+					"name": "outhtml",
+					"pathName": "pages/outHtml/outHtml",
+					"query": ""
 				}
 			]
 		}

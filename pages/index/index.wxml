@@ -86,7 +86,19 @@
   </view>
   <view class='mt40'></view>
 </view>
-<!-- <view class='fullwh'></view> -->
+<view class='fullwh df fdy fyc fxr'>
+    <view class='fhtask df fdy fyc'>
+          <view class='fhtitle'>复活卡任务</view>
+          <view class='df  fsbyc fhItem'>
+              <view class='fhponit'></view>
+              <view class='fhlna'>
+                    <view class='h5'>点击小程序领取复活卡</view>
+                    <view class='h6 fc-333'>关注小程序，获得复活卡</view>
+              </view>
+              <view class='fhb'></view>
+          </view>
+    </view>
+</view>
 
 <!--
           <view

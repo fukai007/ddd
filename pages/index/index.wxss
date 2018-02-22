@@ -46,6 +46,17 @@ page{
   color: #FFFFFF;
   margin-top: 37rpx;
 }
+.fhb{
+  width: 224rpx;
+  height: 66rpx;
+  background: #F75942;
+  border: 1px solid #F75942;
+  border-radius: 44rpx;
+  text-align: center;
+  line-height: 66rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+}
 
 .userfh{
   background: #FFFFFF;
@@ -175,4 +186,29 @@ page{
   color: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 60rpx;
+}
+
+.fhtask{
+  width: 702rpx;
+  height: 643rpx;
+  background: #FFFFFF;
+  border-radius: 18px;
+}
+
+.fhtitle{
+  margin-top: 46rpx;
+  font-size: 36rpx;
+  color: #333333;
+}
+.fhponit{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: red;
+  border-radius: 10rpx;
+}
+.fhItem{
+  width: 100%;
+  margin-left: 24rpx;
+  margin-right: 24rpx;
+  height: 66rpx;
 }

@@ -15,7 +15,8 @@
     "pages/fua/fua",
     "pages/askRule/askRule",
     "pages/goodsMain/goodsMain",
-    "pages/goodsPass/goodsPass"
+    "pages/goodsPass/goodsPass",
+    "pages/outHtml/outHtml"
   ],
   "window": {
     "backgroundTextStyle": "light",
