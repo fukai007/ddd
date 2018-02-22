@@ -1,15 +1,19 @@
 <!--index.wxml-->
 <wxs src="./tools.wxs" module="tools" />
 <view class='userInfo-index'>
-  <view class='df mx24 mt50'>
-    <view class='f1 tac'></view>
-    <view class="userinfo">
-      <image bindtap="" class="wh100 userIconA" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text>
-    </view>
-    <view class='df f1 fxr por'>
+  <view class='df mx24'>
+    <view class='f1 fyb'>
+        <view class='df por'>
         <text class='tar fc-fff h6 mt10' bindtap='toRule'>答题规则</text>
         <view class='ml10 ruleIcon' bindtap='toRule'></view>
+    </view>
+    </view>
+    <view class="userinfo">
+      <image bindtap="" class="wh100 userIconA" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <!-- <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text> -->
+      <view class='fh'>获得复活卡</view>
+    </view>
+    <view class='df f1 fxr fyb'>
         <view class='toac' bindtap='toac'>个人中心 ＞ </view>
     </view>
   </view>
@@ -59,7 +63,11 @@
           <image bindtap='togm' data-gmid='{{gt.g_id}}' class='PrizeImg'src="{{gt.g_img}}"></image>
           <view wx:if='{{gt.is_participate||gt.g_stock<1}}'class='PrizeImgMask df fxyc'>
                <text wx:if='{{gt.is_participate}}' class='tipInfo-goods'>今日已答，明日再来</text>
-              <text wx:else class='tipInfo-goods'>本场比赛已结束</text>
+               <view wx:else class='df fdy fyc'>
+                  <text  class='tipInfo-goods'>本场比赛已结束</text>
+                  <view class='userfh'>使用复活卡答题</view>
+               </view>
+
           </view>
         </view>
 
@@ -78,7 +86,7 @@
   </view>
   <view class='mt40'></view>
 </view>
-
+<!-- <view class='fullwh'></view> -->
 
 <!--
           <view
