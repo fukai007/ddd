@@ -242,6 +242,13 @@ var indexm =  {
       }
 
     })
+  },
+  checkFH:function(e){
+    app.fetchData({
+      func: 'resurrection_card.use_resurrection_card'
+    }).then(()=>{
+      this.togm(e);
+    })
   }
 }
 
