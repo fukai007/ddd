@@ -5,6 +5,7 @@ const app = getApp();
 
 var indexm =  {
   data: {
+    isFHMask:false,
     userInfo:{
       u_level:0
     },
@@ -196,6 +197,19 @@ var indexm =  {
   },
   toac:function(){
     app.toPage('accountMain', {}, 'to'); //跳转到答题页面
+  },
+  showFHMask:function(){
+    this.setData({
+      isFHMask:true
+    })
+  },
+  hideFHMask:function(){
+    this.setData({
+      isFHMask:false
+    })
+  },
+  toOtherMPById:function(e){
+    wx.navigateToMiniProgram({appId:'wx0661b7ed7fdd78e2'})
   },
   getTicket(){
     app.fetchData({

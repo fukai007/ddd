@@ -206,9 +206,13 @@ page{
   background-color: red;
   border-radius: 10rpx;
 }
+.fhlna{
+  margin-left: 10rpx;
+}
 .fhItem{
-  width: 100%;
-  margin-left: 24rpx;
-  margin-right: 24rpx;
-  height: 66rpx;
+  width: 96%;
+  height: 80rpx;
+  margin-top: 40rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #CCCCCC;
 }
