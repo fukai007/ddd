@@ -144,7 +144,7 @@ App({
       } else {
         that.wxLogin().then((value) => { //登录成功执行业务请求接口
           qo.openid = that.globalData.openid || 0;
-          that.fetchDataBase(qo, resolve);
+          that.fetchDataBase(qo, resolve, reject);
         }).catch((err) => {//失败则执行 失败方案
           reject(err)
         })
