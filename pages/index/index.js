@@ -137,6 +137,10 @@ var indexm =  {
       imageUrl: imageUrl,
       success: function (res) {
         console.log(res);
+        //分享微信群获得复活卡（每分享一次群调一次这个接口就行，后台程序自动判断是否给该用户复活卡） - 2018-02-24 20:37
+        if(res.shareTickets){
+          app.fetchData({func:'resurrection_card.click_mini_program'})
+        }
       },
       fail: function (res) {}
     }
@@ -244,10 +248,15 @@ var indexm =  {
     })
   },
   checkFH:function(e){
+    if(this.isCheckingFH) return
+    this.isCheckingFH = true;
     app.fetchData({
       func: 'resurrection_card.use_resurrection_card'
     }).then(()=>{
+      this.isCheckingFH = false;
       this.togm(e);
+    }).catch((err) => {
+      this.isCheckingFH = false;
     })
   }
 }

@@ -32,4 +32,13 @@
   width: 100%;
 }
 
+.toOtherPMIcon{
+    position: fixed;
+    z-index: 99;
+    bottom: 80rpx;
+    right: 20rpx;
+    width: 116rpx;
+    height: 186rpx;
+}
+
 

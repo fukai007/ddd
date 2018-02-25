@@ -85,5 +85,12 @@ Page({
     app.toPage('askForGoods', {
       g_id: this.data.gd.g_id
     },'to');
-  }
+  },
+  /**
+   * 跳转到小程序 -2018-02-25 16:37:10
+   */
+  toOtherMPById:function(){
+    let {appid,path} = this.data.gd;
+    wx.navigateToMiniProgram({appid,path})
+  },
 })

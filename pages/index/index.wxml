@@ -14,8 +14,9 @@
         <!-- <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text> -->
         <view class='fh' bindtap='showFHMask'>获得复活卡</view>
       </view>
-      <view class='df f1 fxr fyb'>
-          <view class='toac' bindtap='toac'>个人中心 ＞ </view>
+      <view class='df f1 fdy  fsb fxr'>
+          <text class='tar toac'>复活卡 × {{userInfo.u_goods_ticket||0}}</text>
+          <view class='tar toac' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
   </view>
@@ -63,10 +64,13 @@
           <view class='por'>
             <image bindtap='togm' data-gmid='{{gt.g_id}}' class='PrizeImg'src="{{gt.g_img}}"></image>
             <view wx:if='{{gt.is_participate||gt.g_stock<1}}'class='PrizeImgMask df fxyc'>
-                 <text wx:if='{{gt.is_participate}}' class='tipInfo-goods'>今日已答，明日再来</text>
+                <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>
+                      <text class='tipInfo-goods'>今日已答，明日再来</text>
+                      <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view>
+                </view>
                  <view wx:else class='df fdy fyc'>
                     <text  class='tipInfo-goods'>本场比赛已结束</text>
-                    <view class='userfh'>使用复活卡答题</view>
+                    <!-- <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view> -->
                  </view>
 
             </view>
@@ -90,16 +94,6 @@
   <view wx:if="{{isFHMask}}" class='fullwh df fdy fyc fxr'>
       <view class='fhtask df fdy fyc'>
             <view class='fhtitle'>复活卡任务</view>
-
-            <view class='df  fyc fhItem'>
-                <view class='fhponit'></view>
-                <view class='fhlna f1'>
-                      <view class='h4'>点击小程序领取复活卡</view>
-                      <view class='h6 fc-333'>关注小程序，获得复活卡</view>
-                </view>
-                <view class='fhb' bindtap='toOtherMPById'>去分享</view>
-            </view>
-
             <view class='df  fsbyc fhItem'>
                 <view class='fhponit'></view>
                 <view class='fhlna f1'>
