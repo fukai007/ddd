@@ -15,7 +15,7 @@
         <view class='fh' bindtap='showFHMask'>获得复活卡</view>
       </view>
       <view class='df f1 fdy  fsb fxr'>
-          <text class='tar toac'>复活卡 × {{userInfo.u_goods_ticket||0}}</text>
+          <text class='tar toac'>复活卡 ×{{userInfo.u_goods_ticket||0}}</text>
           <view class='tar toac' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
@@ -91,8 +91,8 @@
     </view>
     <view class='mt40'></view>
   </view>
-  <view wx:if="{{isFHMask}}" class='fullwh df fdy fyc fxr'>
-      <view class='fhtask df fdy fyc'>
+  <view wx:if="{{isFHMask}}" class='fullwh df fdy fyc fxr' bindtap='hideFHMask'>
+      <view class='fhtask df fdy fyc por'>
             <view class='fhtitle'>复活卡任务</view>
             <view class='df  fsbyc fhItem'>
                 <view class='fhponit'></view>
@@ -102,7 +102,7 @@
                 </view>
                 <button open-type="share" class='fhb'>去分享</button>
             </view>
-
+            <view class='fhc' bindtap='hideFHMask'>×</view>
       </view>
   </view>
 </view>

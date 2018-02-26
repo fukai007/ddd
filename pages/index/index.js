@@ -131,6 +131,7 @@ var indexm =  {
     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let path = 'pages/index/index?';
+    this.hideFHMask();
     return {
       title: title,
       path: path,
