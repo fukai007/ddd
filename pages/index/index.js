@@ -131,6 +131,7 @@ var indexm =  {
     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let path = 'pages/index/index?';
+    let indexMP = this;
     this.hideFHMask();
     return {
       title: title,
@@ -140,7 +141,19 @@ var indexm =  {
         console.log(res);
         //分享微信群获得复活卡（每分享一次群调一次这个接口就行，后台程序自动判断是否给该用户复活卡） - 2018-02-24 20:37
         if(res.shareTickets){
-          app.fetchData({func:'resurrection_card.click_mini_program'})
+          if(indexMP.doubleShare){//逢二发一
+            indexMP.doubleShare = false;
+            app.fetchData({func:'resurrection_card.share_group'}).then(()=>{
+              console.log('resurrection_card.share_group------------------------------------------->');
+              app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
+                app.globalData.userInfo = userInfo
+                indexMP.setData({userInfo})
+              })
+            })
+          }else{
+            indexMP.doubleShare = true;
+          }
+
         }
       },
       fail: function (res) {}
