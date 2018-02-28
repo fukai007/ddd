@@ -34,7 +34,7 @@ Page({
       func: 'goods.get_goods_detail',
       g_id: this.options.gmid
     }).then(data => {
-      this.setData({ gd: data });
+      this.setData({ gd: data, isfh: this.options.isfh});
     })
   },
 
@@ -91,6 +91,15 @@ Page({
    */
   toOtherMPById:function(){
     let {appid,path} = this.data.gd;
-    wx.navigateToMiniProgram({appid,path})
+    console.log(appid,path);
+    app.fetchData({
+      func: 'resurrection_card.click_mini_program'
+    }).then(()=>{
+      wx.navigateToMiniProgram({ appId: appid, path })
+    }).catch(()=>{
+      wx.showToast({ title: '领取复活卡失败', image: "../../images/error-a.png" });
+      wx.navigateToMiniProgram({ appId: appid, path })
+   })
+
   },
 })

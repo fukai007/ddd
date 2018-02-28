@@ -141,8 +141,6 @@ var indexm =  {
         console.log(res);
         //分享微信群获得复活卡（每分享一次群调一次这个接口就行，后台程序自动判断是否给该用户复活卡） - 2018-02-24 20:37
         if(res.shareTickets){
-          if(indexMP.doubleShare){//逢二发一
-            indexMP.doubleShare = false;
             app.fetchData({func:'resurrection_card.share_group'}).then(()=>{
               console.log('resurrection_card.share_group------------------------------------------->');
               app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
@@ -150,10 +148,6 @@ var indexm =  {
                 indexMP.setData({userInfo})
               })
             })
-          }else{
-            indexMP.doubleShare = true;
-          }
-
         }
       },
       fail: function (res) {}
@@ -206,15 +200,15 @@ var indexm =  {
       }, 500);
     }
   },
-  togm:function(e){
+  togm:function(e,isfh=false){
     let gmid = e.currentTarget.dataset.gmid || e.target.dataset.gmid;
-    app.toPage('goodsMain', { gmid }, 'to'); //跳转到答题页面
+    app.toPage('goodsMain', { gmid, isfh}, 'to'); //跳转到答题页面
   },
   toRule:function(){
-    app.toPage('askRule', {}, 'to'); //跳转到答题页面
+    app.toPage('askRule', {}, 'to'); //跳转到规则页面
   },
   toac:function(){
-    app.toPage('accountMain', {}, 'to'); //跳转到答题页面
+    app.toPage('accountMain', {}, 'to'); //跳转到账户页面
   },
   showFHMask:function(){
     this.setData({
@@ -268,9 +262,10 @@ var indexm =  {
       func: 'resurrection_card.use_resurrection_card'
     }).then(()=>{
       this.isCheckingFH = false;
-      this.togm(e);
+      this.togm(e,true);
     }).catch((err) => {
       this.isCheckingFH = false;
+      console.log("err--------------------------->",err);
     })
   }
 }

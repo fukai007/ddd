@@ -15,6 +15,6 @@
 <view class='ba'>
   <view class='df'>
     <button class='f1 lbg bh88 share' open-type="share">分享好友</button>
-    <view wx:if="{{!gd.is_participate}}" class='f1 rbg bh88' bindtap='toga'>开始答题</view>
+    <view wx:if="{{isfh || !gd.is_participate}}" class='f1 rbg bh88' bindtap='toga'>开始答题</view>
   </view>
 </view>
