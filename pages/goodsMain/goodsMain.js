@@ -23,7 +23,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+      wx.updateShareMenu({withShareTicket: true})
   },
 
   /**
@@ -73,6 +73,9 @@ Page({
     let imageUrl = this.data.gd.g_img;
     let title = '不要钱！答对就拿走，对的多拿的多';
     let path = this.route + '?gmid=' + this.options.gmid;
+
+    if(res.shareTickets) app.fetchData({func:'resurrection_card.share_group'})
+
     return {
       title: title,
       path: path,
