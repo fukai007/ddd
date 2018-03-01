@@ -69,18 +69,20 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (e) {
     let imageUrl = this.data.gd.g_img;
     let title = '不要钱！答对就拿走，对的多拿的多';
     let path = this.route + '?gmid=' + this.options.gmid;
 
-    if(res.shareTickets) app.fetchData({func:'resurrection_card.share_group'})
+    
 
     return {
       title: title,
       path: path,
       imageUrl: imageUrl,
-      success: function (res) { },
+      success: function (res) {
+        if (res.shareTickets) app.fetchData({ func: 'resurrection_card.share_group' })
+       },
       fail: function (res) { }
     }
   },
@@ -98,7 +100,11 @@ Page({
     app.fetchData({
       func: 'resurrection_card.click_mini_program'
     }).then(()=>{
-      wx.navigateToMiniProgram({ appId: appid, path })
+      wx.showToast({ title: '领取复活卡成功'});
+      setTimeout(()=>{
+        wx.navigateToMiniProgram({ appId: appid, path })
+      },500);
+
     }).catch(()=>{
       wx.showToast({ title: '领取复活卡失败', image: "../../images/error-a.png" });
       wx.navigateToMiniProgram({ appId: appid, path })

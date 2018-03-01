@@ -111,6 +111,7 @@ var indexm =  {
       userInfo.next_start_time = data.next_start_time; //更新下一场开场时间-2018-01-20 19:55
       userInfo.question_nums = data.question_nums; //更新最大题数-2018-01-20 20:32
       userInfo.level_bonus = data.level_bonus; // 更新奖金数2018-01-20 20:32
+      userInfo.u_goods_ticket = data.u_goods_ticket; //更新复活卡数量 -2018-03-01 17:45
       this.setData({userInfo});
     })
     app.fetchData({
