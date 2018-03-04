@@ -6,7 +6,22 @@ var amm = {
    * 页面的初始数据
    */
   data: {
-    levelInfo: app.globalData.levelInfo
+    levelInfo: app.globalData.levelInfo,
+    barname:'goods',
+    typeList:['','去领取','已领取','已发货'],
+    goodsList:[{
+      g_title:'苏菲A',
+      'timestamp':'2018-03-04 23:04:57',
+      'status':1
+    },{
+      g_title:'苏菲B',
+      'timestamp':'2018-03-04 23:04:57',
+      'status':2
+    },{
+      g_title:'苏菲C',
+      'timestamp':'2018-03-04 23:04:57',
+      'status':3
+    }]
   },
 
   /**
@@ -97,6 +112,18 @@ var amm = {
   },
   toRule:function(){
     //app.toPage('tx', { m });
+  },
+  setCurTab:function (e) {
+    let barname = e.target.dataset.barname;
+    if(barname == 'com'){
+      this.setData({
+        barname:'com'
+      });
+    }else{
+      this.setData({
+        barname:'goods'
+      });
+    }
   }
 }
 

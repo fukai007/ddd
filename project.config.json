@@ -84,6 +84,30 @@
 					"name": "outhtml",
 					"pathName": "pages/outHtml/outHtml",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实物答题成功页面",
+					"pathName": "pages/ask/ask",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实物答题成功页面",
+					"pathName": "pages/addressb/addressb",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "填写地址页面C",
+					"pathName": "pages/addressc/addressc",
+					"query": "a_id= 6"
+				},
+				{
+					"id": -1,
+					"name": "填写地址页面C",
+					"pathName": "pages/ask/ask",
+					"query": "a_id= 6"
 				}
 			]
 		}

@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/askForGoods/askForGoods",
     "pages/addressb/addressb",
+    "pages/addressc/addressc",
     "pages/address/address",
     "pages/testAnimation/ta",
     "pages/accountMain/accountMain",

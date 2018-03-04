@@ -35,21 +35,45 @@
             <text class='mx24 h6 fc-333'>我的答题记录</text>
             <text class='sort-line'></text>
         </view>
-
-        <scroll-view scroll-y class='listArea'>
-        <view
-            class='df fyc mt40 por'
-            wx:for="{{cinfo.bonus_list}}"
-            wx:key="{{bonus.timestamp}}"
-            wx:for-item="item">
-          <view class='point'></view>
-          <view class='line-y'></view>
-
-          <view class='h6 fc-333 ml70 levelName'>{{levelInfo[item.l_config_level].levelText}}：</view>
-          <view class='h6 fc-333 leveltime'>{{item.create_time}}</view>
-          <view class='h6 fc-333 ml10'>奖学金 : </view>
-          <view class='fc-F34435 h6 ml10'>{{item.s_money}}</view>
+        <view class='df fxc mt40'>
+            <view class='df tabwrap'>
+                <view class="{{barname == 'com' ? 'curtab basetab':'distab basetab'}}" bindtap='setCurTab' data-barName='com'>百万夺金赛</view>
+                <view class="{{barname == 'goods' ? 'curtab basetab':'distab basetab'}}" bindtap='setCurTab' data-barName='goods'>品牌独享赛</view>
+            </view>
         </view>
+
+        <scroll-view wx:if="{{barname == 'com'}}" scroll-y class='listArea'>
+          <view
+              class='df fyc mt40 por'
+              wx:for="{{cinfo.bonus_list}}"
+              wx:key="{{bonus.timestamp}}"
+              wx:for-item="item">
+            <view class='point'></view>
+            <view class='line-y'></view>
+
+            <view class='h6 fc-333 ml70 levelName'>{{levelInfo[item.l_config_level].levelText}} : </view>
+            <view class='h6 fc-333 leveltime'>{{item.create_time}}</view>
+            <view class='h6 fc-333 ml10'>奖学金 : </view>
+            <view class='fc-F34435 h6 ml10'>{{item.s_money}}</view>
+          </view>
+        </scroll-view>
+        <scroll-view wx:else scroll-y class='listArea'>
+          <view
+              class='df fyc mt40 por'
+              wx:for="{{goodsList}}"
+              wx:key="{{item.timestamp}}"
+              wx:for-item="item">
+            <view class='point'></view>
+            <view class='g_line_y'></view>
+
+            <view class='h6 fc-333 ml70 levelName'>{{item.g_title}}：</view>
+            <view class='h6 fc-333 g_leveltime'>{{item.timestamp}}</view>
+            <view class='h6 ml10 mr40'>
+              <view wx:if='{{item.status == 1}}' class='gga'> {{typeList[item.status]}}</view>
+              <view wx:elif='{{item.status == 2}}' class='ggb'> {{typeList[item.status]}}</view>
+              <view wx:else='{{item.status == 3}}' class='ggc'> {{typeList[item.status]}}</view>
+            </view>
+          </view>
         </scroll-view>
     </view>
 </view>
