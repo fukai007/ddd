@@ -79,8 +79,18 @@
 
   <!--  分享开始   wx:if='{{isOver == false}}'-->
   <view class="mt30"></view>
+
   <view style='{{isShowHelpUI?"":"display:none"}}' class="mt20 h6 fc-fff tac">求助倒计时{{helpCD+'秒'}}</view>
   <button wx:if="{{tools.isActiveShare(answer,isOver)}}" id='fua' class='shareIconBig mt20' open-type="share"></button>
   <view wx:if="{{!isOver}}" class="h6 fc-fff tac mt20">#可求助多人或群#</view>
+  <!-- 显示帮助倒计时框 -->
+  <view style='{{isShowHelpUI?"":"display:none"}}' class='fullwh f1 fxyc'>
+      <view class='ah-pop-bg'>
+            <view class='ah-pop-cd'>{{helpCD+'秒暂停'}}</view>
+            <view class='ah-pop-info'>等待朋友帮你做答，朋友选对也算对，组群组团答题哦。</view>
+            <button wx:if="{{tools.isActiveShare(answer,isOver)}}" id='fub' class='ah-pop-share' open-type="share"></button>
+      </view>
+  </view>
   <!-- 分享结束 -->
+
 </view>

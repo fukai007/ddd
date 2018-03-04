@@ -71,3 +71,31 @@
     width:100rpx;
     height:100rpx;
 }
+
+.ah-pop-bg{
+    width: 567rpx;
+    height: 567rpx;
+    background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/ask-help-popbg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ah-pop-cd{
+  font-size: 48rpx;
+  color: #FFFFFF;
+  text-align: center;
+}
+.ah-pop-info{
+  margin-top: 355rxp;
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.ah-pop-share{
+  width:371rpx;
+  height: 88rpx;
+  margin-top: 35rpx;
+      background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/asj-help-popbutton.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+

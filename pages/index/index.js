@@ -256,7 +256,12 @@ var indexm =  {
 
     })
   },
-  checkFH:function(e){
+  /*
+      @purpose 调到实物答题首页就扣除复活卡,不适用了 答题才算
+      @createTime 2018-03-04 08:26
+      @author  miles_fk 
+  */
+  checkFHV1:function(e){
     if(this.isCheckingFH) return
     this.isCheckingFH = true;
     app.fetchData({
@@ -268,6 +273,23 @@ var indexm =  {
       this.isCheckingFH = false;
       console.log("err--------------------------->",err);
     })
+  },
+    /*
+      @purpose 调到实物答题首页不扣除复活卡, 答题才算
+      @createTime 2018-03-04 08:26
+      @author  miles_fk 
+  */
+  checkFH:function(e){
+    if (this.isCheckingFH) return
+    this.isCheckingFH = true;
+    let {u_goods_ticket} = this.data.userInfo
+    if (u_goods_ticket>0){
+      this.togm(e, true);
+      this.isCheckingFH = false;
+    }else{
+      wx.showToast({ title: '没有复活卡', image: "../../images/error-a.png" });
+      this.isCheckingFH = false;
+    }
   }
 }
 

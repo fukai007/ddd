@@ -98,7 +98,7 @@
                 <view class='fhponit'></view>
                 <view class='fhlna f1'>
                       <view class='h4'>分享到微信群</view>
-                      <view class='h6 fc-333'>分享到一定的数量的微信群获得复活卡</view>
+                      <view class='h6 fc-333'>每2个群获得一张复活卡(每日限十张)</view>
                 </view>
                 <button open-type="share" class='fhb'>去分享</button>
             </view>

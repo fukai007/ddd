@@ -100,7 +100,7 @@ Page({
     app.fetchData({
       func: 'resurrection_card.click_mini_program'
     }).then(()=>{
-      wx.showToast({ title: '领取复活卡成功'});
+      wx.showToast({ title: '赞助产品页赠 送一张复活卡'});
       setTimeout(()=>{
         wx.navigateToMiniProgram({ appId: appid, path })
       },500);
