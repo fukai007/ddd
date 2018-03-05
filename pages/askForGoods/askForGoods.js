@@ -9,6 +9,7 @@ var askm = {
    */
   data: {
     isOver: false,
+    isCheck:false,
     isPassAll:false,
     isShowHelpUI:false, //是否显示帮助显示浮层-2018-01-05 11:26
     isTryUIA:false,//续命提示框
@@ -229,6 +230,7 @@ var askm = {
     this.cur_qid = qid;
     this.isWaiting = true;
     //check-question 接口 核对
+    this.setData({ isCheck: true ,selectQid: qid});
     return app.fetchData({
       func:'goods.check_answer',
       q_an: qid
@@ -263,7 +265,7 @@ var askm = {
             } else {
               this.isQuestionShare = false
             }
-            this.setData({ answer: data, cd: data.answer_time});
+            this.setData({ answer: data, cd: data.answer_time, isCheck:false});
             this.isWaiting = false;
             this.cur_qid = false;
             break;
