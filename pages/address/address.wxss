@@ -11,7 +11,8 @@
 }
 
 .minput{
-  padding: 20rpx;
+  width: 100%;
+  padding: 30rpx;
   border: 1rpx solid #E5E5E5 ;
 }
 
@@ -24,7 +25,10 @@ input{
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/addressSubmit.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
 
+.splitLine{
+  border-right: 2rpx solid #E5E5E5;
 }
 
 .addressSubmit::after{
