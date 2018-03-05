@@ -8,6 +8,9 @@
   <view class='h6 fc-333  mt30'>-产品说明-</view>
   <view class='mt20'>
     <text class='h5 fc-333'>{{gd.g_info}}</text>
+    <image class='fullw' mode='widthFix' src='{{gd.g_img3}}'></image>
+    <image class='fullw' mode='widthFix' src='{{gd.g_img4}}'></image>
+    <image class='fullw' mode='widthFix' src='{{gd.g_img5}}'></image>
   </view>
 </view>
 <image wx:if="{{gd.appid}}" src='https://wxapp.haizeihuang.com/wannengdequan_php/images/toMPIcon.png' class='toOtherPMIcon' bindtap='toOtherMPById'></image>

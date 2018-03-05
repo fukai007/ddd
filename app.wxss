@@ -460,6 +460,9 @@ page {
 .fullvh{
   max-height: 100vh;
 }
+.fullw{
+  width: 100%;
+}
 .obar{
   position: absolute;
   bottom: 0;

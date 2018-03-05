@@ -71,7 +71,7 @@ Page({
    */
   onShareAppMessage: function (e) {
     let imageUrl = this.data.gd.g_img;
-    let title = '不要钱！答对就拿走，对的多拿的多';
+    let title = '不要钱！答题就拿走，挑战吧!';
     let path = this.route + '?gmid=' + this.options.gmid;
 
     

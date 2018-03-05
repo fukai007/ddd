@@ -124,7 +124,13 @@ var amm = {
         barname:'goods'
       });
     }
-  }
+  },
+  toAddress: function (e) {
+    let ga_id = e.target.dataset.gaid;
+    app.toPage('address', {
+      ga_id: ga_id
+    });
+  },
 }
 
 
