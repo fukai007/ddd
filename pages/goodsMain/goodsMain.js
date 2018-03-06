@@ -74,7 +74,7 @@ Page({
     let title = '不要钱！答题就拿走，挑战吧!';
     let path = this.route + '?gmid=' + this.options.gmid;
 
-    
+
 
     return {
       title: title,
@@ -100,14 +100,16 @@ Page({
     app.fetchData({
       func: 'resurrection_card.click_mini_program'
     }).then(()=>{
-      wx.showToast({ title: '赞助产品页赠 送一张复活卡'});
+      wx.showToast({ title: '赞助产品页赠 送一张复活卡',icon:'none'});
       setTimeout(()=>{
         wx.navigateToMiniProgram({ appId: appid, path })
       },500);
 
     }).catch(()=>{
-      wx.showToast({ title: '领取复活卡失败', image: "../../images/error-a.png" });
-      wx.navigateToMiniProgram({ appId: appid, path })
+      wx.showToast({ title: '只限领取一次', icon:'none' });
+      setTimeout(()=>{
+        wx.navigateToMiniProgram({ appId: appid, path })
+      },500);
    })
 
   },
