@@ -62,7 +62,7 @@
             </view>
 
             <view
-              wx:if='{{isCheck&&(selectQid==qid&&answer.q_an_yes != qid)}}'
+              wx:elif='{{isCheck&&(selectQid==qid&&answer.q_an_yes != qid)}}'
               data-qid='{{qid}}' class='qitem qitem-fail'>
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
             </view> 

@@ -28,6 +28,11 @@ App({
               // 可以将 res 发送给后台解码出 unionId
               console.log("res.userInfo-------------->", resa.userInfo);
               that.globalData.userInfo = resa.userInfo
+              app.fetchDataBase({
+                func: 'user.save_userinfo',
+                openid: app.globalData.openId,
+                ...resa.userInfo
+              });
             }
           })
         }else{
