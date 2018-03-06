@@ -228,7 +228,11 @@ var askm = {
         }
         data.fail = function (error) {
           that.isWaiting = false;
-          wx.showToast(支付失败);
+          wx.showToast({
+            title: '支付失败，即将返回首页',
+            icon: 'none'
+          });
+          that.toIndex();
         }
         try {
           wx.requestPayment(data);
@@ -238,6 +242,7 @@ var askm = {
       }
     }).catch(()=>{
       console.log("生成订单次失败");
+      this.toIndex();
     })
   },
     /*
@@ -327,7 +332,9 @@ var askm = {
             break;
           }
       }
-    });
+      }).catch(()=>{
+        this.toIndex();
+      });
   },
 
     /*

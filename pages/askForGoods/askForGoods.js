@@ -271,6 +271,8 @@ var askm = {
             break;
           }
       }
+    }).catch(() => {
+      this.toIndex();
     });
   },
 

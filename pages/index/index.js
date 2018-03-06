@@ -8,39 +8,7 @@ var indexm =  {
     isFHMask:false,
     userInfo:{
       u_level:0
-    },
-    levelList:[
-      {
-        levelName: '出生水平',
-        levelInfo: 'xxxxx',
-        levelId: 0,
-      },
-      {
-        levelName: '幼儿园水平',
-        levelInfo: 'xxxxx',
-        levelId: 1,
-      },
-      {
-        levelName: '小学水平',
-        levelInfo: 'xxxxx',
-        levelId: 2,
-      },
-      {
-        levelName: '初中水平',
-        levelInfo: 'xxxxx',
-        levelId: 3,
-      },
-      {
-        levelName: '高中水平',
-        levelInfo: 'xxxxx',
-        levelId: 4,
-      },
-      {
-        levelName: '大学水平',
-        levelInfo: 'xxxxx',
-        levelId: 5,
-      }
-    ]
+    }
   },
   onLoad: function () {
     wx.updateShareMenu({withShareTicket: true})
