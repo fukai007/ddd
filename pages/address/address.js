@@ -119,7 +119,7 @@ var addressm ={
   onAddressSubmit:function(){
     let addressInfo = this.data.addressInfo;
     addressInfo.proviceFirstStageName = this.data.province[this.data.provinceId];
-    addressInfo.addressCitySecondStageName = this.data.city[this.data.cityId];
+    addressInfo.addressCitySecondStageName = this.data.city[this.data.provinceId].cities[this.data.cityId];
     
     if (!addressInfo.username) {
       wx.showToast({ title: '未填收货人', image: "../../images/error-a.png" });
