@@ -17,7 +17,8 @@
     "pages/askRule/askRule",
     "pages/goodsMain/goodsMain",
     "pages/goodsPass/goodsPass",
-    "pages/outHtml/outHtml"
+    "pages/outHtml/outHtml",
+    "pages/testForm/testForm"
   ],
   "window": {
     "backgroundTextStyle": "light",
