@@ -8,7 +8,7 @@ var amm = {
   data: {
     levelInfo: app.globalData.levelInfo,
     barname:'goods',
-    typeList:['','去领取','已领取','已发货'],
+    typeList:['去领取','已领取','已发货'],
     goodsList:[{
       g_title:'苏菲A',
       'timestamp':'2018-03-04 23:04:57',

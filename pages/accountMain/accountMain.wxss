@@ -71,7 +71,7 @@ page{
 }
 
 .listArea{
-  height: 720rpx;
+  height: 50vh;
 }
 
 .point{
