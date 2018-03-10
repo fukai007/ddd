@@ -110,13 +110,46 @@ var indexm =  {
         console.log(res);
         //分享微信群获得复活卡（每分享一次群调一次这个接口就行，后台程序自动判断是否给该用户复活卡） - 2018-02-24 20:37
         if(res.shareTickets){
-            app.fetchData({func:'resurrection_card.share_group'}).then(()=>{
-              console.log('resurrection_card.share_group------------------------------------------->');
-              app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
-                app.globalData.userInfo = userInfo
-                indexMP.setData({userInfo})
+          let shareTicket = res.shareTickets[0];
+
+
+          wx.login({
+            success:function(res){
+              app.fetchData({
+                //func:'resurrection_card.share_group',
+                func: 'user.test',
+                code: res.code
+              }).then((value) => {
+                console.log(value);
               })
-            })
+            }
+          });
+
+
+
+          // wx.getShareInfo({
+          //   shareTicket:shareTicket,
+          //   success:function (preShare){
+          //     console.log("preShare--------->",preShare);
+          //     app.fetchData({
+          //       //func:'resurrection_card.share_group',
+          //       func:'user.test',
+          //       code:app.globalData.code,
+          //       encryptedData:preShare.encryptedData,
+          //       iv:preShare.iv
+          //     }).then((data)=>{
+          //       console.log('resurrection_card.share_group------------------------------------------->');
+          //       app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
+          //         app.globalData.userInfo = userInfo
+          //         indexMP.setData({userInfo})
+          //       })
+          //     })
+          //   },
+          //   fail:function () {
+          //
+          //   }
+          // })
+
         }
       },
       fail: function (res) {}
@@ -227,7 +260,7 @@ var indexm =  {
   /*
       @purpose 调到实物答题首页就扣除复活卡,不适用了 答题才算
       @createTime 2018-03-04 08:26
-      @author  miles_fk 
+      @author  miles_fk
   */
   checkFHV1:function(e){
     if(this.isCheckingFH) return
@@ -245,7 +278,7 @@ var indexm =  {
     /*
       @purpose 调到实物答题首页不扣除复活卡, 答题才算
       @createTime 2018-03-04 08:26
-      @author  miles_fk 
+      @author  miles_fk
   */
   checkFH:function(e){
     if (this.isCheckingFH) return

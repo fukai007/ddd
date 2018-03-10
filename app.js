@@ -112,14 +112,16 @@ App({
     var wxLoginPromise = new Promise(function (resolve, reject) {
       wx.login({ //微信登录接口-微信提供的  res.code 到后台换取 openId, sessionKey, unionId
         success: function (res) {
-            //console.log("wxLogin------->wx.login----------------->", res);
+            console.log("wxLogin------->wx.login----------------->", res);
             //decryptMpCode  解code的 测试  mpLogin
+
             that.fetchDataBase({ code: res.code, func:endpoint.getOpenId}, function (loginRes) {
-              //console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
+              console.log("wxLogin------->wx.login------------mpLogin--loginRes--->", loginRes);
               let data = loginRes;
               that.globalData.openid = data.openid;
               that.globalData.session_key = data.session_key; //存储 微信会话key
               that.globalData.union_id = data.union_id;  // 微信端用户唯一id
+              that.globalData.code = res.code;
               resolve();
             }, function(){
               reject({ isError: true });
