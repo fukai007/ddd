@@ -6,8 +6,7 @@
     <text class='h5 fc-333'>{{gd.g_title}}</text>
   </view>
   <view class='h6 fc-333  mt30'>-产品说明-</view> -->
-  <view class='mt20'>
-    <text class='h5 fc-333'>{{gd.g_info}}</text>
+  <view class='mt20 df fdy'>
     <image class='fullw' mode='widthFix' src='{{gd.g_img3}}'></image>
     <image class='fullw' mode='widthFix' src='{{gd.g_img4}}'></image>
     <image class='fullw' mode='widthFix' src='{{gd.g_img5}}'></image>
