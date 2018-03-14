@@ -25,6 +25,7 @@
       <view class="tryCore">
             <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
             <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命</button>
+            <button type="button" name="ftryIt" class="tryIt" open-type="share" id='tryItByShare'>分享即可复活</button>
       </view>
       <view class='close' bindtap='toIndex'></view>
   </view>

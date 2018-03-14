@@ -87,6 +87,11 @@ var askm = {
     this.tryIt();
     this.hideTryItUI();
   },
+  /**
+   * 分享复活
+   */
+  tryItByShare:function () {
+  },
 
   hideTryItUI:function () {
     this.setData({
@@ -104,7 +109,7 @@ var askm = {
    */
   onReady: function () {
 
-
+    wx.updateShareMenu({ withShareTicket: true })
   },
 
   /**
@@ -149,6 +154,7 @@ var askm = {
    * 用户点击右上角分享
    */
   onShareAppMessage: function (res) {
+
     this.isWaiting = true;
     let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
     let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
@@ -163,10 +169,23 @@ var askm = {
         title: title,
         path: path,
         imageUrl: imageUrl,
-        success: function (res) {
+        success: function (ress) {
           //如果成功则禁用转发功能 因为是一对一的
           // wx.hideShareMenu();
           console.log('ask--------------onShareAppMessage------->', path)
+          //TODO  增加回去用户信息的接口来区分群 -2018-03-14 17:54
+          if (res.from === 'button' && res.target.id == 'tryItByShare') {
+            app.fetchData({
+              func:'resurrection.share_group',
+              a_id: that.data.answer.a_id
+            }).then(()=>{
+              app.toPage('ask', { cid: that.cid })
+            }).catch(()=>{
+              //TODO 服务器异常怎么处理 - 2018-03-14 17:55
+            })
+            return 
+          }
+
           that.setData({
             isShowHelpUI: true
           })
