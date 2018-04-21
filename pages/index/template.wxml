@@ -1,0 +1,1 @@
+<view bindtap="cv" class="h1 bgc-red">temp模板</view>

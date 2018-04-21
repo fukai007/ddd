@@ -1,5 +1,5 @@
-const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/';
-//const SERVER = 'https://wxapi.liunianshiguang.com';
+//const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/';
+const SERVER = 'https://wxapi.liunianshiguang.com';
 const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
 import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';

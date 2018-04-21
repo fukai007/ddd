@@ -1,9 +1,12 @@
 //index.js
 import { makePar, extend } from '../../utils/util.js';
+import event from './cv.js';
+console.log(event);
 //获取应用实例
 const app = getApp();
 
 var indexm =  {
+  cv: event.cv,
   data: {
     isFHMask:false,
     userInfo:{

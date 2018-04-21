@@ -20,7 +20,7 @@
       </view>
     </view>
   </view>
-
+<include src="./template.wxml" />
   <view wx:if="{{!isWaitting}}" class='mainbg ovh'>
     <view class='df fxc mt20'>
       <view class='area-com'>
