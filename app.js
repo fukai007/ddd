@@ -1,7 +1,7 @@
 //const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/';
 //const SERVER = 'https://wxapi.liunianshiguang.com'; 
 // 名字  -->  复活卡 变成 入场券
-const SERVER = 'http://womenyanggouba.liunianshiguang.com/';
+const SERVER = 'https://wmygb.crazydoggy.cn/';
 const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
 import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
