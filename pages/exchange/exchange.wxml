@@ -1,0 +1,27 @@
+<view class="section">
+  <view class="section-top">
+    <image src="./imgs/h_bg.png" class="h_bg"></image>
+    <view class="section-top-content">
+      <image src="./imgs/icon_s.png" class="icon"></image>
+      <text>×110g</text>
+    </view>
+  </view>
+  <view class="section-content" style="flex-direction:row;">
+    <view class="item" wx:for="{{array}}">
+      <view class="item-top">
+        <image src="./imgs/icon_s.png" class="logo"></image>
+        <text>{{item.name}}</text>
+      </view>
+      <image src="./imgs/item.png" class="item-img"></image>
+      <view class="item-text">
+        <text class="item-title">{{item.text}}</text>
+        <view class="item-content">
+          <image src="./imgs/icon_s.png" class="icon"></image>
+          <text>×{{item.num}}</text>
+          <button size="20rpx" class="item-btn" wx:if="{{!item.isConversion}}">兑换</button>
+          <button size="20rpx" class="item-btn item-primary" wx:else>兑换</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

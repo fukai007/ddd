@@ -18,7 +18,8 @@
     "pages/goodsMain/goodsMain",
     "pages/goodsPass/goodsPass",
     "pages/outHtml/outHtml",
-    "pages/testForm/testForm"
+    "pages/testForm/testForm",
+    "pages/exchange/exchange"
   ],
   "window": {
     "backgroundTextStyle": "light",

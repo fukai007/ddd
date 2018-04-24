@@ -1,0 +1,88 @@
+/* pages/exchange/exchange.wxss */
+/* 主体上部 */
+.section-top {
+  height: 82rpx;
+  position: relative;
+}
+.h_bg {
+  width: 100%;
+  height: inherit;
+}
+.section-top-content {
+  position: absolute;
+  right:20rpx;
+  top:0;
+  line-height: 82rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+.icon {
+  margin-right: 10rpx;
+  width: 80rpx;
+  height: 40rpx;
+  vertical-align: middle;
+}
+/* 主体列表  */
+.section-content {
+  padding: 20rpx;
+  background: #f8f8f8;
+  min-height: 100vh;
+}
+.item {
+  display: inline-block;
+  margin-right: 22rpx;
+  margin-bottom: 20rpx;
+  width: calc(50% - 11rpx);
+  border-radius: 10rpx;
+  overflow: hidden;
+  background: #fff;
+}
+.section-content .item:nth-child(2n) {
+  margin-right: 0;
+}
+/* item头部 */
+.item-top {
+  padding: 0 16rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 33rpx;
+  color: #202020;
+}
+.logo {
+  margin-right: 22rpx;
+  width: 60rpx;
+  height: 48rpx;
+  vertical-align: middle;
+}
+/* item图片 */
+.item-img {
+  width: 100%;
+}
+/* item说明 */
+.item-text {
+  padding: 18rpx 16rpx 16rpx;
+  font-size: 24rpx;
+  color: #202020;
+}
+.item-title {
+  /* font-size: 24rpx;
+  color: #202020; */
+}
+.item-content {
+  height:56rpx;
+  line-height:56rpx;
+  margin-top:20rpx;
+}
+.item-btn {
+  float: right;
+  margin: 0;
+  width: 118rpx;
+  height: 56rpx;
+  line-height:56rpx;
+  font-size: 30rpx;
+  color: #fff;
+  border-radius:16rpx;
+}
+.item-primary {
+  background: blue;
+}
