@@ -21,46 +21,30 @@
     </view>
   </view>
   <view wx:if="{{!isWaitting}}" class='mainbg ovh'>
-      <view class='df fxc mt20'>
-          <view class='area-com'>
-              <text class='h5 fc-fff ml20'>百万夺金赛</text>
-              <text class='askMinInfo ml20'>{{userInfo.msg1}}</text>
-          </view>
-      </view>
-
-      <view class='q-item'>
-          <view class='f1'>
+      <view class='q-item mt20'>
+          <view class='f1' bindtap="toAsk" data-levelid="{{userInfo.u_level}}">
               <view class='ml40'>
                   <view class='mt80'><text class='h1 fc-ff5f27'>闯三关</text></view>
-                  <view><text class='h6 fc-666 '>闯关成功赢积分</text></view>
-                  <view><text class='fs30 fc-ff5f27'>2486</text><text class='fs30 fc-666'>人参与</text></view>
-                  <view><text lass='fs30 fc-ff5f27'>86</text><text class='fs30 fc-666'>人获奖</text></view>
+                  <view class='mt-10'><text class='h6 fc-666  '>闯关成功赢积分</text></view>
+                  <view class='mt50'><text class='fs30 fc-ff5f27'>2486</text><text class='fs30 fc-666'>人参与</text></view>
+                  <view class='mt10'><text class='fs30 fc-ff5f27'>86</text><text class='fs30 fc-666'>人获奖</text></view>
               </view>
           </view>
-          <view class='f1'></view>
-          <view class='q-tagName'>闯关答题</view>
+          <view class='f1 df fxyc' bindtap="toAsk" data-levelid="{{userInfo.u_level}}">
+                <image src='../../images/cg-right.png' class='wh300'></image>
+          </view>
+          <view class='q-tagName-a'>闯关答题</view>
+          <!-- <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>
+              <view class='df fxyc'>
+                  <view class='levelMaskCore mt40'>
+                      <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
+                      <view class="df fxc">
+                          <view class='nextAskTip mt20'>敬请期待</view>
+                      </view>
+                  </view>
+              </view>
+          </view> -->
       </view>
-
-    <view wx:if="{{tools.isLevel(userInfo)}}">
-        <view  class='df fxc mt20 root3d por' >
-            <view class="por" bindtap="toAsk" data-levelid="{{userInfo.u_level}}" >
-              <image
-                class="baseLevel cube levelItem"
-                src="{{'https://wxapp.haizeihuang.com/wannengdequan_php/images/LV'+userInfo.u_level+'.png'}}"></image>
-              <view class='levelName'> 共{{userInfo.question_nums}}题 / {{userInfo.level_bonus/100}}元</view>
-            </view>
-            <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal1'>
-                <view class='df fxyc'>
-                    <view class='levelMaskCore mt40'>
-                        <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
-                        <view class="df fxc">
-                            <view class='nextAskTip mt20'>敬请期待</view>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </view>
     <view>
       <view class='df fxc mt20'>
         <view class='area-com'>
@@ -73,37 +57,57 @@
       wx:for-index="idx"
       wx:key="idx"
       wx:for-item="gt"
-      class='df fxc mt20 por'>
-          <view class='por'>
-            <image bindtap='togm' data-gmid='{{gt.g_id}}' class='PrizeImg'src="{{gt.g_img}}"></image>
-            <view wx:if='{{gt.is_participate||gt.g_stock<1}}'class='PrizeImgMask df fxyc'>
-                <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>
-                      <text class='tipInfo-goods'>今日已答，明日再来</text>
-                      <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view>
-                </view>
-                 <view wx:else class='df fdy fyc'>
-                    <text  class='tipInfo-goods'>本场比赛已结束</text>
-                    <!-- <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view> -->
-                 </view>
+      class='mt20 q-item por'>
+          <view class='f1'  bindtap='togm' data-gmid='{{gt.g_id}}'>
+              <view class='ml40'>
+                  <view class='mt80'><text class='h1 fc-32a7fd'>品牌答题</text></view>
+                  <view class='mt-10'><text class='h6 fc-666  '>全部答对获好礼</text></view>
 
-            </view>
+                  <view class='mt50' wx:if='{{gt.is_participate==false && gt.g_stock>1}}'>
+                    <text class='fs30 fc-32a7fd'>{{gt.participate_nums}}</text>
+                    <text class='fs30 fc-666' >人参与</text>
+                  </view>
+
+                  <view class='mt10' wx:if='{{gt.is_participate==false && gt.g_stock>1}}'>
+                    <text class='fs30 fc-32a7fd'>{{gt.participate_nums}}</text>
+                    <text class='fs30 fc-666' >人获奖</text>
+                  </view>
+              </view>
           </view>
+          <view class='f1 df fxyc' bindtap='togm' data-gmid='{{gt.g_id}}'>
+                <image src="{{gt.g_img}}" class='wh300 bgc-red'></image>
+          </view>
+          <view wx:if='{{gt.is_participate||gt.g_stock<1}}' class='PrizeImgMask df fxyc'>
+              <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>
+                    <text class='tipInfo-goods'>今日已答，明日再来</text>
+                    <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view>
+              </view>
+               <view wx:else class='df fdy fyc'>
+                  <text  class='tipInfo-goods'>本场比赛已结束</text>
+                  <!-- <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view> -->
+               </view>
 
-          <view wx:if='{{gt.is_participate==false && gt.g_stock>1}}' class='lbgBygoods h4 fc-fff'>{{gt.participate_nums}}人已参与</view>
-          <view wx:if='{{gt.is_participate==false && gt.g_stock>1}}' class='rbgBygoods h4 fc-fff'>{{gt.get_nums}}人已获得</view>
+          </view>
+          <view class='q-tagName-b'>实物答题</view>
       </view>
     </view>
+
     <view class='df fxc mt20 por'>
         <image
           class='PrizeImg'
           src="https://wxapp.haizeihuang.com/wannengdequan_php/images/xiayiqi.png">
         </image>
     </view>
+
+
     <view class='focusAPPWrap'>
         <button open-type='contact' class='focusAPP'></button>
     </view>
     <view class='mt40'></view>
   </view>
+
+
+
   <view wx:if="{{isFHMask}}" class='fullwh df fdy fyc fxr' bindtap='hideFHMask'>
       <view class='fhtask df fdy fyc por'>
             <view class='fhtitle'>复活卡任务</view>

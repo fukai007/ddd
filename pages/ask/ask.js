@@ -1,8 +1,11 @@
 // pages/ask/ask.js
 import _ from '../../utils/underscore.js';
 import { makePar, extend } from '../../utils/util.js';
+const reviveInfo = '是否复活';
 var app = getApp();
-
+/*
+    1. 去除0.1元续命 - 2018-04-24 21:29
+*/
 var askm = {
   /**
    * 页面的初始数据
@@ -51,27 +54,36 @@ var askm = {
         console.log(err);
       }
     }).then(()=>{
-      //开始  答题 倒计时
-      this.ask_sid = setInterval(() => {
-        let oldCd = this.data.cd;
-        if (this.isWaiting) return;
-        if (oldCd < 1) {
-          clearInterval(this.ask_sid);
-          clearInterval(this.hcd_sid);
-          this.setData({ isOver: true });
-          let lindex = this.data.answer.q_level-1;//答题级别变成下标
-          let rf = this.data.answer.resurrection_fee;//获得金额显示
-          let content = `答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。`;
-
-          this.setData({
-            isTryUIA:true,
-            TryUIInfo:content
-          });
-        } else {
-          this.setData({ cd: --oldCd });
-        }
-      }, 1000);
+        this.openCD()
     })
+  },
+  /**
+   * 清除定时器
+   */
+  clearCD:function(){
+    clearInterval(this.ask_sid);
+    clearInterval(this.hcd_sid);
+  },
+  /**
+   * 开启定时器
+   */
+  openCD:function(){
+    //开始  答题 倒计时
+    this.ask_sid = setInterval(() => {
+      let oldCd = this.data.cd;
+      if (this.isWaiting) return;
+      if (oldCd < 1) {
+        this.clearCD();
+        this.setData({ isOver: true });
+        let content = '是否复活'
+        this.setData({
+          isTryUIA:true,
+          TryUIInfo:reviveInfo
+        });
+      } else {
+        this.setData({ cd: --oldCd });
+      }
+    }, 1000);
   },
   /**
    * 强制复活
@@ -178,17 +190,30 @@ var askm = {
             app.fetchData({
               func:'resurrection.share_group',
               a_id: that.data.answer.a_id
+            }).then((data)=>{
+              // app.toPage('ask', { cid: that.cid })
+              // 在当前页复活
+              that.setData({
+                userInfo: app.globalData.userInfo,
+                hasUserInfo: true,
+                answer: data,
+                cd: data.answer_time,
+                helpCD: data.help_time,
+                isTryUIB:false,
+                isOver: false,
+              })
             }).then(()=>{
-              app.toPage('ask', { cid: that.cid })
+              this.openCD()
             }).catch(()=>{
               //TODO 服务器异常怎么处理 - 2018-03-14 17:55
             })
-            return 
+            return
           }
 
-          that.setData({
-            isShowHelpUI: true
-          })
+          // that.setData({
+          //   isShowHelpUI: true
+          // })
+
           //当前题目如果分享了 就不用调用接口了
           if (!that.isQuestionShare) {
             app.fetchData({
@@ -197,7 +222,7 @@ var askm = {
             }).then(data => {
               //增加是否判断  控制 分享行为-2018-01-06 10:52
               that.isQuestionShare = true
-              that.startHelpCD();
+              // that.startHelpCD();
             }).catch((error) => {
               if(error.code == -201004){
                 wx.hideShareMenu()
@@ -218,6 +243,8 @@ var askm = {
       @purpose 再次尝试在支付后
       @createTIme 2018-01-06 08:47:58
       @author miles_fk
+      @upInfo
+        1. 暂不需要支付 - 2018-04-24 21:35
       @parm
           answer.q_id
   */
@@ -334,10 +361,9 @@ var askm = {
             //let lindex = this.data.answer.q_level;//答题级别变成下标
             //let rf = this.data.answer.resurrection_fee;//获得金额显示
             //let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
-            let content = '答题失败您可以续命这一关，否则只能下场从幼儿园重新开始。';
             this.setData({
               isTryUIB:true,
-              TryUIInfo:content,
+              TryUIInfo:reviveInfo,
               isOver: true,
               answer: data
             });

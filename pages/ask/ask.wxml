@@ -11,9 +11,9 @@
   <view class='helpView df fxyc por'>
       <view class="tryCore">
             <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
-            <button type="button" name="ftryIt" class="tryIt" bindtap='tryItA'>
+            <!-- <button type="button" name="ftryIt" class="tryIt" bindtap='tryItA'>
               {{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命
-            </button>
+            </button> -->
             <button type="button" name="ftryIt" class="tryIt" open-type="share" id='tryItByShare'>分享即可复活</button>
       </view>
       <view class='close' bindtap='toIndex'></view>
@@ -25,7 +25,7 @@
   <view class='helpView df fxyc por'>
       <view class="tryCore">
             <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
-            <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命</button>
+            <!-- <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命</button> -->
             <button type="button" name="ftryIt" class="tryIt" open-type="share" id='tryItByShare'>分享即可复活</button>
       </view>
       <view class='close' bindtap='toIndex'></view>
@@ -67,7 +67,7 @@
               wx:elif='{{isCheck&&(selectQid==qid&&answer.q_an_yes != qid)}}'
               data-qid='{{qid}}' class='qitem qitem-fail'>
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
-            </view> 
+            </view>
 
             <view  wx:else data-qid='{{qid}}'
                 bindtap='onCheck'
@@ -88,9 +88,9 @@
   <!--  分享开始   wx:if='{{isOver == false}}'-->
   <view class="mt30"></view>
 
-  <view style='{{isShowHelpUI?"":"display:none"}}' class="mt20 h6 fc-fff tac">求助倒计时{{helpCD+'秒'}}</view>
+  <!-- <view style='{{isShowHelpUI?"":"display:none"}}' class="mt20 h6 fc-fff tac">求助倒计时{{helpCD+'秒'}}</view>
   <button wx:if="{{tools.isActiveShare(answer,isOver)}}" id='fua' class='shareIconBig mt20' open-type="share"></button>
-  <view wx:if="{{!isOver}}" class="h6 fc-fff tac mt20">#可求助多人或群#</view>
+  <view wx:if="{{!isOver}}" class="h6 fc-fff tac mt20">#可求助多人或群#</view> -->
   <!-- 显示帮助倒计时框 -->
   <view style='{{isShowHelpUI?"":"display:none"}}' class='fullwh '>
       <view class='df f1 fxyc full'>

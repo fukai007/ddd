@@ -53,22 +53,36 @@ var askm = {
       }
     }).then(data=>{
       //开始  答题 倒计时
-      this.ask_sid = setInterval(() => {
-        console.log("setInterval-----cd----------------------------",this.data.cd);
-        let oldCd = this.data.cd;
-        if (this.isWaiting) return;
-        if (oldCd < 1) {
-          // let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
-          let e = {
-            target:{dataset:{qid:''}},
-            currentTarget:{dataset:{qid:''}}
-          }
-          this.checkAsk(e)
-        } else {
-          this.setData({ cd: --oldCd });
-        }
-      }, 1000);
+      this.openCD();
     })
+  },
+  /**
+   * 清除定时器
+   */
+  clearCD:function(){
+    clearInterval(this.ask_sid);
+    clearInterval(this.hcd_sid);
+  },
+  /**
+   * 开启定时器
+   */
+  openCD:function(){
+    //开始  答题 倒计时
+    this.ask_sid = setInterval(() => {
+      let oldCd = this.data.cd;
+      if (this.isWaiting) return;
+      if (oldCd < 1) {
+        this.clearCD();
+        this.setData({ isOver: true });
+        let content = '是否复活'
+        this.setData({
+          isTryUIA:true,
+          TryUIInfo:reviveInfo
+        });
+      } else {
+        this.setData({ cd: --oldCd });
+      }
+    }, 1000);
   },
   /**
    * 强制复活
