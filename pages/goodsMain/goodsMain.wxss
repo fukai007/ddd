@@ -12,6 +12,7 @@
 .lbg{
   background-image: linear-gradient(-90deg, #FFC812 0%, #FE970A 100%);
 }
+
 .rbg{
   background-image: linear-gradient(-90deg, #FF7501 0%, #FE4A04 100%);
 }

@@ -16,7 +16,7 @@
 <view class='bh88'></view>
 <view class='ba'>
   <view class='df'>
-    <button class='f1 lbg h6 bh88 share' open-type="share">每分享两个群得一张复活卡</button>
+    <button class='f1 bg-26 h6 bh88 share' open-type="share">每分享两个群得一张复活卡</button>
     <view wx:if="{{isfh || !gd.is_participate}}" class='f1 rbg bh88' bindtap='toga'>开始答题</view>
   </view>
 </view>

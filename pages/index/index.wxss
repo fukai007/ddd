@@ -13,12 +13,11 @@ page{
   font-weight: bold;
 }
 .userIconA{
-  border: 2px solid #FFFFFF;
   border-radius: 130rpx;
 }
 .userInfo-index{
   overflow: hidden;
-  height: 240rpx;
+  height: 228rpx;
   width: 750rpx;
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard.png);
   background-repeat: no-repeat;
@@ -35,16 +34,16 @@ page{
 }
 
 .fh{
-  width: 224rpx;
-  height: 66rpx;
+  width: 200rpx;
+  height: 60rpx;
   background: #F75942;
   border: 1px solid #F75942;
   border-radius: 44rpx;
   text-align: center;
-  line-height: 66rpx;
-  font-size: 28rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
   color: #FFFFFF;
-  margin-top: 37rpx;
+  margin-top: 30rpx;
 }
 .fhb{
   width: 224rpx;
@@ -226,4 +225,26 @@ page{
   text-align: center;
   font-size: 50rpx;
   color: #333333;
+}
+
+.q-item{
+  height: 396rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  position: relative;
+  display: flex;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}
+.q-tagName{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 40rpx;
+  width: 144rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  background-color: #fc481f;
 }

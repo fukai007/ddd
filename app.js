@@ -1,5 +1,7 @@
 //const SERVER = 'https://wxapp.haizeihuang.com/wannengdequan_php/';
-const SERVER = 'https://wxapi.liunianshiguang.com';
+//const SERVER = 'https://wxapi.liunianshiguang.com'; 
+// 名字  -->  复活卡 变成 入场券
+const SERVER = 'http://womenyanggouba.liunianshiguang.com/';
 const fetchErrorInfo = '服务器忙请稍后再试\n谢谢您的理解';
 import { makePar,extend } from './utils/util';
 import { Promise } from './utils/es6-promise.min';
@@ -221,7 +223,7 @@ App({
   makeMd5Par(data={}){
     //传近来的data里不包含包含timestamp，ak这两个参数
     let str = '';
-    let secretKey = 'UbM81S7uFfUQlqu9';
+    let secretKey = 'ThdVdDXLOGmDrsTJ';
     let nowDate = new Date().valueOf().toString().substr(0, 10);
     data.timestamp = nowDate;
     let nd = this.objKeySort(data);
