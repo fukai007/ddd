@@ -1,0 +1,17 @@
+<!--pages/fail/fail.wxml-->
+<view class="askRoot fail">
+    <view class="fail-top img-wrap">
+      <image src="./imgs/fail.png" class="img"></image>
+    </view>
+    <view class="fail-center img-wrap">
+        <image src="./imgs/inspire.png" class="img"></image>
+        <view class="detail">
+          <text>下一场开始时间：</text>
+          <text class="special">19:00</text>
+        </view>
+    </view>
+    <view class="fail-bottom">
+        <image src="../../images/caution.png" class="icon-operate"></image>
+        <image src="../../images/home.png" class="icon-operate" bindtap='toIndex'></image>
+    </view>
+</view>

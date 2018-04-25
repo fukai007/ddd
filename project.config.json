@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 13,
 			"list": [
 				{
 					"id": 0,
@@ -42,8 +42,8 @@
 					"query": "a_id= 6"
 				},
 				{
-					"id": -1,
-					"name": "成功页",
+					"id": 1,
+					"name": "通关成功",
 					"pathName": "pages/dx/dx",
 					"query": ""
 				},
@@ -111,6 +111,12 @@
 					"id": -1,
 					"name": "兑换",
 					"pathName": "pages/exchange/exchange",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "通关失败",
+					"pathName": "pages/fail/fail",
 					"query": ""
 				}
 			]

@@ -1,6 +1,6 @@
 
 <!--pages/dx/dx.wxml 挑战成功页面-->
-<view class='df f1 fyc fdy pw-root por'>
+<!-- <view class='df f1 fyc fdy pw-root por'>
     <image  class="userIcon" src="{{userInfo.avatarUrl}}"  background-size="cover"></image>
     <view><text class="h5 fc-333">{{userInfo.nickName}}</text></view>
     <view style='margin-top:-130rpx'>
@@ -24,8 +24,29 @@
         </view>
         <view class='nextButton' bindtap='toIndex'></view>
     </view>
+</view> -->
+<view class="askRoot success">
+    <view class="success-top img-wrap">
+      <image src="./imgs/success.png" class="img"></image>
+      <view class="reward">
+        <image src="./imgs/bowl.png" class="icon"></image>
+        <text>狗粮</text>
+        <text class="special">+50g</text>
+      </view>
+    </view>
+    <view class="success-center img-wrap">
+        <image src="./imgs/text.png" class="img"></image>
+        <view class="detail">
+          <text>下一场开始时间：</text>
+          <text class="special">19:00</text>
+        </view>
+    </view>
+    <view class="success-bottom">
+        <image src="../../images/caution.png" class="icon-operate"></image>
+        <image src="../../images/share.png" class="icon-operate"></image>
+        <image src="../../images/home.png" class="icon-operate" bindtap='toIndex'></image>
+    </view>
 </view>
-
 
 
 

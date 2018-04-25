@@ -1,5 +1,63 @@
 /* pages/dx/dx.wxss */
-.wh200{
+.askRoot{
+  height: 100vh;
+  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.success {
+  color: #fff;
+  font-size: 24rpx;
+}
+.special {
+  color: #ff5f27;
+}
+/* 上部图片+奖励 */
+.success-top, .success-center {
+  display: inline-block;
+  margin: 44rpx 22% 0;
+  width: 56%;
+}
+.img-wrap .img {
+  width: 100%;
+}
+.reward {
+  margin-top: 50rpx;
+  font-weight: bold;
+}
+.reward text {
+  margin-right: 30rpx;
+  font-size: 36rpx;
+}
+.icon {
+  margin-right: 40rpx;
+  width: 140rpx;
+  height: 70rpx;
+  vertical-align: middle;
+}
+/* center */
+.success-center {
+  margin: 90rpx 20% 170rpx;
+}
+.success-center .img {
+  height: 40rpx;
+}
+.detail {
+  margin: 40rpx 0 0;
+  text-align: center;
+  font-size: 24rpx;
+}
+/* 操作icon */
+.success-bottom {
+  text-align: center;
+  margin-bottom: 138rpx;
+}
+.icon-operate {
+  margin: 0 48rpx;
+  width: 100rpx;
+  height: 100rpx;
+}
+/* .wh200{
   width: 200rpx;
   height: 200rpx;
 }
@@ -80,4 +138,4 @@
   30% { transform: scale(0); } 
   65% { transform: scale(1.3); }
   100% {transform:scale(1)} 
-}
+} */
