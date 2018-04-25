@@ -27,6 +27,7 @@ var askm = {
    */
   onLoad: function (qo) {
     console.log("ask------onLoad--------", qo);
+    wx.updateShareMenu({ withShareTicket: true })
     this.isWaiting = false;
     this.isQuestionShare=false;
     this.cid = qo.cid;
@@ -187,26 +188,41 @@ var askm = {
           console.log('ask--------------onShareAppMessage------->', path)
           //TODO  增加回去用户信息的接口来区分群 -2018-03-14 17:54
           if (res.from === 'button' && res.target.id == 'tryItByShare') {
-            app.fetchData({
-              func:'resurrection.share_group',
-              a_id: that.data.answer.a_id
-            }).then((data)=>{
-              // app.toPage('ask', { cid: that.cid })
-              // 在当前页复活
-              that.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true,
-                answer: data,
-                cd: data.answer_time,
-                helpCD: data.help_time,
-                isTryUIB:false,
-                isOver: false,
-              })
-            }).then(()=>{
-              this.openCD()
-            }).catch(()=>{
-              //TODO 服务器异常怎么处理 - 2018-03-14 17:55
-            })
+
+              if(ress.shareTickets){
+                let shareTicket = ress.shareTickets[0];
+                wx.getShareInfo({
+                  shareTicket:shareTicket,
+                  success:function (preShare){
+                    console.log("preShare--------->",preShare);
+                    app.fetchData({
+                      func:'resurrection.share_group',
+                      a_id: that.data.answer.a_id,
+                      encryptedData:preShare.encryptedData,
+                      iv:preShare.iv
+                    }).then((data)=>{
+                      console.log('resurrection_card.share_group------------------------------------------->');
+                      that.setData({
+                        userInfo: app.globalData.userInfo,
+                        hasUserInfo: true,
+                        answer: data,
+                        cd: data.answer_time,
+                        helpCD: data.help_time,
+                        isTryUIB:false,
+                        isTryUIA:false,
+                        isOver: false,
+                      })
+                    }).then(()=>{
+                      this.openCD()
+                    }).catch(()=>{
+                      //TODO 服务器异常怎么处理 - 2018-03-14 17:55
+                    })
+                  },
+                  fail:function () {
+
+                  }
+                })
+              }
             return
           }
 

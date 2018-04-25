@@ -1,6 +1,7 @@
 // pages/askForGoods/askForGoods.js 实物答题
 import _ from '../../utils/underscore.js';
 import { makePar, extend } from '../../utils/util.js';
+const reviveInfo = '是否复活';
 var app = getApp();
 
 var askm = {
@@ -53,37 +54,24 @@ var askm = {
       }
     }).then(data=>{
       //开始  答题 倒计时
-      this.openCD();
+      this.ask_sid = setInterval(() => {
+        console.log("setInterval-----cd----------------------------",this.data.cd);
+        let oldCd = this.data.cd;
+        if (this.isWaiting) return;
+        if (oldCd < 1) {
+          // let qid = e.target.dataset.qid || e.currentTarget.dataset.qid;
+          let e = {
+            target:{dataset:{qid:''}},
+            currentTarget:{dataset:{qid:''}}
+          }
+          this.checkAsk(e)
+        } else {
+          this.setData({ cd: --oldCd });
+        }
+      }, 1000);
     })
   },
-  /**
-   * 清除定时器
-   */
-  clearCD:function(){
-    clearInterval(this.ask_sid);
-    clearInterval(this.hcd_sid);
-  },
-  /**
-   * 开启定时器
-   */
-  openCD:function(){
-    //开始  答题 倒计时
-    this.ask_sid = setInterval(() => {
-      let oldCd = this.data.cd;
-      if (this.isWaiting) return;
-      if (oldCd < 1) {
-        this.clearCD();
-        this.setData({ isOver: true });
-        let content = '是否复活'
-        this.setData({
-          isTryUIA:true,
-          TryUIInfo:reviveInfo
-        });
-      } else {
-        this.setData({ cd: --oldCd });
-      }
-    }, 1000);
-  },
+
   /**
    * 强制复活
    */
