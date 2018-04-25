@@ -121,10 +121,9 @@ page{
   position: absolute;
   left: 0;
   top: 0;
-  width: 702rpx;
-  height: 480rpx;
+  width: 711rpx;
+  height: 395rpx;
   background: rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
 }
 
 .baseLevel{

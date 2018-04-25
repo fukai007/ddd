@@ -544,7 +544,7 @@ page {
 /** -----------答题页面和帮助页面 start-2018-01-09 16:43-------------- **/
 .askRoot{
   height: 100vh;
-  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/background_B.png);
+  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

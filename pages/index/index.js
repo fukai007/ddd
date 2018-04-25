@@ -115,43 +115,28 @@ var indexm =  {
         if(res.shareTickets){
           let shareTicket = res.shareTickets[0];
 
-
-          wx.login({
-            success:function(res){
+          wx.getShareInfo({
+            shareTicket:shareTicket,
+            success:function (preShare){
+              console.log("preShare--------->",preShare);
               app.fetchData({
                 //func:'resurrection_card.share_group',
-                func: 'user.test',
-                code: res.code
-              }).then((value) => {
-                console.log(value);
+                func:'user.test',
+                code:app.globalData.code,
+                encryptedData:preShare.encryptedData,
+                iv:preShare.iv
+              }).then((data)=>{
+                console.log('resurrection_card.share_group------------------------------------------->');
+                app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
+                  app.globalData.userInfo = userInfo
+                  indexMP.setData({userInfo})
+                })
               })
+            },
+            fail:function () {
+
             }
-          });
-
-
-
-          // wx.getShareInfo({
-          //   shareTicket:shareTicket,
-          //   success:function (preShare){
-          //     console.log("preShare--------->",preShare);
-          //     app.fetchData({
-          //       //func:'resurrection_card.share_group',
-          //       func:'user.test',
-          //       code:app.globalData.code,
-          //       encryptedData:preShare.encryptedData,
-          //       iv:preShare.iv
-          //     }).then((data)=>{
-          //       console.log('resurrection_card.share_group------------------------------------------->');
-          //       app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
-          //         app.globalData.userInfo = userInfo
-          //         indexMP.setData({userInfo})
-          //       })
-          //     })
-          //   },
-          //   fail:function () {
-          //
-          //   }
-          // })
+          })
 
         }
       },
