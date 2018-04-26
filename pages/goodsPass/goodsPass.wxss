@@ -1,63 +1,156 @@
-/* pages/goodsPass/goodsPass.wxss */
+
+
+/* 成功的*/
 page{
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/tongguanBG.png);
+  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.gicon{
-  width: 130rpx;
-  height: 130rpx;
+.successHeader{
+  width: 100%;
+  height: 400rpx;
+  text-align: center;
+  position: relative;
+}
+.successLogo{
+  width: 384rpx;
+  height: 293rpx;
+  background: white;
+  display: inline-block;
+  margin-top: 40rpx;
+  z-index: 1;
+}
+.grade-ok{
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+  color: #ffffff;
+  font-size: 36rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 20rpx;
+  z-index: 2;
+}
+.successText{
+  width: 100%;
+  height: 150rpx;
+  text-align: center;
+}
+.textImg{
+  width: 589rpx;
+  height: 61rpx;
+  display: inline-block;
+  margin-top: 40rpx;
+}
+.successPrize{
+  width: 686rpx;
+  height: 380rpx;
+  background: green;
+  box-sizing: border-box;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prizeName{
+  height: 40rpx;
+  font-size: 30rpx;
+  color: #ffffff;
+  background: #3ab7ff;
+  display: inline-block;
+  padding: 0 16rpx;
+  margin-top: 320rpx;
+}
+.successFooter{
+  width: 100%;
+  height: 200rpx;
+  text-align: center;
+}
+.getBtn{
+  width: 380rpx;
+  height: 88rpx;
+  display: inline-block;
+  line-height: 88rpx;
+  background: white;
+  font-size: 36rpx;
+  color: #3ab7ff;
+  margin-top: 50rpx;
+}
+
+
+/* 失败的*/
+.content{
+  width: 100%;
+  height: 100%;
+}
+.failHeader{
+  width: 100%;
+  height: 600rpx;
+  text-align: center;
+  position: relative;
+}
+.headLogo{
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
   border-radius: 50%;
 }
-.okbg{
-  width: 750rpx;
-  height: 453rpx;
-  margin-top:-170rpx;
-}
-
-.pimgWrap{
-  background-color: #fff;
-  width: 702rpx;
-  height: 480rpx;
-}
-
-.pimg{
-  width:300rpx;
-  height: 300rpx;
-}
-
-.submit-ok{
-  position: absolute;
-  bottom: 50rpx;
-  left:80rpx;
-  width: 574rpx;
-  height: 88rpx;
-  line-height: 88rpx;
-  color: #FF4229;
+.grade-fail{
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 100%;
+  color: #ffffff;
   font-size: 32rpx;
   text-align: center;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/btn_lingqu.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.submit-fail{
-  position: absolute;
-  bottom: 25rpx;
-  left:80rpx;
-  width: 574rpx;
-  height: 88rpx;
-  text-align: center;
-  line-height: 88rpx;
-  color: #FF4229;
-  font-size: 32rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/btn_lingqu_w.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-
-.score{
   margin-top: 30rpx;
-  font-size: 32rpx;
-  color: #333333;
+}
+.failHint{
+  color: #ffffff;
+  width: 100%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 46rpx;
+  font-weight: bolder;
+  display: block;
+  margin-top: 50rpx;
+}
+.peopleLogo{
+  width: 279rpx;
+  height: 312rpx;
+  display: inline-block;
+}
+.failBottom{
+  width: 700rpx;
+  height: 382rpx;
+  background: grey;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  padding-top: 20rpx;
+}
+.hint_1{
+  font-size: 30rpx;
+  width: 100%;
+  display: block;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.hint_2{
+  color: #3ab7ff;
+}
+.yao{
+  display: inline-block;
+  width: 200rpx;
+  height: 200rpx;
+  background: white;
+  margin-top: 40rpx;
+}
+.bottomLogo{
+  display: block;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
 }

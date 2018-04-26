@@ -30,17 +30,16 @@
   </view>
 </view>
 
-<view class='askRoot ovh'>
-  <view class='df fyc baseInfo mt60'>
-      <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
-      <!-- <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text> -->
-      <text class='h1 fc-fffe49 ml40 w230'>剩余 {{cd}} 秒</text>
-      <view class='curScore'>{{answer.ga_score}}分</view>
+<view class='askRoot ovh por'>
+  <view class='df fxc baseInfo mt60'>
+    <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
   </view>
+  <view class='tac mt50'><text class='h1 fc-fffe49 '>剩余 {{cd}} S</text></view>
+  <view class='curScore'>{{answer.ga_score}}分</view>
+  <view class='resurgenceCount h5'>复活卡</view>
 
   <!--  答题内容页面 开始 -->
-  <view class='questionArea mx24 mt60 por'>
-      <image class='logo' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/logo.png'></image>
+  <view class='questionArea mx24 mt40 por'>
       <view class='mx36 ovh'>
           <view class='mt40 tac h4 mt70'>{{answer.ga_progress}}/{{answer.ga_max}} {{answer.q_title}}</view>
           <view
@@ -66,7 +65,7 @@
               wx:elif='{{isCheck&&(selectQid==qid&&answer.q_an_yes != qid)}}'
               data-qid='{{qid}}' class='qitem qitem-fail'>
               <text class='pl30'>{{answer['q_an'+qid]}}</text>
-            </view> 
+            </view>
 
             <view wx:else data-qid='{{qid}}'
                 bindtap='onCheck'
@@ -86,9 +85,9 @@
 
   <!--  分享开始   wx:if='{{isOver == false}}'-->
   <view class="mt30"></view>
-  <view style='{{isShowHelpUI?"":"display:none"}}' class="mt20 h6 fc-fff tac">求助倒计时{{helpCD+'秒'}}</view>
+  <!-- <view style='{{isShowHelpUI?"":"display:none"}}' class="mt20 h6 fc-fff tac">求助倒计时{{helpCD+'秒'}}</view>
   <button wx:if="{{tools.isActiveShare(answer,isOver)}}" id='fua' class='shareIconBig mt20' open-type="share"></button>
-  <view wx:if="{{!isOver}}" class="h6 fc-fff tac mt20">#可求助多人或群#</view>
+  <view wx:if="{{!isOver}}" class="h6 fc-fff tac mt20">#可求助多人或群#</view> -->
 <!-- 显示帮助倒计时框 -->
   <view style='{{isShowHelpUI?"":"display:none"}}' class='fullwh '>
       <view class='df f1 fxyc full'>

@@ -1,20 +1,34 @@
 <!--pages/goodsPass/goodsPass.wxml-->
-<view class='df  fdy fxyc mt30'>
-        <image src='{{userInfo.avatarUrl}}' class='gicon'></image>
-        <view class='score'>{{userInfo.nickName}} 获得分数 : {{ginfo.ga_score}}</view>
-</view>
-<view wx:if="{{ispass}}" >
-  <image class='okbg' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/tupianwenzi-huode.png'></image>
-</view>
-<view wx:else>
-    <image class='okbg' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/tupianwenzi-shibai.png'></image>
-</view>
 
-<view class='df fxc'>
-  <view class='df fxyc mt20 pimgWrap'>
-    <image src='{{ginfo.g_img2}}' class='pimg'></image>
+<view class='content' wx:if="{{ispass}}" >
+  <view class='successHeader mt40'>
+    <image class='successLogo'  src='./images/successLogo.png'></image>
+    <text class='grade-ok'>分数：{{ginfo.ga_score}}</text>
+  </view>
+  <view class='successText'>
+    <image class='textImg' src='./images/successText.png'></image>
+  </view>
+  <view class='successPrize'>
+    <!-- <image class='prizeImg'></image> -->
+    <text class='prizeName'>疯狂的小狗精选狗粮</text>
+  </view>
+  <view class='successFooter'>
+    <button class='getBtn' bindtap='toAddress'>立即领取</button>
   </view>
 </view>
 
-<view wx:if="{{ispass}}" class='submit-ok' bindtap='toAddress'>马上领取</view>
-<view wx:else class='submit-fail' bindtap='toIndex'>返回首页</view>
+<view class='content' wx:else>
+  <view class='failHeader mt40'>
+    <image class='headLogo' src='{{userInfo.avatarUrl}}'></image>
+    <view><text class='grade-fail'>您获得分数：{{ginfo.ga_score}}</text></view>
+    <text class='failHint'>答题失败，希望您再接再厉</text>
+    <image class='peopleLogo'  src='./images/people.png'></image>
+  </view>
+  <view class='failBottom'>
+    <text class='hint_1'>全部答对可获得：<text class='hint_2'>疯狂的小狗有机微量元素片</text></text>
+    <image class='yao'></image>
+  </view>
+  <view class='successFooter'>
+    <button class='getBtn' bindtap='toIndex'>返回首页</button>
+  </view>
+</view>

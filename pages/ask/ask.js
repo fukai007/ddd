@@ -211,9 +211,11 @@ var askm = {
                         isTryUIB:false,
                         isTryUIA:false,
                         isOver: false,
+                        isCheck:false
                       })
                     }).then(()=>{
-                      this.openCD()
+                      that.isWaiting = false;
+                      that.openCD()
                     }).catch(()=>{
                       //TODO 服务器异常怎么处理 - 2018-03-14 17:55
                     })

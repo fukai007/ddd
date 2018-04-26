@@ -32,33 +32,14 @@ var indexm =  {
       return newUserInfo
     }).then(info=>{
       //let info = app.globalData.userInfo;
-      app.fetchDataBase({
+      return app.fetchDataBase({
         func: 'user.save_userinfo',
         openid: app.globalData.openId,
         ...info
       });
-      return app.fetchData({
-        func:'user.get_user_prize'
-      })
+      return
     }).then(data=>{
-      this.setData({
-        isWaitting: false
-      })
-      let {is_receive} = data;
-      if (is_receive){
-        wx.showModal({
-          title: '温馨提示',
-          content: '奖学金已派发，点击确认进我的账户查看(或者提现)',
-          success: function(res){
-            if (res.confirm) {
-              app.toPage('accountMain', {}, 'to'); //跳转到答题页面
-              console.log('用户点击确定')
-            } else if (res.cancel) {
-              console.log('用户点击取消')
-            }
-          }
-        })
-      }
+      this.setData({isWaitting: false})
       return data;
     }).catch(error=>{
       console("data-------->user.get_user_prize", error)

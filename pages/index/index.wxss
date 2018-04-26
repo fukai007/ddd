@@ -38,7 +38,7 @@ page{
   position: absolute;
   left: 0rpx;
   top: 0;
-  z-index: 4;
+  z-index: 1;
   width:712rpx;
   height:396rpx;
   background: rgba(0, 0, 0, 0.8);
@@ -81,12 +81,6 @@ page{
   color: #F25A4A;
 }
 
-.nextAskTime{
-  text-align: center;
-  font-size: 28rpx;
-  color: #FFFFFF;
-}
-
 .area-com{
   width: 720rpx;
   height: 54rpx;
@@ -95,16 +89,7 @@ page{
   background-size: cover;
 }
 
-.nextAskTip{
-    width: 303rpx;
-    height: 70rpx;
-    background: #FFFFFF;
-    border-radius: 49px;
-    text-align: center;
-    font-size: 28rpx;
-    color: #F1322E;
-    line-height: 70rpx;
-}
+
 .askMinInfo{
   font-size: 28rpx;
   color: #EDFF39;

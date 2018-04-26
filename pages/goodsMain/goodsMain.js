@@ -81,9 +81,28 @@ Page({
       path: path,
       imageUrl: imageUrl,
       success: function (res) {
-        if (res.shareTickets) app.fetchData({ func: 'resurrection_card.share_group' })
+        if (res.shareTickets){
+          wx.getShareInfo({
+            shareTicket:shareTicket,
+            success:function (preShare){
+              console.log("preShare--------->",preShare);
+              app.fetchData({
+                func:'resurrection_card.share_group',
+                encryptedData:preShare.encryptedData,
+                iv:preShare.iv
+              }).then((data)=>{
+                console.log('resurrection_card.share_group------------------------------------------->');
+                app.fetchData({ func: 'user.get_userinfo' }).then(userInfo=>{
+                  app.globalData.userInfo = userInfo
+                  indexMP.setData({userInfo})
+                })
+              })
+            },
+            fail:function () {}
+          })
+        }
        },
-      fail: function (res) { }
+      fail: function(res){}
     }
   },
   toga:function(){

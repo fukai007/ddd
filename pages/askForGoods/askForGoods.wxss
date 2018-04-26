@@ -50,15 +50,25 @@
 }
 
 .curScore{
-  width: 150rpx;
-  height: 55rpx;
-  background-color: #fff;
+  position: absolute;
+  right: 20rpx;
+  top: 190rpx;
+  width: 120rpx;
+  height: 40rpx;
   font-size: 32rpx;
-  color: #333333;
-  line-height: 55rpx;
+  color: #fff;
+  border: 1px solid #fff;
+  line-height: 40rpx;
   text-align: center;
-  margin-left: 100rpx;
   border-radius: 25rpx;
+
+}
+.resurgenceCount{
+  position: absolute;
+  top:40rpx;
+  right:20rpx;
+  color: #fff;
+
 }
 
 .tipCount{

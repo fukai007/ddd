@@ -34,16 +34,14 @@
                 <image src='../../images/cg-right.png' class='wh300'></image>
           </view>
           <view class='q-tagName-a'>闯关答题</view>
-          <!-- <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>
-              <view class='df fxyc'>
-                  <view class='levelMaskCore mt40'>
-                      <view class='nextAskTime'>下期开始时间：{{userInfo.next_start_time}}</view>
-                      <view class="df fxc">
-                          <view class='nextAskTip mt20'>敬请期待</view>
-                      </view>
-                  </view>
+          <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>
+              <view class='df fxyc' style="height:100%">
+                    <view>
+                        <view class="tac h1 fc-fff">闯关答题</view>
+                        <view class="tac h4 fc-fff mt50">下一场开发时间{{userInfo.next_start_time}}</view>
+                    </view>
               </view>
-          </view> -->
+          </view>
       </view>
     <view>
       <view class='df fxc mt20'>
