@@ -15,7 +15,7 @@
         <view class='fh' bindtap='showFHMask'>获得入场券</view>
       </view>
       <view class='df f1 fdy  fsb fxr '>
-          <text class='tar toac'>入场券×{{userInfo.u_goods_ticket||0}}</text>
+            <text class='tar toac'></text>  
           <view class='tar toac mb15' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
@@ -34,22 +34,22 @@
                 <image src='../../images/cg-right.png' class='wh300'></image>
           </view>
           <view class='q-tagName-a'>闯关答题</view>
-          <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>
+          <!-- <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>
               <view class='df fxyc' style="height:100%">
                     <view>
                         <view class="tac h1 fc-fff">闯关答题</view>
                         <view class="tac h4 fc-fff mt50">下一场开发时间{{userInfo.next_start_time}}</view>
                     </view>
               </view>
-          </view>
+          </view> -->
       </view>
     <view>
-      <view class='df fxc mt20'>
+      <!-- <view class='df fxc mt20'>
         <view class='area-com'>
           <text class='h5 fc-fff ml20'>品牌独享赛</text>
           <text class='askMinInfo ml20'>{{userInfo.msg2}}</text>
         </view>
-      </view>
+      </view> -->
       <view
       wx:for="{{goodlist}}"
       wx:for-index="idx"
@@ -96,7 +96,6 @@
           src="https://wxapp.haizeihuang.com/wannengdequan_php/images/xiayiqi.png">
         </image>
     </view>
-
 
     <view class='focusAPPWrap'>
         <button open-type='contact' class='focusAPP'></button>

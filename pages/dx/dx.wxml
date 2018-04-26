@@ -4,7 +4,7 @@
     <image  class="userIcon" src="{{userInfo.avatarUrl}}"  background-size="cover"></image>
     <view><text class="h5 fc-333">{{userInfo.nickName}}</text></view>
     <view style='margin-top:-130rpx'>
-        <image 
+        <image
         class = 'cup'
         src='https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard-ok.png'>
         </image>
@@ -31,29 +31,19 @@
       <view class="reward">
         <image src="./imgs/bowl.png" class="icon"></image>
         <text>狗粮</text>
-        <text class="special">+50g</text>
+        <text class="special">{{ info.bonus || 0 }} g</text>
       </view>
     </view>
     <view class="success-center img-wrap">
-        <image src="./imgs/text.png" class="img"></image>
+        <view class='h1 tac fc-fff'>您答对了{{info.a_max}} 题</view>
         <view class="detail">
           <text>下一场开始时间：</text>
           <text class="special">19:00</text>
         </view>
     </view>
     <view class="success-bottom">
-        <image src="../../images/caution.png" class="icon-operate"></image>
+        <!-- <image src="../../images/caution.png" class="icon-operate"></image> -->
         <image src="../../images/share.png" class="icon-operate"></image>
         <image src="../../images/home.png" class="icon-operate" bindtap='toIndex'></image>
     </view>
 </view>
-
-
-
-
-
-
-
-
-
-
