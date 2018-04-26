@@ -2,20 +2,30 @@
 /* 主体上部 */
 .section-top {
   height: 82rpx;
+  line-height: 82rpx;
   position: relative;
+  background: url(https://wmygb.crazydoggy.cn/images/topcard.jpeg) no-repeat;
+  /* background-repeat: no-repeat; */
+  background-size: cover;  
+  font-size: 24rpx;
+  text-align: right;
+  color: #fff;
 }
-.h_bg {
+.section-top text {
+  margin-right: 20rpx;
+}
+/* .h_bg {
   width: 100%;
   height: inherit;
-}
-.section-top-content {
+} */
+/* .section-top-content {
   position: absolute;
   right:20rpx;
   top:0;
   line-height: 82rpx;
   font-size: 24rpx;
   color: #fff;
-}
+} */
 .icon {
   margin-right: 10rpx;
   width: 80rpx;
@@ -45,7 +55,7 @@
   padding: 0 16rpx;
   height: 56rpx;
   line-height: 56rpx;
-  font-size: 33rpx;
+  font-size: 30rpx;
   color: #202020;
 }
 .logo {
@@ -82,6 +92,7 @@
   font-size: 30rpx;
   color: #fff;
   border-radius:16rpx;
+  background:#dfdfdf;
 }
 .item-primary {
   background: blue;

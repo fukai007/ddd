@@ -17,16 +17,16 @@ var gpm = {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-        let ispass = options.ispass * 1  ||  false;
-        app.fetchData({
-          func:'goods.get_award'
-        }).then(data=>{
-          this.setData({
-            ginfo:data,
-            userInfo:app.globalData.userInfo,
-            ispass: ispass
-          });
-        })
+    let ispass = options.ispass * 1  ||  false;
+    app.fetchData({
+      func:'goods.get_award'
+    }).then(data=>{
+      this.setData({
+        ginfo:data,
+        userInfo:app.globalData.userInfo,
+        ispass: ispass
+      });
+    })
   },
 
   /**
