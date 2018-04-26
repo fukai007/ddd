@@ -22,12 +22,8 @@
 
 <!-- 正常续命 -->
 <view class='fullwh fxyc' style='{{isTryUIB?"display:flex":"display:none"}}'>
-  <view class='helpView df fxyc por'>
-      <view class="tryCore">
-            <view class='fc-red tryInfo'>{{TryUIInfo}}</view>
-            <!-- <button type="button" name="ftryIt" class="tryIt" bindtap='tryItB'>{{answer.resurrection_fee[answer.l_config_level||1]/100}}元 续命</button> -->
-            <button type="button" name="ftryIt" class="tryIt" open-type="share" id='tryItByShare'>分享即可复活</button>
-      </view>
+  <view class='helpView-gdd df fxyc por'>
+      <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'></button>
       <view class='close' bindtap='toIndex'></view>
   </view>
 </view>

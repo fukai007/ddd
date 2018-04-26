@@ -1,0 +1,20 @@
+<view class='content'>
+  <view class='personnalHeader'>
+    <image class='userLogo' src='{{pimg}}'></image>
+    <view class='dogFood'>
+      <image class='dogFoodImg' src='../../images/gpz.png'></image>
+      <text class='dogFoodText'>狗粮 × {{price}}g</text>
+    </view>
+    <button class='duiBtn' bindtap='toex'>兑换</button>
+  </view>
+  <view class='personnalSection'>
+    <view class='sectionHeader'>兑换记录</view>
+    <block>
+      <view class='record'  wx:for="{{list}}">
+        <text class='recordDate'>{{item.egl_time}}</text>
+        <text class='recordText'>兑换</text>
+        <text class='recordName'>{{item.eg_name}}</text>
+      </view>
+    </block>
+  </view>
+</view>

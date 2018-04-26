@@ -179,7 +179,7 @@ var indexm =  {
     app.toPage('askRule', {}, 'to'); //跳转到规则页面
   },
   toac:function(){
-    app.toPage('accountMain', {}, 'to'); //跳转到账户页面
+    app.toPage('personal', {}, 'to'); //跳转到账户页面
   },
   showFHMask:function(){
     this.setData({

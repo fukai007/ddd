@@ -20,7 +20,7 @@ page{
   overflow: hidden;
   height: 228rpx;
   width: 750rpx;
-  background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/topcard.png);
+  background: url(https://wmygb.crazydoggy.cn/images/topcard.jpeg);
   background-repeat: no-repeat;
   background-size: cover;
 }

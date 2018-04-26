@@ -39,7 +39,6 @@
   font-size: 36rpx;
   text-align: center;
   line-height: 90rpx;
-
 }
 .cd{
   border: 1rpx solid ;
@@ -62,6 +61,29 @@
   background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG_MessageBox.png);
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.helpView-gdd{
+  width: 558rpx;
+  height: 822rpx;
+  background: url(https://wmygb.crazydoggy.cn/images/sharebg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tryItByShare-gdd{
+  position: absolute;
+  bottom: 38rpx;
+  left: 240rpx;
+  width: 100rpx;
+  height: 100rpx;
+  background: url(https://wmygb.crazydoggy.cn/images/shareIcon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0rpx;
+}
+.tryItByShare-gdd::after{
+  border:0px;
 }
 
 .logo{
