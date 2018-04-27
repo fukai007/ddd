@@ -88,7 +88,7 @@ var fuam = {
   },
 
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
+    let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     //判断是否为实物答题-2018-02-04 18:19:33
     let par = this.options.a_id ? `a_id=${this.options.a_id}` : `ga_id=${this.options.ga_id}`;

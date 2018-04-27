@@ -13,13 +13,15 @@
   color: #ff5f27;
 }
 /* 上部图片+奖励 */
-.success-top, .success-center {
-  display: inline-block;
+ .success-top {
+  /* display: inline-block;
   margin: 44rpx 22% 0;
+  width: 56%; */
+  padding-top: 44rpx;
+  text-align: center;
+} 
+.success-top .img {
   width: 56%;
-}
-.img-wrap .img {
-  width: 100%;
 }
 .reward {
   margin-top: 50rpx;
@@ -37,9 +39,11 @@
 }
 /* center */
 .success-center {
+  display: inline-block;
   margin: 90rpx 20% 170rpx;
 }
 .success-center .img {
+  width: 100%;
   height: 40rpx;
 }
 .detail {
@@ -56,6 +60,17 @@
   margin: 0 48rpx;
   width: 100rpx;
   height: 100rpx;
+  display: inline-block;
+}
+
+.shareIcon{
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(https://wmygb.crazydoggy.cn/images/shareIcon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shareIcon::after{
+  border: 0rpx;
 }
 
 

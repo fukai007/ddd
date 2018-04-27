@@ -3,7 +3,7 @@
 <view class='content' wx:if="{{ispass}}" >
   <view class='successHeader mt40'>
     <image class='successLogo'  src='./images/successLogo.png'></image>
-    <text class='grade-ok'>分数：{{ginfo.ga_score}}</text>
+    <text class='grade-ok'>分数：{{ginfo.ga_score}} 分</text>
   </view>
   <view class='successText'>
     <image class='textImg' src='./images/successText.png'></image>
@@ -25,8 +25,8 @@
     <image class='peopleLogo'  src='./images/people.png'></image>
   </view>
   <view class='failBottom'>
-    <text class='hint_1'>全部答对可获得：<text class='hint_2'>疯狂的小狗有机微量元素片</text></text>
-    <image class='yao'></image>
+    <text class='hint_1'>全部答对可获得：<text class='hint_2'>{{ginfo.g_title}}</text></text>
+    <image class='yao' src='{{ginfo.g_img2}}'></image>
   </view>
   <view class='successFooter'>
     <button class='getBtn' bindtap='toIndex'>返回首页</button>

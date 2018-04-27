@@ -1,4 +1,4 @@
-<!--pages/fail/fail.wxml-->
+<!--pages/fail/fail.wxml 夺金赛答题失败页面-2018-04-27 13:20-->
 <view class="askRoot fail">
     <view class="fail-top img-wrap">
       <image src="./imgs/fail.png" class="img"></image>
@@ -7,7 +7,7 @@
         <image src="./imgs/inspire.png" class="img"></image>
         <view class="detail">
           <text>下一场开始时间：</text>
-          <text class="special">19:00</text>
+          <text class="special">{{info.next_start_time}}</text>
         </view>
     </view>
     <view class="fail-bottom">

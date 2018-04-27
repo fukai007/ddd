@@ -169,7 +169,7 @@ var askm = {
   onShareAppMessage: function (res) {
 
     this.isWaiting = true;
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
+    let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
     let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
     //if (res.from === 'button') {
       // 来自页面内转发按钮
@@ -472,6 +472,10 @@ var askm = {
       }).then(data=>{
         this.setData({ tipInfo: data});
       });
+  },
+  toFail:function(e){
+    let tofail = e.target.dataset.tofail;
+    tofail&&app.toPage('fail');
   }
 }
 

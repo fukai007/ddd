@@ -35,12 +35,12 @@
 /* 主体列表  */
 .section-content {
   padding: 20rpx;
-  background: #f8f8f8;
+  background: #E9F0FF;
   min-height: 100vh;
 }
 .item {
   display: inline-block;
-  margin-right: 22rpx;
+  margin-right: 20rpx;
   margin-bottom: 20rpx;
   width: calc(50% - 11rpx);
   border-radius: 10rpx;
@@ -83,7 +83,7 @@
   line-height:56rpx;
   margin-top:20rpx;
 }
-.item-btn {
+.item-btn{
   float: right;
   margin: 0;
   width: 118rpx;
@@ -92,8 +92,11 @@
   font-size: 30rpx;
   color: #fff;
   border-radius:16rpx;
-  background:#dfdfdf;
+  background:#61b9f5;
+}
+.item-btn::after{
+    border: 0;
 }
 .item-primary {
-  background: blue;
+  background: #3BB7FF;
 }

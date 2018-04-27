@@ -1,4 +1,4 @@
-/**index.wxss**/
+focusAPP/**index.wxss**/
 page{
   /* background: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/BG.png);
   background-repeat: repeat;
@@ -130,13 +130,13 @@ page{
 
 .focusAPPWrap{
   position: fixed;
-  right:0;
-  bottom:-40rpx;
+  right:-30rpx;
+  bottom:80rpx;
 }
 .focusAPP{
-  width: 363rpx;
-  height: 100rpx;
-  background-image: url(https://wxapp.haizeihuang.com/wannengdequan_php/images/gongzhonghao.png);
+  width: 138rpx;
+  height: 154rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/gongzhonghao.png);
   background-repeat: no-repeat;
   background-size: contain;
   background-color: rgba(0,0,0,0);

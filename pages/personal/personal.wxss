@@ -15,7 +15,7 @@
   margin-top: 16rpx;
 }
 .dogFood{
-  width: 380rpx;
+  min-width: 380rpx;
   height: 60rpx;
   margin: 0 auto;
   margin-top: 40rpx;

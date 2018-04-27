@@ -73,7 +73,7 @@ var tgm = {
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let imageUrl = 'https://wxapp.haizeihuang.com/wannengdequan_php/images/share.png';
+    let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
     let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
     let path = 'pages/index/index?';
     return {

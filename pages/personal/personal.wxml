@@ -3,7 +3,7 @@
     <image class='userLogo' src='{{pimg}}'></image>
     <view class='dogFood'>
       <image class='dogFoodImg' src='../../images/gpz.png'></image>
-      <text class='dogFoodText'>狗粮 × {{price}}g</text>
+      <text class='dogFoodText'>狗粮 × {{price}} g</text>
     </view>
     <button class='duiBtn' bindtap='toex'>兑换</button>
   </view>

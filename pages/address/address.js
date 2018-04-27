@@ -59,8 +59,8 @@ var addressm ={
    */
   onLoad: function (options) {
     this.ga_id = options.ga_id;
+    this.gr_type = options.gr_type;
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -148,6 +148,7 @@ var addressm ={
 
 
     addressInfo.ga_id = this.ga_id;
+    addressInfo.gr_type = this.gr_type;
       //TODO 保存收货地址
     app.fetchData(addressInfo).then(()=>{
       wx.showToast({ title:'保存地址成功'});

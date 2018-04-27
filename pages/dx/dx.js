@@ -78,7 +78,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
+    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let path = 'pages/index/index?';
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) { },
+      fail: function (res) { }
+    }
   },
   toIndex:function(){
     app.toPage('index');

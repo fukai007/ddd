@@ -7,7 +7,7 @@
 </view>
 
 <!-- 强制续命 - isTryUIA -->
-<view class='fullwh fxyc' style='{{isTryUIA?"display:flex":"display:none"}}'>
+<view class='fullwh fxyc' style='{{isTryUIA?"display:flex":"display:none"}}' catchtap='toFail' data-tofail='1'>
   <view class='helpView-gdd df fxyc por'>
     <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'></button>
     <view class='close' bindtap='toIndex'></view>
@@ -15,7 +15,7 @@
 </view>
 
 <!-- 正常续命 - isTryUIB -->
-<view class='fullwh fxyc' style='{{isTryUIB?"display:flex":"display:none"}}'>
+<view class='fullwh fxyc' style='{{isTryUIB?"display:flex":"display:none"}}' catchtap='toFail' data-tofail='1'>
   <view class='helpView-gdd df fxyc por'>
       <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'></button>
       <view class='close' bindtap='toIndex'></view>

@@ -144,7 +144,6 @@ page{
   display: inline-block;
   width: 200rpx;
   height: 200rpx;
-  background: white;
   margin-top: 40rpx;
 }
 .bottomLogo{

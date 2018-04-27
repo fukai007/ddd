@@ -3,7 +3,7 @@
     <!-- <image src="./imgs/h_bg.png" class="h_bg"></image> -->
     <!-- <view class="section-top-content"> -->
       <image src="./imgs/icon_s.png" class="icon"></image>
-      <text>×110g</text>
+      <text>×{{volume}}g</text>
     <!-- </view> -->
   </view>
   <view class="section-content" style="flex-direction:row;">
@@ -14,7 +14,7 @@
       </view>
       <image src='{{item.eg_img}}' class="item-img"></image>
       <view class="item-text">
-        <text class="item-title">疯狂小狗的精品狗粮</text>
+        <text class="item-title">{{item.eg_desc}}</text>
         <view class="item-content">
           <image src="./imgs/icon_s.png" class="icon"></image>
           <text>×{{item.eg_pay}}</text>

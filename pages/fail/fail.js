@@ -11,18 +11,29 @@ Page({
   
   },
 
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    app.fetchData({
+      func: 'user.get_user_level'
+    }).then(data => {
+      //data.bonus = (data.bonus / 100 || 0).toFixed(2);
+      this.setData({
+        info: data
+      })
+      console.log('dx---------->', data);
+    });
   },
 
   /**
