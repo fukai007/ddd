@@ -150,6 +150,7 @@ var indexm =  {
     // toPage: function (pageName, paro, gotoType)
     let that = this;
     let levelId = e.currentTarget.dataset.levelid || e.target.dataset.levelid;
+    console.log("toAsk----------toPage------------------------------------>", levelId)
     let ticket = this.data.userInfo.u_ticket;
     ticket = true;
     if (ticket == 0) { //ticket == 0
