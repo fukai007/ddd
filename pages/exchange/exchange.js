@@ -7,6 +7,7 @@ var exchangem = {
    * 页面的初始数据
    */
   data: {
+    volume: 0,
     array: [
       // { name: '疯狂的小狗', text: '疯狂小狗精品狗粮', num: 2, isConversion: false },
       // { name: '疯狂的小狗', text: '疯狂小狗精品狗粮', num: 3, isConversion: true },
@@ -23,6 +24,7 @@ var exchangem = {
       func: 'exchange_goods.all'
     }).then(data => {
       this.setData({
+        volume: data.price,
         array: data.list
       });
     })
@@ -36,7 +38,7 @@ var exchangem = {
       func: 'exchange_goods.pay',
       eg_id: id
     }).then(data => {
-      // app.toPage('address', { id: data });
+      app.toPage('address', { id: data });
     })
   }
 }
