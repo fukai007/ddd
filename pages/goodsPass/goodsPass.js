@@ -79,7 +79,7 @@ var gpm = {
   },
   toAddress:function(){
     app.toPage('address',{
-      ga_id: this.data.ginfo.ga_id,
+      ga_id: this.data.ginfo.gs_id,
       gr_type:1
     });
   },

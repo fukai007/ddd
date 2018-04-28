@@ -15,7 +15,6 @@ page{
 .successLogo{
   width: 384rpx;
   height: 293rpx;
-  background: white;
   display: inline-block;
   margin-top: 40rpx;
   z-index: 1;
@@ -45,7 +44,7 @@ page{
 .successPrize{
   width: 686rpx;
   height: 380rpx;
-  background: green;
+  background: #fff;
   box-sizing: border-box;
   margin: 0 auto;
   text-align: center;
@@ -56,9 +55,7 @@ page{
   font-size: 30rpx;
   color: #ffffff;
   background: #3ab7ff;
-  display: inline-block;
-  padding: 0 16rpx;
-  margin-top: 320rpx;
+  margin-top: 20rpx;
 }
 .successFooter{
   width: 100%;
@@ -122,7 +119,7 @@ page{
 .failBottom{
   width: 700rpx;
   height: 382rpx;
-  background: grey;
+  background: #fff;
   margin: 0 auto;
   border-radius: 10px;
   text-align: center;
