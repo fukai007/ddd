@@ -15,7 +15,7 @@
         <view class='fh' bindtap='showFHMask'>获得入场券</view>
       </view>
       <view class='df f1 fdy  fsb fxr '>
-            <text class='tar toac'></text>  
+            <text class='tar toac'>复活卡 × {{userInfo.u_goods_ticket||0}}</text>
           <view class='tar toac mb15' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
@@ -38,10 +38,10 @@
               <view class='df fxyc' style="height:100%">
                     <view>
                         <view class="tac h1 fc-fff">闯关答题</view>
-                        <view class="tac h4 fc-fff mt50">下一场开发时间{{userInfo.next_start_time}}</view>
+                        <view class="tac h4 fc-fff mt50">下一场开放时间{{userInfo.next_start_time}}</view>
                     </view>
               </view>
-          </view> 
+          </view>
       </view>
     <view>
       <!-- <viewaadddddddd class='df fxc mt20'>

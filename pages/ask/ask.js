@@ -170,13 +170,14 @@ var askm = {
 
     this.isWaiting = true;
     let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
-    let title = '急！我正参加在百万夺金答题，万能的圈啊帮我选择正确答案！';
+    let title = '不要钱，答题就拿走，挑战吧';
     //if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
       let par = `a_id=${this.data.answer.a_id}`;
       //let par = '';
-      let path = 'pages/fua/fua?' + par;
+      // let path = 'pages/fua/fua?' + par;
+      let path = 'pages/index/index?'
       let that = this;
       return {
         title: title,

@@ -79,7 +79,7 @@ Page({
    */
   onShareAppMessage: function () {
     let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
-    let title = '24小时随时答题夺金，对三道题就有奖金，答的多拿得多。';
+    let title = '不要钱，答题就拿走，挑战吧';
     let path = 'pages/index/index?';
     return {
       title: title,
