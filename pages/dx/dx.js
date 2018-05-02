@@ -96,7 +96,7 @@ Page({
     app.fetchData({
       func: 'notice.send_next_match',
       form_id: formId,
-      keyword1:"闯关答题10点场(测试用)",
+      keyword1: this.data.info.next_match_str,
       keyword2: this.data.info.next_start_time
     }).then(()=>{
       wx.showToast({title: '订阅成功'});
