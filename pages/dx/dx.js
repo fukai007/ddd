@@ -89,6 +89,19 @@ Page({
       fail: function (res) { }
     }
   },
+  formSubmit:function(e){
+
+    let formId = e.detail.formId;
+    console.log("formSubmit-formId---------info-------->", formId, this.data.info)
+    app.fetchData({
+      func: 'notice.send_next_match',
+      form_id: formId,
+      keyword1:"闯关答题10点场(测试用)",
+      keyword2: this.data.info.next_start_time
+    }).then(()=>{
+      wx.showToast({title: '订阅成功'});
+    })
+  },
   toIndex:function(){
     app.toPage('index');
   }

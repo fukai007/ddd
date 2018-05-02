@@ -34,15 +34,20 @@
         <text class="special">{{ info.bonus || 0 }} g</text>
       </view>
     </view>
-    <view class="success-center img-wrap">
-        <view class='h1 tac fc-fff'>您答对了{{info.a_max}} 题</view>
-        <view class="detail">
-          <text>下一场开始时间：</text>
-          <text class="special">{{info.next_start_time}}</text>
-        </view>
+    <view class='df fxyc mt80 mb40'>
+      <view class="success-center">
+          <view class='h1 tac fc-fff'>您答对了{{info.a_max}} 题</view>
+          <view class="detail">
+            <text>下一场开始时间：</text>
+            <text class="special">{{info.next_start_time}}</text>
+          </view>
+      </view>    
     </view>
+
     <view class="success-bottom">
-        <!-- <image src="../../images/caution.png" class="icon-operate"></image> -->
+    <form bindsubmit="formSubmit"  report-submit="true">
+        <button  class="icon-operate submitIcon" formType="submit"></button> 
+    </form>
         <button  class="icon-operate shareIcon"  open-type="share"></button>
         <image src="../../images/home.png" class="icon-operate" bindtap='toIndex'></image>
     </view>

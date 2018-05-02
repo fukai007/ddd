@@ -40,7 +40,8 @@
 /* center */
 .success-center {
   display: inline-block;
-  margin: 90rpx 20% 170rpx;
+  /* margin: 90rpx 20% 170rpx; */
+  text-align: center;
 }
 .success-center .img {
   width: 100%;
@@ -69,7 +70,13 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.shareIcon::after{
+.submitIcon{
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(https://wmygb.crazydoggy.cn/images/caution.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shareIcon::after,.submitIcon::after{
   border: 0rpx;
 }
 
