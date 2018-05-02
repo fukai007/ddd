@@ -64,10 +64,8 @@
   border-bottom: 1px solid #eeeeee;
 }
 .recordText{
-  margin-left: 200rpx;
 }
 .recordName{
-  display: inline-block;
-  float: right;
   color: #eb6936;
+  
 }

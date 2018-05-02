@@ -49,7 +49,11 @@
           <text class='h5 fc-fff ml20'>品牌独享赛</text>
           <text class='askMinInfo ml20'>{{userInfo.msg2}}</text>
         </view>
-      </view> -->
+      </view> 
+      
+      wx:if='{{gt.is_participate==false && gt.g_stock>1}}'
+
+      -->
       <view
       wx:for="{{goodlist}}"
       wx:for-index="idx"
@@ -61,12 +65,12 @@
                   <view class='mt80'><text class='h1 fc-32a7fd'>品牌答题</text></view>
                   <view class='mt-10'><text class='h6 fc-666  '>全部答对获好礼</text></view>
 
-                  <view class='mt50' wx:if='{{gt.is_participate==false && gt.g_stock>1}}'>
+                  <view class='mt50'>
                     <text class='fs30 fc-32a7fd'>{{gt.participate_nums}}</text>
                     <text class='fs30 fc-666' >人参与</text>
                   </view>
 
-                  <view class='mt10' wx:if='{{gt.is_participate==false && gt.g_stock>1}}'>
+                  <view class='mt10'>
                     <text class='fs30 fc-32a7fd'>{{gt.participate_nums}}</text>
                     <text class='fs30 fc-666' >人获奖</text>
                   </view>

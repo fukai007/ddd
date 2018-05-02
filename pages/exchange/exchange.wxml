@@ -7,7 +7,7 @@
     <!-- </view> -->
   </view>
   <view class="section-content" style="flex-direction:row;">
-    <view class="item" wx:for="{{array}}">
+    <view class="item" wx:for="{{array}}" wx:key='{{index}}'>
       <view class="item-top">
         <image src="./imgs/icon_s.png" class="logo"></image>
         <text>{{item.eg_name}}</text>

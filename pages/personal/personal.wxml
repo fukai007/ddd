@@ -10,10 +10,10 @@
   <view class='personnalSection'>
     <view class='sectionHeader'>兑换记录</view>
     <block>
-      <view class='record'  wx:for="{{list}}">
-        <text class='recordDate'>{{item.egl_time}}</text>
-        <text class='recordText'>兑换</text>
-        <text class='recordName'>{{item.eg_name}}</text>
+      <view class='record df fsb '  wx:for="{{list}}" wx:key='{{index}}'>
+        <text class='recordDate df f2'>{{item.egl_time}}</text>
+        <text class='recordText df f1'>兑换</text>
+        <text class='recordName df f1 fxr'>{{item.eg_name}}</text>
       </view>
     </block>
   </view>
