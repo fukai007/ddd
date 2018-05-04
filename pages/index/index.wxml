@@ -71,7 +71,7 @@
                   </view>
 
                   <view class='mt10'>
-                    <text class='fs30 fc-32a7fd'>{{gt.participate_nums}}</text>
+                    <text class='fs30 fc-32a7fd'>{{gt.get_nums}}</text>
                     <text class='fs30 fc-666' >人获奖</text>
                   </view>
               </view>

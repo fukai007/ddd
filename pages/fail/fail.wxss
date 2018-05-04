@@ -32,15 +32,32 @@
 .detail {
   margin: 74rpx 0 0;
   text-align: center;
-  font-size: 24rpx;
+  font-size: 32rpx;
 }
 /* 操作icon */
 .fail-bottom {
-  margin: 200rpx 0 138rpx;
   text-align: center;
+  margin-bottom: 138rpx;
 }
 .icon-operate {
-  margin: 0 98rpx;
+  margin: 0 48rpx;
   width: 100rpx;
   height: 100rpx;
+  display: inline-block;
+}
+
+.shareIcon{
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(https://wmygb.crazydoggy.cn/images/shareIcon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.submitIcon{
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(https://wmygb.crazydoggy.cn/images/caution.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.shareIcon::after,.submitIcon::after{
+  border: 0rpx;
 }

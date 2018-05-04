@@ -10,8 +10,11 @@
           <text class="special">{{info.next_start_time}}</text>
         </view>
     </view>
-    <view class="fail-bottom">
-        <image src="../../images/caution.png" class="icon-operate"></image>
+    <view class="fail-bottom  mt40">
+        <form bindsubmit="formSubmit"  report-submit="true">
+          <button  class="icon-operate submitIcon" formType="submit"></button> 
+        </form>
+        <button  class="icon-operate shareIcon"  open-type="share"></button>
         <image src="../../images/home.png" class="icon-operate" bindtap='toIndex'></image>
     </view>
 </view>

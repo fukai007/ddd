@@ -75,7 +75,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    let imageUrl = 'https://wmygb.crazydoggy.cn/images/share-big-bg.jpeg';
+    let title = '不要钱，答题就拿走，挑战吧';
+    let path = 'pages/index/index?';
+    return {
+      title: title,
+      path: path,
+      imageUrl: imageUrl,
+      success: function (res) { },
+      fail: function (res) { }
+    }
   },
   
   /**
@@ -83,5 +92,20 @@ Page({
    */
   toIndex: function () {
     app.toPage('index');
-  }
+  },
+  formSubmit: function (e) {
+    let formId = e.detail.formId;
+    console.log("formSubmit-formId---------info-------->", formId, this.data.info)
+    app.fetchData({
+      func: 'notice.send_next_match',
+      form_id: formId,
+      keyword1: this.data.info.next_match_str,
+      keyword2: this.data.info.next_start_time,
+      n_time: this.data.info.next_match_time
+    }).then(() => {
+      wx.showToast({ title: '订阅成功' });
+    })
+  },
+
+
 })
