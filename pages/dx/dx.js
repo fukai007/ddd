@@ -97,7 +97,8 @@ Page({
       func: 'notice.send_next_match',
       form_id: formId,
       keyword1: this.data.info.next_match_str,
-      keyword2: this.data.info.next_start_time
+      keyword2: this.data.info.next_start_time,
+      n_time:this.data.next_match_time
     }).then(()=>{
       wx.showToast({title: '订阅成功'});
     })
