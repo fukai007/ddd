@@ -10,7 +10,7 @@
   </view>
   <view class='successPrize'>
      <image class='yao' src='{{ginfo.g_img2}}'></image> 
-     <view class='tac'><text class='prizeName'>疯狂的小狗精选狗粮</text></view>
+     <view class='tac'><text class='prizeName'>{{ginfo.g_title}}</text></view>
   </view>
   <view class='successFooter'>
     <button class='getBtn' bindtap='toAddress'>立即领取</button>

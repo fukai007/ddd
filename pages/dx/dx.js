@@ -104,6 +104,9 @@ Page({
     })
   },
   toIndex:function(){
-    app.toPage('index');
+    let ul = this.data.userInfo.u_level
+    app.toPage('index', {
+      ul: ul
+    });
   }
 })

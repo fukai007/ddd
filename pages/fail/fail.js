@@ -91,7 +91,10 @@ Page({
    * 用户点击home
    */
   toIndex: function () {
-    app.toPage('index');
+    let ul = this.data.userInfo.u_level
+    app.toPage('index',{
+      ul: ul
+    });
   },
   formSubmit: function (e) {
     let formId = e.detail.formId;

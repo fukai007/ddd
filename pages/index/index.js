@@ -23,6 +23,7 @@ var indexm =  {
       console.log("data-------->user.get_userinfo",data)
       let oldUserInfo = app.globalData.userInfo
       let newUserInfo = extend(oldUserInfo,data);
+      console.log("data------extend-->user.get_userinfo", data)
       app.globalData.userInfo = newUserInfo
       this.setData({
         userInfo: newUserInfo,//app.globalData.userInfo,
@@ -47,7 +48,7 @@ var indexm =  {
         isWatting:false
       })
     });
-    this.setUserInfo();
+    //this.setUserInfo();
     //app.wxLogin();
   },
   /**
@@ -56,7 +57,8 @@ var indexm =  {
    */
   onShow: function () {
     app.fetchData({
-      func:'user.get_user_ticket_num'
+      func:'user.get_user_ticket_num',
+      level:this.options.ul
     }).then(data=>{
       let userInfo = this.data.userInfo;
       userInfo.u_ticket = data.u_ticket; //更新入场券-2018-01-20 19:54
@@ -76,6 +78,16 @@ var indexm =  {
     this.setData({
       isWatting: false
     })
+
+    app.globalData.userInfo = this.data.userInfo;
+
+  },
+
+  /**
+ * 生命周期函数--监听页面卸载
+ */
+  onUnload: function () {
+    app.globalData.userInfo = this.data.userInfo;
   },
   /**
    * 用户点击右上角分享
@@ -132,6 +144,7 @@ var indexm =  {
   setUserInfo:function(){
     let that = this;
     let sid = setInterval(function(){
+      console.log("index--------->setUserInfo-----app.globalData.userInfo---->", app.globalData.userInfo, that.data);
       let info = app.globalData.userInfo;
       if (info.nickName){
         that.setData({
