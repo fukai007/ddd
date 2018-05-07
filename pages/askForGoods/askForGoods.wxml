@@ -36,7 +36,7 @@
   </view>
   <view class='tac mt50'><text class='h1 fc-fffe49 '>剩余 {{cd}} S</text></view>
   <view class='curScore'>{{answer.ga_score}}分</view>
-  <view class='resurgenceCount h5'>复活卡</view>
+  <view class='resurgenceCount h5'>复活卡 x {{userInfo.u_goods_ticket}}</view>
 
   <!--  答题内容页面 开始 -->
   <view class='questionArea mx24 mt40 por'>
