@@ -24,7 +24,7 @@
       <view class='q-item mt20'>
           <view class='f1' bindtap="toAsk" data-levelid="{{userInfo.u_level}}">
               <view class='ml40'>
-                  <view class='mt80'><text class='h1 fc-ff5f27'>闯三关</text></view>
+                  <view class='mt80'><text class='h1 fc-ff5f27'>{{userInfo.index_word}}</text></view>
                   <view class='mt-10'><text class='h6 fc-666  '>闯关成功赢积分</text></view>
                   <view class='mt50'><text class='fs30 fc-ff5f27'>{{userInfo.play_num}}</text><text class='fs30 fc-666'> 人参与</text></view>
                   <view class='mt10'><text class='fs30 fc-ff5f27'>{{userInfo.get_award_num}}</text><text class='fs30 fc-666'> 人获奖</text></view>
