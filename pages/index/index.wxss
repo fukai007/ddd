@@ -57,15 +57,16 @@ page{
   margin-top: 30rpx;
 }
 .fhb{
-  width: 224rpx;
-  height: 66rpx;
-  background: #F75942;
-  border: 1px solid #F75942;
-  border-radius: 44rpx;
+  width: 203rpx;
+  height: 72rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/share_b115.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   text-align: center;
-  line-height: 66rpx;
+  line-height: 70rpx;
   font-size: 28rpx;
   color: #FFFFFF;
+  background-color:transparent;
 }
 
 .userfh{
@@ -183,22 +184,35 @@ page{
 }
 
 .fhtask{
-  width: 702rpx;
-  height: 643rpx;
-  background: #FFFFFF;
-  border-radius: 18px;
+  width: 600rpx;
+  height: 700rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/share-bg-a.png);
+  border-radius: 2px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .fhtitle{
-  margin-top: 46rpx;
-  font-size: 36rpx;
-  color: #333333;
+  margin-top: 148rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+  font-family: 'YouYuan';
+  color: #FFFFFF;
 }
 .fhponit{
   width: 10rpx;
   height: 10rpx;
   background-color: red;
   border-radius: 10rpx;
+}
+.ticketIcon{
+  width: 52rpx;
+  height: 31rpx;
+}
+.ticketInfo{
+  font-size: 30rpx;
+  color: #FFFFFF;
+  margin-left: 40rpx;
 }
 .fhlna{
   margin-left: 10rpx;

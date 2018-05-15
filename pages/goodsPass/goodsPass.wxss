@@ -72,7 +72,10 @@ page{
   color: #3ab7ff;
   margin-top: 50rpx;
 }
-
+.goHome{
+  width: 100rpx;
+  height: 100rpx;
+}
 
 /* 失败的*/
 .content{
@@ -116,6 +119,14 @@ page{
   height: 312rpx;
   display: inline-block;
 }
+.happy-dogLog{
+
+}
+.cry-dogLog{
+  width: 306rpx;
+  height: 328rpx;
+}
+
 .failBottom{
   width: 700rpx;
   height: 382rpx;

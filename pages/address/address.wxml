@@ -1,5 +1,6 @@
 <!--pages/address/address.wxml-->
-<view class='df fyc baseArea'>
+<view class='ovh'>
+<view class='df fyc baseArea '>
     <view class='h3 fc-000'>收货人 :</view>
     <input
       data-inputType='username'
@@ -47,4 +48,5 @@
 
 <view class="df fxyc">
     <button class='mt80 addressSubmit' bindtap='onAddressSubmit'></button>
+</view>
 </view>

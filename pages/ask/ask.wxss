@@ -64,27 +64,42 @@
 }
 
 .helpView-gdd{
-  width: 558rpx;
-  height: 822rpx;
-  background: url(https://wmygb.crazydoggy.cn/images/sharebg.png);
+  width: 600rpx;
+  height: 700rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/share-bg-a.png);
+  border-radius: 2px;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
 }
 
 .tryItByShare-gdd{
-  position: absolute;
-  bottom: 38rpx;
-  left: 240rpx;
-  width: 100rpx;
-  height: 100rpx;
-  background: url(https://wmygb.crazydoggy.cn/images/shareIcon.png);
+  width: 203rpx;
+  height: 72rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/share_b115.png);
   background-repeat: no-repeat;
   background-size: cover;
-  border: 0rpx;
+  text-align: center;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  color: #FFFFFF;
+  background-color:transparent;
 }
 .tryItByShare-gdd::after{
   border:0px;
 }
+
+.heartIcon{
+  width: 138rpx;
+  height: 49rpx;
+}
+.helpView-title{
+  margin-top: 148rpx;
+  font-size: 42rpx;
+  font-weight: bold;
+  font-family: 'YouYuan';
+  color: #FFFFFF;
+}
+
 
 .logo{
     position:absolute;

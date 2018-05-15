@@ -669,6 +669,35 @@ image{
 }
 
 
+.backHome-bt{
+  width: 380rpx;
+  height: 88rpx;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: transparent;
+}
+
+.next-bt{
+  width: 380rpx;
+  height: 88rpx;
+  background-color: #ffffff;
+  color: #00d1e4;
+
+  line-height: 88rpx;
+  text-align: center;
+}
+
+.backHome-bt::after,next-bt::after{
+  border:0px;
+}
+
+.backHome-bt::before,next-bt::before{
+  border:0px;
+}
+
+
 .ah-pop-close{
   position: absolute;
   width: 70rpx;

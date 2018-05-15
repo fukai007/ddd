@@ -108,5 +108,12 @@ Page({
     app.toPage('index', {
       ul: ul
     });
+  },
+  toAsk:function(){
+    let levelId  = this.data.info.level;
+    app.toPage('ask', { cid: levelId }); //跳转到答题页面
   }
+
 })
+
+

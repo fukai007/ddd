@@ -113,8 +113,8 @@ var indexm =  {
             success:function (preShare){
               console.log("preShare--------->",preShare);
               app.fetchData({
-                //func:'resurrection_card.share_group',
-                func:'user.test',
+                func:'resurrection_card.share_group',
+                //func:'user.test',
                 code:app.globalData.code,
                 encryptedData:preShare.encryptedData,
                 iv:preShare.iv

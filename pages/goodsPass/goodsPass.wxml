@@ -22,13 +22,19 @@
     <image class='headLogo' src='{{userInfo.avatarUrl}}'></image>
     <view><text class='grade-fail'>您获得分数：{{ginfo.ga_score}}</text></view>
     <text class='failHint'>答题失败，希望您再接再厉</text>
-    <image class='peopleLogo'  src='./images/people.png'></image>
+    <view class='df fxyc'>
+        <image class='cry-dogLog'  src='/images/dog-cry-b.png'></image>
+    </view>
+
   </view>
   <view class='failBottom'>
     <text class='hint_1'>全部答对可获得：<text class='hint_2'>{{ginfo.g_title}}</text></text>
     <image class='yao' src='{{ginfo.g_img2}}'></image>
   </view>
-  <view class='successFooter'>
+   <view class='successFooter'>
     <button class='getBtn' bindtap='toIndex'>返回首页</button>
-  </view>
+  </view> 
+  <!-- <view class='df fxyc mt40'>
+       <image src="../../images/home.png" class="goHome" bindtap='toIndex'></image>
+  </view> -->
 </view>

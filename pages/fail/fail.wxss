@@ -20,14 +20,19 @@
 .img-wrap .img {
   width: 100%;
 }
+.dog-icon{
+  width: 306rpx;
+  height: 238rpx;
+}
 /* center */
 .fail-center {
   display: inline-block;
   margin: 60rpx 10% 0;
   width: 80%;
 }
-.fail-center .img {
-  height: 40rpx;
+.failInfoImg{
+  width: 573rpx;
+  height: 48rpx;
 }
 .detail {
   margin: 74rpx 0 0;

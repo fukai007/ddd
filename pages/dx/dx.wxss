@@ -10,7 +10,7 @@
   font-size: 24rpx;
 }
 .special {
-  color: #ff5f27;
+  color: #ff8e48;
 }
 /* 上部图片+奖励 */
  .success-top {
@@ -21,7 +21,8 @@
   text-align: center;
 } 
 .success-top .img {
-  width: 56%;
+  width: 423rpx;
+  height: 402rpx;
 }
 .reward {
   margin-top: 50rpx;
@@ -79,6 +80,8 @@
 .shareIcon::after,.submitIcon::after{
   border: 0rpx;
 }
+
+
 
 
 /* 原来的样式 答多多的  结束 */

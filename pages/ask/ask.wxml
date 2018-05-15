@@ -8,16 +8,25 @@
 
 <!-- 强制续命 - isTryUIA -->
 <view class='fullwh fxyc' style='{{isTryUIA?"display:flex":"display:none"}}' catchtap='toFail' data-tofail='1'>
-  <view class='helpView-gdd df fxyc por'>
-    <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'></button>
+  <view class='helpView-gdd  por'>
+    <view class='df fxyc'><text class='helpView-title'>分享群可立即复活!</text></view>
+    <view class='df fxyc mt100'><image src='/images/1_10.png' class='heartIcon'></image></view>
+    <view class='df fxyc mt200'>
+        <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'>去分享</button>
+    </view>
+
     <view class='close' bindtap='toIndex'></view>
   </view>
 </view>
 
 <!-- 正常续命 - isTryUIB -->
 <view class='fullwh fxyc' style='{{isTryUIB?"display:flex":"display:none"}}' catchtap='toFail' data-tofail='1'>
-  <view class='helpView-gdd df fxyc por'>
-      <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'></button>
+  <view class='helpView-gdd  por'>
+      <view class='df fxyc'><text class='helpView-title'>分享群可立即复活!</text></view>
+      <view class='df fxyc mt100'><image src='/images/1_10.png' class='heartIcon'></image></view>
+      <view class='df fxyc mt200'>
+          <button class='tryItByShare-gdd' type="button" name="ftryIt" open-type="share" id='tryItByShare'>去分享</button>
+      </view>
       <view class='close' bindtap='toIndex'></view>
   </view>
 </view>

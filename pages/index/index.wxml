@@ -15,7 +15,7 @@
         <view class='fh' bindtap='showFHMask'>获得入场券</view>
       </view>
       <view class='df f1 fdy  fsb fxr '>
-            <text class='tar toac'>复活卡 × {{userInfo.u_goods_ticket||0}}</text>
+            <text class='tar toac'>入场券 × {{userInfo.u_goods_ticket||0}}</text>
           <view class='tar toac mb15' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
@@ -25,7 +25,7 @@
           <view class='f1' bindtap="toAsk" data-levelid="{{userInfo.u_level}}">
               <view class='ml40'>
                   <view class='mt80'><text class='h1 fc-ff5f27'>{{userInfo.index_word}}</text></view>
-                  <view class='mt-10'><text class='h6 fc-666  '>闯关成功赢积分</text></view>
+                  <view class='mt-10'><text class='h6 fc-666  '>闯关成功赢狗粮</text></view>
                   <view class='mt50'><text class='fs30 fc-ff5f27'>{{userInfo.play_num}}</text><text class='fs30 fc-666'> 人参与</text></view>
                   <view class='mt10'><text class='fs30 fc-ff5f27'>{{userInfo.get_award_num}}</text><text class='fs30 fc-666'> 人获奖</text></view>
               </view>
@@ -62,7 +62,7 @@
       class='mt20 q-item por'>
           <view class='f1'  bindtap='togm' data-gmid='{{gt.g_id}}'>
               <view class='ml40'>
-                  <view class='mt80'><text class='h1 fc-32a7fd'>品牌答题</text></view>
+                  <view class='mt80'><text class='h1 fc-32a7fd'>奖品答题</text></view>
                   <view class='mt-10'><text class='h6 fc-666  '>全部答对获好礼</text></view>
 
                   <view class='mt50'>
@@ -82,7 +82,7 @@
           <view wx:if='{{gt.is_participate||gt.g_stock<1}}' class='PrizeImgMask df fxyc'>
               <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>
                     <text class='tipInfo-goods'>今日已答，明日再来</text>
-                    <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用复活卡答题</view>
+                    <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用入场券卡答题</view>
               </view>
                <view wx:else class='df fdy fyc'>
                   <text  class='tipInfo-goods'>本场比赛已结束</text>
@@ -109,18 +109,17 @@
 
 
 
-  <view wx:if="{{isFHMask}}" class='fullwh df fdy fyc fxr' bindtap='hideFHMask'>
+  <view wx:if="{{isFHMask}}" class='fullwh df fxyc' catchtap='hideFHMask'>
       <view class='fhtask df fdy fyc por'>
-            <view class='fhtitle'>复活卡任务</view>
-            <view class='df  fsbyc fhItem'>
-                <view class='fhponit'></view>
-                <view class='fhlna f1'>
-                      <view class='h4'>分享到微信群</view>
-                      <view class='h6 fc-333'>每2个群获得一张复活卡(每日限十张)</view>
-                </view>
+            <view class='fhtitle'>分享到两个不同微信群可获得</view>
+            <view class='df fxyc  mt100'>
+              <image src='/images/ticketIcon.png' class='ticketIcon'></image>
+              <text class='ticketInfo'>入场券 x1</text>
+            </view>
+            <view class='df fxyc mt200'>
                 <button open-type="share" class='fhb'>去分享</button>
             </view>
-            <view class='fhc' bindtap='hideFHMask'>×</view>
+            <!-- <view class='fhc' bindtap='hideFHMask'>×</view> -->
       </view>
   </view>
 </view>
