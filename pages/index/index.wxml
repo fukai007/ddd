@@ -31,7 +31,7 @@
               </view>
           </view>
           <view class='f1 df fxyc' bindtap="toAsk" data-levelid="{{userInfo.u_level}}">
-                <image src='../../images/cg-right.png' class='wh300'></image>
+                <image src="{{cgLevelImgList[userInfo.u_level]}}" class='wh300'></image>
           </view>
           <view class='q-tagName-a'>闯关答题</view>
            <view wx:if="{{tools.isMask(userInfo)}}" class='levelMaskAreal2'>

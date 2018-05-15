@@ -11,7 +11,8 @@ var indexm =  {
     isFHMask:false,
     userInfo:{
       u_level:0
-    }
+    },
+    cgLevelImgList: ["", "https://wmygb.crazydoggy.cn/images/level1.png", "https://wmygb.crazydoggy.cn/images/level2.png", "https://wmygb.crazydoggy.cn/images/level3.png", "https://wmygb.crazydoggy.cn/images/level4.png", "https://wmygb.crazydoggy.cn/images/level5.png"]
   },
   onLoad: function () {
     wx.updateShareMenu({withShareTicket: true})
