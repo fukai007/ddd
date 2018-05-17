@@ -1,3 +1,6 @@
+page{
+  background-color: #ffffff;
+}
 .personnalHeader{
   width: 100%;
   height: 400rpx;
@@ -53,6 +56,7 @@
   font-size: 30rpx;
   box-sizing: border-box;
   padding-left: 20rpx;
+  background-color:#eaf0fe;
 }
 .record{
   height: 60rpx;
@@ -67,5 +71,21 @@
 }
 .recordName{
   color: #eb6936;
-  
+}
+
+.discurType{
+  width: 174rpx;
+  height: 70rpx;
+  text-align: center;
+}
+
+.curType{
+  width: 174rpx;
+  height: 70rpx;
+  text-align: center;
+  background-color: #ffffff;
+}
+.baseGetPrize{
+  height: 98rpx;
+  border-bottom: 1rpx solid #eeeeee;
 }

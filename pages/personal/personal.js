@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    type:'a',
+    isLoadding:true
   },
 
   /**
@@ -32,8 +33,9 @@ Page({
     }).then(data=>{
       this.setData({
         price: data.price,
-        list: data.log,
-        pimg: app.globalData.userInfo.avatarUrl
+        elist: data.log,
+        pimg: app.globalData.userInfo.avatarUrl,
+        isLoadding:false
       });
     })
   },
@@ -75,5 +77,46 @@ Page({
 
   toex: function () {
     app.toPage('exchange', {}, 'to'); //跳转到账户页面
+  },
+
+  /**
+   * 切换至兑换记录模式&&请求数据-2018-05-17 16:44:26
+   */
+  setTypeA:function(){
+    if (this.data.isLoadding) return ;
+
+
+    this.setData({type:'a'})
+    app.fetchData({
+      func: 'exchange_goods.log'
+    }).then(data => {
+      this.setData({
+        price: data.price,
+        elist: data.log,
+        pimg: app.globalData.userInfo.avatarUrl,
+        isLoadding: false
+      });
+    })
+
+  },
+   /**
+   * 切换至获奖记录模式&&请求数据-2018-05-17 16:44:26
+   */
+  setTypeB: function () { 
+    if (this.data.isLoadding) return;
+
+    this.setData({ type: 'b' }) 
+
+    app.fetchData({
+      func: 'goods.send_prize_log'
+    }).then(data => {
+      this.setData({
+        plist: data.log,
+        isLoadding: false
+      });
+    }).catch(()=>{
+      this.setData({ isLoadding: false }) 
+    })
+
   },
 })

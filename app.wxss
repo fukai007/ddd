@@ -149,7 +149,12 @@ image{
 .fc-32a7fd{
   color: #32a7fd;
 }
-
+.fc-202020{
+  color: #202020;
+}
+.fc-999{
+  color: #999999;
+}
 .fc-000{
   color: #000;
 }
@@ -282,6 +287,10 @@ image{
   height: 110rpx;
 }
 
+.h20{
+  height: 20rpx;
+}
+
 
 .wh80{
   width: 80rpx;
@@ -396,6 +405,9 @@ image{
 
 .mt20{
   margin-top: 20rpx;
+}
+.mt22{
+  margin-top: 22rpx;
 }
 .mt24{
   margin-top: 24rpx;
