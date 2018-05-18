@@ -48,12 +48,6 @@
 					"query": ""
 				},
 				{
-					"id": -1,
-					"name": "账户中心",
-					"pathName": "pages/accountMain/accountMain",
-					"query": ""
-				},
-				{
 					"id": 7,
 					"name": "实物答题成功页面",
 					"pathName": "pages/goodsPass/goodsPass",

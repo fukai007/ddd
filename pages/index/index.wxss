@@ -56,6 +56,12 @@ page{
   color: #FFFFFF;
   margin-top: 30rpx;
 }
+.fha{
+  width: 200rpx;
+  height: 60rpx;
+  margin-top:30rpx;
+
+}
 .fhb{
   width: 203rpx;
   height: 72rpx;

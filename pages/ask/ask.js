@@ -76,11 +76,13 @@ var askm = {
       if (oldCd < 1) {
         this.clearCD();
         this.setData({ isOver: true });
-        let content = '是否复活'
-        this.setData({
-          isTryUIA:true,
-          TryUIInfo:reviveInfo
-        });
+        // let content = '是否复活'
+        // this.setData({
+        //   isTryUIA:true,
+        //   TryUIInfo:reviveInfo
+        // });
+        let e = { target: { dataset: { tofail: true }}}
+        this.toFail(e);
       } else {
         this.setData({ cd: --oldCd });
       }
@@ -377,15 +379,8 @@ var askm = {
             clearInterval(this.ask_sid);
             wx.hideShareMenu();
             //TODO 最后一道题错了怎么办 2018-01-09 19:04:31
-            //let lindex = this.data.answer.q_level;//答题级别变成下标
-            //let rf = this.data.answer.resurrection_fee;//获得金额显示
-            //let content = `距离${rf[lindex]/100}元奖学金,一步之遥.点击续命,获得答题机会`;
-            this.setData({
-              isTryUIB:true,
-              TryUIInfo:reviveInfo,
-              isOver: true,
-              answer: data
-            });
+            let e = {target:{dataset:{tofail:true}}}
+            this.toFail(e);
             break;
           }
           case 3:{//通关

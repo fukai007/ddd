@@ -12,10 +12,13 @@
       <view class="userinfo">
         <image bindtap="" class="wh110 userIconA" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
         <!-- <text class="userinfo-nickname h4 fc-fff mt20">{{userInfo.nickName}}</text> -->
-        <view class='fh' bindtap='showFHMask'>获得入场券</view>
+         <!-- <view class='fh' bindtap='showFHMask'>获得入场券</view>  -->
+         <view class='fha'></view>
+        <view></view>
       </view>
       <view class='df f1 fdy  fsb fxr '>
-            <text class='tar toac'>入场券 × {{userInfo.u_goods_ticket||0}}</text>
+          <text class='tar toac'></text>
+          <!-- <text class='tar toac'>入场券 × {{userInfo.u_goods_ticket||0}}</text> -->
           <view class='tar toac mb15' bindtap='toac'>个人中心 ＞ </view>
       </view>
     </view>
@@ -82,7 +85,7 @@
           <view wx:if='{{gt.is_participate||gt.g_stock<1}}' class='PrizeImgMask df fxyc'>
               <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>
                     <text class='tipInfo-goods'>今日已答，明日再来</text>
-                    <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用入场券卡答题</view>
+                    <!-- <view class='userfh' data-gmid='{{gt.g_id}}' bindtap='checkFH'>使用入场券卡答题</view> -->
               </view>
                <view wx:else class='df fdy fyc'>
                   <text  class='tipInfo-goods'>本场比赛已结束</text>
