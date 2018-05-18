@@ -111,7 +111,8 @@
 
   <view wx:if="{{isFHMask}}" class='fullwh df fxyc' catchtap='hideFHMask'>
       <view class='fhtask df fdy fyc por'>
-            <view class='fhtitle'>分享到两个不同微信群可获得</view>
+            <view class='fhtitle'>分享到每一个微信群可获得</view>
+            <view class='df fxc mt10'><text class='h6 fc-fff'>(上限10张)</text></view>
             <view class='df fxyc  mt100'>
               <image src='/images/ticketIcon.png' class='ticketIcon'></image>
               <text class='ticketInfo'>入场券 x1</text>
