@@ -28,7 +28,7 @@
             <view class='fc-ff5f27 h6 mt20'>{{item.g_title}}</view>
             <view class='df mt20 ovh'>
               <text class='fc-202020 h6'>{{item.courier_company}}</text>
-              <text class='fc-999 h6 f1 ml20'>订单编号: {{item.courier_number}}</text>
+              <text class='fc-999 h6 f1 ml20'>物流单号: {{item.courier_number}}</text>
               <text class='fc-202020 h6'>{{item.award_winning_time}}</text>
             </view>
         </view>

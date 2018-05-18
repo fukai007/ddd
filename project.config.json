@@ -64,6 +64,12 @@
 					"name": "兑换页面",
 					"pathName": "pages/personal/personal",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "实物闯关页面",
+					"pathName": "pages/askForGoods/askForGoods",
+					"query": ""
 				}
 			]
 		}
