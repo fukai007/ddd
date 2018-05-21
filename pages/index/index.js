@@ -59,7 +59,7 @@ var indexm =  {
   onShow: function () {
     app.fetchData({
       func:'user.get_user_ticket_num',
-      level:this.options.ul
+      //level:this.options.ul -  暂时不用了后台解决-2018-05-21 14:39
     }).then(data=>{
       let userInfo = this.data.userInfo;
       userInfo.u_ticket = data.u_ticket; //更新入场券-2018-01-20 19:54
