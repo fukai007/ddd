@@ -1,27 +1,44 @@
 <!--pages/askRule/askRule.wxml-->
-<view class='bgtop'></view>
-<view class='df fxc'>
-    <view class='core por'>
-        <image class='userIcon' src='{{userInfo.avatarUrl}}'></image>
-        <view class='df fyc fdy'>
-            <view class='ovh'>
-                <view class='df fxc '>
-                <image src='https://wxapp.haizeihuang.com/wannengdequan_php/images/big_shuoming.png' class='ricon'>
-                </image>
-                 </view>
-            </view>
-
-            <view class='doc'>
-                  <view
-                    wx:for="{{ruleList}}"
-                    wx:for-index="idx"
-                    wx:key="idx"
-                    wx:for-item="ruleItem"
-                  >
-                    {{ruleItem}}
-                  </view>     
-            </view>
-        </view>        
-    </view>
-
+<view class="askRoot bgfff">
+  <header></header>
+  <view class="title bg-yellow">
+    <view class="left fc-yellow">答题规则</view>
+  </view>
+  <view class="content">
+    <view
+      wx:for="{{ruleList}}"
+      wx:for-index="idx"
+      wx:key="idx"
+      wx:for-item="ruleItem"
+      class="mb20"
+    >
+      <text wx:if="{{idx == 0 || idx == 3 }}" class="item-title fc-yellow mt40">{{ruleItem}}</text>
+      <text wx:else class="fc-666">{{ruleItem}}</text>
+    </view>     
+  </view>
 </view>
+
+<!-- <view class='bgtop'></view> 
+  <view class='df fxc'>
+    <view class='core por'>
+      <image class='userIcon' src='{{userInfo.avatarUrl}}'></image> 
+      <view class='df fyc fdy'>
+        <view class='ovh'>
+          <view class='df fxc '>
+            <image src='https://wxapp.haizeihuang.com/wannengdequan_php/images/big_shuoming.png' class='ricon'></image>
+          </view>
+        </view>
+
+        <view class='doc'>
+          <view
+            wx:for="{{ruleList}}"
+            wx:for-index="idx"
+            wx:key="idx"
+            wx:for-item="ruleItem"
+          >
+            {{ruleItem}}
+          </view>     
+        </view>
+      </view>        
+    </view>
+  </view> -->

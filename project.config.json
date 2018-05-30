@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 8,
 			"list": [
 				{
 					"id": 0,
@@ -69,6 +69,24 @@
 					"id": -1,
 					"name": "实物闯关页面",
 					"pathName": "pages/askForGoods/askForGoods",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "首页",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "答题页面",
+					"pathName": "pages/ask/ask",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "答题规则",
+					"pathName": "pages/askRule/askRule",
 					"query": ""
 				}
 			]

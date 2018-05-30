@@ -187,6 +187,9 @@ image{
 .fc-blue{
   color: blue
 }
+.fc-yellow {
+  color: #F6B300;
+}
 
 .fb{
   font-weight: bold
@@ -316,7 +319,9 @@ image{
   height: 100%;
   background-color: rgba(0,0,0,.5)
 }
-
+.bgfff {
+  background-color: #fff;
+}
 .bgf2{
   background-color: #f2f2f2;
 }
@@ -333,6 +338,13 @@ image{
 .bg-26{
   background-color: #262626;
 }
+.bg-yellow {
+  background-color: #F6B300;
+}
+.bgc-y {
+  background-color: #FBD97F;
+}
+
 
 .bgc-green{
   background-color: green;
@@ -380,10 +392,13 @@ image{
   margin-left:36rpx;
   margin-right:36rpx;
 }
-
 .mx40{
   margin-left: 40rpx;
   margin-right: 40rpx;
+}
+.mx50{
+  margin-left: 50rpx;
+  margin-right: 50rpx;
 }
 
 .mx80{
@@ -569,15 +584,16 @@ image{
 /** -----------答题页面和帮助页面 start-2018-01-09 16:43-------------- **/
 .askRoot{
   height: 100vh;
-  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
+  /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 .questionArea{
   background: #fff;
   border-radius: 16rpx;
-  height: 730rpx;
+  /* height: 730rpx; */
+  height: 650rpx;
 }
 
 .baseInfo{
@@ -597,18 +613,23 @@ image{
 }
 
 .qitem{
-  width: 630rpx;
-  height: 88rpx;
+  /* width: 630rpx; */
+  /* height: 88rpx; */
+  height: 78rpx;
   border-radius: 57rpx;
-  font-size: 32rpx;
-  line-height: 88rpx;
+  font-size: 30rpx;
+  /* font-size: 32rpx; */
+  /* line-height: 88rpx; */
+  line-height: 78rpx;
   transition:all 500ms ease 0ms;
 
 }
 
 .qitem-normal{
-  color: #A3ABB7;
-  background-color: #ECEFF4;
+  /* color: #A3ABB7; */
+  /* background-color: #ECEFF4; */
+  color: #928457;
+  background-color: #FBD97F; 
 }
 .qitem-fail{
   color: #ffffff;

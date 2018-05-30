@@ -1,9 +1,15 @@
 <!--pages/fail/fail.wxml 夺金赛答题失败页面-2018-04-27 13:20-->
-<view class="askRoot fail">
+<view class="askRoot fail bg-yellow">
+    <header></header>
     <view class="df fxyc">
       <image src="/images/dog-cry-a.png" class="dog-icon mt200"></image>
     </view>
-    <view class='df fxyc mt40'><image src="./imgs/inspire.png" class="failInfoImg"></image></view>
+    <view class='mt40'>
+    <!-- <view class='df fxyc mt40'> -->
+      <!-- <image src="./imgs/inspire.png" class="failInfoImg"></image> -->
+      <view class="tac">"闯关失败"</view>
+      <view class="tac">希望您再接再厉</view>
+    </view>
      <view class="fail-center">
         <view class="detail">
           <!-- <text>下一场开始时间：</text>
