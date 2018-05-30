@@ -411,6 +411,9 @@ image{
   margin-top: 16rpx;
 }
 
+mt18{
+   margin-top: 18rpx;
+}
 
 .mt20{
   margin-top: 20rpx;
@@ -424,6 +427,10 @@ image{
 
 .mt30{
   margin-top: 30rpx;
+}
+
+.mt36{
+  margin-top: 36rpx;
 }
 
 .mt40{
@@ -488,6 +495,9 @@ image{
 
 .ml0{
   margin-left: 0;
+}
+.ml6{
+  margin-left: 6rpx;
 }
 .ml10{
   margin-left: 10rpx;
