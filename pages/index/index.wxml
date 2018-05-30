@@ -80,7 +80,7 @@
               </view>
           </view>
           <view class='f1 df fxyc' bindtap='togm' data-gmid='{{gt.g_id}}'>
-                <image src="{{gt.g_img}}" class='wh300'></image>
+                <image src="{{gt.g_img}}" class='wh320'></image>
           </view>
           <view wx:if='{{gt.is_participate||gt.g_stock<1}}' class='PrizeImgMask df fxyc'>
               <view wx:if='{{gt.is_participate}}'  class='df fdy fyc'>

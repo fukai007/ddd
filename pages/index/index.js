@@ -57,10 +57,12 @@ var indexm =  {
      @purpose更新 userInfo.u_ticket
    */
   onShow: function () {
+    console.log("index-------------->onShow-------------------->")
     app.fetchData({
       func:'user.get_user_ticket_num',
       //level:this.options.ul -  暂时不用了后台解决-2018-05-21 14:39
     }).then(data=>{
+      console.log("index-------------->onShow--------then-------end------------------->")
       let userInfo = this.data.userInfo;
       userInfo.u_ticket = data.u_ticket; //更新入场券-2018-01-20 19:54
       userInfo.next_start_time = data.next_start_time; //更新下一场开场时间-2018-01-20 19:55
