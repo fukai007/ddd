@@ -260,6 +260,14 @@ image{
   font-weight:bold;
   font-size: 24rpx;
 }
+.fs25{
+  line-height: 1;
+  font-size: 25rpx;
+}
+.fs26{
+  line-height: 1;
+  font-size: 26rpx;
+}
 
 
 
@@ -520,6 +528,10 @@ mt18{
 
 .ml20{
   margin-left: 20rpx;
+}
+
+.ml24{
+  margin-left: 24rpx;
 }
 
 .ml30{

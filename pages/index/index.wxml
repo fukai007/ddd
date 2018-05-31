@@ -16,6 +16,57 @@
   </view>
   <!--头部UI end--2018-05-30 20:54:09  -->
 
-  <text class='tt'>闯三关</text>
+  <!-- <text class='tt'>闯三关</text> -->
 
+  <!-- 智夺狗粮 start  -->
+    <view class='mt36 cBar por df'> 
+      <view class='tag'></view>
+      <view>
+          <view class='mt74 ml24'>
+            <view class='ctt h1'>闯五关</view>
+            <view class='mt16 fs26 fc-fff'>10g/20g/30g/40g/50g</view>
+            <view class='fs26 fc-fff mt40'>1086人在玩</view>
+          </view>
+      </view>
+      <view>
+          <image></image>
+      </view>
+    </view>
+  <!-- 智夺狗粮 end  -->
+
+  <!-- 奖品答题 start  -->
+    <view 
+      wx:for="{{goodlist}}"
+      wx:for-index="idx"
+      wx:key="idx"
+      wx:for-item="gt"
+      bindtap='togm' data-gmid='{{gt.g_id}}'
+      class='mt36 jBar por df'> 
+
+        <view wx:if='{{idx == 0}}'class='tag'></view>
+
+        <view class='mt74 ml24'>
+              <view class='ctt h1'>高钙钙片</view>
+              <view class='fs26 fc-fff mt30'>{{gt.participate_nums}}人在玩</view> 
+        </view>
+
+        <view></view>
+     
+    </view>
+  <!-- 奖品答题 end  -->
+
+  <!-- 兑换 start  -->
+    <view class='df mt40'>
+        <view class='por hBar df fxyc'>
+          <view class='tag'></view>
+          <view class=''>
+              <view class='ctt h1'>狗粮兑换商城</view>
+              <view class='fs26 fc-fff mt30 tac'>兑换记录</view>
+          </view>
+        </view>
+        <view class='hlBar  ml24 df fxyc'>
+            <view class='ctt h2'>兑换记录</view>
+        </view>
+    </view>
+  <!-- 兑换 end  -->
 </view>

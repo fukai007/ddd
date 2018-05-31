@@ -38,3 +38,39 @@ page{/*  */
   color: #ffffff;
   letter-spacing: 4rpx;
 }
+
+.ctt{
+  text-shadow:0px 0px 3px #FA986B;
+  color: #ffffff;
+  letter-spacing: 4rpx;
+}
+
+.tag{
+  width: 158rpx;
+  height: 54rpx;
+  background-color: #f7b401;
+  position: absolute;
+  top: -20rpx;
+  left: 20rpx;
+}
+
+.cBar{
+  width: 715rpx;
+  height: 260rpx;
+  background-color: red;
+}
+.jBar{
+  width: 715rpx;
+  height: 205rpx;
+  background-color: red;
+}
+.hBar{
+  width: 480rpx;
+  height: 214rpx;
+  background-color: red;
+}
+.hlBar{
+  width: 204rpx;
+  height: 214rpx;
+  background-color: red;
+}
