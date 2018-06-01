@@ -2,9 +2,9 @@
   <!--头部UI start  -->
   <view class='df fsb'>
         <view>
-            <image class='.top-left-icon'></image>
+            <image class='.top-left-icon' src='/images/logo_32.png'></image>
             <view class='df fyc mt18'>
-                <image class='t-l-dogFoodIcon'></image>
+                <image class='t-l-dogFoodIcon' src='/images/yanggou_06.png'></image>
                 <text class='t-l-dogFoodCount ml6'>100g</text>
             </view>
         </view>
@@ -20,16 +20,16 @@
 
   <!-- 智夺狗粮 start  -->
     <view class='mt36 cBar por df'> 
-      <view class='tag'></view>
-      <view>
+      <view class='tag ctag'></view>
+      <view class='f1'>
           <view class='mt74 ml24'>
             <view class='ctt h1'>闯五关</view>
             <view class='mt16 fs26 fc-fff'>10g/20g/30g/40g/50g</view>
             <view class='fs26 fc-fff mt40'>1086人在玩</view>
           </view>
       </view>
-      <view>
-          <image></image>
+      <view class='df fxyc mr24'>
+          <image class='crPic'></image>
       </view>
     </view>
   <!-- 智夺狗粮 end  -->
@@ -43,14 +43,14 @@
       bindtap='togm' data-gmid='{{gt.g_id}}'
       class='mt36 jBar por df'> 
 
-        <view wx:if='{{idx == 0}}'class='tag'></view>
+        <view wx:if='{{idx == 0}}'class='tag jtag'></view>
 
-        <view class='mt74 ml24'>
+        <view class='mt74 ml24 f1'>
               <view class='ctt h1'>高钙钙片</view>
               <view class='fs26 fc-fff mt30'>{{gt.participate_nums}}人在玩</view> 
         </view>
 
-        <view></view>
+        <view class='df fxyc mr24'><image class='jrPic' src="{{gt.g_img}}"></image></view>
      
     </view>
   <!-- 奖品答题 end  -->
@@ -58,7 +58,7 @@
   <!-- 兑换 start  -->
     <view class='df mt40'>
         <view class='por hBar df fxyc'>
-          <view class='tag'></view>
+          <view class='tag htag'></view>
           <view class=''>
               <view class='ctt h1'>狗粮兑换商城</view>
               <view class='fs26 fc-fff mt30 tac'>兑换记录</view>

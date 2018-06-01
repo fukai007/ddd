@@ -5,13 +5,13 @@ page{/*  */
 .top{
 }
 .top-left-icon{
-  width:242rpx;
+  width:207rpx;
   height: 60rpx;
   background-color: red;
 }
 .t-l-dogFoodIcon{
   width: 44rpx;
-  height: 64rpx;
+  height: 63rpx;
   background-color: red;
 }
 
@@ -46,31 +46,68 @@ page{/*  */
 }
 
 .tag{
-  width: 158rpx;
-  height: 54rpx;
+  width: 160rpx;
+  height: 56rpx;
   background-color: #f7b401;
   position: absolute;
   top: -20rpx;
   left: 20rpx;
 }
 
+.ctag{
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_10.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.jtag{
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_15.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.htag{
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_21.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.crPic{
+  width: 222rpx;
+  height: 222rpx;
+  background-color: #afe56e;
+}
+
+.jrPic{
+  width: 186rpx;
+  height: 186rpx;
+   background-color: #afe56e;
+}
+
 .cBar{
   width: 715rpx;
   height: 260rpx;
-  background-color: red;
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_03.png);
+  background-repeat: no-repeat;
+  background-size: cover;  
+  
 }
 .jBar{
   width: 715rpx;
   height: 205rpx;
-  background-color: red;
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_17.png);
+  background-repeat: no-repeat;
+  background-size: cover;  
 }
 .hBar{
   width: 480rpx;
   height: 214rpx;
-  background-color: red;
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_25.png);
+  background-repeat: no-repeat;
+  background-size: cover;  
 }
 .hlBar{
   width: 204rpx;
   height: 214rpx;
-  background-color: red;
+  background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_27.png);
+  background-repeat: no-repeat;
+  background-size: cover;  
 }

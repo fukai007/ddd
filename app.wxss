@@ -552,6 +552,10 @@ mt18{
   margin-right: 20rpx;
 }
 
+.mr24{
+  margin-right: 24rpx;
+}
+
 .mr30{
   margin-right: 30rpx;
 }
