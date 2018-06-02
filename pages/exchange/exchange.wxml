@@ -1,20 +1,18 @@
 <view class="section">
-  <view class="section-top">
-    <!-- <image src="./imgs/h_bg.png" class="h_bg"></image> -->
-    <!-- <view class="section-top-content"> -->
+  <header volume="{{volume}}"></header>
+  <!-- <view class="section-top">
       <image src="./imgs/icon_s.png" class="icon"></image>
       <text>×{{volume}}g</text>
-    <!-- </view> -->
-  </view>
+  </view> -->
   <view class="section-content" style="flex-direction:row;">
     <view class="item" wx:for="{{array}}" wx:key='{{index}}'>
-      <view class="item-top">
+      <!-- <view class="item-top">
         <image src="./imgs/icon_s.png" class="logo"></image>
         <text>{{item.eg_name}}</text>
-      </view>
+      </view> -->
       <image src='{{item.eg_img}}' class="item-img"></image>
       <view class="item-text">
-        <text class="item-title">{{item.eg_desc}}</text>
+        <text class="item-title fc-444">{{item.eg_desc}}</text>
         <view class="item-content">
           <image src="./imgs/icon_s.png" class="icon"></image>
           <text>×{{item.eg_pay}}</text>

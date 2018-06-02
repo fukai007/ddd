@@ -1,16 +1,16 @@
 /* pages/dx/dx.wxss */
 .askRoot{
   height: 100vh;
-  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
+  /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 .success {
   color: #fff;
   font-size: 24rpx;
 }
 .special {
-  color: #ff8e48;
+  color: #333;
 }
 /* 上部图片+奖励 */
  .success-top {

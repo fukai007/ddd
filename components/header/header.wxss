@@ -1,13 +1,33 @@
 /* components/header/header.wxss */
 .header {
-  display:flex;
+  /* display:flex;
   padding: 30rpx;
   height: 80rpx;
   font-size: 28rpx;
-  color: #fff;
+  color: #fff; */
+  position: relative;
+  text-align: center;
   background: #101F26;
 }
-.left, .right {
+.logo {
+  margin: 10rpx 0;
+  width: 207rpx;
+  height: 60rpx;
+}
+.volume {
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  font-size: 22rpx;
+  color: #fff;
+}
+.icon {
+  margin-right: 10rpx;
+  width: 60rpx;
+  height: 30rpx;
+  vertical-align: middle;
+}
+/* .left, .right {
   margin-top: 45rpx;
   width: 25%;
 }
@@ -30,5 +50,5 @@
   background-repeat:no-repeat;
   background-size:contain;
   vertical-align: text-bottom;
-}
+} */
 

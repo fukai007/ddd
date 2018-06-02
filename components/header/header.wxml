@@ -1,7 +1,13 @@
 <!--components/header/header.wxml-->
-<view class="header">
+<!-- <view class="header">
     <view class="left">我们养狗吧</view>
-    <!-- <open-data type="userAvatarUrl"></open-data> -->
     <view class="userIcon"><image src="{{avatarUrl}}"></image></view>
     <view class="right tar" bindtap='toRule'>答题规则<text class='ml10 ruleIcon'></text></view>
+</view> -->
+<view class="header">
+    <image class="logo" src="/images/logo_32.png"></image>
+    <view wx:if='{{volume !== ""}}' class="volume">
+      <image src="../../images/icon_s.png" class="icon"></image>
+      <text>× {{volume}}g</text>
+  </view>
 </view>

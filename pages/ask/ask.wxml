@@ -31,21 +31,24 @@
   </view>
 </view>
 
-<view class='askRoot ovh bg-yellow'>
-  <header avatarUrl="{{userInfo.avatarUrl}}"></header>
+<view class='askRoot ovh'>
+  <header></header>
   <!-- <view class='df fxc baseInfo mt60'>
        <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image> 
        <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text>
   </view> -->
-  <view class='tac mt70'><text class='h1 fc-fff'>剩余 {{cd}} S</text></view>
+  <view class='tac mt40 dealine'>
+    <text class='fc-333 fs42'>剩余 <text class='fc-fff fs60'>{{cd}}</text> S</text>
+    <!-- <text class='currentScore'>积分：<text class='fc-fff'>XX</text></text> -->
+  </view>
 
   <!--  答题内容页面 开始 -->
-  <view class='questionArea mx50 mt60 por'>
+  <view class='questionArea mx24 mt30 por'>
       <!-- <image class='logo' src='https://wxapp.haizeihuang.com/wannengdequan_php/images/logo.png'></image> -->
       <view class='mx36 ovh'>
-          <view class='mt40 tac h4 mt70'>{{answer.a_progress}}/{{answer.a_max}} {{answer.q_title}}</view>
+          <view class='mt70 tac h4'>{{answer.a_progress}}/{{answer.a_max}} {{answer.q_title}}</view>
           <view
-            class='mt40 por'
+            class='mt60 por'
             wx:for="{{[1,2,3,4]}}"
             wx:for-index="idx"
             wx:key="qid"

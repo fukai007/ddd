@@ -1,14 +1,15 @@
 <view class='content'>
-  <view class='personnalHeader'>
+  <header></header>
+  <!-- <view class='personnalHeader'>
     <image class='userLogo' src='{{pimg}}'></image>
     <view class='dogFood'>
       <image class='dogFoodImg' src='../../images/gpz.png'></image>
       <text class='dogFoodText'>狗粮 × {{price}} g</text>
     </view>
     <button class='duiBtn' bindtap='toex'>兑换</button>
-  </view>
+  </view> -->
   <view class='personnalSection'>
-    <view class='sectionHeader df'>
+    <view class='sectionHeader df bg-yellow fc-yellow'>
          <view class="{{type == 'a' ? 'curType':'discurType'}}" bindtap='setTypeA'>兑换记录</view>
          <view class="{{type == 'b' ? 'curType':'discurType'}}" bindtap='setTypeB'>获奖记录</view>
     </view>
@@ -17,7 +18,7 @@
       <view class='record df fsb '  wx:for="{{elist}}" wx:key='{{index}}' >
         <text class='recordDate df f2'>{{item.egl_time}}</text>
         <text class='recordText df f1'>兑换</text>
-        <text class='recordName df f1 fxr'>{{item.eg_name}}</text>
+        <text class='recordName df f1 fxr fc-yellow'>{{item.eg_name}}</text>
       </view>
     </block>
 
@@ -25,7 +26,7 @@
     <block wx:else>
         <view class='h20 bgc-fff'></view>
         <view class='baseGetPrize ovh mx40'  wx:for="{{plist}}" wx:key='{{index}}' >
-            <view class='fc-ff5f27 h6 mt20'>{{item.g_title}}</view>
+            <view class='fc-yellow h6 mt20'>{{item.g_title}}</view>
             <view class='df mt20 ovh'>
               <text class='fc-202020 h6'>{{item.courier_company}}</text>
               <text class='fc-999 h6 f1 ml20'>物流单号: {{item.courier_number}}</text>

@@ -166,7 +166,9 @@ image{
 .fc-333{
   color: #333333;
 }
-
+.fc-444{
+  color: #444;
+}
 .fc-666{
   color: #666666;
 }
@@ -197,6 +199,12 @@ image{
 
 .fs30{
   font-size: 30rpx;
+}
+.fs42 {
+  font-size: 42rpx;
+}
+.fs60 {
+  font-size: 60rpx;
 }
 
 .h1{
@@ -610,16 +618,25 @@ mt18{
 /** -----------答题页面和帮助页面 start-2018-01-09 16:43-------------- **/
 .askRoot{
   height: 100vh;
+  background-color: #F6B300;
   /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; */
 }
-
+.dealine {
+  position: relative;
+  padding: 0 20rpx;
+}
+.currentScore {
+  position:absolute;
+  right: 30rpx;
+  bottom: 10rpx;
+  font-size: 26rpx;
+}
 .questionArea{
   background: #fff;
   border-radius: 16rpx;
-  /* height: 730rpx; */
-  height: 650rpx;
+  height: 750rpx; 
 }
 
 .baseInfo{
@@ -751,8 +768,8 @@ mt18{
   width: 380rpx;
   height: 88rpx;
   background-color: #ffffff;
-  color: #00d1e4;
-
+  /* color: #00d1e4; */
+  color: #F6B300;
   line-height: 88rpx;
   text-align: center;
 }

@@ -1,5 +1,5 @@
 <!--pages/askRule/askRule.wxml-->
-<view class="askRoot bgfff">
+<view class="askRule bgfff">
   <header></header>
   <view class="title bg-yellow">
     <view class="left fc-yellow">答题规则</view>

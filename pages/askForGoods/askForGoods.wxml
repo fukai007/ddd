@@ -31,11 +31,17 @@
 </view>
 
 <view class='askRoot ovh por'>
-  <view class='df fxc baseInfo mt60'>
+  <header></header>
+  <!-- <view class='df fxc baseInfo mt60'>
     <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image>
+  </view> -->
+  
+  <view class='tac mt40 dealine'>
+    <text class='fc-333 fs42'>剩余 <text class='fc-fff fs60'>{{cd}}</text> S</text>
+    <text class='currentScore'>积分：<text class='fc-fff'>{{answer.ga_score}}</text></text>
   </view>
-  <view class='tac mt50'><text class='h1 fc-fffe49 '>剩余 {{cd}} S</text></view>
-  <view class='curScore'>{{answer.ga_score}}分</view>
+  <!-- <view class='tac mt50'><text class='h1 fc-fffe49 '>剩余 {{cd}} S</text></view> -->
+  <!-- <view class='curScore'>{{answer.ga_score}}分</view> -->
   <!-- <view class='resurgenceCount h5'>复活卡 x {{userInfo.u_goods_ticket}}</view> -->
 
   <!--  答题内容页面 开始 -->
@@ -43,7 +49,7 @@
       <view class='mx36 ovh'>
           <view class='mt40 tac h4 mt70'>{{answer.ga_progress}}/{{answer.ga_max}} {{answer.q_title}}</view>
           <view
-            class='mt40 por'
+            class='mt60 por'
             wx:for="{{[1,2,3,4]}}"
             wx:for-index="idx"
             wx:key="qid"

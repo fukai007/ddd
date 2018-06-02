@@ -1,5 +1,10 @@
-page{
+/* page{
   background-color: #ffffff;
+} */
+.content {
+  height: 100vh;
+  background-color: #fff;
+  overflow-y: auto;
 }
 .personnalHeader{
   width: 100%;
@@ -46,17 +51,17 @@ page{
 }
 .personnalSection{
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 .sectionHeader{
   width: 100%;
   height: 70rpx;
   line-height: 70rpx;
-  color: #3ab7ff;
+  /* color: #3ab7ff; */
   font-size: 30rpx;
   box-sizing: border-box;
   padding-left: 20rpx;
-  background-color:#eaf0fe;
+  /* background-color:#eaf0fe; */
 }
 .record{
   height: 60rpx;
@@ -70,13 +75,14 @@ page{
 .recordText{
 }
 .recordName{
-  color: #eb6936;
+  /* color: #eb6936; */
 }
 
 .discurType{
   width: 174rpx;
   height: 70rpx;
   text-align: center;
+  color: #fff;
 }
 
 .curType{

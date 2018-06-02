@@ -4,11 +4,9 @@
     <view class="df fxyc">
       <image src="/images/dog-cry-a.png" class="dog-icon mt200"></image>
     </view>
-    <view class='mt40'>
+    <view class='mt40 tac'>
     <!-- <view class='df fxyc mt40'> -->
-      <!-- <image src="./imgs/inspire.png" class="failInfoImg"></image> -->
-      <view class="tac">"闯关失败"</view>
-      <view class="tac">希望您再接再厉</view>
+       <image src="./imgs/inspire.png" class="failInfoImg"></image>
     </view>
      <view class="fail-center">
         <view class="detail">
