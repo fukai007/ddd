@@ -7,12 +7,10 @@ page{/*  */
 .top-left-icon{
   width:207rpx;
   height: 60rpx;
-  background-color: red;
 }
 .t-l-dogFoodIcon{
-  width: 44rpx;
-  height: 63rpx;
-  background-color: red;
+  width: 68rpx;
+  height: 45rpx;
 }
 
 .t-l-dogFoodCount{
@@ -20,18 +18,12 @@ page{/*  */
   font-weight: bold;
   color: #ffffff;
 }
-.userIcon-wrap{
-  width: 108rpx;
-  height: 108rpx;
-  border-radius: 64rpx;
-  border: 1px solid #f7b401;
-}
+.userIcon-wrap{}
 
 .userIcon-index{
   width: 94rpx;
   height: 94rpx;
   border-radius: 47rpx;
-  background-color: #ffffff;
 }
 .tt{
   text-shadow:0px 0px 3px #FA986B;
@@ -48,7 +40,6 @@ page{/*  */
 .tag{
   width: 160rpx;
   height: 56rpx;
-  background-color: #f7b401;
   position: absolute;
   top: -20rpx;
   left: 20rpx;
@@ -73,13 +64,11 @@ page{/*  */
 .crPic{
   width: 222rpx;
   height: 222rpx;
-  background-color: #afe56e;
 }
 
 .jrPic{
   width: 186rpx;
   height: 186rpx;
-   background-color: #afe56e;
 }
 
 .cBar{

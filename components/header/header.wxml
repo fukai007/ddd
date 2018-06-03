@@ -1,4 +1,4 @@
-<!--components/header/header.wxml-->
+ <!--components/header/header.wxml-->
 <!-- <view class="header">
     <view class="left">我们养狗吧</view>
     <view class="userIcon"><image src="{{avatarUrl}}"></image></view>

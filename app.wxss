@@ -399,6 +399,12 @@ image{
   margin-right:10rpx;
 }
 
+
+.mx20{
+  margin-left:20rpx;
+  margin-right:20rpx;
+}
+
 .mx24{
   margin-left:24rpx;
   margin-right:24rpx;

@@ -1,16 +1,14 @@
-<view class='mx10 mt20'>
+<view class='mx20 mt20'>
   <!--头部UI start  -->
-  <view class='df fsb'>
+<view class='df fsb fyc'>
         <view>
-            <image class='.top-left-icon' src='/images/logo_32.png'></image>
-            <view class='df fyc mt18'>
-                <image class='t-l-dogFoodIcon' src='/images/yanggou_06.png'></image>
-                <text class='t-l-dogFoodCount ml6'>100g</text>
-            </view>
+            <image class='top-left-icon' src='/images/logo_32.png'></image>
         </view>
         <view>
-            <view class='userIcon-wrap df fxyc'>
-                  <image  class='userIcon-index'  src="{{userInfo.avatarUrl}}"></image>
+            <view class='userIcon-wrap df  '>
+                  <!-- <image  class='userIcon-index'  src="{{userInfo.avatarUrl}}"></image> -->
+                <image class='t-l-dogFoodIcon' src='/images/bowl_09.png'></image>
+                <text class='t-l-dogFoodCount ml20'> x {{userInfo.u_money}} g</text>
             </view>
         </view>
   </view>
@@ -19,7 +17,7 @@
   <!-- <text class='tt'>闯三关</text> -->
 
   <!-- 智夺狗粮 start  -->
-    <view class='mt36 cBar por df'> 
+    <view class='mt80 cBar por df '> 
       <view class='tag ctag'></view>
       <view class='f1'>
           <view class='mt74 ml24'>
@@ -29,7 +27,7 @@
           </view>
       </view>
       <view class='df fxyc mr24'>
-          <image class='crPic'></image>
+          <image class='crPic' src='/images/qt_15.png'></image>
       </view>
     </view>
   <!-- 智夺狗粮 end  -->
@@ -56,15 +54,15 @@
   <!-- 奖品答题 end  -->
 
   <!-- 兑换 start  -->
-    <view class='df mt40'>
+    <view class='df mt40' >
         <view class='por hBar df fxyc'>
           <view class='tag htag'></view>
-          <view class=''>
+          <view bindtap='toex'>
               <view class='ctt h1'>狗粮兑换商城</view>
               <view class='fs26 fc-fff mt30 tac'>兑换记录</view>
           </view>
         </view>
-        <view class='hlBar  ml24 df fxyc'>
+        <view class='hlBar  ml24 df fxyc' bindtap='toac'>
             <view class='ctt h2'>兑换记录</view>
         </view>
     </view>

@@ -1,12 +1,12 @@
-<!--pages/goodsMain/goodsMain.wxml-->
-<view class='mx24'>
+<!--pages/goodsMain/goodsMain.wxml mx24-->
+<view>
   <!-- <image class='bigImage mt20' src='{{gd.g_img}}'></image>
   <view class='h5 fc-333 mt30'>产品详情</view>
   <view class='mt20'>
     <text class='h5 fc-333'>{{gd.g_title}}</text>
   </view>
   <view class='h6 fc-333  mt30'>-产品说明-</view> -->
-  <view class='mt20 df fdy'>
+  <view class='df fdy'>
     <image class='fullw' mode='widthFix' src='{{gd.g_img3}}'></image>
     <image class='fullw' mode='widthFix' src='{{gd.g_img4}}'></image>
     <image class='fullw' mode='widthFix' src='{{gd.g_img5}}'></image>
@@ -17,6 +17,6 @@
 <view class='ba'>
   <view class='df'>
     <!-- <button class='f1 bg-26 h6 bh88 share' open-type="share">每分享一个群获得一张入场券</button> -->
-    <view wx:if="{{isfh || !gd.is_participate}}" class='f1 rbg bh88' bindtap='toga'>开始答题</view>
+    <view wx:if="{{isfh || !gd.is_participate}}" class='f1 rbg bh98' bindtap='toga'>开始答题</view>
   </view>
 </view>

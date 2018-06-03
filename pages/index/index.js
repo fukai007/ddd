@@ -200,6 +200,9 @@ var indexm =  {
   toac:function(){
     app.toPage('personal', {}, 'to'); //跳转到账户页面
   },
+  toex: function () {
+    app.toPage('exchange', {}, 'to'); //跳转兑换页面
+  },
   showFHMask:function(){
     this.setData({
       isFHMask:true
