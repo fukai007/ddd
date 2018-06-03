@@ -1,5 +1,10 @@
 /**app.wxss**/
 /* @import 'weui.wxss'; */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
 page {
     font-family:PingFangSC-Medium;
     background-color: #eaf0fe;
@@ -200,11 +205,20 @@ image{
 .fs30{
   font-size: 30rpx;
 }
+.fs36{
+  font-size: 36rpx;
+}
 .fs42 {
   font-size: 42rpx;
 }
+.fs48 {
+  font-size: 48rpx;
+}
 .fs60 {
   font-size: 60rpx;
+}
+.fs72 {
+  font-size: 72rpx;
 }
 
 .h1{

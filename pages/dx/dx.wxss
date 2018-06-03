@@ -17,15 +17,19 @@
   /* display: inline-block;
   margin: 44rpx 22% 0;
   width: 56%; */
-  padding-top: 44rpx;
+  padding-top: 90rpx;
   text-align: center;
 } 
 .success-top .img {
-  width: 423rpx;
-  height: 402rpx;
+  width: 220rpx;
+  height: 221rpx;
+}
+.imgText {
+  width: 355rpx;
+  height: 45rpx;
 }
 .reward {
-  margin-top: 50rpx;
+  margin-top: 180rpx;
   font-weight: bold;
 }
 .reward text {
@@ -34,8 +38,8 @@
 }
 .icon {
   margin-right: 40rpx;
-  width: 140rpx;
-  height: 70rpx;
+  width: 80rpx;
+  height: 52rpx;
   vertical-align: middle;
 }
 /* center */

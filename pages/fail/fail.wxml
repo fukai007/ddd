@@ -2,11 +2,11 @@
 <view class="askRoot fail bg-yellow">
     <header></header>
     <view class="df fxyc">
-      <image src="/images/dog-cry-a.png" class="dog-icon mt200"></image>
+      <image src="/images/fail.png" class="dog-icon"></image>
     </view>
-    <view class='mt40 tac'>
+    <view class='mt50 tac'>
     <!-- <view class='df fxyc mt40'> -->
-       <image src="./imgs/inspire.png" class="failInfoImg"></image>
+       <image src="/images/inspire.png" class="failInfoImg"></image>
     </view>
      <view class="fail-center">
         <view class="detail">
