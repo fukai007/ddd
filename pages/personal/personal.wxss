@@ -58,10 +58,15 @@
   height: 70rpx;
   line-height: 70rpx;
   /* color: #3ab7ff; */
-  font-size: 30rpx;
+  font-size: 28rpx;
   box-sizing: border-box;
-  padding-left: 20rpx;
+  padding-left: 30rpx;
   /* background-color:#eaf0fe; */
+}
+.item-wrap {
+  padding-bottom: 30rpx;
+  height: calc(100vh - 200rpx);
+  overflow-y: auto;
 }
 .record{
   height: 60rpx;
@@ -79,19 +84,19 @@
 }
 
 .discurType{
-  width: 174rpx;
+  width: 190rpx;
   height: 70rpx;
   text-align: center;
   color: #fff;
 }
 
 .curType{
-  width: 174rpx;
+  width: 190rpx;
   height: 70rpx;
   text-align: center;
   background-color: #ffffff;
 }
 .baseGetPrize{
-  height: 98rpx;
+  height: 106rpx;
   border-bottom: 1rpx solid #eeeeee;
 }

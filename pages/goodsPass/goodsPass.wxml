@@ -1,16 +1,15 @@
 <!--pages/goodsPass/goodsPass.wxml-->
-
+<header></header>  
 <view class='content' wx:if="{{ispass}}" >
   <view class='successHeader mt40'>
-    <image class='successLogo'  src='./images/successLogo.png'></image>
-    <text class='grade-ok'>分数：{{ginfo.ga_score}} 分</text>
+    <image class='successLogo'  src='./images/qt_51.png'></image>
   </view>
   <view class='successText'>
-    <image class='textImg' src='./images/successText.png'></image>
+    <image class='textImg' src='./images/qt_54.png'></image>
   </view>
   <view class='successPrize'>
      <image class='yao' src='{{ginfo.g_img2}}'></image> 
-     <view class='tac'><text class='prizeName'>{{ginfo.g_title}}</text></view>
+     <!-- <view class='tac'><text class='prizeName'>{{ginfo.g_title}}</text></view> -->
   </view>
   <view class='successFooter'>
     <button class='getBtn' bindtap='toAddress'>立即领取</button>
@@ -18,14 +17,13 @@
 </view>
 
 <view class='content' wx:else>
-  <view class='failHeader mt40'>
-    <image class='headLogo' src='{{userInfo.avatarUrl}}'></image>
-    <view><text class='grade-fail'>您获得分数：{{ginfo.ga_score}}</text></view>
+  <view class='failHeader mt34'>
+    <!-- <image class='headLogo' src='{{userInfo.avatarUrl}}'></image> -->
+    <view><text class='grade-fail'>积分 ：{{ginfo.ga_score}}</text></view>
+    <view class='df fxyc mt28'>
+        <image class='qt_18' src='./images/qt_18.png'></image>
+    </view>    
     <text class='failHint'>答题失败，希望您再接再厉</text>
-    <view class='df fxyc'>
-        <image class='cry-dogLog'  src='/images/dog-cry-b.png'></image>
-    </view>
-
   </view>
   <view class='failBottom'>
     <text class='hint_1'>全部答对可获得：<text class='hint_2'>{{ginfo.g_title}}</text></text>

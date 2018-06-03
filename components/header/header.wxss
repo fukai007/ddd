@@ -6,11 +6,12 @@
   font-size: 28rpx;
   color: #fff; */
   position: relative;
+  height: 100rpx;
   text-align: center;
   background: #101F26;
 }
 .logo {
-  margin: 10rpx 0;
+  margin: 20rpx 0;
   width: 207rpx;
   height: 60rpx;
 }
@@ -23,8 +24,8 @@
 }
 .icon {
   margin-right: 10rpx;
-  width: 60rpx;
-  height: 30rpx;
+  width: 59rpx;
+  height: 38rpx;
   vertical-align: middle;
 }
 /* .left, .right {

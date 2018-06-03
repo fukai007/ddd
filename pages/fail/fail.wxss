@@ -21,8 +21,9 @@
   width: 100%;
 }
 .dog-icon{
-  width: 306rpx;
-  height: 238rpx;
+  margin-top: 90rpx;
+  width: 220rpx;
+  height: 221rpx;
 }
 /* center */
 .fail-center {

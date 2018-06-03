@@ -7,7 +7,7 @@
 <view class="header">
     <image class="logo" src="/images/logo_32.png"></image>
     <view wx:if='{{volume !== ""}}' class="volume">
-      <image src="../../images/icon_s.png" class="icon"></image>
+      <image src="/images/icon_s.png" class="icon"></image>
       <text>× {{volume}}g</text>
   </view>
 </view>

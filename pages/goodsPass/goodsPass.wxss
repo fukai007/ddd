@@ -2,21 +2,20 @@
 
 /* 成功的*/
 page{
-  background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
+  /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: #f3a709;
 }
 .successHeader{
   width: 100%;
-  height: 400rpx;
   text-align: center;
   position: relative;
 }
 .successLogo{
-  width: 384rpx;
-  height: 293rpx;
+  width: 321rpx;
+  height: 239rpx;
   display: inline-block;
-  margin-top: 40rpx;
   z-index: 1;
 }
 .grade-ok{
@@ -36,8 +35,8 @@ page{
   text-align: center;
 }
 .textImg{
-  width: 589rpx;
-  height: 61rpx;
+  width: 454rpx;
+  height: 45rpx;
   display: inline-block;
   margin-top: 40rpx;
 }
@@ -84,7 +83,6 @@ page{
 }
 .failHeader{
   width: 100%;
-  height: 600rpx;
   text-align: center;
   position: relative;
 }
@@ -112,7 +110,7 @@ page{
   font-size: 46rpx;
   font-weight: bolder;
   display: block;
-  margin-top: 50rpx;
+  margin-top: 70rpx;
 }
 .peopleLogo{
   width: 279rpx;
@@ -129,13 +127,13 @@ page{
 
 .failBottom{
   width: 700rpx;
-  height: 382rpx;
   background: #fff;
   margin: 0 auto;
   border-radius: 10px;
   text-align: center;
   box-sizing: border-box;
   padding-top: 20rpx;
+  margin-top: 50rpx;
 }
 .hint_1{
   font-size: 30rpx;
@@ -160,4 +158,9 @@ page{
   height: 120rpx;
   margin: 0 auto;
   margin-top: 20rpx;
+}
+
+.qt_18{
+  width: 165rpx;
+  height: 167rpx;
 }

@@ -28,15 +28,16 @@
 } */
 .icon {
   margin-right: 10rpx;
-  width: 80rpx;
-  height: 40rpx;
+  width: 59rpx;
+  height: 38rpx;
   vertical-align: middle;
 }
 /* 主体列表  */
 .section-content {
   padding: 20rpx;
   background: #101F26;
-  min-height: 100vh;
+  height: calc(100vh - 140rpx);
+  overflow-y: auto;
 }
 .item {
   display: inline-block;

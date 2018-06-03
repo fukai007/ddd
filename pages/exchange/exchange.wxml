@@ -14,7 +14,7 @@
       <view class="item-text">
         <text class="item-title fc-444">{{item.eg_desc}}</text>
         <view class="item-content">
-          <image src="./imgs/icon_s.png" class="icon"></image>
+          <image src="/images/icon_s.png" class="icon"></image>
           <text>×{{item.eg_pay}}</text>
           <button size="20rpx" class="item-btn" wx:if="{{item.eg_stock == 0}}">兑换</button>
           <button size="20rpx" class="item-btn item-primary" wx:else bindtap='exchangeGoods' data-id='{{item.eg_id}}'>兑换</button>

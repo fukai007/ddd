@@ -13,26 +13,28 @@
          <view class="{{type == 'a' ? 'curType':'discurType'}}" bindtap='setTypeA'>兑换记录</view>
          <view class="{{type == 'b' ? 'curType':'discurType'}}" bindtap='setTypeB'>获奖记录</view>
     </view>
-    <!--  兑换记录 列表 -->
-    <block wx:if="{{type=='a'}}">
-      <view class='record df fsb '  wx:for="{{elist}}" wx:key='{{index}}' >
-        <text class='recordDate df f2'>{{item.egl_time}}</text>
-        <text class='recordText df f1'>兑换</text>
-        <text class='recordName df f1 fxr fc-yellow'>{{item.eg_name}}</text>
-      </view>
-    </block>
-
-    <!--  获奖记录 列表 -->
-    <block wx:else>
-        <view class='h20 bgc-fff'></view>
-        <view class='baseGetPrize ovh mx40'  wx:for="{{plist}}" wx:key='{{index}}' >
-            <view class='fc-yellow h6 mt20'>{{item.g_title}}</view>
-            <view class='df mt20 ovh'>
-              <text class='fc-202020 h6'>{{item.courier_company}}</text>
-              <text class='fc-999 h6 f1 ml20'>物流单号: {{item.courier_number}}</text>
-              <text class='fc-202020 h6'>{{item.award_winning_time}}</text>
-            </view>
+    <view class="item-wrap">
+      <!--  兑换记录 列表 -->
+      <block wx:if="{{type=='a'}}">
+        <view class='record df fsb '  wx:for="{{elist}}" wx:key='{{index}}' >
+          <text class='recordDate df f2'>{{item.egl_time}}</text>
+          <text class='recordText df f1'>兑换</text>
+          <text class='recordName df f1 fxr fc-yellow'>{{item.eg_name}}</text>
         </view>
-    </block>
+      </block>
+
+      <!--  获奖记录 列表 -->
+      <block wx:else>
+          <view class='h20 bgc-fff'></view>
+          <view class='baseGetPrize ovh mx40'  wx:for="{{plist}}" wx:key='{{index}}' >
+              <view class='fc-yellow h6 mt20'>{{item.g_title}}</view>
+              <view class='df mt20'>
+                <text class='fc-202020 h6'>{{item.courier_company}}</text>
+                <text class='fc-999 h6 f1 ml20'>物流单号: {{item.courier_number}}</text>
+                <text class='fc-202020 h6'>{{item.award_winning_time}}</text>
+              </view>
+          </view>
+      </block>
+    </view>
   </view>
 </view>

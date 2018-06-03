@@ -37,8 +37,8 @@
        <image bindtap="" class="userIcon" src="{{userInfo.avatarUrl}}"></image> 
        <text class="userName h4 ml20 fc-fff">{{userInfo.nickName}}</text>
   </view> -->
-  <view class='tac mt40 dealine'>
-    <text class='fc-333 fs42'>剩余 <text class='fc-fff fs60'>{{cd}}</text> S</text>
+  <view class='tac mt20 dealine'>
+    <text class='fc-333 fs48'>剩余 <text class='fc-fff fs72'>{{cd}}</text> S</text>
     <!-- <text class='currentScore'>积分：<text class='fc-fff'>XX</text></text> -->
   </view>
 
