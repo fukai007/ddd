@@ -504,6 +504,9 @@ mt18{
 .mt50{
   margin-top: 50rpx;
 }
+.mt54{
+  margin-top: 54rpx;
+}
 .mt60{
   margin-top: 60rpx;
 }

@@ -17,13 +17,22 @@
   <!-- <text class='tt'>闯三关</text> -->
 
   <!-- 智夺狗粮 start  -->
-    <view class='mt80 cBar por df '> 
+    <view class='mt80 cBar por df ' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
       <view class='tag ctag'></view>
       <view class='f1'>
-          <view class='mt74 ml24'>
-            <view class='ctt h1'>闯五关</view>
+          <view class='mt54 ml24'>
+            <view class='ctt h1'>{{userInfo.index_word}}</view>
+            <!-- <view class='fs26 fc-fff'>答题闯关赢好礼</view>  -->
             <view class='mt16 fs26 fc-fff'>10g/20g/30g/40g/50g</view>
-            <view class='fs26 fc-fff mt40'>1086人在玩</view>
+            <view class='df fyc mt30'>
+              <view class='df fyc'>
+                <view wx:for="{{userInfo.recent_participation}}"  wx:for-index="idx" wx:key="{{idx}}" wx:if="{{item}}" >
+                   <image src="{{item}}" class='recentUser'></image>
+                </view>
+              </view>
+               <view class='fs26 fc-fff ml10 '>{{userInfo.play_num}}人在玩</view>
+            </view>
+
           </view>
       </view>
       <view class='df fxyc mr24'>
@@ -43,9 +52,10 @@
 
         <view wx:if='{{idx == 0}}'class='tag jtag'></view>
 
-        <view class='mt74 ml24 f1'>
-              <view class='ctt h1'>高钙钙片</view>
-              <view class='fs26 fc-fff mt30'>{{gt.participate_nums}}人在玩</view> 
+        <view class='mt54 ml24 f1'>
+              <view class='ctt h1'>{{gt.g_title}}</view>
+              <!--{{gt.participate_nums}}人在玩  -->
+              <view class='fs26 fc-fff mt20'>答题闯关赢好礼</view> 
         </view>
 
         <view class='df fxyc mr24'><image class='jrPic' src="{{gt.g_img}}"></image></view>
