@@ -750,7 +750,8 @@ mt18{
 .qitem:active{
   font-size: 32rpx;
   color: #FFFFFF;
-  background: #734DF2;
+   background: #111E26; 
+  /* background: #734DF2; */
 }
 
 .ah-pop-bg{
