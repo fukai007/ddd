@@ -201,7 +201,12 @@ image{
 .fb{
   font-weight: bold
 }
-
+.fs20 {
+  font-size: 20rpx;
+}
+.fs24 {
+  font-size: 24rpx;
+}
 .fs30{
   font-size: 30rpx;
 }

@@ -6,19 +6,19 @@
   font-size: 28rpx;
   color: #fff; */
   position: relative;
-  height: 100rpx;
+  height: 112rpx;
   text-align: center;
   background: #101F26;
 }
 .logo {
-  margin: 20rpx 0;
+  margin-top: 20rpx;
   width: 207rpx;
   height: 60rpx;
 }
 .volume {
   position: absolute;
   right: 20rpx;
-  bottom: 20rpx;
+  top: 35rpx;
   font-size: 22rpx;
   color: #fff;
 }

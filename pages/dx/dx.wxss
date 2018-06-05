@@ -1,4 +1,7 @@
 /* pages/dx/dx.wxss */
+page {
+  /* background-color: #F6B300; */
+}
 .askRoot{
   height: 100vh;
   /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
@@ -11,6 +14,11 @@
 }
 .special {
   color: #333;
+}
+.content {
+  padding-bottom: 50rpx;
+  height: calc(100vh - 162rpx);
+  overflow-y: auto;
 }
 /* 上部图片+奖励 */
  .success-top {

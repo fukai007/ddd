@@ -27,20 +27,22 @@
 </view> -->
 <view class="askRoot success bg-yellow">
   <header></header>
-  <view class="success-top img-wrap">
-    <image src="/images/success.png" class="img"></image>
-    <view class='mt50'><image src="/images/success_text.png" class="imgText"></image></view>
-    <view class="reward">
-      <image src="/images/bowl_success.png" class="icon"></image>
-      <text>狗粮</text>
-      <text class="special">+{{ info.bonus || 0 }}g</text>
-    </view>
+   <view class='content'> 
+    <view class="success-top img-wrap">
+      <image src="/images/success.png" class="img"></image>
+      <view class='mt50'><image src="/images/success_text.png" class="imgText"></image></view>
+      <view class="reward">
+        <image src="/images/bowl_success.png" class="icon"></image>
+        <text>狗粮</text>
+        <text class="special">+{{ info.bonus || 0 }}g</text>
+      </view>
 
-    <view class='df fxyc mt40' wx:if='{{info.level  < 5 }}'>
-      <text>下场将获得狗粮:   </text>
-      <text class="special ml30">  {{ info.next_level_bonus || 0 }}g</text>
+      <view class='df fxyc mt40' wx:if='{{info.level  < 5 }}'>
+        <text>下场将获得狗粮:   </text>
+        <text class="special ml30">  {{ info.next_level_bonus || 0 }}g</text>
+      </view>
     </view>
-  </view>
-  <view class='df fxyc mt100' wx:if='{{info.level  < 5 }}'><button class='next-bt' bindtap='toAsk'>继续闯关</button></view>
-  <view class="{{info.level  < 5 ? 'df fxyc mt40' : 'df fxyc mt200'}}"><button class='backHome-bt' bindtap='toIndex'>返回首页</button></view>
+    <view class='df fxyc mt100' wx:if='{{info.level  < 5 }}'><button class='next-bt' bindtap='toAsk'>继续闯关</button></view>
+    <view class="{{info.level  < 5 ? 'df fxyc mt40' : 'df fxyc mt200'}}"><button class='backHome-bt' bindtap='toIndex'>返回首页</button></view>
+   </view> 
 </view>

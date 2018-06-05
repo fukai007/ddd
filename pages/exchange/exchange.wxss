@@ -1,4 +1,7 @@
 /* pages/exchange/exchange.wxss */
+page {
+  background-color: #101F26;
+}
 /* 主体上部 */
 .section-top {
   height: 82rpx;
@@ -34,16 +37,19 @@
 }
 /* 主体列表  */
 .section-content {
-  padding: 20rpx;
+  padding: 30rpx 20rpx;
   background: #101F26;
-  height: calc(100vh - 140rpx);
+  height: calc(100vh - 172rpx);
   overflow-y: auto;
 }
 .item {
   display: inline-block;
-  margin-right: 20rpx;
+  /* margin-right: 20rpx;
   margin-bottom: 20rpx;
-  width: calc(50% - 11rpx);
+  width: calc(50% - 11rpx); */
+  margin-right: 22rpx;
+  margin-bottom: 20rpx;
+  width: 344rpx;
   border-radius: 10rpx;
   overflow: hidden;
   background: #F7B401;
@@ -67,11 +73,12 @@
 }
 /* item图片 */
 .item-img {
-  width: 100%;
+  width: 344rpx;
+  height: 402rpx;
 }
 /* item说明 */
 .item-text {
-  padding: 10rpx 16rpx 16rpx;
+  padding: 0rpx 14rpx 14rpx;
   font-size: 26rpx;
   color: #202020;
 }
@@ -80,9 +87,9 @@
   color: #202020; */
 }
 .item-content {
-  height:56rpx;
-  line-height:56rpx;
-  margin-top:10rpx;
+  height:50rpx;
+  line-height:50rpx;
+  margin-top:6rpx;
 }
 .item-btn{
   float: right;

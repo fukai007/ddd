@@ -65,7 +65,7 @@
 }
 .item-wrap {
   padding-bottom: 30rpx;
-  height: calc(100vh - 200rpx);
+  height: calc(100vh - 212rpx);
   overflow-y: auto;
 }
 .record{
