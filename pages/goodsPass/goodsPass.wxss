@@ -68,7 +68,7 @@ page{
   line-height: 88rpx;
   background: white;
   font-size: 36rpx;
-  color: #3ab7ff;
+  color: #ffa600;
   margin-top: 50rpx;
 }
 .goHome{
