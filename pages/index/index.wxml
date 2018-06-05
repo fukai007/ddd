@@ -1,3 +1,5 @@
+<wxs src="tools.wxs" module="tools" />
+
 <view class='mx20 mt20'>
   <!--头部UI start  -->
 <view class='df fsb fyc'>
@@ -15,7 +17,6 @@
   <!--头部UI end--2018-05-30 20:54:09  -->
 
   <!-- <text class='tt'>闯三关</text> -->
-
   <!-- 智夺狗粮 start  -->
     <view wx:if="{{!tools.isMask(userInfo)}}" class='mt80 cBar por df' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
       <view class='tag ctag'></view>
@@ -40,7 +41,7 @@
           <image class='crPic' src='/images/qt_15.png'></image>
       </view>
     </view>
-
+    <!--  禁止答题的场景  -->
     <view wx:else class='mt80 dcBar  por df' > 
       <view class='tag dctag'></view>
       <view class='f1'>
@@ -60,10 +61,17 @@
           </view>
       </view>
       <view class='df fxyc mr24'>
-          <image class='crPic' src='/images/qt_15.png'></image>
+            <view >
+                  <view class='h5 fc-fff'>下一场开放时间</view>
+                  <view class='h5 fc-fff tac mt10'>{{userInfo.next_start_time}}</view>
+            </view>
       </view>
     </view>
   <!-- 智夺狗粮 end  -->
+
+
+
+
 
   <!-- 奖品答题 start  -->
     <view 

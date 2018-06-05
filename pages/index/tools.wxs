@@ -9,9 +9,8 @@
 // module.exports.msg = "some msg";
 
 var isMask = function (userInfo){
-  if (userInfo.u_level == 1){
-    console.log(userInfo.u_ticket);
-    if (userInfo.u_ticket){
+  if (userInfo.u_level === 1){
+    if (userInfo.u_ticket > 0){
       return false
     }else{
       return true
@@ -20,6 +19,7 @@ var isMask = function (userInfo){
     return false
   }
 }
+
 
 var isLevel = function(userInfo){
     if(userInfo&&userInfo.u_level > 0){
