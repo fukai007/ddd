@@ -10,6 +10,7 @@
 
 var isMask = function (userInfo){
   if (userInfo.u_level == 1){
+    console.log(userInfo.u_ticket);
     if (userInfo.u_ticket){
       return false
     }else{

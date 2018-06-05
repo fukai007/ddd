@@ -17,11 +17,35 @@
   <!-- <text class='tt'>闯三关</text> -->
 
   <!-- 智夺狗粮 start  -->
-    <view class='mt80 cBar por df ' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
+    <view wx:if="{{!tools.isMask(userInfo)}}" class='mt80 cBar por df' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
       <view class='tag ctag'></view>
       <view class='f1'>
           <view class='mt54 ml24'>
-            <view class='ctt h1'>{{userInfo.index_word}}</view>
+            <view class='cttb h1'>{{userInfo.index_word}}</view>
+            <!-- <view class='fs26 fc-fff'>答题闯关赢好礼</view>  -->
+            <view class='mt16 fs26 fc-fff'>10g/20g/30g/40g/50g</view>
+
+            <view class='df fyc mt50'>
+              <view class='df fyc'>
+                <view class='wh48' wx:for="{{userInfo.recent_participation}}"  wx:for-index="idx" wx:key="{{idx}}" wx:if="{{item}}" >
+                   <image src="{{item}}" class='recentUser'></image>
+                </view>
+              </view>
+               <view class='fs26 fc-fff ml20 '>{{userInfo.play_num}}人在玩</view>
+            </view>
+
+          </view>
+      </view>
+      <view class='df fxyc mr24'>
+          <image class='crPic' src='/images/qt_15.png'></image>
+      </view>
+    </view>
+
+    <view wx:else class='mt80 dcBar  por df' > 
+      <view class='tag dctag'></view>
+      <view class='f1'>
+          <view class='mt54 ml24'>
+            <view class='cttb h1'>{{userInfo.index_word}}</view>
             <!-- <view class='fs26 fc-fff'>答题闯关赢好礼</view>  -->
             <view class='mt16 fs26 fc-fff'>10g/20g/30g/40g/50g</view>
             <view class='df fyc mt50'>
@@ -56,6 +80,16 @@
               <view class='ctt h1'>{{gt.g_title}}</view>
               <!--{{gt.participate_nums}}人在玩  -->
               <view class='fs26 fc-fff mt20'>答题闯关赢好礼</view> 
+
+              <view class='df fyc mt50'>
+                <view class='df fyc'>
+                  <view class='wh48' wx:for="{{userInfo.recent_participation}}"  wx:for-index="idx" wx:key="{{idx}}" wx:if="{{item}}" >
+                    <image src="{{item}}" class='recentUser'></image>
+                  </view>
+                </view>
+                <view class='fs26 fc-fff ml20 '>{{userInfo.play_num}}人在玩</view>
+              </view>    
+
         </view>
 
         <view class='df fxyc mr24'><image class='jrPic' src="{{gt.g_img}}"></image></view>
@@ -68,12 +102,12 @@
         <view class='por hBar df fxyc'>
           <view class='tag htag'></view>
           <view bindtap='toex'>
-              <view class=' h1'>狗粮兑换商城</view>
+              <view class=' cttb h1'>狗粮兑换商城</view>
               <view class='fs26 fc-fff mt30 tac'>兑换记录</view>
           </view>
         </view>
         <view class='hlBar  ml24 df fxyc' bindtap='toac'>
-            <view class=' h2'>兑换记录</view>
+            <view class=' cttb h2'>兑换记录</view>
         </view>
     </view>
   <!-- 兑换 end  -->

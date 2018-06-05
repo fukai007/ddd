@@ -371,6 +371,9 @@ image{
 .bg-yellow {
   background-color: #F6B300;
 }
+.bgc-333{
+  background-color: #333;
+}
 .bgc-y {
   background-color: #FBD97F;
 }
@@ -712,7 +715,8 @@ mt18{
 
 .qitem-ok{
   color: #ffffff;
-  background-color: #38D576;
+  /* background-color: #38D576; */
+  background-color:#111E26; 
 }
 
 
@@ -750,7 +754,7 @@ mt18{
 .qitem:active{
   font-size: 32rpx;
   color: #FFFFFF;
-   background: #111E26; 
+  background: #111E26; 
   /* background: #734DF2; */
 }
 

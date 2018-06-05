@@ -36,7 +36,10 @@ page{/*  */
   color: #ffffff;
   letter-spacing: 4rpx;
 }
-
+.cttb{
+  color: #ffffff;
+  letter-spacing: 4rpx;
+}
 .tag{
   width: 160rpx;
   height: 56rpx;
@@ -50,6 +53,15 @@ page{/*  */
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.dctag{
+  width: 156rpx;
+  height: 50rpx;
+  background-image: url(https://wmygb.crazydoggy.cn/images/dis_taga.png); 
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .jtag{
   background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_15.png);
   background-repeat: no-repeat;
@@ -79,9 +91,16 @@ page{/*  */
   background-size: cover;  
   
 }
-.jBar{
+.dcBar{
   width: 715rpx;
-  height: 205rpx;
+  height: 260rpx;
+   background-image: url(https://wmygb.crazydoggy.cn/images/dis_ca.png); 
+  background-repeat: no-repeat;
+  background-size: cover; 
+}
+.jBar{
+  width: 716rpx;
+  height: 262rpx;
   background-image: url(https://wmygb.crazydoggy.cn/images/yanggou_17.png);
   background-repeat: no-repeat;
   background-size: cover;  

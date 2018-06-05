@@ -5,7 +5,7 @@ page{
   /* background-image: url(https://wmygb.crazydoggy.cn/images/bg.jpg);
   background-repeat: no-repeat;
   background-size: cover; */
-  background-color: #f3a709;
+  background-color: #ffa600;
 }
 .successHeader{
   width: 100%;
@@ -134,23 +134,26 @@ page{
   box-sizing: border-box;
   padding-top: 20rpx;
   margin-top: 50rpx;
+  padding-bottom: 20rpx;
+
 }
 .hint_1{
   font-size: 30rpx;
-  width: 100%;
   display: block;
-  text-align: center;
   height: 50rpx;
+  width: 450rpx;
+  text-align: center;
   line-height: 50rpx;
+  color: #fff;
+  background-color: #ffa600;
 }
 .hint_2{
   color: #3ab7ff;
 }
 .yao{
   display: inline-block;
-  width: 200rpx;
-  height: 200rpx;
-  margin-top: 40rpx;
+  width: 300rpx;
+  height: 300rpx;
 }
 .bottomLogo{
   display: block;

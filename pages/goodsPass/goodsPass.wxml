@@ -25,9 +25,12 @@
     </view>    
     <text class='failHint'>答题失败，希望您再接再厉</text>
   </view>
+
   <view class='failBottom'>
-    <text class='hint_1'>全部答对可获得：<text class='hint_2'>{{ginfo.g_title}}</text></text>
     <image class='yao' src='{{ginfo.g_img2}}'></image>
+    <view class='df fxyc'>
+        <text class='hint_1'>全部答对可获得：{{ginfo.g_title}}</text>
+    </view>
   </view>
    <view class='successFooter'>
     <button class='getBtn' bindtap='toIndex'>返回首页</button>
