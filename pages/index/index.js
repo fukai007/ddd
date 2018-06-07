@@ -191,6 +191,7 @@ var indexm =  {
     }
   },
   togm:function(e,isfh=false){
+    // gt.is_participate||gt.g_stock<1
     let gmid = e.currentTarget.dataset.gmid || e.target.dataset.gmid;
     app.toPage('goodsMain', { gmid, isfh}, 'to'); //跳转到答题页面
   },
@@ -282,7 +283,18 @@ var indexm =  {
       wx.showToast({ title: '没有复活卡', image: "../../images/error-a.png" });
       this.isCheckingFH = false;
     }
+  },
+  checkGM:function(e){
+    let curgmIndex =  e.currentTarget.dataset.idx ; //|| e.target.dataset.idx;
+    let curgm = this.data.goodlist[curgmIndex];
+    if (curgm.is_participate || curgm.g_stock < 1){
+      wx.showToast({ title: '每日只限答一次', image: "../../images/error-a.png" });
+    }else{
+      this.togm(e, true);
+    }
+
   }
+
 }
 
 

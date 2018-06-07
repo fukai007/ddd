@@ -36,7 +36,7 @@
   </view>
 </view>
 
-<view class='df fyc baseArea'>
+<view class='df fyc baseArea addressTag'>
     <view class='h3 fc-000' >详细地址 :</view>
 </view>
 <textarea
