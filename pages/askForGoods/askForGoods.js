@@ -167,27 +167,27 @@ var askm = {
           //如果成功则禁用转发功能 因为是一对一的
           // wx.hideShareMenu();
           console.log('ask--------------onShareAppMessage------->', path)
-          that.setData({
-            isShowHelpUI: true
-          })
-          //当前题目如果分享了 就不用调用接口了
-          if (!that.isQuestionShare) {
-            app.fetchData({
-              func: 'goods_help.share_num',
-              ga_id: that.data.answer.ga_id
-            }).then(data => {
-              //增加是否判断  控制 分享行为-2018-01-06 10:52
-              that.isQuestionShare = true
-              that.startHelpCD();
-            }).catch((error) => {
-              if(error.code == -201004){
-                wx.hideShareMenu()
-              }
-              that.setData({
-                isShowHelpUI: false
-              })
-            })
-          }
+          // that.setData({
+          //   isShowHelpUI: true
+          // })
+          // //当前题目如果分享了 就不用调用接口了
+          // if (!that.isQuestionShare) {
+          //   app.fetchData({
+          //     func: 'goods_help.share_num',
+          //     ga_id: that.data.answer.ga_id
+          //   }).then(data => {
+          //     //增加是否判断  控制 分享行为-2018-01-06 10:52
+          //     that.isQuestionShare = true
+          //     that.startHelpCD();
+          //   }).catch((error) => {
+          //     if(error.code == -201004){
+          //       wx.hideShareMenu()
+          //     }
+          //     that.setData({
+          //       isShowHelpUI: false
+          //     })
+          //   })
+          // }
         },
         fail: function (res) {
           // 转发失败

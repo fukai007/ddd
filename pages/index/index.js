@@ -214,8 +214,11 @@ var indexm =  {
       isFHMask:false
     })
   },
-  toOtherMPById:function(e){
-    wx.navigateToMiniProgram({appId:'wx0661b7ed7fdd78e2'})
+  // toOtherMPById:function(e){
+  //   wx.navigateToMiniProgram({appId:'wx0661b7ed7fdd78e2'})
+  // },
+  toOtherMPById: function (e) {
+    wx.navigateToMiniProgram({appId: 'wx20a5e1b7cdfb82b0' })
   },
   getTicket(){
     app.fetchData({
@@ -287,8 +290,8 @@ var indexm =  {
   checkGM:function(e){
     let curgmIndex =  e.currentTarget.dataset.idx ; //|| e.target.dataset.idx;
     let curgm = this.data.goodlist[curgmIndex];
-    if (curgm.is_participate || curgm.g_stock < 1){
-      wx.showToast({ title: '每日只限答一次', image: "../../images/error-a.png" });
+    if (curgm.is_participate > 10 || curgm.g_stock < 1){
+      wx.showToast({ title: '每日只限答十次', image: "../../images/error-a.png" });
     }else{
       this.togm(e, true);
     }

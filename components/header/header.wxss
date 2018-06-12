@@ -10,6 +10,13 @@
   text-align: center;
   background: #101F26;
 }
+.fu{
+  position: absolute;
+  left: 10rpx;
+  top: 30rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
 .logo {
   margin-top: 20rpx;
   width: 207rpx;

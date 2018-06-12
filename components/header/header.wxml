@@ -5,6 +5,9 @@
     <view class="right tar" bindtap='toRule'>答题规则<text class='ml10 ruleIcon'></text></view>
 </view> -->
 <view class="header">
+    <view class='fu'>
+        <!-- 客服微信：fkxgxcx -->
+    </view> 
     <image class="logo" src="/images/logo_32.png"></image>
     <view wx:if='{{volume !== ""}}' class="volume">
       <image src="/images/icon_s.png" class="icon"></image>

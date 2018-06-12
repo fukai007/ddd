@@ -12,7 +12,7 @@
       </view> -->
       <image src='{{item.eg_img}}' class="item-img"></image>
       <view class="item-text">
-        <text class="item-title fc-444">{{item.eg_desc}}</text>
+        <view class="item-title fc-444">{{item.eg_desc}}</view>
         <view class="item-content">
           <image src="/images/icon_s.png" class="icon"></image>
           <text>×{{item.eg_pay}}</text>
@@ -23,3 +23,4 @@
     </view>
   </view>
 </view>
+<view class='fs24 fc-fff kf'>客服微信：fkxgxcx</view>

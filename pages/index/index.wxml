@@ -10,12 +10,11 @@
             <view class='userIcon-wrap df  '>
                   <!-- <image  class='userIcon-index'  src="{{userInfo.avatarUrl}}"></image> -->
                 <image class='t-l-dogFoodIcon' src='/images/bowl_09.png'></image>
-                <text class='t-l-dogFoodCount ml20'> x {{userInfo.u_money}} g</text>
+                <text class='t-l-dogFoodCount ml20'> x {{userInfo.u_money||0}}g</text>
             </view>
         </view>
   </view>
   <!--头部UI end--2018-05-30 20:54:09  -->
-
   <!-- <text class='tt'>闯三关</text> -->
   <!-- 智夺狗粮 start  -->
     <view wx:if="{{!tools.isMask(userInfo)}}" class='mt80 cBar por df' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
