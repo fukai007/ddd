@@ -290,12 +290,18 @@ var indexm =  {
   checkGM:function(e){
     let curgmIndex =  e.currentTarget.dataset.idx ; //|| e.target.dataset.idx;
     let curgm = this.data.goodlist[curgmIndex];
-    if (curgm.is_participate > 10 || curgm.g_stock < 1){
-      wx.showToast({ title: '每日只限答十次', image: "../../images/error-a.png" });
+    let maxCount = curgm.gean;
+
+    if (curgm.twp){
+      wx.showToast({ title: curgm.twp_msg, icon:'success'});
+      return;
+    }
+
+    if (curgm.is_participate > maxCount || curgm.g_stock < 1){
+      wx.showToast({ title: `每日只限答 ${maxCount}次`, image: "../../images/error-a.png" });
     }else{
       this.togm(e, true);
     }
-
   }
 
 }

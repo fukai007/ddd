@@ -14,10 +14,11 @@
             </view>
         </view>
   </view>
+  <view class='df fxr mt20'><text class='fs30 fc-fff'>答题规则</text></view>
   <!--头部UI end--2018-05-30 20:54:09  -->
   <!-- <text class='tt'>闯三关</text> -->
   <!-- 智夺狗粮 start  -->
-    <view wx:if="{{!tools.isMask(userInfo)}}" class='mt80 cBar por df' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
+    <view wx:if="{{!tools.isMask(userInfo)}}" class='mt20 cBar por df' bindtap="toAsk" data-levelid="{{userInfo.u_level}}"> 
       <view class='tag ctag'></view>
       <view class='f1'>
           <view class='mt54 ml24'>
@@ -119,4 +120,5 @@
         </view>
     </view>
   <!-- 兑换 end  -->
+  <view style='height:50rpx'></view>
 </view>

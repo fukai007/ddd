@@ -33,14 +33,8 @@ var exchangem = {
    * 兑换商品
    */
   exchangeGoods: function (e) {
-    var id = e.currentTarget.dataset.id;  
-    app.fetchData({
-      func: 'exchange_goods.pay',
-      eg_id: id
-    }).then(data => {
-      console.log('exchangeGoods---------data-------------------->',data);
-      app.toPage('address', { ga_id: data.egl_id, gr_type: 2});
-    })
+    var id = e.currentTarget.dataset.id; 
+    app.toPage('exchangeDetail',{ eg_id:id},'to');
   }
 }
 var exchangeh = extend(exchangem, {});

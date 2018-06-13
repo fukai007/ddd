@@ -202,27 +202,43 @@ image{
   font-weight: bold
 }
 .fs20 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 20rpx;
 }
 .fs24 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 24rpx;
 }
 .fs30{
+  line-height: 1;
+  font-weight:normal;
   font-size: 30rpx;
 }
 .fs36{
+  line-height: 1;
+  font-weight:normal;
   font-size: 36rpx;
 }
 .fs42 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 42rpx;
 }
 .fs48 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 48rpx;
 }
 .fs60 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 60rpx;
 }
 .fs72 {
+  line-height: 1;
+  font-weight:normal;
   font-size: 72rpx;
 }
 

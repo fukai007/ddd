@@ -1,0 +1,5 @@
+<!--pages/exchangeDetail/exchangeDetail.wxml-->
+<image class='fullw' mode='widthFix' src='{{egImg}}'></image>
+<view class='bw fullw'>
+   <view class='f1 rbg bh98 fxyc' bindtap='exchangeGoods'> <text>兑换</text></view>
+</view>

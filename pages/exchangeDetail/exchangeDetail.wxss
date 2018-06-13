@@ -1,0 +1,21 @@
+/* pages/exchangeDetail/exchangeDetail.wxss */
+.bh98{
+  height: 98rpx;
+  line-height: 98rpx;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.lbg{
+  background-image: linear-gradient(-90deg, #FFC812 0%, #FE970A 100%);
+}
+
+.rbg{
+  background-color: #f3a70a;
+}
+
+.bw{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

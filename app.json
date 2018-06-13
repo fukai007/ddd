@@ -14,7 +14,8 @@
     "pages/goodsPass/goodsPass",
     "pages/exchange/exchange",
     "pages/fail/fail",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/exchangeDetail/exchangeDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",
