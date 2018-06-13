@@ -14,7 +14,7 @@
             </view>
         </view>
   </view>
-  <view class='df fxr mt20'><text class='fs30 fc-fff'>答题规则</text></view>
+  <view class='df fxr mt20'><text class='fs30 fc-fff' bindtap='toRule'>答题规则</text></view>
   <!--头部UI end--2018-05-30 20:54:09  -->
   <!-- <text class='tt'>闯三关</text> -->
   <!-- 智夺狗粮 start  -->
