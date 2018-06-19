@@ -107,7 +107,7 @@ Page({
     let ul = this.data.userInfo.u_level
     app.toPage('index', {
       ul: ul
-    });
+    }, "rel");
   },
   toAsk:function(){
     let levelId = this.data.info.next_level;

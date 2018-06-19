@@ -94,7 +94,7 @@ Page({
     let ul = this.data.userInfo.u_level
     app.toPage('index',{
       ul: ul
-    });
+    }, "rel");
   },
   formSubmit: function (e) {
     let formId = e.detail.formId;

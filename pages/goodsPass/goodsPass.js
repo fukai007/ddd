@@ -84,7 +84,7 @@ var gpm = {
     });
   },
   toIndex: function () {
-    app.toPage('index');
+    app.toPage('index',{}, "rel");
   }
 }
 var gpmh = extend(gpm, base);

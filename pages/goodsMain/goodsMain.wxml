@@ -12,7 +12,7 @@
     <image wx:if='{{gd.g_img5}}' class='fullw' mode='widthFix' src='{{gd.g_img5}}'></image>
   </view>
 </view>
-<image wx:if="{{gd.appid}}" src='https://wxapp.haizeihuang.com/wannengdequan_php/images/toMPIcon.png' class='toOtherPMIcon' bindtap='toOtherMPById'></image>
+<!-- <image wx:if="{{gd.appid}}" src='https://wxapp.haizeihuang.com/wannengdequan_php/images/toMPIcon.png' class='toOtherPMIcon' bindtap='toOtherMPById'></image> -->
 <view class='bh88'></view>
 <view class='ba'>
   <view class='df'>
