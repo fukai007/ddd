@@ -106,9 +106,15 @@ Page({
     }
   },
   toga:function(){
-    app.toPage('askForGoods', {
-      g_id: this.data.gd.g_id
-    },'to');
+    let gd = this.data.gd;
+    let maxCount = gd.gean; // gd. 
+    if (gd.is_participate > maxCount){
+      wx.showToast({ title: `每日只限答 ${maxCount}次`, image: "../../images/error-a.png" });
+    }else{
+      app.toPage('askForGoods', {
+        g_id: gd.g_id
+      }, 'to');
+    }
   },
   /**
    * 跳转到小程序 -2018-02-25 16:37:10

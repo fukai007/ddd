@@ -24,6 +24,7 @@ var indexm =  {
       console.log("data-------->user.get_userinfo",data)
       let oldUserInfo = app.globalData.userInfo
       let newUserInfo = extend(oldUserInfo,data);
+      newUserInfo.u_ticket = data.u_ticket;
       console.log("data------extend-->user.get_userinfo", data)
       app.globalData.userInfo = newUserInfo
       this.setData({
